@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from 'react';
 import { nelayanData } from '@/lib/mock-data/nelayan';
 import { kapalData } from '@/lib/mock-data/kapal';
 import { hasilTangkapData } from '@/lib/mock-data/hasil-tangkap';
@@ -33,21 +33,47 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [pasarIndustri] = useState<PasarIndustri[]>(pasarIndustriData);
   const [notifikasi, setNotifikasi] = useState<Notifikasi[]>(notifikasiData);
 
-  const value: DataContextValue = {
-    nelayan,
-    kapal,
-    hasilTangkap,
-    koperasi,
-    pasarIndustri,
-    notifikasi,
-    addNelayan: (n) => setNelayan((prev) => [n, ...prev]),
-    addKapal: (k) => setKapal((prev) => [k, ...prev]),
-    addHasilTangkap: (h) => setHasilTangkap((prev) => [h, ...prev]),
-    markNotifikasiDibaca: (id) =>
-      setNotifikasi((prev) => prev.map((n) => (n.id === id ? { ...n, dibaca: true } : n))),
-    updateKapalPosisi: (id, posisi) =>
+  const addNelayan = useCallback((n: Nelayan) => setNelayan((prev) => [n, ...prev]), []);
+  const addKapal = useCallback((k: Kapal) => setKapal((prev) => [k, ...prev]), []);
+  const addHasilTangkap = useCallback((h: HasilTangkap) => setHasilTangkap((prev) => [h, ...prev]), []);
+  const markNotifikasiDibaca = useCallback(
+    (id: string) => setNotifikasi((prev) => prev.map((n) => (n.id === id ? { ...n, dibaca: true } : n))),
+    []
+  );
+  const updateKapalPosisi = useCallback(
+    (id: string, posisi: { lat: number; lng: number }) =>
       setKapal((prev) => prev.map((k) => (k.id === id ? { ...k, posisi } : k))),
-  };
+    []
+  );
+
+  const value: DataContextValue = useMemo(
+    () => ({
+      nelayan,
+      kapal,
+      hasilTangkap,
+      koperasi,
+      pasarIndustri,
+      notifikasi,
+      addNelayan,
+      addKapal,
+      addHasilTangkap,
+      markNotifikasiDibaca,
+      updateKapalPosisi,
+    }),
+    [
+      nelayan,
+      kapal,
+      hasilTangkap,
+      koperasi,
+      pasarIndustri,
+      notifikasi,
+      addNelayan,
+      addKapal,
+      addHasilTangkap,
+      markNotifikasiDibaca,
+      updateKapalPosisi,
+    ]
+  );
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 }
