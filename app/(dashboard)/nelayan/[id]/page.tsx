@@ -7,6 +7,7 @@ import { PageHeader } from '@/components/shared/page-header';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TrendLineChart } from '@/components/dashboard/trend-line-chart';
+import { IdCardDownloadButton } from '@/components/nelayan/id-card-download-button';
 import {
   hasilTangkapForKapal, totalJamMelaut, totalNilaiTangkapan, rataRataPerTripKg,
   totalHasilTangkapKg, trenHasilTangkapHarian,
@@ -46,6 +47,9 @@ export default function NelayanDetailPage() {
           { label: orang.nama },
         ]}
         title="Detail Nelayan ID"
+        actions={
+          <IdCardDownloadButton nelayan={orang} koperasiNama={koperasiNelayan?.nama} kapalNama={kapalNelayan?.nama} />
+        }
       />
 
       <Card>
