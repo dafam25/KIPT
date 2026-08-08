@@ -25,8 +25,7 @@ import { downloadCsv } from '@/lib/csv';
 
 type JenisRow = { nama: string; beratKg: number; persen: number };
 
-const TAB_VALUES = ['hasil-tangkap', 'koperasi', 'pasar-industri'] as const;
-type TabValue = (typeof TAB_VALUES)[number];
+type TabValue = 'hasil-tangkap' | 'koperasi' | 'pasar-industri';
 
 export default function LaporanPage() {
   const { hasilTangkap, koperasi, pasarIndustri } = useData();
