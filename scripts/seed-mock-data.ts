@@ -6,7 +6,7 @@ import { nextNelayanId, nextKapalId } from '../lib/id';
 import type { Kapal, Nelayan, HasilTangkap, Koperasi, PasarIndustri, Notifikasi } from '../lib/types';
 
 faker.seed(20250510); // fixed seed so the dataset is stable across re-runs
-const SEED_DATE = new Date(2025, 4, 10); // fixed "today" (10 Mei 2025) so generated IDs are stable across re-runs
+const SEED_DATE = new Date('2025-05-10T00:00:00Z'); // fixed "today" (10 Mei 2025, UTC) so generated IDs/dates are stable across re-runs regardless of machine timezone
 
 const JENIS_KAPAL: Kapal['jenis'][] = ['Purse Seine', 'Longline', 'Gillnet', 'Kapal Motor', 'Kapal Tanpa Motor'];
 const IKAN = ['Ikan Tongkol', 'Ikan Cakalang', 'Ikan Kembung', 'Ikan Tuna', 'Ikan Layang', 'Ikan Tenggiri'];

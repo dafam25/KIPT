@@ -113,7 +113,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "b082e2cb-5139-4ce1-8f3f-9dd4030812ec",
     "kapalId": "KAP-2505-00017",
-    "tanggal": "2025-04-22",
+    "tanggal": "2025-04-23",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Cornwall",
@@ -173,7 +173,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "abc7ff94-372e-4126-a669-933f92e01f1c",
     "kapalId": "KAP-2505-00022",
-    "tanggal": "2025-05-03",
+    "tanggal": "2025-05-04",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Marshall County",
@@ -245,7 +245,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "c23d4030-dda6-44ab-b41f-249097d96b49",
     "kapalId": "KAP-2505-00016",
-    "tanggal": "2025-04-22",
+    "tanggal": "2025-04-23",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan North Yorkshire",
@@ -437,7 +437,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "742d8c88-7ad3-44b2-9c0e-26c618a79107",
     "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-04-17",
+    "tanggal": "2025-04-18",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Crawford County",
@@ -497,7 +497,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "d1d1e02e-d32d-4743-9414-bbf61d47562c",
     "kapalId": "KAP-2505-00020",
-    "tanggal": "2025-04-14",
+    "tanggal": "2025-04-15",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Worcestershire",
@@ -515,7 +515,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "44f0b3ac-3647-4b06-b518-8efd5845dab1",
     "kapalId": "KAP-2505-00025",
-    "tanggal": "2025-05-02",
+    "tanggal": "2025-05-03",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Grampian",
@@ -665,7 +665,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "bcf682b8-057b-44f3-a5e9-4451aa3aabc5",
     "kapalId": "KAP-2505-00025",
-    "tanggal": "2025-05-03",
+    "tanggal": "2025-05-04",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Monroe County",
@@ -689,7 +689,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "c480dd23-d3fa-463c-ab73-0ebd8b8f69df",
     "kapalId": "KAP-2505-00012",
-    "tanggal": "2025-05-01",
+    "tanggal": "2025-05-02",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Bedfordshire",
@@ -725,7 +725,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "f53ac981-d7d1-4ce1-b57f-c92c39b40024",
     "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-04-29",
+    "tanggal": "2025-04-30",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Pike County",
@@ -785,7 +785,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "fc331c3b-c5e7-47d2-9b63-176c8b02abcf",
     "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-05-02",
+    "tanggal": "2025-05-03",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Essex",
@@ -821,7 +821,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "8eb31088-2dc8-423a-b657-6007266fc94c",
     "kapalId": "KAP-2505-00029",
-    "tanggal": "2025-04-17",
+    "tanggal": "2025-04-18",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Highlands and Islands",
@@ -905,7 +905,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "0fc5a5ef-502c-4b80-8c38-88a6adad51aa",
     "kapalId": "KAP-2505-00036",
-    "tanggal": "2025-04-30",
+    "tanggal": "2025-05-01",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Gloucestershire",
@@ -1013,7 +1013,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "859f1564-1efb-41a9-a3b1-85bf1245ca40",
     "kapalId": "KAP-2505-00001",
-    "tanggal": "2025-05-06",
+    "tanggal": "2025-05-07",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Lincoln County",
@@ -1295,7 +1295,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "5216c9ae-88d2-4d82-8f33-5ea90ed2bfea",
     "kapalId": "KAP-2505-00026",
-    "tanggal": "2025-04-15",
+    "tanggal": "2025-04-16",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Marshall County",
@@ -1319,7 +1319,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "a15c6d84-b9a3-41d1-b120-84d27bb5403c",
     "kapalId": "KAP-2505-00006",
-    "tanggal": "2025-04-23",
+    "tanggal": "2025-04-24",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Johnson County",
@@ -1457,7 +1457,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "fda97f06-0130-4592-be94-72eb195efa4b",
     "kapalId": "KAP-2505-00023",
-    "tanggal": "2025-04-27",
+    "tanggal": "2025-04-28",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Hertfordshire",
@@ -1535,7 +1535,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "5ae8ed99-585f-473f-ad4a-958af51fa345",
     "kapalId": "KAP-2505-00024",
-    "tanggal": "2025-04-18",
+    "tanggal": "2025-04-19",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Marion County",
@@ -1571,7 +1571,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "be25fa02-59bb-4f4d-9d20-8cf1f8b971d4",
     "kapalId": "KAP-2505-00023",
-    "tanggal": "2025-04-09",
+    "tanggal": "2025-04-10",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan West Yorkshire",
@@ -1631,7 +1631,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "55aa5964-9fac-4e29-aeaa-1e642e1fb309",
     "kapalId": "KAP-2505-00027",
-    "tanggal": "2025-05-05",
+    "tanggal": "2025-05-06",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Berkshire",
@@ -1661,7 +1661,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "b74c86de-0eee-43ef-9cb6-6c1081906b44",
     "kapalId": "KAP-2505-00020",
-    "tanggal": "2025-04-27",
+    "tanggal": "2025-04-28",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Powys",
@@ -1703,7 +1703,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "8c3c5f23-d089-4f04-9efb-406e4f1e3764",
     "kapalId": "KAP-2505-00035",
-    "tanggal": "2025-04-21",
+    "tanggal": "2025-04-22",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Shropshire",
@@ -1805,7 +1805,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "1906ed19-eab9-43ac-837c-d7cd9c3b9406",
     "kapalId": "KAP-2505-00014",
-    "tanggal": "2025-04-14",
+    "tanggal": "2025-04-15",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Central",
@@ -1865,7 +1865,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "a5081d30-3534-4df6-aff2-746263338391",
     "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-05-05",
+    "tanggal": "2025-05-06",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Lee County",
@@ -1883,7 +1883,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "29ed6db6-f227-44ca-bf3c-bd82efe3af0b",
     "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-04-09",
+    "tanggal": "2025-04-10",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Clwyd",
@@ -1901,7 +1901,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "a5494e1a-18ac-4975-bfa6-a33d4756e53a",
     "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-04-25",
+    "tanggal": "2025-04-26",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Hertfordshire",
@@ -1925,7 +1925,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "9a09c1a8-b3df-4ea6-8ca9-09f805f3ae63",
     "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-04-10",
+    "tanggal": "2025-04-11",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Central",
@@ -1991,7 +1991,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "d777b90f-6945-46cb-a41f-20d461131c81",
     "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-04-30",
+    "tanggal": "2025-05-01",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Tayside",
@@ -2063,7 +2063,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "2d7637da-474b-471f-a302-6e01d2bf17ad",
     "kapalId": "KAP-2505-00035",
-    "tanggal": "2025-04-09",
+    "tanggal": "2025-04-10",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Perry County",
@@ -2129,7 +2129,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "469c1337-96ac-46af-8b28-044639e0a050",
     "kapalId": "KAP-2505-00007",
-    "tanggal": "2025-05-02",
+    "tanggal": "2025-05-03",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan West Yorkshire",
@@ -2165,7 +2165,7 @@ export const hasilTangkapData: HasilTangkap[] = [
   {
     "id": "26b5ed0b-6e09-41b9-acb3-814f990005ee",
     "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-04-23",
+    "tanggal": "2025-04-24",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan West Yorkshire",

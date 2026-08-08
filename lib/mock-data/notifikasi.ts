@@ -7,7 +7,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Tantillus decor abscido annus.",
     "deskripsi": "Cilicium patrocinor aut mollitia patruus cometes theatrum artificiose comparo celo.",
-    "waktu": "2025-05-06T23:26:57.377Z",
+    "waktu": "2025-05-07T06:26:57.377Z",
     "dibaca": false
   },
   {
@@ -15,7 +15,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sukses",
     "judul": "Speculum tam caries amor.",
     "deskripsi": "Tondeo tui carmen vita aut nemo vesco curriculum commodi talis.",
-    "waktu": "2025-05-08T17:08:28.923Z",
+    "waktu": "2025-05-09T00:08:28.923Z",
     "dibaca": true
   },
   {
@@ -23,7 +23,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Adopto odit coma aperiam.",
     "deskripsi": "Tendo tepidus color taedium alii assumenda speciosus abbas coniuratio terra.",
-    "waktu": "2025-05-09T10:54:18.982Z",
+    "waktu": "2025-05-09T17:54:18.982Z",
     "dibaca": false
   },
   {
@@ -31,7 +31,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sukses",
     "judul": "Bibo perspiciatis apto acerbitas.",
     "deskripsi": "Victus vero eligendi confugo aspernatur ambulo colo tres umbra timidus.",
-    "waktu": "2025-05-05T09:08:47.145Z",
+    "waktu": "2025-05-05T16:08:47.145Z",
     "dibaca": false
   },
   {
@@ -39,7 +39,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "peringatan",
     "judul": "Voluptatem id praesentium admitto.",
     "deskripsi": "Cunctatio tonsor curto thermae acerbitas dolor cur congregatio amicitia unus.",
-    "waktu": "2025-05-07T13:12:10.907Z",
+    "waktu": "2025-05-07T20:12:10.907Z",
     "dibaca": true
   },
   {
@@ -47,7 +47,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sukses",
     "judul": "Cohibeo quo supra subiungo.",
     "deskripsi": "Carpo defero amor adhaero deinde defero amplus clarus attero vapulus.",
-    "waktu": "2025-05-06T22:01:34.243Z",
+    "waktu": "2025-05-07T05:01:34.243Z",
     "dibaca": false
   },
   {
@@ -55,7 +55,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Vorago corroboro suadeo eum.",
     "deskripsi": "Arbitro terebro anser suppellex animus doloribus derelinquo tam undique ambitus.",
-    "waktu": "2025-05-07T17:14:02.596Z",
+    "waktu": "2025-05-08T00:14:02.596Z",
     "dibaca": true
   },
   {
@@ -63,7 +63,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Damnatio assumenda ventosus tibi.",
     "deskripsi": "Cohors vindico crebro voluptatibus teneo dolorem terga conicio altus super.",
-    "waktu": "2025-05-06T02:52:27.944Z",
+    "waktu": "2025-05-06T09:52:27.944Z",
     "dibaca": false
   },
   {
@@ -71,7 +71,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Caecus deludo constans adeptio.",
     "deskripsi": "Cubicularis solio celo comminor mollitia assentator voluptas adversus advoco depereo.",
-    "waktu": "2025-05-08T20:32:44.052Z",
+    "waktu": "2025-05-09T03:32:44.052Z",
     "dibaca": true
   },
   {
@@ -79,7 +79,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "peringatan",
     "judul": "Agnosco amoveo nam blandior.",
     "deskripsi": "Amita agnosco ago magnam illum eum suasoria sui crinis victus.",
-    "waktu": "2025-05-07T05:12:28.852Z",
+    "waktu": "2025-05-07T12:12:28.852Z",
     "dibaca": false
   },
   {
@@ -87,7 +87,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Cohaero comprehendo vel cogo.",
     "deskripsi": "Quaerat tergum demum cotidie ustulo turpis sulum angelus vacuus ad.",
-    "waktu": "2025-05-09T00:54:26.117Z",
+    "waktu": "2025-05-09T07:54:26.117Z",
     "dibaca": false
   },
   {
@@ -95,7 +95,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sukses",
     "judul": "Ustulo comedo sulum omnis.",
     "deskripsi": "Iure autus tamdiu et usque undique solus carcer cerno ait.",
-    "waktu": "2025-05-05T13:03:05.053Z",
+    "waktu": "2025-05-05T20:03:05.053Z",
     "dibaca": false
   },
   {
@@ -103,7 +103,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sukses",
     "judul": "Summisse argumentum comparo bonus.",
     "deskripsi": "Summisse aeger tunc casus averto denique uberrime celer amplus sub.",
-    "waktu": "2025-05-05T07:00:10.972Z",
+    "waktu": "2025-05-05T14:00:10.972Z",
     "dibaca": false
   },
   {
@@ -111,7 +111,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "peringatan",
     "judul": "Animi catena turpis sint.",
     "deskripsi": "Neque ultra vinitor utpote texo vitae commodi contabesco vomito coaegresco.",
-    "waktu": "2025-05-08T19:06:27.141Z",
+    "waktu": "2025-05-09T02:06:27.141Z",
     "dibaca": true
   },
   {
@@ -119,7 +119,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "informasi",
     "judul": "Coaegresco varietas animi cognatus.",
     "deskripsi": "Tergo adhaero tergum aestus vulgus cerno allatus illum turbo demulceo.",
-    "waktu": "2025-05-06T08:26:32.628Z",
+    "waktu": "2025-05-06T15:26:32.628Z",
     "dibaca": false
   },
   {
@@ -127,7 +127,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "informasi",
     "judul": "Trans supra inventore victoria.",
     "deskripsi": "Bis carus odit verto corrigo ocer ambulo advoco quibusdam iure.",
-    "waktu": "2025-05-09T08:01:21.554Z",
+    "waktu": "2025-05-09T15:01:21.554Z",
     "dibaca": true
   },
   {
@@ -135,7 +135,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "sistem",
     "judul": "Tolero numquam quae artificiose.",
     "deskripsi": "Aperio vinco cimentarius adulatio adstringo ocer clam audacia natus una.",
-    "waktu": "2025-05-06T04:22:58.807Z",
+    "waktu": "2025-05-06T11:22:58.807Z",
     "dibaca": false
   },
   {
@@ -143,7 +143,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "informasi",
     "judul": "Caste tero arx tollo.",
     "deskripsi": "Virtus ullus dicta tempore depopulo deporto arca traho addo taedium.",
-    "waktu": "2025-05-07T13:41:54.856Z",
+    "waktu": "2025-05-07T20:41:54.856Z",
     "dibaca": false
   },
   {
@@ -151,7 +151,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "peringatan",
     "judul": "Ademptio brevis vehemens vulgus.",
     "deskripsi": "Unus veniam solio denuncio ubi crux alter culpo speciosus caterva.",
-    "waktu": "2025-05-05T03:16:16.788Z",
+    "waktu": "2025-05-05T10:16:16.788Z",
     "dibaca": true
   },
   {
@@ -159,7 +159,7 @@ export const notifikasiData: Notifikasi[] = [
     "jenis": "peringatan",
     "judul": "Audax comprehendo beatae una.",
     "deskripsi": "Vicissitudo uberrime tredecim summopere viridis beatus textus solitudo caute eius.",
-    "waktu": "2025-05-06T05:36:34.882Z",
+    "waktu": "2025-05-06T12:36:34.882Z",
     "dibaca": true
   }
 ];
