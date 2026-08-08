@@ -6,6 +6,12 @@ import {
   kapalMelautCount,
   komposisiHasilTangkap,
   trenHasilTangkapHarian,
+  hasilTangkapForKapal,
+  totalJamMelaut,
+  totalNilaiTangkapan,
+  rataRataPerTripKg,
+  kapalSandarCount,
+  kapalTidakAktifCount,
 } from './stats';
 import type { Nelayan, Kapal, HasilTangkap } from './types';
 
@@ -71,5 +77,77 @@ describe('trenHasilTangkapHarian', () => {
 
   it('returns an empty array for an empty input', () => {
     expect(trenHasilTangkapHarian([])).toEqual([]);
+  });
+});
+
+const hasilTangkapDenganWaktu: HasilTangkap[] = [
+  {
+    id: '1', kapalId: 'KAP-1', tanggal: '2025-05-10',
+    waktuMulai: '06:00', waktuSelesai: '12:30',
+    jenisIkan: [{ nama: 'Ikan Tongkol', beratKg: 100, jumlahEkor: 10, kondisi: 'Segar' }],
+    estimasiNilai: 2_500_000,
+  } as HasilTangkap,
+  {
+    id: '2', kapalId: 'KAP-1', tanggal: '2025-05-11',
+    waktuMulai: '05:00', waktuSelesai: '09:00',
+    jenisIkan: [{ nama: 'Ikan Cakalang', beratKg: 50, jumlahEkor: 5, kondisi: 'Segar' }],
+    estimasiNilai: 1_250_000,
+  } as HasilTangkap,
+  {
+    id: '3', kapalId: 'KAP-2', tanggal: '2025-05-11',
+    waktuMulai: '06:00', waktuSelesai: '10:00',
+    jenisIkan: [{ nama: 'Ikan Tongkol', beratKg: 30, jumlahEkor: 3, kondisi: 'Segar' }],
+    estimasiNilai: 750_000,
+  } as HasilTangkap,
+];
+
+const kapalBerbagaiStatus: Kapal[] = [
+  { id: 'KAP-1', status: 'melaut' } as Kapal,
+  { id: 'KAP-2', status: 'sandar' } as Kapal,
+  { id: 'KAP-3', status: 'sandar' } as Kapal,
+  { id: 'KAP-4', status: 'tidak_aktif' } as Kapal,
+];
+
+describe('hasilTangkapForKapal', () => {
+  it('filters to only the given kapal', () => {
+    const result = hasilTangkapForKapal('KAP-1', hasilTangkapDenganWaktu);
+    expect(result.map((h) => h.id)).toEqual(['1', '2']);
+  });
+});
+
+describe('totalJamMelaut', () => {
+  it('sums hours between waktuMulai and waktuSelesai', () => {
+    const kap1 = hasilTangkapForKapal('KAP-1', hasilTangkapDenganWaktu);
+    expect(totalJamMelaut(kap1)).toBeCloseTo(6.5 + 4, 5);
+  });
+});
+
+describe('totalNilaiTangkapan', () => {
+  it('sums estimasiNilai', () => {
+    const kap1 = hasilTangkapForKapal('KAP-1', hasilTangkapDenganWaktu);
+    expect(totalNilaiTangkapan(kap1)).toBe(3_750_000);
+  });
+});
+
+describe('rataRataPerTripKg', () => {
+  it('divides total kg by trip count', () => {
+    const kap1 = hasilTangkapForKapal('KAP-1', hasilTangkapDenganWaktu);
+    expect(rataRataPerTripKg(kap1)).toBe(75);
+  });
+
+  it('returns 0 for an empty list', () => {
+    expect(rataRataPerTripKg([])).toBe(0);
+  });
+});
+
+describe('kapalSandarCount', () => {
+  it('counts only sandar status', () => {
+    expect(kapalSandarCount(kapalBerbagaiStatus)).toBe(2);
+  });
+});
+
+describe('kapalTidakAktifCount', () => {
+  it('counts only tidak_aktif status', () => {
+    expect(kapalTidakAktifCount(kapalBerbagaiStatus)).toBe(1);
   });
 });

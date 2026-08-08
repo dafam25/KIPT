@@ -50,3 +50,34 @@ export function trenHasilTangkapHarian(
     .map(([tanggal, totalKg]) => ({ tanggal, totalKg }))
     .sort((a, b) => a.tanggal.localeCompare(b.tanggal));
 }
+
+export function hasilTangkapForKapal(kapalId: string, list: HasilTangkap[]): HasilTangkap[] {
+  return list.filter((h) => h.kapalId === kapalId);
+}
+
+function jamFromRange(waktuMulai: string, waktuSelesai: string): number {
+  const [mulaiH, mulaiM] = waktuMulai.split(':').map(Number);
+  const [selesaiH, selesaiM] = waktuSelesai.split(':').map(Number);
+  return (selesaiH * 60 + selesaiM - (mulaiH * 60 + mulaiM)) / 60;
+}
+
+export function totalJamMelaut(list: HasilTangkap[]): number {
+  return list.reduce((sum, h) => sum + jamFromRange(h.waktuMulai, h.waktuSelesai), 0);
+}
+
+export function totalNilaiTangkapan(list: HasilTangkap[]): number {
+  return list.reduce((sum, h) => sum + h.estimasiNilai, 0);
+}
+
+export function rataRataPerTripKg(list: HasilTangkap[]): number {
+  if (list.length === 0) return 0;
+  return totalHasilTangkapKg(list) / list.length;
+}
+
+export function kapalSandarCount(list: Kapal[]): number {
+  return list.filter((k) => k.status === 'sandar').length;
+}
+
+export function kapalTidakAktifCount(list: Kapal[]): number {
+  return list.filter((k) => k.status === 'tidak_aktif').length;
+}
