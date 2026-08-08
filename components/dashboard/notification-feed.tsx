@@ -20,11 +20,21 @@ const STYLES: Record<NotifikasiJenis, string> = {
   sistem: 'text-accent bg-accent/10',
 };
 
-export function NotificationFeed({ limit = 5 }: { limit?: number }) {
+export function NotificationFeed({
+  limit,
+  filterJenis = 'semua',
+}: {
+  limit?: number;
+  filterJenis?: NotifikasiJenis | 'semua';
+}) {
   const { notifikasi, markNotifikasiDibaca } = useData();
-  const items = [...notifikasi]
-    .sort((a, b) => b.waktu.localeCompare(a.waktu))
-    .slice(0, limit);
+  const filtered = filterJenis === 'semua' ? notifikasi : notifikasi.filter((n) => n.jenis === filterJenis);
+  const sorted = [...filtered].sort((a, b) => b.waktu.localeCompare(a.waktu));
+  const items = typeof limit === 'number' ? sorted.slice(0, limit) : sorted;
+
+  if (items.length === 0) {
+    return <p className="text-sm text-muted-foreground">Belum ada notifikasi.</p>;
+  }
 
   return (
     <div className="space-y-2">
