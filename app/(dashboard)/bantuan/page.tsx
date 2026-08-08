@@ -64,7 +64,7 @@ export default function BantuanPage() {
     { header: 'Judul', cell: (t) => t.judul },
     { header: 'Kategori', cell: (t) => t.kategori },
     { header: 'Status', cell: (t) => <StatusBadge label={t.status} tone={STATUS_TONE[t.status]} /> },
-    { header: 'Tanggal Dibuat', cell: (t) => formatDate(t.dibuatPada) },
+    { header: 'Tanggal Dibuat', cell: (t) => formatDate(t.dibuatPada.slice(0, 10)) },
   ];
 
   function handleSubmit(e: React.FormEvent) {
