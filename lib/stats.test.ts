@@ -23,6 +23,9 @@ import {
   aktifPasarIndustriCount,
   komposisiVolumePasarIndustri,
   peringkatVolume,
+  nelayanAktifCount,
+  nelayanTerverifikasiCount,
+  nelayanTergabungKoperasiCount,
 } from './stats';
 import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri } from './types';
 
@@ -259,5 +262,40 @@ describe('peringkatVolume', () => {
 
   it('works for any entity shaped with id and volumeKg (e.g. PasarIndustri)', () => {
     expect(peringkatVolume(pasarIndustri, 'PAS-1')).toBe(1);
+  });
+});
+
+describe('nelayanAktifCount', () => {
+  it('counts only aktif status', () => {
+    const list: Nelayan[] = [
+      { id: 'N1', status: 'aktif' } as Nelayan,
+      { id: 'N2', status: 'nonaktif' } as Nelayan,
+      { id: 'N3', status: 'aktif' } as Nelayan,
+    ];
+    expect(nelayanAktifCount(list)).toBe(2);
+  });
+});
+
+describe('nelayanTerverifikasiCount', () => {
+  it('counts only terverifikasi true', () => {
+    const list: Nelayan[] = [
+      { id: 'N1', terverifikasi: true } as Nelayan,
+      { id: 'N2', terverifikasi: false } as Nelayan,
+    ];
+    expect(nelayanTerverifikasiCount(list)).toBe(1);
+  });
+});
+
+describe('nelayanTergabungKoperasiCount', () => {
+  it('counts only non-null koperasiId', () => {
+    const list: Nelayan[] = [
+      { id: 'N1', koperasiId: 'KOP-1' } as Nelayan,
+      { id: 'N2', koperasiId: null } as Nelayan,
+    ];
+    expect(nelayanTergabungKoperasiCount(list)).toBe(1);
+  });
+
+  it('returns 0 for an empty list', () => {
+    expect(nelayanTergabungKoperasiCount([])).toBe(0);
   });
 });

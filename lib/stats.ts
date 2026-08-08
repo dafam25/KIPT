@@ -171,3 +171,15 @@ export function peringkatVolume<T extends { id: string; volumeKg: number }>(
 ): number {
   return [...list].sort((a, b) => b.volumeKg - a.volumeKg).findIndex((item) => item.id === id) + 1;
 }
+
+export function nelayanAktifCount(list: Nelayan[]): number {
+  return list.filter((n) => n.status === 'aktif').length;
+}
+
+export function nelayanTerverifikasiCount(list: Nelayan[]): number {
+  return list.filter((n) => n.terverifikasi).length;
+}
+
+export function nelayanTergabungKoperasiCount(list: Nelayan[]): number {
+  return list.filter((n) => n.koperasiId !== null).length;
+}
