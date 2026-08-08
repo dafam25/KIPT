@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PageHeader } from '@/components/shared/page-header';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { toastManager } from '@/components/ui/toast';
@@ -13,8 +14,12 @@ const DECORATIVE_TABS = [
   { value: 'notifikasi', label: 'Notifikasi' },
   { value: 'integrasi', label: 'Integrasi' },
   { value: 'backup', label: 'Data & Backup' },
-  { value: 'preferensi', label: 'Preferensi' },
 ] as const;
+
+const BAHASA_OPTIONS = [
+  { value: 'id', label: 'Bahasa Indonesia' },
+  { value: 'en', label: 'English' },
+];
 
 function showComingSoonToast() {
   toastManager.add({
@@ -28,6 +33,7 @@ export default function PengaturanPage() {
   const [notifikasiKapal, setNotifikasiKapal] = useState(true);
   const [sinkronisasiOtomatis, setSinkronisasiOtomatis] = useState(false);
   const [tampilanKompak, setTampilanKompak] = useState(false);
+  const [bahasa, setBahasa] = useState('id');
 
   return (
     <div className="space-y-6">
@@ -44,6 +50,7 @@ export default function PengaturanPage() {
               {tab.label}
             </TabsTrigger>
           ))}
+          <TabsTrigger value="preferensi">Preferensi</TabsTrigger>
         </TabsList>
 
         <TabsContent value="umum" className="pt-4">
@@ -97,6 +104,28 @@ export default function PengaturanPage() {
             </Card>
           </TabsContent>
         ))}
+
+        <TabsContent value="preferensi" className="pt-4">
+          <Card>
+            <CardHeader className="text-sm font-semibold">Preferensi</CardHeader>
+            <CardContent className="space-y-4">
+              <div className="max-w-xs space-y-1.5">
+                <label htmlFor="pengaturan-bahasa" className="text-sm text-muted-foreground">Bahasa</label>
+                <Select items={BAHASA_OPTIONS} value={bahasa} onValueChange={(v) => setBahasa(v ?? 'id')}>
+                  <SelectTrigger id="pengaturan-bahasa"><SelectValue /></SelectTrigger>
+                  <SelectContent>
+                    {BAHASA_OPTIONS.map((opt) => (
+                      <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button variant="outline" onClick={showComingSoonToast}>
+                Simpan Perubahan
+              </Button>
+            </CardContent>
+          </Card>
+        </TabsContent>
       </Tabs>
     </div>
   );
