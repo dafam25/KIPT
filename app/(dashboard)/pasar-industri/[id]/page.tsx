@@ -7,6 +7,7 @@ import { StatusBadge } from '@/components/shared/status-badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { formatNumber, formatRupiah } from '@/lib/format';
+import { peringkatVolume } from '@/lib/stats';
 
 export default function PasarIndustriDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -26,7 +27,7 @@ export default function PasarIndustriDetailPage() {
     );
   }
 
-  const peringkat = [...pasarIndustri].sort((a, b) => b.volumeKg - a.volumeKg).findIndex((p) => p.id === item.id) + 1;
+  const peringkat = peringkatVolume(pasarIndustri, item.id);
 
   return (
     <div className="space-y-6">

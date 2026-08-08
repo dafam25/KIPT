@@ -9,13 +9,14 @@ import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import type { Koperasi } from '@/lib/types';
 import { formatNumber, formatRupiah } from '@/lib/format';
+import { totalVolumeKoperasi, aktifKoperasiCount } from '@/lib/stats';
 
 export default function KoperasiListPage() {
   const { koperasi } = useData();
 
   const totalAnggota = koperasi.reduce((sum, k) => sum + k.jumlahAnggota, 0);
-  const totalVolume = koperasi.reduce((sum, k) => sum + k.volumeKg, 0);
-  const aktifCount = koperasi.filter((k) => k.status === 'Aktif').length;
+  const totalVolume = totalVolumeKoperasi(koperasi);
+  const aktifCount = aktifKoperasiCount(koperasi);
 
   const columns: DataTableColumn<Koperasi>[] = [
     {

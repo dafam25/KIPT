@@ -14,8 +14,17 @@ import {
   kapalTidakAktifCount,
   rekapPerKapal,
   rekapPerWilayah,
+  totalVolumeKoperasi,
+  totalNilaiKoperasi,
+  aktifKoperasiCount,
+  komposisiVolumeKoperasi,
+  totalVolumePasarIndustri,
+  totalNilaiPasarIndustri,
+  aktifPasarIndustriCount,
+  komposisiVolumePasarIndustri,
+  peringkatVolume,
 } from './stats';
-import type { Nelayan, Kapal, HasilTangkap } from './types';
+import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri } from './types';
 
 const nelayan: Nelayan[] = [{ id: 'NEL-1' } as Nelayan, { id: 'NEL-2' } as Nelayan];
 const kapal: Kapal[] = [
@@ -185,5 +194,70 @@ describe('rekapPerWilayah', () => {
       { label: 'Perairan Selat Bali', totalKg: 150, jumlahTrip: 2 },
       { label: 'Perairan Utara Jawa', totalKg: 30, jumlahTrip: 1 },
     ]);
+  });
+});
+
+const koperasi: Koperasi[] = [
+  { id: 'KOP-1', nama: 'Koperasi Bahari', volumeKg: 300, nilaiTransaksi: 5_000_000, status: 'Aktif' } as Koperasi,
+  { id: 'KOP-2', nama: 'Koperasi Nusantara', volumeKg: 100, nilaiTransaksi: 2_000_000, status: 'Tidak Aktif' } as Koperasi,
+];
+
+const pasarIndustri: PasarIndustri[] = [
+  { id: 'PAS-1', nama: 'Pasar Ikan Sentral', volumeKg: 500, nilaiTransaksi: 9_000_000, status: 'Aktif' } as PasarIndustri,
+  { id: 'PAS-2', nama: 'Industri Olahan Jaya', volumeKg: 500, nilaiTransaksi: 1_000_000, status: 'Aktif' } as PasarIndustri,
+];
+
+describe('totalVolumeKoperasi', () => {
+  it('sums volumeKg across all koperasi', () => { expect(totalVolumeKoperasi(koperasi)).toBe(400); });
+});
+
+describe('totalNilaiKoperasi', () => {
+  it('sums nilaiTransaksi across all koperasi', () => { expect(totalNilaiKoperasi(koperasi)).toBe(7_000_000); });
+});
+
+describe('aktifKoperasiCount', () => {
+  it('counts only Aktif status', () => { expect(aktifKoperasiCount(koperasi)).toBe(1); });
+});
+
+describe('komposisiVolumeKoperasi', () => {
+  it('maps nama/volumeKg to nama/beratKg/persen, sorted descending', () => {
+    expect(komposisiVolumeKoperasi(koperasi)).toEqual([
+      { nama: 'Koperasi Bahari', beratKg: 300, persen: 75 },
+      { nama: 'Koperasi Nusantara', beratKg: 100, persen: 25 },
+    ]);
+  });
+
+  it('returns an empty array for an empty input (divide-by-zero guard)', () => {
+    expect(komposisiVolumeKoperasi([])).toEqual([]);
+  });
+});
+
+describe('totalVolumePasarIndustri', () => {
+  it('sums volumeKg across all records', () => { expect(totalVolumePasarIndustri(pasarIndustri)).toBe(1000); });
+});
+
+describe('totalNilaiPasarIndustri', () => {
+  it('sums nilaiTransaksi across all records', () => { expect(totalNilaiPasarIndustri(pasarIndustri)).toBe(10_000_000); });
+});
+
+describe('aktifPasarIndustriCount', () => {
+  it('counts only Aktif status', () => { expect(aktifPasarIndustriCount(pasarIndustri)).toBe(2); });
+});
+
+describe('komposisiVolumePasarIndustri', () => {
+  it('maps nama/volumeKg to nama/beratKg/persen', () => {
+    const result = komposisiVolumePasarIndustri(pasarIndustri);
+    expect(result.find((r) => r.nama === 'Pasar Ikan Sentral')?.persen).toBeCloseTo(50, 5);
+  });
+});
+
+describe('peringkatVolume', () => {
+  it('ranks by descending volumeKg, 1-based', () => {
+    expect(peringkatVolume(koperasi, 'KOP-1')).toBe(1);
+    expect(peringkatVolume(koperasi, 'KOP-2')).toBe(2);
+  });
+
+  it('works for any entity shaped with id and volumeKg (e.g. PasarIndustri)', () => {
+    expect(peringkatVolume(pasarIndustri, 'PAS-1')).toBe(1);
   });
 });

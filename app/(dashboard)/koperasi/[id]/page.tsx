@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Nelayan } from '@/lib/types';
 import { formatNumber, formatRupiah } from '@/lib/format';
+import { peringkatVolume } from '@/lib/stats';
 
 export default function KoperasiDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -30,7 +31,7 @@ export default function KoperasiDetailPage() {
   }
 
   const anggota = nelayan.filter((n) => n.koperasiId === item.id);
-  const peringkat = [...koperasi].sort((a, b) => b.volumeKg - a.volumeKg).findIndex((k) => k.id === item.id) + 1;
+  const peringkat = peringkatVolume(koperasi, item.id);
 
   const anggotaColumns: DataTableColumn<Nelayan>[] = [
     {

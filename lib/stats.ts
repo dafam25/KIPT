@@ -1,4 +1,4 @@
-import type { Nelayan, Kapal, HasilTangkap } from './types';
+import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri } from './types';
 
 export function totalNelayan(list: Nelayan[]): number {
   return list.length;
@@ -113,4 +113,61 @@ export function rekapPerWilayah(
   return [...totals.entries()]
     .map(([lokasi, v]) => ({ label: lokasi, totalKg: v.totalKg, jumlahTrip: v.jumlahTrip }))
     .sort((a, b) => b.totalKg - a.totalKg);
+}
+
+export function totalVolumeKoperasi(list: Koperasi[]): number {
+  return list.reduce((sum, k) => sum + k.volumeKg, 0);
+}
+
+export function totalNilaiKoperasi(list: Koperasi[]): number {
+  return list.reduce((sum, k) => sum + k.nilaiTransaksi, 0);
+}
+
+export function aktifKoperasiCount(list: Koperasi[]): number {
+  return list.filter((k) => k.status === 'Aktif').length;
+}
+
+export function komposisiVolumeKoperasi(
+  list: Koperasi[],
+): { nama: string; beratKg: number; persen: number }[] {
+  const grandTotal = list.reduce((sum, k) => sum + k.volumeKg, 0);
+  return [...list]
+    .map((k) => ({
+      nama: k.nama,
+      beratKg: k.volumeKg,
+      persen: grandTotal > 0 ? (k.volumeKg / grandTotal) * 100 : 0,
+    }))
+    .sort((a, b) => b.beratKg - a.beratKg);
+}
+
+export function totalVolumePasarIndustri(list: PasarIndustri[]): number {
+  return list.reduce((sum, p) => sum + p.volumeKg, 0);
+}
+
+export function totalNilaiPasarIndustri(list: PasarIndustri[]): number {
+  return list.reduce((sum, p) => sum + p.nilaiTransaksi, 0);
+}
+
+export function aktifPasarIndustriCount(list: PasarIndustri[]): number {
+  return list.filter((p) => p.status === 'Aktif').length;
+}
+
+export function komposisiVolumePasarIndustri(
+  list: PasarIndustri[],
+): { nama: string; beratKg: number; persen: number }[] {
+  const grandTotal = list.reduce((sum, p) => sum + p.volumeKg, 0);
+  return [...list]
+    .map((p) => ({
+      nama: p.nama,
+      beratKg: p.volumeKg,
+      persen: grandTotal > 0 ? (p.volumeKg / grandTotal) * 100 : 0,
+    }))
+    .sort((a, b) => b.beratKg - a.beratKg);
+}
+
+export function peringkatVolume<T extends { id: string; volumeKg: number }>(
+  list: T[],
+  id: string,
+): number {
+  return [...list].sort((a, b) => b.volumeKg - a.volumeKg).findIndex((item) => item.id === id) + 1;
 }

@@ -9,13 +9,14 @@ import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import type { PasarIndustri } from '@/lib/types';
 import { formatNumber, formatRupiah } from '@/lib/format';
+import { totalVolumePasarIndustri, totalNilaiPasarIndustri, aktifPasarIndustriCount } from '@/lib/stats';
 
 export default function PasarIndustriListPage() {
   const { pasarIndustri } = useData();
 
-  const totalVolume = pasarIndustri.reduce((sum, p) => sum + p.volumeKg, 0);
-  const totalNilai = pasarIndustri.reduce((sum, p) => sum + p.nilaiTransaksi, 0);
-  const aktifCount = pasarIndustri.filter((p) => p.status === 'Aktif').length;
+  const totalVolume = totalVolumePasarIndustri(pasarIndustri);
+  const totalNilai = totalNilaiPasarIndustri(pasarIndustri);
+  const aktifCount = aktifPasarIndustriCount(pasarIndustri);
 
   const columns: DataTableColumn<PasarIndustri>[] = [
     {
