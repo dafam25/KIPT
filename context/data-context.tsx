@@ -7,7 +7,8 @@ import { hasilTangkapData } from '@/lib/mock-data/hasil-tangkap';
 import { koperasiData } from '@/lib/mock-data/koperasi';
 import { pasarIndustriData } from '@/lib/mock-data/pasar-industri';
 import { notifikasiData } from '@/lib/mock-data/notifikasi';
-import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri, Notifikasi } from '@/lib/types';
+import { jadwalSandarData } from '@/lib/mock-data/jadwal-sandar';
+import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri, Notifikasi, JadwalSandar } from '@/lib/types';
 
 interface DataContextValue {
   nelayan: Nelayan[];
@@ -16,9 +17,11 @@ interface DataContextValue {
   koperasi: Koperasi[];
   pasarIndustri: PasarIndustri[];
   notifikasi: Notifikasi[];
+  jadwalSandar: JadwalSandar[];
   addNelayan: (n: Nelayan) => void;
   addKapal: (k: Kapal) => void;
   addHasilTangkap: (h: HasilTangkap) => void;
+  addJadwalSandar: (j: JadwalSandar) => void;
   markNotifikasiDibaca: (id: string) => void;
   updateKapalPosisi: (id: string, posisi: { lat: number; lng: number }) => void;
 }
@@ -32,10 +35,12 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [koperasi] = useState<Koperasi[]>(koperasiData);
   const [pasarIndustri] = useState<PasarIndustri[]>(pasarIndustriData);
   const [notifikasi, setNotifikasi] = useState<Notifikasi[]>(notifikasiData);
+  const [jadwalSandar, setJadwalSandar] = useState<JadwalSandar[]>(jadwalSandarData);
 
   const addNelayan = useCallback((n: Nelayan) => setNelayan((prev) => [n, ...prev]), []);
   const addKapal = useCallback((k: Kapal) => setKapal((prev) => [k, ...prev]), []);
   const addHasilTangkap = useCallback((h: HasilTangkap) => setHasilTangkap((prev) => [h, ...prev]), []);
+  const addJadwalSandar = useCallback((j: JadwalSandar) => setJadwalSandar((prev) => [j, ...prev]), []);
   const markNotifikasiDibaca = useCallback(
     (id: string) => setNotifikasi((prev) => prev.map((n) => (n.id === id ? { ...n, dibaca: true } : n))),
     []
@@ -54,9 +59,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
       koperasi,
       pasarIndustri,
       notifikasi,
+      jadwalSandar,
       addNelayan,
       addKapal,
       addHasilTangkap,
+      addJadwalSandar,
       markNotifikasiDibaca,
       updateKapalPosisi,
     }),
@@ -67,9 +74,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
       koperasi,
       pasarIndustri,
       notifikasi,
+      jadwalSandar,
       addNelayan,
       addKapal,
       addHasilTangkap,
+      addJadwalSandar,
       markNotifikasiDibaca,
       updateKapalPosisi,
     ]
