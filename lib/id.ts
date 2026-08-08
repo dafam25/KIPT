@@ -23,8 +23,14 @@ export function nextKapalId(existingIds: string[], date: Date = new Date()): str
   return `${prefix}${nextSeqForPrefix(existingIds, prefix, 5)}`;
 }
 
+function localDateString(date: Date): string {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 export function nextBiosecurityId(existingIds: string[], date: Date = new Date()): string {
-  const iso = date.toISOString().slice(0, 10); // YYYY-MM-DD
-  const prefix = `BS-${iso}-`;
+  const prefix = `BS-${localDateString(date)}-`;
   return `${prefix}${nextSeqForPrefix(existingIds, prefix, 3)}`;
 }

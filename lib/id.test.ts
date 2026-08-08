@@ -22,4 +22,8 @@ describe('nextBiosecurityId', () => {
   it('generates an ID scoped to the exact date', () => {
     expect(nextBiosecurityId([], new Date('2025-05-10'))).toBe('BS-2025-05-10-001');
   });
+
+  it('uses local-time date parts, consistent with yymm() used by nelayan/kapal IDs', () => {
+    expect(nextBiosecurityId([], new Date(2025, 4, 10))).toBe('BS-2025-05-10-001');
+  });
 });
