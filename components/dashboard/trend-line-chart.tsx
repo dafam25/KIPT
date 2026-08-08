@@ -10,7 +10,7 @@ export function TrendLineChart({ data }: { data: { tanggal: string; totalKg: num
         <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
         <XAxis
           dataKey="tanggal"
-          tickFormatter={(v) => formatDate(v).replace(/^\d+ /, '')}
+          tickFormatter={(v) => formatDate(v).replace(/ \d{4}$/, '')}
           stroke="var(--muted-foreground)"
           fontSize={12}
         />
