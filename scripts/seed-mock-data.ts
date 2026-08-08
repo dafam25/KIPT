@@ -133,7 +133,10 @@ const biosecurityCheckData: BiosecurityCheck[] = Array.from({ length: 15 }, () =
   const tanggal = faker.date.recent({ days: 20, refDate: SEED_DATE });
   const values: Record<string, string> = {};
   for (const item of BIOSECURITY_CHECKLIST_ITEMS) {
-    values[item.key] = faker.helpers.arrayElement(item.options);
+    values[item.key] = faker.helpers.weightedArrayElement([
+      { weight: 12, value: item.options.find((o) => o !== item.problemValue)! },
+      { weight: 1, value: item.problemValue },
+    ]);
   }
   const id = nextBiosecurityId(biosecurityIds, tanggal);
   biosecurityIds.push(id);

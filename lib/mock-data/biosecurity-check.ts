@@ -10,34 +10,34 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-05-07-001"
   },
   {
@@ -68,11 +68,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
     "hasil": "tidak_lolos",
@@ -86,19 +86,19 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
@@ -110,10 +110,10 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-04-26-001"
   },
   {
@@ -132,11 +132,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
@@ -144,14 +144,14 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-05-05-001"
   },
   {
@@ -162,7 +162,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
@@ -182,7 +182,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
@@ -200,7 +200,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
@@ -212,7 +212,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
@@ -220,11 +220,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
     "hasil": "tidak_lolos",
@@ -238,7 +238,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
@@ -250,11 +250,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -262,10 +262,10 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-04-27-001"
   },
   {
@@ -292,7 +292,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -360,7 +360,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
@@ -368,7 +368,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -376,10 +376,10 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-04-25-001"
   },
   {
@@ -398,11 +398,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
@@ -410,14 +410,14 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-05-10-001"
   },
   {
@@ -428,15 +428,15 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
@@ -448,11 +448,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "6. Limbah & Buangan",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
     "hasil": "tidak_lolos",
@@ -466,7 +466,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
@@ -474,7 +474,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
@@ -482,7 +482,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -493,7 +493,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-04-21-001"
   },
   {
@@ -504,23 +504,23 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
-        "hasil": "Kotor"
+        "hasil": "Bersih"
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Ditemukan"
+        "hasil": "Tidak Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -546,7 +546,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
@@ -554,7 +554,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
+        "hasil": "Lengkap"
       },
       {
         "label": "5. Hama & Penyakit",
@@ -569,7 +569,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-05-07-002"
   }
 ];
