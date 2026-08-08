@@ -27,7 +27,7 @@ export default function NotifikasiPage() {
         description="Semua notifikasi dan peringatan sistem"
       />
       <div className="max-w-xs">
-        <Select value={kategori} onValueChange={(v) => setKategori((v ?? 'semua') as Kategori)}>
+        <Select items={KATEGORI_OPTIONS} value={kategori} onValueChange={(v) => setKategori((v ?? 'semua') as Kategori)}>
           <SelectTrigger>
             <SelectValue />
           </SelectTrigger>
