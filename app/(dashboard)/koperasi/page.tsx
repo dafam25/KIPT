@@ -1,0 +1,64 @@
+'use client';
+
+import Link from 'next/link';
+import { UsersRound, CheckCircle2, Users, Fish } from 'lucide-react';
+import { useData } from '@/context/data-context';
+import { PageHeader } from '@/components/shared/page-header';
+import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
+import { StatusBadge } from '@/components/shared/status-badge';
+import { KpiCard } from '@/components/dashboard/kpi-card';
+import type { Koperasi } from '@/lib/types';
+import { formatNumber, formatRupiah } from '@/lib/format';
+
+export default function KoperasiListPage() {
+  const { koperasi } = useData();
+
+  const totalAnggota = koperasi.reduce((sum, k) => sum + k.jumlahAnggota, 0);
+  const totalVolume = koperasi.reduce((sum, k) => sum + k.volumeKg, 0);
+  const aktifCount = koperasi.filter((k) => k.status === 'Aktif').length;
+
+  const columns: DataTableColumn<Koperasi>[] = [
+    {
+      header: 'Nama Koperasi',
+      cell: (k) => (
+        <Link href={`/koperasi/${k.id}`} className="font-medium text-primary hover:underline">
+          {k.nama}
+        </Link>
+      ),
+    },
+    { header: 'Lokasi', cell: (k) => k.lokasi },
+    { header: 'Ketua', cell: (k) => k.ketua },
+    { header: 'Anggota', cell: (k) => formatNumber(k.jumlahAnggota) },
+    { header: 'Volume (kg)', cell: (k) => formatNumber(k.volumeKg) },
+    { header: 'Nilai Transaksi', cell: (k) => formatRupiah(k.nilaiTransaksi) },
+    {
+      header: 'Status',
+      cell: (k) => (
+        <StatusBadge label={k.status} tone={k.status === 'Aktif' ? 'success' : 'muted'} />
+      ),
+    },
+  ];
+
+  return (
+    <div className="space-y-6">
+      <PageHeader
+        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Koperasi' }]}
+        title="Koperasi"
+        description="Cari dan kelola data koperasi perikanan"
+      />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <KpiCard icon={UsersRound} label="Total Koperasi" value={formatNumber(koperasi.length)} accent="blue" />
+        <KpiCard icon={CheckCircle2} label="Koperasi Aktif" value={formatNumber(aktifCount)} accent="green" />
+        <KpiCard icon={Users} label="Total Anggota" value={formatNumber(totalAnggota)} accent="cyan" />
+        <KpiCard icon={Fish} label="Volume Hasil (kg)" value={formatNumber(totalVolume)} accent="purple" />
+      </div>
+      <DataTable
+        data={koperasi}
+        columns={columns}
+        getRowKey={(k) => k.id}
+        searchPlaceholder="Cari nama atau lokasi koperasi..."
+        filterFn={(k, q) => k.nama.toLowerCase().includes(q) || k.lokasi.toLowerCase().includes(q)}
+      />
+    </div>
+  );
+}
