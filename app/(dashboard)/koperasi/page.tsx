@@ -49,7 +49,7 @@ export default function KoperasiListPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard icon={UsersRound} label="Total Koperasi" value={formatNumber(koperasi.length)} accent="blue" />
         <KpiCard icon={CheckCircle2} label="Koperasi Aktif" value={formatNumber(aktifCount)} accent="green" />
-        <KpiCard icon={Users} label="Total Anggota" value={formatNumber(totalAnggota)} accent="cyan" />
+        <KpiCard icon={Users} label="Anggota Terdaftar (Koperasi)" value={formatNumber(totalAnggota)} accent="cyan" />
         <KpiCard icon={Fish} label="Volume Hasil (kg)" value={formatNumber(totalVolume)} accent="purple" />
       </div>
       <DataTable
