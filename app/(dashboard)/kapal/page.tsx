@@ -86,7 +86,16 @@ export default function KapalListPage() {
         description="Kelola data kapal terdaftar"
         actions={
           <>
-            <Dialog open={open} onOpenChange={setOpen}>
+            <Dialog
+              open={open}
+              onOpenChange={(v) => {
+                setOpen(v);
+                if (!v) {
+                  setForm(emptyForm());
+                  setError('');
+                }
+              }}
+            >
               <DialogTrigger render={<Button />}>Tambah Kapal</DialogTrigger>
               <DialogContent className="sm:max-w-lg">
                 <DialogHeader>

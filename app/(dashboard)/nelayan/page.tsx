@@ -92,7 +92,16 @@ export default function NelayanListPage() {
         title="Nelayan"
         description="Kelola data nelayan terdaftar"
         actions={
-          <Dialog open={open} onOpenChange={setOpen}>
+          <Dialog
+            open={open}
+            onOpenChange={(v) => {
+              setOpen(v);
+              if (!v) {
+                setForm(emptyForm());
+                setError('');
+              }
+            }}
+          >
             <DialogTrigger render={<Button />}>Tambah Nelayan</DialogTrigger>
             <DialogContent className="sm:max-w-lg">
               <DialogHeader>
