@@ -55,6 +55,10 @@ describe('komposisiHasilTangkap', () => {
     expect(tongkol?.beratKg).toBe(150);
     expect(tongkol?.persen).toBeCloseTo(75, 5);
   });
+
+  it('returns an empty array for an empty input (divide-by-zero guard)', () => {
+    expect(komposisiHasilTangkap([])).toEqual([]);
+  });
 });
 
 describe('trenHasilTangkapHarian', () => {
@@ -63,5 +67,9 @@ describe('trenHasilTangkapHarian', () => {
       { tanggal: '2025-05-10', totalKg: 150 },
       { tanggal: '2025-05-11', totalKg: 50 },
     ]);
+  });
+
+  it('returns an empty array for an empty input', () => {
+    expect(trenHasilTangkapHarian([])).toEqual([]);
   });
 });

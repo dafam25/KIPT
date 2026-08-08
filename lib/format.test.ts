@@ -23,4 +23,12 @@ describe('formatPercent', () => {
   it('formats a decimal as a percent with one sign', () => {
     expect(formatPercent(8.2)).toBe('8.2%');
   });
+
+  it('pads a whole number to one decimal place', () => {
+    expect(formatPercent(8)).toBe('8.0%');
+  });
+
+  it('rounds to one decimal place', () => {
+    expect(formatPercent(8.25)).toBe('8.3%');
+  });
 });

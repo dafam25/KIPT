@@ -1,7 +1,7 @@
 'use client';
 
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import { formatNumber } from '@/lib/format';
+import { formatNumber, formatPercent } from '@/lib/format';
 
 const COLORS = ['var(--success)', 'var(--primary)', 'var(--accent)', 'hsl(280 60% 60%)', 'var(--muted-foreground)'];
 
@@ -23,7 +23,7 @@ export function DonutChart({ data }: { data: { nama: string; beratKg: number; pe
           <li key={entry.nama} className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS[i % COLORS.length] }} />
             {entry.nama}
-            <span className="text-muted-foreground">{entry.persen.toFixed(0)}%</span>
+            <span className="text-muted-foreground">{formatPercent(entry.persen)}</span>
           </li>
         ))}
       </ul>
