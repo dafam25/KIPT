@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
 import type { JadwalSandar } from '@/lib/types';
 import { formatDate } from '@/lib/format';
+import { generateLocalId } from '@/lib/id';
 
 const DERMAGA_OPTIONS = ['Dermaga 01', 'Dermaga 02', 'Dermaga 03'];
 const PRIORITAS_OPTIONS: JadwalSandar['prioritas'][] = ['Rendah', 'Normal', 'Tinggi'];
@@ -33,7 +34,7 @@ export default function JadwalSandarPage() {
     }
     setError('');
     addJadwalSandar({
-      id: crypto.randomUUID(),
+      id: generateLocalId('JS'),
       kapalId,
       tanggal,
       dermaga,
