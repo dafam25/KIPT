@@ -76,9 +76,13 @@ export default function JadwalSandarPage() {
         <CardContent>
           <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Pilih Kapal</label>
-              <Select value={kapalId} onValueChange={(v) => setKapalId(v ?? '')}>
-                <SelectTrigger><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
+              <label htmlFor="jadwal-kapal" className="text-sm text-muted-foreground">Pilih Kapal</label>
+              <Select
+                items={kapal.map((k) => ({ value: k.id, label: k.nama }))}
+                value={kapalId}
+                onValueChange={(v) => setKapalId(v ?? '')}
+              >
+                <SelectTrigger id="jadwal-kapal"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
                 <SelectContent>
                   {kapal.map((k) => (
                     <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
@@ -87,21 +91,21 @@ export default function JadwalSandarPage() {
               </Select>
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Tanggal Sandar</label>
-              <Input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
+              <label htmlFor="jadwal-tanggal" className="text-sm text-muted-foreground">Tanggal Sandar</label>
+              <Input id="jadwal-tanggal" type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Waktu Tiba (ETA)</label>
-              <Input type="time" value={waktuTiba} onChange={(e) => setWaktuTiba(e.target.value)} />
+              <label htmlFor="jadwal-waktu-tiba" className="text-sm text-muted-foreground">Waktu Tiba (ETA)</label>
+              <Input id="jadwal-waktu-tiba" type="time" value={waktuTiba} onChange={(e) => setWaktuTiba(e.target.value)} />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Durasi Sandar (Jam)</label>
-              <Input type="number" min={1} max={24} value={durasiJam} onChange={(e) => setDurasiJam(e.target.value)} />
+              <label htmlFor="jadwal-durasi" className="text-sm text-muted-foreground">Durasi Sandar (Jam)</label>
+              <Input id="jadwal-durasi" type="number" min={1} max={24} value={durasiJam} onChange={(e) => setDurasiJam(e.target.value)} />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Pilih Dermaga</label>
+              <label htmlFor="jadwal-dermaga" className="text-sm text-muted-foreground">Pilih Dermaga</label>
               <Select value={dermaga} onValueChange={(v) => setDermaga(v ?? DERMAGA_OPTIONS[0])}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectTrigger id="jadwal-dermaga"><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {DERMAGA_OPTIONS.map((d) => (
                     <SelectItem key={d} value={d}>{d}</SelectItem>
@@ -110,9 +114,9 @@ export default function JadwalSandarPage() {
               </Select>
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Prioritas Sandar</label>
+              <label htmlFor="jadwal-prioritas" className="text-sm text-muted-foreground">Prioritas Sandar</label>
               <Select value={prioritas} onValueChange={(v) => setPrioritas((v ?? 'Normal') as JadwalSandar['prioritas'])}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
+                <SelectTrigger id="jadwal-prioritas"><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {PRIORITAS_OPTIONS.map((p) => (
                     <SelectItem key={p} value={p}>{p}</SelectItem>

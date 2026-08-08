@@ -122,17 +122,17 @@ export default function BantuanPage() {
         <CardContent>
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-sm text-muted-foreground">Judul</label>
-              <Input value={judul} onChange={(e) => setJudul(e.target.value)} placeholder="Ringkasan singkat masalah Anda" />
+              <label htmlFor="tiket-judul" className="text-sm text-muted-foreground">Judul</label>
+              <Input id="tiket-judul" value={judul} onChange={(e) => setJudul(e.target.value)} placeholder="Ringkasan singkat masalah Anda" />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm text-muted-foreground">Kategori</label>
+              <label htmlFor="tiket-kategori" className="text-sm text-muted-foreground">Kategori</label>
               <Select
                 items={KATEGORI_OPTIONS.map((k) => ({ value: k, label: k }))}
                 value={kategori}
                 onValueChange={(v) => setKategori((v ?? 'Teknis') as TiketKategori)}
               >
-                <SelectTrigger>
+                <SelectTrigger id="tiket-kategori">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -145,8 +145,9 @@ export default function BantuanPage() {
               </Select>
             </div>
             <div className="space-y-1.5 sm:col-span-2">
-              <label className="text-sm text-muted-foreground">Deskripsi</label>
+              <label htmlFor="tiket-deskripsi" className="text-sm text-muted-foreground">Deskripsi</label>
               <Textarea
+                id="tiket-deskripsi"
                 value={deskripsi}
                 onChange={(e) => setDeskripsi(e.target.value)}
                 placeholder="Jelaskan masalah Anda secara detail"

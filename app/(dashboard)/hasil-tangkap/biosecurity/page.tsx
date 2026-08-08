@@ -91,9 +91,13 @@ export default function BiosecurityCheckPage() {
           {step === 1 && (
             <form onSubmit={handleNextFromStep1} className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Pilih Kapal</label>
-                <Select value={kapalId} onValueChange={(v) => setKapalId(v ?? '')}>
-                  <SelectTrigger className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
+                <label htmlFor="bio-kapal" className="text-sm text-muted-foreground">Pilih Kapal</label>
+                <Select
+                  items={kapal.map((k) => ({ value: k.id, label: k.nama }))}
+                  value={kapalId}
+                  onValueChange={(v) => setKapalId(v ?? '')}
+                >
+                  <SelectTrigger id="bio-kapal" className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
                   <SelectContent>
                     {kapal.map((k) => (
                       <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
@@ -102,17 +106,17 @@ export default function BiosecurityCheckPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Tanggal Pemeriksaan</label>
-                <Input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
+                <label htmlFor="bio-tanggal" className="text-sm text-muted-foreground">Tanggal Pemeriksaan</label>
+                <Input id="bio-tanggal" type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Petugas Pemeriksa</label>
-                <Input value={petugas} onChange={(e) => setPetugas(e.target.value)} placeholder="Nama petugas" />
+                <label htmlFor="bio-petugas" className="text-sm text-muted-foreground">Petugas Pemeriksa</label>
+                <Input id="bio-petugas" value={petugas} onChange={(e) => setPetugas(e.target.value)} placeholder="Nama petugas" />
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Metode Pemeriksaan</label>
+                <label htmlFor="bio-metode" className="text-sm text-muted-foreground">Metode Pemeriksaan</label>
                 <Select value={metode} onValueChange={(v) => setMetode(v ?? metode)}>
-                  <SelectTrigger className="w-full"><SelectValue /></SelectTrigger>
+                  <SelectTrigger id="bio-metode" className="w-full"><SelectValue /></SelectTrigger>
                   <SelectContent>
                     {METODE_OPTIONS.map((m) => (
                       <SelectItem key={m} value={m}>{m}</SelectItem>
@@ -131,12 +135,12 @@ export default function BiosecurityCheckPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {BIOSECURITY_CHECKLIST_ITEMS.map((item) => (
                   <div key={item.key} className="space-y-1.5">
-                    <label className="text-sm text-muted-foreground">{item.label}</label>
+                    <label htmlFor={`bio-check-${item.key}`} className="text-sm text-muted-foreground">{item.label}</label>
                     <Select
                       value={values[item.key] ?? ''}
                       onValueChange={(v) => setValues((prev) => ({ ...prev, [item.key]: v ?? '' }))}
                     >
-                      <SelectTrigger className="w-full"><SelectValue placeholder="Pilih hasil" /></SelectTrigger>
+                      <SelectTrigger id={`bio-check-${item.key}`} className="w-full"><SelectValue placeholder="Pilih hasil" /></SelectTrigger>
                       <SelectContent>
                         {item.options.map((opt) => (
                           <SelectItem key={opt} value={opt}>{opt}</SelectItem>

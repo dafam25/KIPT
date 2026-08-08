@@ -120,9 +120,13 @@ export default function InputHasilTangkapPage() {
           {step === 1 && (
             <form onSubmit={handleNextFromStep1} className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Pilih Kapal</label>
-                <Select value={kapalId} onValueChange={(v) => setKapalId(v ?? '')}>
-                  <SelectTrigger className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
+                <label htmlFor="input-kapal" className="text-sm text-muted-foreground">Pilih Kapal</label>
+                <Select
+                  items={kapal.map((k) => ({ value: k.id, label: k.nama }))}
+                  value={kapalId}
+                  onValueChange={(v) => setKapalId(v ?? '')}
+                >
+                  <SelectTrigger id="input-kapal" className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
                   <SelectContent>
                     {kapal.map((k) => (
                       <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
@@ -131,20 +135,20 @@ export default function InputHasilTangkapPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Tanggal Tangkap</label>
-                <Input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
+                <label htmlFor="input-tanggal" className="text-sm text-muted-foreground">Tanggal Tangkap</label>
+                <Input id="input-tanggal" type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Waktu Mulai</label>
-                <Input type="time" value={waktuMulai} onChange={(e) => setWaktuMulai(e.target.value)} />
+                <label htmlFor="input-waktu-mulai" className="text-sm text-muted-foreground">Waktu Mulai</label>
+                <Input id="input-waktu-mulai" type="time" value={waktuMulai} onChange={(e) => setWaktuMulai(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label className="text-sm text-muted-foreground">Waktu Selesai</label>
-                <Input type="time" value={waktuSelesai} onChange={(e) => setWaktuSelesai(e.target.value)} />
+                <label htmlFor="input-waktu-selesai" className="text-sm text-muted-foreground">Waktu Selesai</label>
+                <Input id="input-waktu-selesai" type="time" value={waktuSelesai} onChange={(e) => setWaktuSelesai(e.target.value)} />
               </div>
               <div className="space-y-1.5 sm:col-span-2">
-                <label className="text-sm text-muted-foreground">Lokasi Penangkapan</label>
-                <Input value={lokasi} onChange={(e) => setLokasi(e.target.value)} placeholder="Contoh: Perairan Utara Jawa" />
+                <label htmlFor="input-lokasi" className="text-sm text-muted-foreground">Lokasi Penangkapan</label>
+                <Input id="input-lokasi" value={lokasi} onChange={(e) => setLokasi(e.target.value)} placeholder="Contoh: Perairan Utara Jawa" />
               </div>
               <div className="sm:col-span-2">
                 <Button type="submit">Lanjut</Button>
