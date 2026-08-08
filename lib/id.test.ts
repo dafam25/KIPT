@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { nextNelayanId, nextKapalId, nextBiosecurityId } from './id';
+import { nextNelayanId, nextKapalId, nextBiosecurityId, generateLocalId } from './id';
 
 describe('nextNelayanId', () => {
   it('generates the first ID for a given month with no existing IDs', () => {
@@ -25,5 +25,25 @@ describe('nextBiosecurityId', () => {
 
   it('uses local-time date parts, consistent with yymm() used by nelayan/kapal IDs', () => {
     expect(nextBiosecurityId([], new Date(2025, 4, 10))).toBe('BS-2025-05-10-001');
+  });
+});
+
+describe('generateLocalId', () => {
+  it('returns crypto.randomUUID() when available', () => {
+    const id = generateLocalId('JS');
+    expect(typeof id).toBe('string');
+    expect(id.length).toBeGreaterThan(0);
+  });
+
+  it('falls back to a prefixed id when crypto.randomUUID is unavailable', () => {
+    const original = globalThis.crypto.randomUUID;
+    // @ts-expect-error - intentionally removing for this test
+    globalThis.crypto.randomUUID = undefined;
+    try {
+      const id = generateLocalId('JS');
+      expect(id.startsWith('JS-')).toBe(true);
+    } finally {
+      globalThis.crypto.randomUUID = original;
+    }
   });
 });

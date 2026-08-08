@@ -34,3 +34,10 @@ export function nextBiosecurityId(existingIds: string[], date: Date = new Date()
   const prefix = `BS-${localDateString(date)}-`;
   return `${prefix}${nextSeqForPrefix(existingIds, prefix, 3)}`;
 }
+
+export function generateLocalId(prefix: string): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
