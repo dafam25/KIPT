@@ -42,7 +42,7 @@ export default function InputHasilTangkapPage() {
 
   function handleNextFromStep1(e: FormEvent) {
     e.preventDefault();
-    if (!kapalId || !tanggal || !waktuMulai || !waktuSelesai || !lokasi) {
+    if (!kapalId || !tanggal || !waktuMulai || !waktuSelesai || !lokasi.trim()) {
       setError('Lengkapi semua informasi kapal dan trip terlebih dahulu.');
       return;
     }
@@ -195,7 +195,7 @@ export default function InputHasilTangkapPage() {
                           </Select>
                         </td>
                         <td className="p-2">
-                          <Button type="button" variant="outline" size="sm" onClick={() => removeRow(i)}>Hapus</Button>
+                          <Button type="button" variant="outline" size="sm" disabled={rows.length === 1} onClick={() => removeRow(i)}>Hapus</Button>
                         </td>
                       </tr>
                     ))}

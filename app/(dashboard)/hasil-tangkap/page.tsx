@@ -11,9 +11,9 @@ import { KpiCard } from '@/components/dashboard/kpi-card';
 import { TrendLineChart } from '@/components/dashboard/trend-line-chart';
 import { DonutChart } from '@/components/dashboard/donut-chart';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import type { HasilTangkap } from '@/lib/types';
+import type { HasilTangkap, BiosecurityCheck } from '@/lib/types';
 import {
   totalHasilTangkapKg, totalNilaiTangkapan, rataRataPerTripKg,
   komposisiHasilTangkap, trenHasilTangkapHarian, rekapPerKapal, rekapPerWilayah,
@@ -24,7 +24,7 @@ type RekapRow = { label: string; totalKg: number; jumlahTrip: number };
 type JenisRow = { nama: string; beratKg: number; persen: number };
 
 export default function HasilTangkapPage() {
-  const { hasilTangkap, kapal } = useData();
+  const { hasilTangkap, kapal, biosecurityCheck } = useData();
 
   const komposisi = useMemo(() => komposisiHasilTangkap(hasilTangkap), [hasilTangkap]);
   const tren = useMemo(() => trenHasilTangkapHarian(hasilTangkap), [hasilTangkap]);
@@ -33,6 +33,10 @@ export default function HasilTangkapPage() {
   const terbaru = useMemo(
     () => [...hasilTangkap].sort((a, b) => b.tanggal.localeCompare(a.tanggal)).slice(0, 10),
     [hasilTangkap],
+  );
+  const terbaruBiosecurity = useMemo(
+    () => [...biosecurityCheck].sort((a, b) => b.tanggal.localeCompare(a.tanggal)).slice(0, 10),
+    [biosecurityCheck],
   );
 
   const jenisIkanColumns: DataTableColumn<JenisRow>[] = [
@@ -65,6 +69,22 @@ export default function HasilTangkapPage() {
     },
   ];
 
+  const biosecurityColumns: DataTableColumn<BiosecurityCheck>[] = [
+    { header: 'Tanggal', cell: (b) => formatDate(b.tanggal) },
+    { header: 'Kapal', cell: (b) => kapal.find((k) => k.id === b.kapalId)?.nama ?? b.kapalId },
+    { header: 'Petugas', cell: (b) => b.petugas },
+    { header: 'Nomor Sertifikat', cell: (b) => b.nomorSertifikat },
+    {
+      header: 'Status',
+      cell: (b) => (
+        <StatusBadge
+          label={b.hasil === 'lolos' ? 'Lolos' : 'Tidak Lolos'}
+          tone={b.hasil === 'lolos' ? 'success' : 'destructive'}
+        />
+      ),
+    },
+  ];
+
   return (
     <div className="space-y-6">
       <PageHeader
@@ -73,12 +93,12 @@ export default function HasilTangkapPage() {
         description="Pantau hasil tangkapan ikan secara real-time"
         actions={
           <>
-            <Button variant="outline" render={<Link href="/hasil-tangkap/biosecurity" />}>
+            <Link href="/hasil-tangkap/biosecurity" className={buttonVariants({ variant: 'outline' })}>
               Cek Biosecurity
-            </Button>
-            <Button render={<Link href="/hasil-tangkap/input" />}>
+            </Link>
+            <Link href="/hasil-tangkap/input" className={buttonVariants()}>
               Input Hasil Tangkap
-            </Button>
+            </Link>
           </>
         }
       />
@@ -120,6 +140,13 @@ export default function HasilTangkapPage() {
         <CardHeader className="text-sm font-semibold">Data Hasil Tangkapan Terbaru</CardHeader>
         <CardContent>
           <DataTable data={terbaru} columns={terbaruColumns} getRowKey={(h) => h.id} pageSize={10} />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="text-sm font-semibold">Status Biosecurity Terbaru</CardHeader>
+        <CardContent>
+          <DataTable data={terbaruBiosecurity} columns={biosecurityColumns} getRowKey={(b) => b.id} pageSize={10} />
         </CardContent>
       </Card>
     </div>

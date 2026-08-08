@@ -29,7 +29,7 @@ export default function BiosecurityCheckPage() {
 
   function handleNextFromStep1(e: FormEvent) {
     e.preventDefault();
-    if (!kapalId || !tanggal || !petugas) {
+    if (!kapalId || !tanggal || !petugas.trim()) {
       setError('Lengkapi informasi kapal dan petugas pemeriksa terlebih dahulu.');
       return;
     }
