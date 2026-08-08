@@ -8,28 +8,14 @@ import { PageHeader } from '@/components/shared/page-header';
 import { StatusBadge } from '@/components/shared/status-badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import type { KapalStatus } from '@/lib/types';
-import { hasilTangkapForKapal } from '@/lib/stats';
+import { hasilTangkapForKapal, totalHasilTangkapKg } from '@/lib/stats';
 import { formatDate, formatNumber, formatRupiah } from '@/lib/format';
+import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 
 const MapView = dynamic(
   () => import('@/components/dashboard/map-view').then((mod) => mod.MapView),
   { ssr: false }
 );
-
-const STATUS_LABEL: Record<KapalStatus, string> = {
-  melaut: 'Aktif Melaut',
-  sandar: 'Sandar',
-  tidak_aktif: 'Tidak Aktif',
-  perbaikan: 'Perbaikan',
-};
-
-const STATUS_TONE: Record<KapalStatus, 'success' | 'warning' | 'destructive' | 'muted'> = {
-  melaut: 'success',
-  sandar: 'warning',
-  tidak_aktif: 'destructive',
-  perbaikan: 'muted',
-};
 
 export default function KapalDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -68,7 +54,7 @@ export default function KapalDetailPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between text-sm font-semibold">
             Spesifikasi Kapal
-            <StatusBadge label={STATUS_LABEL[kapalItem.status]} tone={STATUS_TONE[kapalItem.status]} />
+            <StatusBadge label={KAPAL_STATUS_LABEL[kapalItem.status]} tone={KAPAL_STATUS_TONE[kapalItem.status]} />
           </CardHeader>
           <CardContent className="grid grid-cols-2 gap-y-2 text-sm">
             <div><span className="text-muted-foreground">ID Kapal</span><p className="font-medium">{kapalItem.id}</p></div>
@@ -114,7 +100,7 @@ export default function KapalDetailPage() {
                 <div key={t.id} className="flex items-center justify-between border-b border-border py-2 last:border-0">
                   <span>{formatDate(t.tanggal)} · {t.lokasi}</span>
                   <span className="font-medium">
-                    {formatNumber(t.jenisIkan.reduce((s, j) => s + j.beratKg, 0))} kg · {formatRupiah(t.estimasiNilai)}
+                    {formatNumber(totalHasilTangkapKg([t]))} kg · {formatRupiah(t.estimasiNilai)}
                   </span>
                 </div>
               ))}

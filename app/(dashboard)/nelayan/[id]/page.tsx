@@ -75,7 +75,12 @@ export default function NelayanDetailPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
-          <CardHeader className="text-sm font-semibold">Ringkasan Aktivitas</CardHeader>
+          <CardHeader className="text-sm font-semibold">
+            Ringkasan Aktivitas Kapal
+            <p className="text-xs font-normal text-muted-foreground">
+              Berdasarkan aktivitas {kapalNelayan?.nama ?? 'kapal terkait'}
+            </p>
+          </CardHeader>
           <CardContent className="grid grid-cols-2 gap-4 text-sm">
             <div><p className="text-muted-foreground">Total Melaut</p><p className="text-lg font-semibold">{formatNumber(trips.length)} trip</p></div>
             <div><p className="text-muted-foreground">Aktivitas Terakhir</p><p className="text-lg font-semibold">{terakhir ? formatDate(terakhir.tanggal) : '-'}</p></div>

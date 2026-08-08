@@ -7,23 +7,11 @@ import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
-import type { Kapal, KapalStatus } from '@/lib/types';
+import { Button } from '@/components/ui/button';
+import type { Kapal } from '@/lib/types';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
 import { formatNumber } from '@/lib/format';
-
-const STATUS_LABEL: Record<KapalStatus, string> = {
-  melaut: 'Aktif Melaut',
-  sandar: 'Sandar',
-  tidak_aktif: 'Tidak Aktif',
-  perbaikan: 'Perbaikan',
-};
-
-const STATUS_TONE: Record<KapalStatus, 'success' | 'warning' | 'destructive' | 'muted'> = {
-  melaut: 'success',
-  sandar: 'warning',
-  tidak_aktif: 'destructive',
-  perbaikan: 'muted',
-};
+import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 
 export default function KapalListPage() {
   const { kapal, nelayan } = useData();
@@ -42,7 +30,7 @@ export default function KapalListPage() {
     { header: 'GT', cell: (k) => `${k.gt} GT` },
     { header: 'Pelabuhan Induk', cell: (k) => k.pelabuhanInduk },
     { header: 'Nahkoda', cell: (k) => nelayan.find((n) => n.id === k.nahkodaId)?.nama ?? '-' },
-    { header: 'Status', cell: (k) => <StatusBadge label={STATUS_LABEL[k.status]} tone={STATUS_TONE[k.status]} /> },
+    { header: 'Status', cell: (k) => <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} /> },
   ];
 
   return (
@@ -51,6 +39,11 @@ export default function KapalListPage() {
         crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Kapal' }]}
         title="Kapal"
         description="Kelola data kapal terdaftar"
+        actions={
+          <Button variant="outline" render={<Link href="/kapal/jadwal-sandar" />}>
+            Jadwal Sandar
+          </Button>
+        }
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <KpiCard icon={Ship} label="Total Kapal" value={formatNumber(totalKapal(kapal))} accent="blue" />

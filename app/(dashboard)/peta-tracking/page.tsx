@@ -8,28 +8,15 @@ import { DataTable, type DataTableColumn } from '@/components/shared/data-table'
 import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import type { Kapal, KapalStatus } from '@/lib/types';
+import type { Kapal } from '@/lib/types';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
 import { formatNumber } from '@/lib/format';
+import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 
 const MapView = dynamic(
   () => import('@/components/dashboard/map-view').then((mod) => mod.MapView),
   { ssr: false }
 );
-
-const STATUS_LABEL: Record<KapalStatus, string> = {
-  melaut: 'Aktif Melaut',
-  sandar: 'Sandar',
-  tidak_aktif: 'Tidak Aktif',
-  perbaikan: 'Perbaikan',
-};
-
-const STATUS_TONE: Record<KapalStatus, 'success' | 'warning' | 'destructive' | 'muted'> = {
-  melaut: 'success',
-  sandar: 'warning',
-  tidak_aktif: 'destructive',
-  perbaikan: 'muted',
-};
 
 export default function PetaTrackingPage() {
   const { kapal } = useData();
@@ -37,7 +24,7 @@ export default function PetaTrackingPage() {
   const columns: DataTableColumn<Kapal>[] = [
     { header: 'Nama Kapal', cell: (k) => k.nama },
     { header: 'Jenis', cell: (k) => k.jenis },
-    { header: 'Status', cell: (k) => <StatusBadge label={STATUS_LABEL[k.status]} tone={STATUS_TONE[k.status]} /> },
+    { header: 'Status', cell: (k) => <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} /> },
   ];
 
   return (
