@@ -9,7 +9,8 @@ import { pasarIndustriData } from '@/lib/mock-data/pasar-industri';
 import { notifikasiData } from '@/lib/mock-data/notifikasi';
 import { jadwalSandarData } from '@/lib/mock-data/jadwal-sandar';
 import { biosecurityCheckData } from '@/lib/mock-data/biosecurity-check';
-import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri, Notifikasi, JadwalSandar, BiosecurityCheck } from '@/lib/types';
+import { tiketBantuanData } from '@/lib/mock-data/tiket-bantuan';
+import type { Nelayan, Kapal, HasilTangkap, Koperasi, PasarIndustri, Notifikasi, JadwalSandar, BiosecurityCheck, TiketBantuan } from '@/lib/types';
 
 interface DataContextValue {
   nelayan: Nelayan[];
@@ -20,11 +21,13 @@ interface DataContextValue {
   notifikasi: Notifikasi[];
   jadwalSandar: JadwalSandar[];
   biosecurityCheck: BiosecurityCheck[];
+  tiketBantuan: TiketBantuan[];
   addNelayan: (n: Nelayan) => void;
   addKapal: (k: Kapal) => void;
   addHasilTangkap: (h: HasilTangkap) => void;
   addJadwalSandar: (j: JadwalSandar) => void;
   addBiosecurityCheck: (b: BiosecurityCheck) => void;
+  addTiketBantuan: (t: TiketBantuan) => void;
   markNotifikasiDibaca: (id: string) => void;
   updateKapalPosisi: (id: string, posisi: { lat: number; lng: number }) => void;
 }
@@ -40,12 +43,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [notifikasi, setNotifikasi] = useState<Notifikasi[]>(notifikasiData);
   const [jadwalSandar, setJadwalSandar] = useState<JadwalSandar[]>(jadwalSandarData);
   const [biosecurityCheck, setBiosecurityCheck] = useState<BiosecurityCheck[]>(biosecurityCheckData);
+  const [tiketBantuan, setTiketBantuan] = useState<TiketBantuan[]>(tiketBantuanData);
 
   const addNelayan = useCallback((n: Nelayan) => setNelayan((prev) => [n, ...prev]), []);
   const addKapal = useCallback((k: Kapal) => setKapal((prev) => [k, ...prev]), []);
   const addHasilTangkap = useCallback((h: HasilTangkap) => setHasilTangkap((prev) => [h, ...prev]), []);
   const addJadwalSandar = useCallback((j: JadwalSandar) => setJadwalSandar((prev) => [j, ...prev]), []);
   const addBiosecurityCheck = useCallback((b: BiosecurityCheck) => setBiosecurityCheck((prev) => [b, ...prev]), []);
+  const addTiketBantuan = useCallback((t: TiketBantuan) => setTiketBantuan((prev) => [t, ...prev]), []);
   const markNotifikasiDibaca = useCallback(
     (id: string) => setNotifikasi((prev) => prev.map((n) => (n.id === id ? { ...n, dibaca: true } : n))),
     []
@@ -66,11 +71,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
       notifikasi,
       jadwalSandar,
       biosecurityCheck,
+      tiketBantuan,
       addNelayan,
       addKapal,
       addHasilTangkap,
       addJadwalSandar,
       addBiosecurityCheck,
+      addTiketBantuan,
       markNotifikasiDibaca,
       updateKapalPosisi,
     }),
@@ -83,11 +90,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
       notifikasi,
       jadwalSandar,
       biosecurityCheck,
+      tiketBantuan,
       addNelayan,
       addKapal,
       addHasilTangkap,
       addJadwalSandar,
       addBiosecurityCheck,
+      addTiketBantuan,
       markNotifikasiDibaca,
       updateKapalPosisi,
     ]

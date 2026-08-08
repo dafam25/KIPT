@@ -103,3 +103,15 @@ export interface Notifikasi {
   waktu: string;
   dibaca: boolean;
 }
+
+export type TiketKategori = 'Teknis' | 'Akun' | 'Data' | 'Lainnya';
+export type TiketStatus = 'Terbuka' | 'Diproses' | 'Selesai';
+
+export interface TiketBantuan {
+  id: string;
+  judul: string;
+  kategori: TiketKategori;
+  deskripsi: string;
+  status: TiketStatus;
+  dibuatPada: string;
+}
