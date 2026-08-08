@@ -12,6 +12,8 @@ import {
   rataRataPerTripKg,
   kapalSandarCount,
   kapalTidakAktifCount,
+  rekapPerKapal,
+  rekapPerWilayah,
 } from './stats';
 import type { Nelayan, Kapal, HasilTangkap } from './types';
 
@@ -149,5 +151,39 @@ describe('kapalSandarCount', () => {
 describe('kapalTidakAktifCount', () => {
   it('counts only tidak_aktif status', () => {
     expect(kapalTidakAktifCount(kapalBerbagaiStatus)).toBe(1);
+  });
+});
+
+const hasilTangkapDenganLokasi: HasilTangkap[] = [
+  { id: '1', kapalId: 'KAP-1', tanggal: '2025-05-10', lokasi: 'Perairan Selat Bali', jenisIkan: [{ nama: 'Ikan Tongkol', beratKg: 100, jumlahEkor: 10, kondisi: 'Segar' }] } as HasilTangkap,
+  { id: '2', kapalId: 'KAP-1', tanggal: '2025-05-11', lokasi: 'Perairan Selat Bali', jenisIkan: [{ nama: 'Ikan Cakalang', beratKg: 50, jumlahEkor: 5, kondisi: 'Segar' }] } as HasilTangkap,
+  { id: '3', kapalId: 'KAP-2', tanggal: '2025-05-11', lokasi: 'Perairan Utara Jawa', jenisIkan: [{ nama: 'Ikan Tongkol', beratKg: 30, jumlahEkor: 3, kondisi: 'Segar' }] } as HasilTangkap,
+];
+
+const kapalUntukRekap: Kapal[] = [
+  { id: 'KAP-1', nama: 'KM. Bahari Jaya' } as Kapal,
+  { id: 'KAP-2', nama: 'KM. Samudra Indah' } as Kapal,
+];
+
+describe('rekapPerKapal', () => {
+  it('groups by kapal, resolves the name, and sorts descending by total weight', () => {
+    expect(rekapPerKapal(hasilTangkapDenganLokasi, kapalUntukRekap)).toEqual([
+      { label: 'KM. Bahari Jaya', totalKg: 150, jumlahTrip: 2 },
+      { label: 'KM. Samudra Indah', totalKg: 30, jumlahTrip: 1 },
+    ]);
+  });
+
+  it('falls back to the raw kapalId if no matching vessel is found', () => {
+    const result = rekapPerKapal(hasilTangkapDenganLokasi, []);
+    expect(result.find((r) => r.label === 'KAP-1')).toBeTruthy();
+  });
+});
+
+describe('rekapPerWilayah', () => {
+  it('groups by lokasi and sorts descending by total weight', () => {
+    expect(rekapPerWilayah(hasilTangkapDenganLokasi)).toEqual([
+      { label: 'Perairan Selat Bali', totalKg: 150, jumlahTrip: 2 },
+      { label: 'Perairan Utara Jawa', totalKg: 30, jumlahTrip: 1 },
+    ]);
   });
 });

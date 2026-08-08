@@ -81,3 +81,36 @@ export function kapalSandarCount(list: Kapal[]): number {
 export function kapalTidakAktifCount(list: Kapal[]): number {
   return list.filter((k) => k.status === 'tidak_aktif').length;
 }
+
+export function rekapPerKapal(
+  list: HasilTangkap[],
+  kapal: Kapal[],
+): { label: string; totalKg: number; jumlahTrip: number }[] {
+  const totals = new Map<string, { totalKg: number; jumlahTrip: number }>();
+  for (const h of list) {
+    const beratTrip = h.jenisIkan.reduce((s, j) => s + j.beratKg, 0);
+    const current = totals.get(h.kapalId) ?? { totalKg: 0, jumlahTrip: 0 };
+    totals.set(h.kapalId, { totalKg: current.totalKg + beratTrip, jumlahTrip: current.jumlahTrip + 1 });
+  }
+  return [...totals.entries()]
+    .map(([kapalId, v]) => ({
+      label: kapal.find((k) => k.id === kapalId)?.nama ?? kapalId,
+      totalKg: v.totalKg,
+      jumlahTrip: v.jumlahTrip,
+    }))
+    .sort((a, b) => b.totalKg - a.totalKg);
+}
+
+export function rekapPerWilayah(
+  list: HasilTangkap[],
+): { label: string; totalKg: number; jumlahTrip: number }[] {
+  const totals = new Map<string, { totalKg: number; jumlahTrip: number }>();
+  for (const h of list) {
+    const beratTrip = h.jenisIkan.reduce((s, j) => s + j.beratKg, 0);
+    const current = totals.get(h.lokasi) ?? { totalKg: 0, jumlahTrip: 0 };
+    totals.set(h.lokasi, { totalKg: current.totalKg + beratTrip, jumlahTrip: current.jumlahTrip + 1 });
+  }
+  return [...totals.entries()]
+    .map(([lokasi, v]) => ({ label: lokasi, totalKg: v.totalKg, jumlahTrip: v.jumlahTrip }))
+    .sort((a, b) => b.totalKg - a.totalKg);
+}
