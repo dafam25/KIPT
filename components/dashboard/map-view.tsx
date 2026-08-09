@@ -29,6 +29,15 @@ function vesselIconForStatus(status: KapalStatus) {
   });
 }
 
+// Built once at module scope (only 4 possible KapalStatus values) so react-leaflet's Marker
+// sees a stable `icon` reference across renders. If this were rebuilt per-render instead,
+// react-leaflet's prop-identity check would call marker.setIcon() on every render — including
+// the 4-second position-jitter interval below — tearing down and rebuilding each marker's DOM
+// element and popup binding for no visual change.
+const VESSEL_ICONS: Record<KapalStatus, L.DivIcon> = Object.fromEntries(
+  (Object.keys(KAPAL_STATUS_TONE) as KapalStatus[]).map((s) => [s, vesselIconForStatus(s)])
+) as Record<KapalStatus, L.DivIcon>;
+
 export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: number }) {
   const { updateKapalPosisi } = useData();
 
@@ -53,7 +62,7 @@ export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: numb
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
         />
         {kapal.map((k) => (
-          <Marker key={k.id} position={[k.posisi.lat, k.posisi.lng]} icon={vesselIconForStatus(k.status)}>
+          <Marker key={k.id} position={[k.posisi.lat, k.posisi.lng]} icon={VESSEL_ICONS[k.status]}>
             <Popup>
               <strong>{k.nama}</strong>
               <br />

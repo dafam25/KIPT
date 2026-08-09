@@ -124,6 +124,7 @@ export function DataTable<T>({
                   variant={p === pageSafe ? 'default' : 'outline'}
                   size="icon-sm"
                   onClick={() => setPage(p)}
+                  aria-current={p === pageSafe ? 'page' : undefined}
                 >
                   {p}
                 </Button>
