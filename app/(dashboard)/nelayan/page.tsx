@@ -179,10 +179,10 @@ export default function NelayanListPage() {
         }
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Users} label="Total Nelayan" value={formatNumber(totalNelayan(nelayan))} accent="blue" />
-        <KpiCard icon={CheckCircle2} label="Nelayan Aktif" value={formatNumber(nelayanAktifCount(nelayan))} accent="green" />
-        <KpiCard icon={ShieldCheck} label="Terverifikasi" value={formatNumber(nelayanTerverifikasiCount(nelayan))} accent="cyan" />
-        <KpiCard icon={UsersRound} label="Tergabung Koperasi" value={formatNumber(nelayanTergabungKoperasiCount(nelayan))} accent="purple" />
+        <KpiCard icon={Users} label="Total Nelayan" value={formatNumber(totalNelayan(nelayan))} deltaPercent={4.6} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
+        <KpiCard icon={CheckCircle2} label="Nelayan Aktif" value={formatNumber(nelayanAktifCount(nelayan))} deltaPercent={2.1} deltaLabel="Dibandingkan bulan lalu" accent="green" />
+        <KpiCard icon={ShieldCheck} label="Terverifikasi" value={formatNumber(nelayanTerverifikasiCount(nelayan))} deltaPercent={3.8} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
+        <KpiCard icon={UsersRound} label="Tergabung Koperasi" value={formatNumber(nelayanTergabungKoperasiCount(nelayan))} deltaPercent={1.5} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
       </div>
       <DataTable
         data={nelayan}

@@ -46,10 +46,10 @@ export default function PasarIndustriListPage() {
         description="Cari dan kelola data pasar dan industri hasil perikanan"
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Building2} label="Total Pasar / Industri" value={formatNumber(pasarIndustri.length)} accent="blue" />
-        <KpiCard icon={CheckCircle2} label="Aktif" value={formatNumber(aktifCount)} accent="green" />
-        <KpiCard icon={Fish} label="Volume Distribusi (kg)" value={formatNumber(totalVolume)} accent="cyan" />
-        <KpiCard icon={Wallet} label="Nilai Transaksi" value={formatRupiah(totalNilai)} accent="purple" />
+        <KpiCard icon={Building2} label="Total Pasar / Industri" value={formatNumber(pasarIndustri.length)} deltaPercent={3.2} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
+        <KpiCard icon={CheckCircle2} label="Aktif" value={formatNumber(aktifCount)} deltaPercent={2.5} deltaLabel="Dibandingkan bulan lalu" accent="green" />
+        <KpiCard icon={Fish} label="Volume Distribusi (kg)" value={formatNumber(totalVolume)} deltaPercent={4.8} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
+        <KpiCard icon={Wallet} label="Nilai Transaksi" value={formatRupiah(totalNilai)} deltaPercent={5.9} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
       </div>
       <DataTable
         data={pasarIndustri}

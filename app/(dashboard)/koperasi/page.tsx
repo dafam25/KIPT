@@ -48,10 +48,10 @@ export default function KoperasiListPage() {
         description="Cari dan kelola data koperasi perikanan"
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={UsersRound} label="Total Koperasi" value={formatNumber(koperasi.length)} accent="blue" />
-        <KpiCard icon={CheckCircle2} label="Koperasi Aktif" value={formatNumber(aktifCount)} accent="green" />
-        <KpiCard icon={Users} label="Anggota Terdaftar (Koperasi)" value={formatNumber(totalAnggota)} accent="cyan" />
-        <KpiCard icon={Fish} label="Volume Hasil (kg)" value={formatNumber(totalVolume)} accent="purple" />
+        <KpiCard icon={UsersRound} label="Total Koperasi" value={formatNumber(koperasi.length)} deltaPercent={2.4} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
+        <KpiCard icon={CheckCircle2} label="Koperasi Aktif" value={formatNumber(aktifCount)} deltaPercent={1.9} deltaLabel="Dibandingkan bulan lalu" accent="green" />
+        <KpiCard icon={Users} label="Anggota Terdaftar (Koperasi)" value={formatNumber(totalAnggota)} deltaPercent={3.1} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
+        <KpiCard icon={Fish} label="Volume Hasil (kg)" value={formatNumber(totalVolume)} deltaPercent={6.7} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
       </div>
       <DataTable
         data={koperasi}

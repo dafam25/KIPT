@@ -176,10 +176,10 @@ export default function KapalListPage() {
         }
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Ship} label="Total Kapal" value={formatNumber(totalKapal(kapal))} accent="blue" />
-        <KpiCard icon={Anchor} label="Aktif Melaut" value={formatNumber(kapalMelautCount(kapal))} accent="green" />
-        <KpiCard icon={PauseCircle} label="Sandar" value={formatNumber(kapalSandarCount(kapal))} accent="cyan" />
-        <KpiCard icon={AlertTriangle} label="Tidak Aktif" value={formatNumber(kapalTidakAktifCount(kapal))} accent="purple" />
+        <KpiCard icon={Ship} label="Total Kapal" value={formatNumber(totalKapal(kapal))} deltaPercent={5.2} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
+        <KpiCard icon={Anchor} label="Aktif Melaut" value={formatNumber(kapalMelautCount(kapal))} deltaPercent={3.4} deltaLabel="Dibandingkan bulan lalu" accent="green" />
+        <KpiCard icon={PauseCircle} label="Sandar" value={formatNumber(kapalSandarCount(kapal))} deltaPercent={-1.8} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
+        <KpiCard icon={AlertTriangle} label="Tidak Aktif" value={formatNumber(kapalTidakAktifCount(kapal))} deltaPercent={-2.6} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
       </div>
       <DataTable
         data={kapal}
