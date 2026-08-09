@@ -5,13 +5,12 @@ import { useMemo, useState } from 'react';
 import { Ship, Anchor, PauseCircle, AlertTriangle } from 'lucide-react';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
-import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
 import { WeatherWidget } from '@/components/dashboard/weather-widget';
-import type { Kapal } from '@/lib/types';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
 import { formatNumber } from '@/lib/format';
 import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
@@ -39,11 +38,8 @@ export default function PetaTrackingPage() {
     [kapal, statusFilter, jenisFilter],
   );
 
-  const columns: DataTableColumn<Kapal>[] = [
-    { header: 'Nama Kapal', cell: (k) => k.nama },
-    { header: 'Jenis', cell: (k) => k.jenis },
-    { header: 'Status', cell: (k) => <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} /> },
-  ];
+  const [search, setSearch] = useState('');
+  const searchedKapal = filteredKapal.filter((k) => k.nama.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="space-y-6">
@@ -102,14 +98,33 @@ export default function PetaTrackingPage() {
 
       <Card>
         <CardHeader className="text-sm font-semibold">Daftar Kapal Terpantau</CardHeader>
-        <CardContent>
-          <DataTable
-            data={kapal}
-            columns={columns}
-            getRowKey={(k) => k.id}
-            searchPlaceholder="Cari nama kapal..."
-            filterFn={(k, q) => k.nama.toLowerCase().includes(q)}
+        <CardContent className="space-y-3">
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Cari nama kapal..."
+            className="max-w-sm"
           />
+          <div className="divide-y divide-border">
+            {searchedKapal.map((k) => (
+              <div key={k.id} className="flex items-center gap-3 py-3">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Ship className="h-4 w-4" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium">{k.nama}</p>
+                  <p className="text-xs text-muted-foreground">{k.jenis}</p>
+                </div>
+                <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} />
+                <span className="w-16 shrink-0 text-right text-sm text-muted-foreground">
+                  {k.status === 'melaut' ? `${k.kecepatanKnot} knot` : '—'}
+                </span>
+              </div>
+            ))}
+            {searchedKapal.length === 0 && (
+              <p className="py-6 text-center text-sm text-muted-foreground">Tidak ada kapal yang cocok.</p>
+            )}
+          </div>
         </CardContent>
       </Card>
     </div>
