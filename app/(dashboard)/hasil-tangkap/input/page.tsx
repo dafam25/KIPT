@@ -98,7 +98,7 @@ export default function InputHasilTangkapPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
         crumbs={[
           { label: 'Dashboard', href: '/dashboard' },

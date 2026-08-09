@@ -64,7 +64,7 @@ export default function JadwalSandarPage() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
         crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Kapal', href: '/kapal' }, { label: 'Jadwal Sandar' }]}
         title="Jadwal Sandar"
