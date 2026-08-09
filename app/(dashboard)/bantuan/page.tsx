@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Database, Wrench, AlertTriangle, FileText, Search, HelpCircle, Ticket, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { User, Database, Wrench, AlertTriangle, FileText, Search, HelpCircle, Ticket, ShieldCheck, Mail, Phone, Clock, ChevronRight } from 'lucide-react';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
@@ -197,6 +198,8 @@ export default function BantuanPage() {
         </CardContent>
       </Card>
 
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="space-y-6 lg:col-span-2">
       <Card>
         <CardHeader className="text-sm font-semibold">Tiket Dukungan ({tiketBantuan.length})</CardHeader>
         <CardContent>
@@ -247,6 +250,59 @@ export default function BantuanPage() {
           </form>
         </CardContent>
       </Card>
+      </div>
+
+      <div className="space-y-6">
+        <Card>
+          <CardHeader className="text-sm font-semibold">Hubungi Kami</CardHeader>
+          <CardContent className="space-y-3 text-sm">
+            <div className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-muted-foreground" />
+              <div>
+                <p className="font-medium">Email</p>
+                <p className="text-muted-foreground">bantuan@dkp.go.id</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone className="h-4 w-4 text-muted-foreground" />
+              <div>
+                <p className="font-medium">Telepon</p>
+                <p className="text-muted-foreground">(021) 1234 5678</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Clock className="h-4 w-4 text-muted-foreground" />
+              <div>
+                <p className="font-medium">Jam Operasional</p>
+                <p className="text-muted-foreground">Senin - Jumat, 08:00 - 17:00 WIB</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="text-sm font-semibold">Panduan Cepat</CardHeader>
+          <CardContent className="space-y-1">
+            {[
+              { label: 'Cara Melacak Kapal', href: '/peta-tracking' },
+              { label: 'Cara Input Hasil Tangkapan', href: '/hasil-tangkap/input' },
+              { label: 'Cara Cek Biosecurity', href: '/hasil-tangkap/biosecurity' },
+              { label: 'Cara Membuat Laporan', href: '/laporan' },
+              { label: 'Kelola Data Nelayan', href: '/nelayan' },
+            ].map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="flex items-center justify-between rounded-md px-2 py-2 text-sm hover:bg-muted/40"
+              >
+                {guide.label}
+                <ChevronRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+      </div>
     </div>
   );
 }
