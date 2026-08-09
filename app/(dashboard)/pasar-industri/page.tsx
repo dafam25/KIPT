@@ -22,7 +22,10 @@ export default function PasarIndustriListPage() {
     {
       header: 'Nama',
       cell: (p) => (
-        <Link href={`/pasar-industri/${p.id}`} className="font-medium text-primary hover:underline">
+        <Link href={`/pasar-industri/${p.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+            <Building2 className="h-3.5 w-3.5" />
+          </span>
           {p.nama}
         </Link>
       ),
