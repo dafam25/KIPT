@@ -38,7 +38,15 @@ const VESSEL_ICONS: Record<KapalStatus, L.DivIcon> = Object.fromEntries(
   (Object.keys(KAPAL_STATUS_TONE) as KapalStatus[]).map((s) => [s, vesselIconForStatus(s)])
 ) as Record<KapalStatus, L.DivIcon>;
 
-export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: number }) {
+export function MapView({
+  kapal,
+  height = 400,
+  onSelectKapal,
+}: {
+  kapal: Kapal[];
+  height?: number;
+  onSelectKapal?: (id: string) => void;
+}) {
   const { updateKapalPosisi } = useData();
 
   useEffect(() => {
@@ -62,7 +70,12 @@ export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: numb
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
         />
         {kapal.map((k) => (
-          <Marker key={k.id} position={[k.posisi.lat, k.posisi.lng]} icon={VESSEL_ICONS[k.status]}>
+          <Marker
+            key={k.id}
+            position={[k.posisi.lat, k.posisi.lng]}
+            icon={VESSEL_ICONS[k.status]}
+            eventHandlers={onSelectKapal ? { click: () => onSelectKapal(k.id) } : undefined}
+          >
             <Popup>
               <strong>{k.nama}</strong>
               <br />
