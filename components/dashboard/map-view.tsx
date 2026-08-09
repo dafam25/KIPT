@@ -4,14 +4,29 @@ import { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import type { Kapal } from '@/lib/types';
+import type { Kapal, KapalStatus } from '@/lib/types';
 import { useData } from '@/context/data-context';
+import { KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 
-const vesselIcon = L.divIcon({
-  className: '',
-  html: '<div style="width:10px;height:10px;border-radius:9999px;background:#22d3ee;box-shadow:0 0 0 3px rgba(34,211,238,0.3)"></div>',
-  iconSize: [10, 10],
-});
+// Same HSL values as --success / --warning / --destructive / --muted-foreground in app/globals.css,
+// reused here (rather than duplicated as new colors) since Leaflet's divIcon needs an inline color
+// string and can't reference CSS custom properties from a Tailwind class.
+const TONE_COLOR: Record<'success' | 'warning' | 'destructive' | 'muted', string> = {
+  success: 'hsl(142 71% 45%)',
+  warning: 'hsl(38 92% 50%)',
+  destructive: 'hsl(0 72% 51%)',
+  muted: 'hsl(215 20% 65%)',
+};
+
+function vesselIconForStatus(status: KapalStatus) {
+  const tone = KAPAL_STATUS_TONE[status];
+  const color = TONE_COLOR[tone as keyof typeof TONE_COLOR] ?? TONE_COLOR.muted;
+  return L.divIcon({
+    className: '',
+    html: `<div style="width:10px;height:10px;border-radius:9999px;background:${color};box-shadow:0 0 0 3px ${color}4d"></div>`,
+    iconSize: [10, 10],
+  });
+}
 
 export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: number }) {
   const { updateKapalPosisi } = useData();
@@ -37,7 +52,7 @@ export function MapView({ kapal, height = 400 }: { kapal: Kapal[]; height?: numb
           attribution="&copy; OpenStreetMap contributors &copy; CARTO"
         />
         {kapal.map((k) => (
-          <Marker key={k.id} position={[k.posisi.lat, k.posisi.lng]} icon={vesselIcon}>
+          <Marker key={k.id} position={[k.posisi.lat, k.posisi.lng]} icon={vesselIconForStatus(k.status)}>
             <Popup>
               <strong>{k.nama}</strong>
               <br />
