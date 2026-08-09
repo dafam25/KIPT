@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { Ship, Anchor, PauseCircle, AlertTriangle, ExternalLink } from 'lucide-react';
+import { Ship, Anchor, PauseCircle, AlertTriangle, ExternalLink, Fish } from 'lucide-react';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { WeatherWidget } from '@/components/dashboard/weather-widget';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
-import { formatNumber } from '@/lib/format';
+import { formatNumber, formatDate } from '@/lib/format';
 import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 
 const MapView = dynamic(
@@ -23,7 +23,7 @@ const MapView = dynamic(
 );
 
 export default function PetaTrackingPage() {
-  const { kapal } = useData();
+  const { kapal, hasilTangkap } = useData();
 
   const [statusFilter, setStatusFilter] = useState('semua');
   const [jenisFilter, setJenisFilter] = useState('semua');
@@ -42,6 +42,21 @@ export default function PetaTrackingPage() {
 
   const [selectedKapalId, setSelectedKapalId] = useState<string | null>(null);
   const selectedKapal = kapal.find((k) => k.id === selectedKapalId) ?? null;
+
+  const aktivitasTerbaru = useMemo(
+    () =>
+      [...hasilTangkap]
+        .sort((a, b) => `${b.tanggal}${b.waktuSelesai}`.localeCompare(`${a.tanggal}${a.waktuSelesai}`))
+        .slice(0, 5)
+        .map((h) => ({
+          id: h.id,
+          kapalNama: kapal.find((k) => k.id === h.kapalId)?.nama ?? h.kapalId,
+          beratKg: h.jenisIkan.reduce((sum, j) => sum + j.beratKg, 0),
+          lokasi: h.lokasi,
+          tanggal: h.tanggal,
+        })),
+    [hasilTangkap, kapal],
+  );
 
   const [search, setSearch] = useState('');
   const searchedKapal = filteredKapal.filter((k) => k.nama.toLowerCase().includes(search.toLowerCase()));
@@ -170,6 +185,28 @@ export default function PetaTrackingPage() {
               <p className="py-6 text-center text-sm text-muted-foreground">Tidak ada kapal yang cocok.</p>
             )}
           </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="text-sm font-semibold">Aktivitas Terbaru</CardHeader>
+        <CardContent className="space-y-3">
+          {aktivitasTerbaru.map((a) => (
+            <div key={a.id} className="flex items-start gap-3 text-sm">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success/15 text-success">
+                <Fish className="h-3.5 w-3.5" />
+              </span>
+              <div>
+                <p>
+                  <span className="font-medium">{a.kapalNama}</span> mendapatkan {formatNumber(a.beratKg)} kg hasil tangkapan di {a.lokasi}
+                </p>
+                <p className="text-xs text-muted-foreground">{formatDate(a.tanggal)}</p>
+              </div>
+            </div>
+          ))}
+          {aktivitasTerbaru.length === 0 && (
+            <p className="text-sm text-muted-foreground">Belum ada aktivitas tercatat.</p>
+          )}
         </CardContent>
       </Card>
     </div>
