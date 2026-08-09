@@ -10,6 +10,7 @@ import { StatusBadge } from '@/components/shared/status-badge';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { TrendLineChart } from '@/components/dashboard/trend-line-chart';
 import { DonutChart } from '@/components/dashboard/donut-chart';
+import { TopRankingBarChart } from '@/components/dashboard/top-ranking-bar-chart';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -18,7 +19,7 @@ import {
   totalHasilTangkapKg, totalNilaiTangkapan, rataRataPerTripKg, komposisiHasilTangkap, trenHasilTangkapHarian,
   totalVolumeKoperasi, totalNilaiKoperasi, aktifKoperasiCount, komposisiVolumeKoperasi,
   totalVolumePasarIndustri, totalNilaiPasarIndustri, aktifPasarIndustriCount, komposisiVolumePasarIndustri,
-  peringkatVolume,
+  peringkatVolume, rekapPerWilayah,
 } from '@/lib/stats';
 import { formatNumber, formatRupiah } from '@/lib/format';
 import { downloadCsv } from '@/lib/csv';
@@ -33,6 +34,7 @@ export default function LaporanPage() {
 
   const komposisiIkan = useMemo(() => komposisiHasilTangkap(hasilTangkap), [hasilTangkap]);
   const trenIkan = useMemo(() => trenHasilTangkapHarian(hasilTangkap), [hasilTangkap]);
+  const wilayahRanking = useMemo(() => rekapPerWilayah(hasilTangkap), [hasilTangkap]);
   const komposisiKoperasi = useMemo(() => komposisiVolumeKoperasi(koperasi), [koperasi]);
   const koperasiUrut = useMemo(() => [...koperasi].sort((a, b) => b.volumeKg - a.volumeKg), [koperasi]);
   const komposisiPasar = useMemo(() => komposisiVolumePasarIndustri(pasarIndustri), [pasarIndustri]);
@@ -146,6 +148,26 @@ export default function LaporanPage() {
               <DataTable data={komposisiIkan} columns={jenisIkanColumns} getRowKey={(r) => r.nama} />
             </CardContent>
           </Card>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <Card>
+              <CardHeader className="text-sm font-semibold">Top 5 Jenis Ikan</CardHeader>
+              <CardContent>
+                <TopRankingBarChart
+                  data={komposisiIkan.slice(0, 5).map((r) => ({ label: r.nama, value: r.beratKg }))}
+                  unit="kg"
+                />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="text-sm font-semibold">Top 5 Wilayah Distribusi</CardHeader>
+              <CardContent>
+                <TopRankingBarChart
+                  data={wilayahRanking.slice(0, 5).map((r) => ({ label: r.label, value: r.totalKg }))}
+                  unit="kg"
+                />
+              </CardContent>
+            </Card>
+          </div>
         </TabsContent>
 
         <TabsContent value="koperasi" className="space-y-4 pt-4">
