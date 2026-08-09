@@ -76,8 +76,25 @@ export default function KapalListPage() {
     { header: 'ID Kapal', cell: (k) => <span className="font-mono text-xs">{k.id}</span> },
     { header: 'Jenis', cell: (k) => k.jenis },
     { header: 'GT', cell: (k) => `${k.gt} GT` },
-    { header: 'Pelabuhan Induk', cell: (k) => k.pelabuhanInduk },
-    { header: 'Nahkoda', cell: (k) => nelayan.find((n) => n.id === k.nahkodaId)?.nama ?? '-' },
+    {
+      header: 'Pelabuhan Induk',
+      cell: (k) => (
+        <span className="block max-w-36 truncate" title={k.pelabuhanInduk}>
+          {k.pelabuhanInduk}
+        </span>
+      ),
+    },
+    {
+      header: 'Nahkoda',
+      cell: (k) => {
+        const nama = nelayan.find((n) => n.id === k.nahkodaId)?.nama ?? '-';
+        return (
+          <span className="block max-w-36 truncate" title={nama}>
+            {nama}
+          </span>
+        );
+      },
+    },
     { header: 'Status', cell: (k) => <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} /> },
   ];
 

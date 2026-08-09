@@ -32,7 +32,14 @@ export default function PasarIndustriListPage() {
     },
     { header: 'Jenis', cell: (p) => p.jenis },
     { header: 'Lokasi', cell: (p) => p.lokasi },
-    { header: 'Pengelola', cell: (p) => p.pengelola },
+    {
+      header: 'Pengelola',
+      cell: (p) => (
+        <span className="block max-w-40 truncate" title={p.pengelola}>
+          {p.pengelola}
+        </span>
+      ),
+    },
     { header: 'Volume (kg)', cell: (p) => formatNumber(p.volumeKg) },
     { header: 'Nilai Transaksi', cell: (p) => formatRupiah(p.nilaiTransaksi) },
     {

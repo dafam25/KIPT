@@ -31,7 +31,14 @@ export default function KoperasiListPage() {
       ),
     },
     { header: 'Lokasi', cell: (k) => k.lokasi },
-    { header: 'Ketua', cell: (k) => k.ketua },
+    {
+      header: 'Ketua',
+      cell: (k) => (
+        <span className="block max-w-40 truncate" title={k.ketua}>
+          {k.ketua}
+        </span>
+      ),
+    },
     { header: 'Anggota', cell: (k) => formatNumber(k.jumlahAnggota) },
     { header: 'Volume (kg)', cell: (k) => formatNumber(k.volumeKg) },
     { header: 'Nilai Transaksi', cell: (k) => formatRupiah(k.nilaiTransaksi) },

@@ -74,7 +74,17 @@ export default function NelayanListPage() {
         </Link>
       ),
     },
-    { header: 'Koperasi', cell: (n) => koperasi.find((k) => k.id === n.koperasiId)?.nama ?? '-' },
+    {
+      header: 'Koperasi',
+      cell: (n) => {
+        const nama = koperasi.find((k) => k.id === n.koperasiId)?.nama ?? '-';
+        return (
+          <span className="block max-w-40 truncate" title={nama}>
+            {nama}
+          </span>
+        );
+      },
+    },
     { header: 'Kapal', cell: (n) => kapal.find((k) => k.id === n.kapalId)?.nama ?? '-' },
     { header: 'Bergabung', cell: (n) => formatDate(n.tanggalBergabung) },
     {
