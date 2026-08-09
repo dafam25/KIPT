@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { Ship, Anchor, PauseCircle, AlertTriangle, ExternalLink, Fish } from 'lucide-react';
+import { Ship, Anchor, PauseCircle, AlertTriangle, ExternalLink, Fish, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -16,6 +16,7 @@ import { WeatherWidget } from '@/components/dashboard/weather-widget';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
 import { formatNumber, formatDate } from '@/lib/format';
 import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
+import { paginate, totalPages, pageNumbersToShow } from '@/lib/table';
 
 const MapView = dynamic(
   () => import('@/components/dashboard/map-view').then((mod) => mod.MapView),
@@ -27,6 +28,8 @@ export default function PetaTrackingPage() {
 
   const [statusFilter, setStatusFilter] = useState('semua');
   const [jenisFilter, setJenisFilter] = useState('semua');
+  const [page, setPage] = useState(1);
+  const VESSEL_PAGE_SIZE = 10;
 
   const jenisOptions = useMemo(() => [...new Set(kapal.map((k) => k.jenis))].sort(), [kapal]);
 
@@ -61,6 +64,10 @@ export default function PetaTrackingPage() {
   const [search, setSearch] = useState('');
   const searchedKapal = filteredKapal.filter((k) => k.nama.toLowerCase().includes(search.toLowerCase()));
 
+  const vesselPageCount = totalPages(searchedKapal.length, VESSEL_PAGE_SIZE);
+  const vesselPageSafe = Math.min(page, vesselPageCount);
+  const pagedKapal = paginate(searchedKapal, vesselPageSafe, VESSEL_PAGE_SIZE);
+
   return (
     <div className="space-y-6">
       <PageHeader
@@ -81,7 +88,10 @@ export default function PetaTrackingPage() {
           <Select
             items={[{ value: 'semua', label: 'Semua Status' }, ...Object.entries(KAPAL_STATUS_LABEL).map(([value, label]) => ({ value, label }))]}
             value={statusFilter}
-            onValueChange={(v) => setStatusFilter(v ?? 'semua')}
+            onValueChange={(v) => {
+              setStatusFilter(v ?? 'semua');
+              setPage(1);
+            }}
           >
             <SelectTrigger aria-label="Filter status kapal"><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -96,7 +106,10 @@ export default function PetaTrackingPage() {
           <Select
             items={[{ value: 'semua', label: 'Semua Jenis Kapal' }, ...jenisOptions.map((j) => ({ value: j, label: j }))]}
             value={jenisFilter}
-            onValueChange={(v) => setJenisFilter(v ?? 'semua')}
+            onValueChange={(v) => {
+              setJenisFilter(v ?? 'semua');
+              setPage(1);
+            }}
           >
             <SelectTrigger aria-label="Filter jenis kapal"><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -155,17 +168,26 @@ export default function PetaTrackingPage() {
         <CardContent className="space-y-3">
           <Input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
             placeholder="Cari nama kapal..."
             className="max-w-sm"
           />
           <div className="divide-y divide-border">
-            {searchedKapal.map((k) => (
+            {pagedKapal.map((k) => (
               <div
                 key={k.id}
                 role="button"
                 tabIndex={0}
                 onClick={() => setSelectedKapalId(k.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedKapalId(k.id);
+                  }
+                }}
                 className="flex cursor-pointer items-center gap-3 py-3 hover:bg-muted/40"
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -185,6 +207,50 @@ export default function PetaTrackingPage() {
               <p className="py-6 text-center text-sm text-muted-foreground">Tidak ada kapal yang cocok.</p>
             )}
           </div>
+          {vesselPageCount > 1 && (
+            <div className="flex items-center justify-between text-sm text-muted-foreground">
+              <span>
+                Menampilkan {(vesselPageSafe - 1) * VESSEL_PAGE_SIZE + 1}-{Math.min(vesselPageSafe * VESSEL_PAGE_SIZE, searchedKapal.length)} dari {searchedKapal.length} kapal
+              </span>
+              <div className="flex items-center gap-1">
+                <Button
+                  variant="outline"
+                  size="icon-sm"
+                  disabled={vesselPageSafe <= 1}
+                  onClick={() => setPage(vesselPageSafe - 1)}
+                  aria-label="Halaman sebelumnya"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                {pageNumbersToShow(vesselPageSafe, vesselPageCount).map((p, i) =>
+                  p === '...' ? (
+                    <span key={`ellipsis-${i}`} className="px-1.5">
+                      …
+                    </span>
+                  ) : (
+                    <Button
+                      key={p}
+                      variant={p === vesselPageSafe ? 'default' : 'outline'}
+                      size="icon-sm"
+                      onClick={() => setPage(p)}
+                      aria-current={p === vesselPageSafe ? 'page' : undefined}
+                    >
+                      {p}
+                    </Button>
+                  )
+                )}
+                <Button
+                  variant="outline"
+                  size="icon-sm"
+                  disabled={vesselPageSafe >= vesselPageCount}
+                  onClick={() => setPage(vesselPageSafe + 1)}
+                  aria-label="Halaman berikutnya"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 

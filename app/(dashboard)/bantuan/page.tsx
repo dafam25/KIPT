@@ -136,7 +136,7 @@ export default function BantuanPage() {
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={HelpCircle} label="Pusat Bantuan" value="24/7" accent="blue" />
+        <KpiCard icon={HelpCircle} label="Jam Layanan" value="Sen-Jum" accent="blue" />
         <KpiCard icon={HelpCircle} label="FAQ Tersedia" value={formatNumber(FAQ_ITEMS.length)} accent="green" />
         <KpiCard icon={Ticket} label="Tiket Saya" value={formatNumber(tiketBantuan.length)} accent="cyan" />
         <KpiCard icon={ShieldCheck} label="Status Layanan" value="Normal" accent="purple" />
@@ -187,8 +187,8 @@ export default function BantuanPage() {
             <p className="py-6 text-center text-sm text-muted-foreground">Tidak ada FAQ yang cocok.</p>
           ) : (
             <Accordion>
-              {faqTersaring.map((item, i) => (
-                <AccordionItem key={item.pertanyaan} value={String(i)}>
+              {faqTersaring.map((item) => (
+                <AccordionItem key={item.pertanyaan} value={item.pertanyaan}>
                   <AccordionTrigger>{item.pertanyaan}</AccordionTrigger>
                   <AccordionContent>{item.jawaban}</AccordionContent>
                 </AccordionItem>
