@@ -4,10 +4,10 @@ import { cn } from '@/lib/utils';
 import { formatPercent } from '@/lib/format';
 
 const ACCENT_BG: Record<string, string> = {
-  blue: 'bg-primary/20 text-primary',
-  green: 'bg-success/20 text-success',
-  purple: 'bg-accent/20 text-accent',
-  cyan: 'bg-sky-500/20 text-sky-400',
+  blue: 'bg-primary text-primary-foreground',
+  green: 'bg-success text-success-foreground',
+  purple: 'bg-accent text-accent-foreground',
+  cyan: 'bg-sky-500 text-white',
 };
 
 export interface KpiCardProps {
