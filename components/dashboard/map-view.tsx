@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -48,6 +48,7 @@ export function MapView({
   onSelectKapal?: (id: string) => void;
 }) {
   const { updateKapalPosisi } = useData();
+  const [tileMode, setTileMode] = useState<'peta' | 'satelit'>('peta');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,12 +64,35 @@ export function MapView({
   }, [kapal, updateKapalPosisi]);
 
   return (
-    <div style={{ height }} className="overflow-hidden rounded-lg border border-border">
+    <div style={{ height }} className="relative overflow-hidden rounded-lg border border-border">
+      <div className="absolute top-2 right-2 z-[1000] flex overflow-hidden rounded-md border border-border bg-card text-xs">
+        <button
+          type="button"
+          onClick={() => setTileMode('peta')}
+          className={tileMode === 'peta' ? 'bg-primary px-3 py-1.5 text-primary-foreground' : 'px-3 py-1.5 text-muted-foreground hover:text-foreground'}
+        >
+          Peta
+        </button>
+        <button
+          type="button"
+          onClick={() => setTileMode('satelit')}
+          className={tileMode === 'satelit' ? 'bg-primary px-3 py-1.5 text-primary-foreground' : 'px-3 py-1.5 text-muted-foreground hover:text-foreground'}
+        >
+          Satelit
+        </button>
+      </div>
       <MapContainer center={[-2.5, 118]} zoom={5} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          attribution="&copy; OpenStreetMap contributors &copy; CARTO"
-        />
+        {tileMode === 'peta' ? (
+          <TileLayer
+            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            attribution="&copy; OpenStreetMap contributors &copy; CARTO"
+          />
+        ) : (
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            attribution="Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics"
+          />
+        )}
         {kapal.map((k) => (
           <Marker
             key={k.id}
