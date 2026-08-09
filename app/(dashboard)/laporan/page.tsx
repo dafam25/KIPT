@@ -13,6 +13,7 @@ import { DonutChart } from '@/components/dashboard/donut-chart';
 import { TopRankingBarChart } from '@/components/dashboard/top-ranking-bar-chart';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import type { Koperasi, PasarIndustri } from '@/lib/types';
 import {
@@ -31,10 +32,20 @@ type TabValue = 'hasil-tangkap' | 'koperasi' | 'pasar-industri';
 export default function LaporanPage() {
   const { hasilTangkap, koperasi, pasarIndustri } = useData();
   const [activeTab, setActiveTab] = useState<TabValue>('hasil-tangkap');
+  const [tanggalDari, setTanggalDari] = useState('');
+  const [tanggalSampai, setTanggalSampai] = useState('');
 
-  const komposisiIkan = useMemo(() => komposisiHasilTangkap(hasilTangkap), [hasilTangkap]);
-  const trenIkan = useMemo(() => trenHasilTangkapHarian(hasilTangkap), [hasilTangkap]);
-  const wilayahRanking = useMemo(() => rekapPerWilayah(hasilTangkap), [hasilTangkap]);
+  const hasilTangkapTerfilter = useMemo(
+    () =>
+      hasilTangkap.filter(
+        (h) => (!tanggalDari || h.tanggal >= tanggalDari) && (!tanggalSampai || h.tanggal <= tanggalSampai),
+      ),
+    [hasilTangkap, tanggalDari, tanggalSampai],
+  );
+
+  const komposisiIkan = useMemo(() => komposisiHasilTangkap(hasilTangkapTerfilter), [hasilTangkapTerfilter]);
+  const trenIkan = useMemo(() => trenHasilTangkapHarian(hasilTangkapTerfilter), [hasilTangkapTerfilter]);
+  const wilayahRanking = useMemo(() => rekapPerWilayah(hasilTangkapTerfilter), [hasilTangkapTerfilter]);
   const komposisiKoperasi = useMemo(() => komposisiVolumeKoperasi(koperasi), [koperasi]);
   const koperasiUrut = useMemo(() => [...koperasi].sort((a, b) => b.volumeKg - a.volumeKg), [koperasi]);
   const komposisiPasar = useMemo(() => komposisiVolumePasarIndustri(pasarIndustri), [pasarIndustri]);
@@ -129,10 +140,25 @@ export default function LaporanPage() {
         </TabsList>
 
         <TabsContent value="hasil-tangkap" className="space-y-4 pt-4">
+          <div className="flex flex-wrap items-end gap-3">
+            <div className="space-y-1.5">
+              <label htmlFor="laporan-dari" className="text-sm text-muted-foreground">Dari Tanggal</label>
+              <Input id="laporan-dari" type="date" value={tanggalDari} onChange={(e) => setTanggalDari(e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="laporan-sampai" className="text-sm text-muted-foreground">Sampai Tanggal</label>
+              <Input id="laporan-sampai" type="date" value={tanggalSampai} onChange={(e) => setTanggalSampai(e.target.value)} />
+            </div>
+            {(tanggalDari || tanggalSampai) && (
+              <Button variant="outline" size="sm" onClick={() => { setTanggalDari(''); setTanggalSampai(''); }}>
+                Reset
+              </Button>
+            )}
+          </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <KpiCard icon={Fish} label="Total Hasil Tangkapan" value={`${formatNumber(totalHasilTangkapKg(hasilTangkap))} kg`} accent="blue" />
-            <KpiCard icon={Wallet} label="Total Nilai Tangkapan" value={formatRupiah(totalNilaiTangkapan(hasilTangkap))} accent="green" />
-            <KpiCard icon={Ship} label="Rata-rata per Trip" value={`${formatNumber(Math.round(rataRataPerTripKg(hasilTangkap)))} kg`} accent="cyan" />
+            <KpiCard icon={Fish} label="Total Hasil Tangkapan" value={`${formatNumber(totalHasilTangkapKg(hasilTangkapTerfilter))} kg`} accent="blue" />
+            <KpiCard icon={Wallet} label="Total Nilai Tangkapan" value={formatRupiah(totalNilaiTangkapan(hasilTangkapTerfilter))} accent="green" />
+            <KpiCard icon={Ship} label="Rata-rata per Trip" value={`${formatNumber(Math.round(rataRataPerTripKg(hasilTangkapTerfilter)))} kg`} accent="cyan" />
             <KpiCard icon={Layers} label="Jenis Ikan Tertangkap" value={`${formatNumber(komposisiIkan.length)} Jenis`} accent="purple" />
           </div>
           <Card>
