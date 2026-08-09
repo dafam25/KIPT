@@ -55,7 +55,17 @@ export default function HasilTangkapPage() {
     { header: 'Tanggal', cell: (h) => formatDate(h.tanggal) },
     { header: 'Kapal', cell: (h) => kapal.find((k) => k.id === h.kapalId)?.nama ?? h.kapalId },
     { header: 'Lokasi', cell: (h) => h.lokasi },
-    { header: 'Jenis Ikan', cell: (h) => h.jenisIkan.map((j) => j.nama).join(', ') },
+    {
+      header: 'Jenis Ikan',
+      cell: (h) => {
+        const names = h.jenisIkan.map((j) => j.nama).join(', ');
+        return (
+          <span className="block max-w-48 truncate" title={names}>
+            {names}
+          </span>
+        );
+      },
+    },
     { header: 'Berat (kg)', cell: (h) => formatNumber(h.jenisIkan.reduce((s, j) => s + j.beratKg, 0)) },
     { header: 'Nilai', cell: (h) => formatRupiah(h.estimasiNilai) },
     {
