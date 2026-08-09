@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
+import { Stepper } from '@/components/shared/stepper';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -109,10 +110,11 @@ export default function InputHasilTangkapPage() {
       />
 
       <Card>
-        <CardHeader className="flex flex-row gap-6 text-sm font-medium text-muted-foreground">
-          <span className={step === 1 ? 'text-primary' : undefined}>1. Data Kapal & Trip</span>
-          <span className={step === 2 ? 'text-primary' : undefined}>2. Detail Ikan</span>
-          <span className={step === 3 ? 'text-primary' : undefined}>3. Review & Simpan</span>
+        <CardHeader>
+          <Stepper
+            steps={[{ label: 'Data Kapal & Trip' }, { label: 'Detail Ikan' }, { label: 'Review & Simpan' }]}
+            currentStep={step}
+          />
         </CardHeader>
         <CardContent>
           {error && <p className="mb-4 text-sm text-destructive">{error}</p>}
