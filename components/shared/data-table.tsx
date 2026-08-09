@@ -1,11 +1,11 @@
 'use client';
 
 import { useMemo, useState, type ReactNode } from 'react';
-import { Search } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
-import { paginate, totalPages } from '@/lib/table';
+import { paginate, totalPages, pageNumbersToShow } from '@/lib/table';
 
 export interface DataTableColumn<T> {
   header: string;
@@ -101,14 +101,42 @@ export function DataTable<T>({
       {pageCount > 1 && (
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <span>
-            Halaman {pageSafe} dari {pageCount} ({filtered.length} data)
+            Menampilkan {(pageSafe - 1) * pageSize + 1}-{Math.min(pageSafe * pageSize, filtered.length)} dari {filtered.length} data
           </span>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm" disabled={pageSafe <= 1} onClick={() => setPage(pageSafe - 1)}>
-              Sebelumnya
+          <div className="flex items-center gap-1">
+            <Button
+              variant="outline"
+              size="icon-sm"
+              disabled={pageSafe <= 1}
+              onClick={() => setPage(pageSafe - 1)}
+              aria-label="Halaman sebelumnya"
+            >
+              <ChevronLeft className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm" disabled={pageSafe >= pageCount} onClick={() => setPage(pageSafe + 1)}>
-              Berikutnya
+            {pageNumbersToShow(pageSafe, pageCount).map((p, i) =>
+              p === '...' ? (
+                <span key={`ellipsis-${i}`} className="px-1.5">
+                  …
+                </span>
+              ) : (
+                <Button
+                  key={p}
+                  variant={p === pageSafe ? 'default' : 'outline'}
+                  size="icon-sm"
+                  onClick={() => setPage(p)}
+                >
+                  {p}
+                </Button>
+              )
+            )}
+            <Button
+              variant="outline"
+              size="icon-sm"
+              disabled={pageSafe >= pageCount}
+              onClick={() => setPage(pageSafe + 1)}
+              aria-label="Halaman berikutnya"
+            >
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
