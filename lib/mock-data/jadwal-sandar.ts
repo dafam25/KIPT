@@ -3,183 +3,183 @@ import type { JadwalSandar } from '../types';
 
 export const jadwalSandarData: JadwalSandar[] = [
   {
-    "id": "ca2d7592-b59a-4072-917b-a8ef6f058246",
-    "kapalId": "KAP-2505-00008",
-    "tanggal": "2025-05-12",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "18:45",
+    "id": "2cca2d75-92b5-49a0-9721-7ba8ef6f0582",
+    "kapalId": "KAP-2505-00012",
+    "tanggal": "2025-05-15",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "17:00",
     "durasiJam": 2,
+    "prioritas": "Tinggi"
+  },
+  {
+    "id": "af2cbfd1-1d1f-4bfc-a4a9-b21daa9e3f5f",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-05-15",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "11:45",
+    "durasiJam": 6,
     "prioritas": "Normal"
   },
   {
-    "id": "2cbfd11d-1fbf-4c4a-a9b2-1daa9e3f5fb5",
-    "kapalId": "KAP-2505-00027",
-    "tanggal": "2025-05-23",
-    "dermaga": "Dermaga 03",
-    "waktuTiba": "20:30",
+    "id": "dc26e5c0-d161-410b-ad6b-5893384bef71",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-05-10",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "06:45",
+    "durasiJam": 6,
+    "prioritas": "Rendah"
+  },
+  {
+    "id": "ab93ac37-cd7c-4d9c-83b9-406226a5ac7b",
+    "kapalId": "KAP-2505-00024",
+    "tanggal": "2025-05-15",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "19:30",
     "durasiJam": 2,
     "prioritas": "Rendah"
   },
   {
-    "id": "26e5c0d1-6110-4bd6-9b58-93384bef7190",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-05-22",
-    "dermaga": "Dermaga 03",
-    "waktuTiba": "18:00",
-    "durasiJam": 4,
-    "prioritas": "Tinggi"
-  },
-  {
-    "id": "93ac37cd-7cd9-4c3b-a940-6226a5ac7b06",
-    "kapalId": "KAP-2505-00026",
-    "tanggal": "2025-05-19",
+    "id": "f9eda735-4bd8-41d1-9b9d-ad2cc7ac08ca",
+    "kapalId": "KAP-2505-00021",
+    "tanggal": "2025-05-13",
     "dermaga": "Dermaga 01",
-    "waktuTiba": "16:00",
-    "durasiJam": 4,
-    "prioritas": "Normal"
+    "waktuTiba": "14:00",
+    "durasiJam": 5,
+    "prioritas": "Rendah"
   },
   {
-    "id": "eda7354b-d81d-41b9-8dad-2cc7ac08ca73",
-    "kapalId": "KAP-2505-00039",
+    "id": "5081d303-534d-4f6f-bf27-46263338391b",
+    "kapalId": "KAP-2505-00014",
     "tanggal": "2025-05-12",
     "dermaga": "Dermaga 03",
     "waktuTiba": "15:00",
-    "durasiJam": 3,
+    "durasiJam": 2,
     "prioritas": "Normal"
   },
   {
-    "id": "81d30353-4df6-4ff2-a746-263338391bd2",
-    "kapalId": "KAP-2505-00015",
+    "id": "29ed6db6-f227-44ca-bf3c-bd82efe3af0b",
+    "kapalId": "KAP-2505-00005",
     "tanggal": "2025-05-10",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "18:45",
+    "durasiJam": 6,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "7dcca549-4e1a-418a-bc97-5fa6a33d4756",
+    "kapalId": "KAP-2505-00015",
+    "tanggal": "2025-05-14",
     "dermaga": "Dermaga 01",
-    "waktuTiba": "06:15",
+    "waktuTiba": "19:30",
+    "durasiJam": 6,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "0df5b427-19c5-4e49-aa09-c1a8b3dfea6c",
+    "kapalId": "KAP-2505-00027",
+    "tanggal": "2025-05-18",
+    "dermaga": "Dermaga 01",
+    "waktuTiba": "20:30",
+    "durasiJam": 6,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "f3ae6300-6d18-4ec7-a13a-0628a9b4a265",
+    "kapalId": "KAP-2505-00002",
+    "tanggal": "2025-05-12",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "11:15",
+    "durasiJam": 4,
+    "prioritas": "Tinggi"
+  },
+  {
+    "id": "533f048c-9769-49cc-926d-9b2ec05067d7",
+    "kapalId": "KAP-2505-00016",
+    "tanggal": "2025-05-16",
+    "dermaga": "Dermaga 03",
+    "waktuTiba": "14:30",
     "durasiJam": 2,
     "prioritas": "Tinggi"
   },
   {
-    "id": "ed6db6f2-274c-4af3-9cbd-82efe3af0bf0",
+    "id": "456cb41f-20d4-4611-931c-81bbeff19663",
+    "kapalId": "KAP-2505-00016",
+    "tanggal": "2025-05-17",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "14:15",
+    "durasiJam": 2,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "777c1c47-feb2-40fc-b15a-bb0357506a0f",
     "kapalId": "KAP-2505-00006",
-    "tanggal": "2025-05-22",
-    "dermaga": "Dermaga 03",
-    "waktuTiba": "15:15",
+    "tanggal": "2025-05-23",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "11:30",
+    "durasiJam": 4,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "d7e50af1-a37f-4e31-805b-515b34304a5d",
+    "kapalId": "KAP-2505-00040",
+    "tanggal": "2025-05-13",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "16:15",
+    "durasiJam": 2,
+    "prioritas": "Tinggi"
+  },
+  {
+    "id": "37da474b-71f3-4026-8e01-d2bf17ada041",
+    "kapalId": "KAP-2505-00020",
+    "tanggal": "2025-05-18",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "12:00",
+    "durasiJam": 4,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "7c3904f6-6f85-4556-8c6c-3f0681d5b931",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-05-16",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "09:15",
     "durasiJam": 3,
     "prioritas": "Tinggi"
   },
   {
-    "id": "cca5494e-1a18-4ac9-875f-a6a33d4756e5",
-    "kapalId": "KAP-2505-00019",
-    "tanggal": "2025-05-19",
-    "dermaga": "Dermaga 03",
+    "id": "223c2551-b271-46f8-8ac3-b11d5588698c",
+    "kapalId": "KAP-2505-00030",
+    "tanggal": "2025-05-22",
+    "dermaga": "Dermaga 02",
     "waktuTiba": "18:30",
     "durasiJam": 5,
-    "prioritas": "Tinggi"
-  },
-  {
-    "id": "f5b42719-c5e4-49a0-89c1-a8b3dfea6ca9",
-    "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-05-18",
-    "dermaga": "Dermaga 03",
-    "waktuTiba": "19:30",
-    "durasiJam": 2,
     "prioritas": "Normal"
   },
   {
-    "id": "ae63006d-18ec-4713-9a06-28a9b4a26593",
-    "kapalId": "KAP-2505-00040",
-    "tanggal": "2025-05-16",
-    "dermaga": "Dermaga 02",
-    "waktuTiba": "09:45",
+    "id": "2ef50438-8e6d-43d4-869c-133796ac6afb",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-05-17",
+    "dermaga": "Dermaga 01",
+    "waktuTiba": "17:15",
     "durasiJam": 3,
     "prioritas": "Normal"
   },
   {
-    "id": "3f048c97-699c-4c26-ad9b-2ec05067d777",
-    "kapalId": "KAP-2505-00015",
-    "tanggal": "2025-05-18",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "09:45",
-    "durasiJam": 3,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "6cb41f20-d461-4131-9c81-bbeff1966348",
-    "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-05-13",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "11:30",
-    "durasiJam": 2,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "7c1c47fe-b20f-4c15-9abb-0357506a0fff",
-    "kapalId": "KAP-2505-00018",
-    "tanggal": "2025-05-19",
-    "dermaga": "Dermaga 02",
-    "waktuTiba": "13:30",
-    "durasiJam": 6,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "e50af1a3-7fe3-4105-ab51-5b34304a5d13",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-05-16",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "13:45",
-    "durasiJam": 4,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "da474b71-f302-46e0-a1d2-bf17ada04119",
-    "kapalId": "KAP-2505-00009",
-    "tanggal": "2025-05-11",
-    "dermaga": "Dermaga 02",
-    "waktuTiba": "13:30",
-    "durasiJam": 6,
-    "prioritas": "Rendah"
-  },
-  {
-    "id": "3904f66f-8555-46c6-9c3f-0681d5b93107",
-    "kapalId": "KAP-2505-00020",
-    "tanggal": "2025-05-14",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "17:45",
-    "durasiJam": 5,
-    "prioritas": "Tinggi"
-  },
-  {
-    "id": "3c2551b2-716f-48ac-93b1-1d5588698c1e",
+    "id": "e0a0501c-f2de-4900-8029-2fe30b26b5ed",
     "kapalId": "KAP-2505-00008",
-    "tanggal": "2025-05-18",
+    "tanggal": "2025-05-20",
+    "dermaga": "Dermaga 02",
+    "waktuTiba": "14:45",
+    "durasiJam": 2,
+    "prioritas": "Normal"
+  },
+  {
+    "id": "9cb3814f-9900-405e-ae87-f1a8f9226f53",
+    "kapalId": "KAP-2505-00004",
+    "tanggal": "2025-05-21",
     "dermaga": "Dermaga 03",
-    "waktuTiba": "08:30",
-    "durasiJam": 6,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "f504388e-6d3d-4469-8c13-3796ac6afb28",
-    "kapalId": "KAP-2505-00007",
-    "tanggal": "2025-05-14",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "19:15",
+    "waktuTiba": "16:00",
     "durasiJam": 2,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "a0501cf2-de90-4002-992f-e30b26b5ed0b",
-    "kapalId": "KAP-2505-00037",
-    "tanggal": "2025-05-22",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "06:30",
-    "durasiJam": 2,
-    "prioritas": "Normal"
-  },
-  {
-    "id": "b3814f99-0005-4ee8-b7f1-a8f9226f53ac",
-    "kapalId": "KAP-2505-00025",
-    "tanggal": "2025-05-13",
-    "dermaga": "Dermaga 01",
-    "waktuTiba": "17:00",
-    "durasiJam": 4,
-    "prioritas": "Normal"
+    "prioritas": "Rendah"
   }
 ];

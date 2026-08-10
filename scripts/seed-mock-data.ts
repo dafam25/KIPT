@@ -35,8 +35,12 @@ const NAMA_BELAKANG = [
   'Nasution', 'Siregar', 'Simanjuntak', 'Harahap', 'Lubis', 'Marpaung', 'Sinaga', 'Tanjung', 'Rangkuti', 'Daulay',
 ];
 function namaLengkap(): string {
-  const depan = faker.helpers.arrayElement(faker.datatype.boolean() ? NAMA_DEPAN_PRIA : NAMA_DEPAN_WANITA);
-  const belakang = faker.helpers.arrayElement(NAMA_BELAKANG);
+  let depan: string;
+  let belakang: string;
+  do {
+    depan = faker.helpers.arrayElement(faker.datatype.boolean() ? NAMA_DEPAN_PRIA : NAMA_DEPAN_WANITA);
+    belakang = faker.helpers.arrayElement(NAMA_BELAKANG);
+  } while (depan === belakang);
   return `${depan} ${belakang}`;
 }
 
@@ -56,8 +60,12 @@ const NAMA_DUSUN_DESA = [
   'Cintamulya', 'Sumberwaru', 'Karanganyar', 'Sidoharjo',
 ];
 function alamatNelayan(): string {
-  const dusun = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
-  const desa = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
+  let dusun: string;
+  let desa: string;
+  do {
+    dusun = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
+    desa = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
+  } while (dusun === desa);
   const rt = String(faker.number.int({ min: 1, max: 12 })).padStart(2, '0');
   const rw = String(faker.number.int({ min: 1, max: 8 })).padStart(2, '0');
   return `Dusun ${dusun}, Desa ${desa}, RT ${rt}/RW ${rw}`;

@@ -40,7 +40,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000048"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00003",
@@ -60,7 +60,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000045"
+    "nahkodaId": "NEL-2505-000029"
   },
   {
     "id": "KAP-2505-00004",
@@ -100,7 +100,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000057"
   },
   {
     "id": "KAP-2505-00006",
@@ -120,7 +120,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000032"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00007",
@@ -140,7 +140,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000054"
+    "nahkodaId": "NEL-2505-000056"
   },
   {
     "id": "KAP-2505-00008",
@@ -200,7 +200,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000046"
   },
   {
     "id": "KAP-2505-00011",
@@ -220,7 +220,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000041"
+    "nahkodaId": "NEL-2505-000028"
   },
   {
     "id": "KAP-2505-00012",
@@ -260,7 +260,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000038"
   },
   {
     "id": "KAP-2505-00014",
@@ -300,7 +300,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000046"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00016",
@@ -380,7 +380,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000034"
   },
   {
     "id": "KAP-2505-00020",
@@ -420,7 +420,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000043"
   },
   {
     "id": "KAP-2505-00022",
@@ -500,7 +500,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000030"
+    "nahkodaId": "NEL-2505-000059"
   },
   {
     "id": "KAP-2505-00026",
@@ -540,7 +540,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000031"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00028",
@@ -560,7 +560,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000051"
+    "nahkodaId": "NEL-2505-000026"
   },
   {
     "id": "KAP-2505-00029",
@@ -580,7 +580,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000037"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00030",
@@ -620,7 +620,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000023"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00032",
@@ -640,7 +640,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000059"
+    "nahkodaId": "NEL-2505-000033"
   },
   {
     "id": "KAP-2505-00033",
@@ -660,7 +660,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000024"
+    "nahkodaId": "NEL-2505-000041"
   },
   {
     "id": "KAP-2505-00034",
@@ -720,7 +720,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000029"
+    "nahkodaId": "NEL-2505-000022"
   },
   {
     "id": "KAP-2505-00037",
@@ -760,7 +760,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000027"
+    "nahkodaId": "NEL-2505-000030"
   },
   {
     "id": "KAP-2505-00039",

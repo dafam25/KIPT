@@ -3,163 +3,163 @@ import type { Notifikasi } from '../types';
 
 export const notifikasiData: Notifikasi[] = [
   {
-    "id": "88d64380-34b2-4fd2-acef-1014c7717bf0",
+    "id": "de88d643-8034-4b2f-bd2c-ef1014c7717b",
     "jenis": "peringatan",
-    "judul": "Vivo vinum summopere acsi.",
-    "deskripsi": "Vomer colo cornu vito decipio fugiat auctor vox cicuta quis.",
-    "waktu": "2025-05-06T03:44:17.493Z",
-    "dibaca": true
-  },
-  {
-    "id": "cb3bd002-8057-49ed-b2ec-84006c033c33",
-    "jenis": "peringatan",
-    "judul": "Delego territo nemo vestrum.",
-    "deskripsi": "Virtus suppellex delibero corrigo thesaurus curvo arcesso adulatio damnatio utpote.",
-    "waktu": "2025-05-08T10:10:04.779Z",
+    "judul": "Suspendo caritas vivo vinum.",
+    "deskripsi": "Summopere acsi vomer colo cornu vito decipio fugiat auctor vox.",
+    "waktu": "2025-05-06T09:41:57.274Z",
     "dibaca": false
   },
   {
-    "id": "4ac7e53a-6ca1-4475-936a-692e0f8bb5b5",
-    "jenis": "sukses",
-    "judul": "Apud admoneo talio approbo.",
-    "deskripsi": "Vindico cum illo brevis amet sollers versus aufero quam valde.",
-    "waktu": "2025-05-09T23:28:31.216Z",
-    "dibaca": true
+    "id": "35cb3bd0-0280-4579-8ed2-ec84006c033c",
+    "jenis": "peringatan",
+    "judul": "Thymum ager delego territo.",
+    "deskripsi": "Nemo vestrum virtus suppellex delibero corrigo thesaurus curvo arcesso adulatio.",
+    "waktu": "2025-05-07T03:56:31.324Z",
+    "dibaca": false
   },
   {
-    "id": "23af7daa-a547-43b9-9357-cfe9e534425f",
+    "id": "ad4ac7e5-3a6c-4a14-a753-6a692e0f8bb5",
     "jenis": "informasi",
-    "judul": "Blandior tabesco assumenda accendo.",
-    "deskripsi": "Tonsor curvo aliquam subvenio demergo curiositas audeo denuo cilicium universe.",
-    "waktu": "2025-05-06T03:11:19.898Z",
-    "dibaca": true
+    "judul": "Degero non apud admoneo.",
+    "deskripsi": "Talio approbo vindico cum illo brevis amet sollers versus aufero.",
+    "waktu": "2025-05-08T02:26:00.584Z",
+    "dibaca": false
   },
   {
-    "id": "6db05244-d97d-48b0-8e7a-36deabac7f6c",
-    "jenis": "informasi",
-    "judul": "Constans vinum inflammatio cimentarius.",
-    "deskripsi": "Victus comprehendo cuius hic cohibeo aggredior temptatio velut officiis facere.",
-    "waktu": "2025-05-08T23:41:24.348Z",
-    "dibaca": true
-  },
-  {
-    "id": "c93f8a2d-ee61-4ddb-91d6-aa5934908521",
+    "id": "f523af7d-aaa5-4473-9b93-57cfe9e53442",
     "jenis": "sistem",
-    "judul": "Minima sopor valens ducimus.",
-    "deskripsi": "Id ultio audax undique exercitationem atrox vitium avaritia beatae constans.",
-    "waktu": "2025-05-09T12:43:43.202Z",
+    "judul": "Clamo crustulum blandior tabesco.",
+    "deskripsi": "Assumenda accendo tonsor curvo aliquam subvenio demergo curiositas audeo denuo.",
+    "waktu": "2025-05-06T09:49:44.337Z",
     "dibaca": false
   },
   {
-    "id": "90ed2bfe-a133-422c-bee9-fcd231dbaa15",
-    "jenis": "informasi",
-    "judul": "Triduana desparatus cognomen sufficio.",
-    "deskripsi": "Natus stips blanditiis aggero usitas aestivus annus articulus abeo illum.",
-    "waktu": "2025-05-06T08:57:57.353Z",
+    "id": "376db052-44d9-47d8-9b0e-7a36deabac7f",
+    "jenis": "sistem",
+    "judul": "Benevolentia comptus constans vinum.",
+    "deskripsi": "Inflammatio cimentarius victus comprehendo cuius hic cohibeo aggredior temptatio velut.",
+    "waktu": "2025-05-07T22:54:56.778Z",
     "dibaca": false
   },
   {
-    "id": "27bb5403-cc72-46fe-93eb-ab52400fde28",
+    "id": "c3c93f8a-2dee-461d-8db1-d6aa59349085",
     "jenis": "peringatan",
-    "judul": "Adulescens coniuratio capillus aggredior.",
-    "deskripsi": "Vacuus arbor careo tolero vox quidem aiunt ambulo accedo accommodo.",
-    "waktu": "2025-05-08T03:47:22.679Z",
+    "judul": "Cruciamentum tersus minima sopor.",
+    "deskripsi": "Valens ducimus id ultio audax undique exercitationem atrox vitium avaritia.",
+    "waktu": "2025-05-06T00:45:28.607Z",
     "dibaca": true
   },
   {
-    "id": "2832d149-8c0e-4078-be8e-6bbe0af47c70",
-    "jenis": "sukses",
-    "judul": "Ater summisse maiores aetas.",
-    "deskripsi": "Color deludo allatus decet coepi creta strenuus benevolentia tabernus absum.",
-    "waktu": "2025-05-07T00:55:30.916Z",
-    "dibaca": false
-  },
-  {
-    "id": "634f923a-00be-49dc-9178-8338c6dac974",
-    "jenis": "sistem",
-    "judul": "Absconditus desipio vix aegre.",
-    "deskripsi": "Una eligendi cito umerus claustrum cerno admiratio vero contra dignissimos.",
-    "waktu": "2025-05-05T11:09:16.379Z",
-    "dibaca": true
-  },
-  {
-    "id": "44d8c33c-bc86-4935-9c29-fda97f060130",
-    "jenis": "sukses",
-    "judul": "Aro velum placeat cicuta.",
-    "deskripsi": "Depulso atrocitas veritas suadeo alo necessitatibus conqueror versus votum sortitus.",
-    "waktu": "2025-05-06T11:48:05.072Z",
-    "dibaca": false
-  },
-  {
-    "id": "d9a619ba-9b78-4f3d-b1b5-951c937c586d",
-    "jenis": "sukses",
-    "judul": "Color solitudo arceo absorbeo.",
-    "deskripsi": "Vestrum accusantium vilicus coma cur aiunt speciosus triumphus tutamen amiculum.",
-    "waktu": "2025-05-09T09:51:55.202Z",
-    "dibaca": false
-  },
-  {
-    "id": "ee5fe922-e3fc-4eb7-af99-acec374919ee",
-    "jenis": "peringatan",
-    "judul": "Curatio stillicidium depromo vae.",
-    "deskripsi": "Amo crux comitatus aduro antea denuo ter nulla temptatio cui.",
-    "waktu": "2025-05-05T17:05:34.357Z",
-    "dibaca": true
-  },
-  {
-    "id": "a30bc67f-85ae-48ed-a995-85f73fd4a958",
-    "jenis": "sistem",
-    "judul": "Confido allatus voveo rem.",
-    "deskripsi": "Callide certe comedo summisse cognomen bonus sortitus molestiae copia pel.",
-    "waktu": "2025-05-09T15:31:38.609Z",
-    "dibaca": true
-  },
-  {
-    "id": "0ecbe25f-a025-49bb-8f4d-d208cf1f8b97",
-    "jenis": "sistem",
-    "judul": "Cogo currus absens volutabrum.",
-    "deskripsi": "Audacia summopere valens tamen vomito qui aut damno velit sophismata.",
-    "waktu": "2025-05-05T06:40:27.845Z",
-    "dibaca": true
-  },
-  {
-    "id": "5f5cfdd9-753e-4971-9c08-3a9bf1b9a75f",
-    "jenis": "peringatan",
-    "judul": "Ter aut vehemens corpus.",
-    "deskripsi": "Cuppedia sono inflammatio theatrum solum ulterius derideo speciosus angustus uter.",
-    "waktu": "2025-05-06T21:18:57.821Z",
-    "dibaca": false
-  },
-  {
-    "id": "55aa5964-9fac-4e29-aeaa-1e642e1fb309",
-    "jenis": "sistem",
-    "judul": "Copia coepi depromo aufero.",
-    "deskripsi": "Clementia alter tonsor sto delectus cilicium thema incidunt debilito totidem.",
-    "waktu": "2025-05-09T14:47:37.340Z",
-    "dibaca": true
-  },
-  {
-    "id": "eee3efcb-66c1-4081-a906-b4479d7b7507",
-    "jenis": "sukses",
-    "judul": "Ipsa apparatus sufficio copia.",
-    "deskripsi": "Sopor claro capio arma vero abbas recusandae vulgivagus avarus crux.",
-    "waktu": "2025-05-06T06:24:47.369Z",
-    "dibaca": false
-  },
-  {
-    "id": "0acb34f1-dfa2-4ccc-9df8-9dd2b95a6e0c",
+    "id": "ea90ed2b-fea1-4332-82ce-e9fcd231dbaa",
     "jenis": "informasi",
-    "judul": "Adduco dolor tonsor bis.",
-    "deskripsi": "Thymum consuasor vito appositus benigne urbs adipisci desolo molestias vivo.",
-    "waktu": "2025-05-05T00:26:53.724Z",
+    "judul": "Thalassinus cresco triduana desparatus.",
+    "deskripsi": "Cognomen sufficio natus stips blanditiis aggero usitas aestivus annus articulus.",
+    "waktu": "2025-05-05T00:31:22.285Z",
+    "dibaca": false
+  },
+  {
+    "id": "4d27bb54-03cc-4726-8fe3-ebab52400fde",
+    "jenis": "sukses",
+    "judul": "Certus antepono adulescens coniuratio.",
+    "deskripsi": "Capillus aggredior vacuus arbor careo tolero vox quidem aiunt ambulo.",
+    "waktu": "2025-05-05T01:47:25.979Z",
     "dibaca": true
   },
   {
-    "id": "efb406e4-f1e3-4764-a66d-d659668c5421",
+    "id": "a62832d1-498c-40e0-978e-8e6bbe0af47c",
+    "jenis": "peringatan",
+    "judul": "Vester talus ater summisse.",
+    "deskripsi": "Maiores aetas color deludo allatus decet coepi creta strenuus benevolentia.",
+    "waktu": "2025-05-08T16:07:29.673Z",
+    "dibaca": true
+  },
+  {
+    "id": "6d634f92-3a00-4be9-9dc1-788338c6dac9",
+    "jenis": "informasi",
+    "judul": "Communis tenax absconditus desipio.",
+    "deskripsi": "Vix aegre una eligendi cito umerus claustrum cerno admiratio vero.",
+    "waktu": "2025-05-06T19:15:08.652Z",
+    "dibaca": false
+  },
+  {
+    "id": "1644d8c3-3cbc-4869-835c-29fda97f0601",
+    "jenis": "peringatan",
+    "judul": "Conculco occaecati aro velum.",
+    "deskripsi": "Placeat cicuta depulso atrocitas veritas suadeo alo necessitatibus conqueror versus.",
+    "waktu": "2025-05-09T22:32:48.136Z",
+    "dibaca": false
+  },
+  {
+    "id": "4bd9a619-ba9b-478f-93d1-b5951c937c58",
     "jenis": "sistem",
-    "judul": "Creber corporis usitas carbo.",
-    "deskripsi": "Calcar solitudo soluta adicio chirographum ars decor amor decerno varius.",
-    "waktu": "2025-05-06T10:28:52.347Z",
+    "judul": "Vulnus tabella color solitudo.",
+    "deskripsi": "Arceo absorbeo vestrum accusantium vilicus coma cur aiunt speciosus triumphus.",
+    "waktu": "2025-05-09T05:16:37.265Z",
+    "dibaca": true
+  },
+  {
+    "id": "e8ee5fe9-22e3-4fce-bb7f-99acec374919",
+    "jenis": "sistem",
+    "judul": "Subseco capillus curatio stillicidium.",
+    "deskripsi": "Depromo vae amo crux comitatus aduro antea denuo ter nulla.",
+    "waktu": "2025-05-08T19:23:33.397Z",
+    "dibaca": true
+  },
+  {
+    "id": "21a30bc6-7f85-4ae8-9ed9-9585f73fd4a9",
+    "jenis": "sukses",
+    "judul": "Ratione voro confido allatus.",
+    "deskripsi": "Voveo rem callide certe comedo summisse cognomen bonus sortitus molestiae.",
+    "waktu": "2025-05-06T19:50:27.276Z",
+    "dibaca": false
+  },
+  {
+    "id": "e50ecbe2-5fa0-4259-abbf-4dd208cf1f8b",
+    "jenis": "informasi",
+    "judul": "Aeneus ustilo cogo currus.",
+    "deskripsi": "Absens volutabrum audacia summopere valens tamen vomito qui aut damno.",
+    "waktu": "2025-05-09T11:42:11.988Z",
+    "dibaca": false
+  },
+  {
+    "id": "055f5cfd-d975-43e9-971c-083a9bf1b9a7",
+    "jenis": "sistem",
+    "judul": "Damno arbor ter aut.",
+    "deskripsi": "Vehemens corpus cuppedia sono inflammatio theatrum solum ulterius derideo speciosus.",
+    "waktu": "2025-05-05T14:10:29.321Z",
+    "dibaca": false
+  },
+  {
+    "id": "6b55aa59-649f-4ace-829e-aa1e642e1fb3",
+    "jenis": "sukses",
+    "judul": "Soleo usus copia coepi.",
+    "deskripsi": "Depromo aufero clementia alter tonsor sto delectus cilicium thema incidunt.",
+    "waktu": "2025-05-07T04:26:10.822Z",
+    "dibaca": false
+  },
+  {
+    "id": "e0eee3ef-cb66-4c10-8819-06b4479d7b75",
+    "jenis": "informasi",
+    "judul": "Subiungo subito ipsa apparatus.",
+    "deskripsi": "Sufficio copia sopor claro capio arma vero abbas recusandae vulgivagus.",
+    "waktu": "2025-05-05T23:48:44.669Z",
+    "dibaca": true
+  },
+  {
+    "id": "490acb34-f1df-4a2c-8ccd-f89dd2b95a6e",
+    "jenis": "sistem",
+    "judul": "Coadunatio cognatus adduco dolor.",
+    "deskripsi": "Tonsor bis thymum consuasor vito appositus benigne urbs adipisci desolo.",
+    "waktu": "2025-05-07T20:35:08.794Z",
+    "dibaca": false
+  },
+  {
+    "id": "04efb406-e4f1-4e37-8646-6dd659668c54",
+    "jenis": "peringatan",
+    "judul": "Eius tardus creber corporis.",
+    "deskripsi": "Usitas carbo calcar solitudo soluta adicio chirographum ars decor amor.",
+    "waktu": "2025-05-07T04:49:41.318Z",
     "dibaca": false
   }
 ];

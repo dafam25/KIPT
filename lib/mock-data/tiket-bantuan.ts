@@ -3,8 +3,8 @@ import type { TiketBantuan } from '../types';
 
 export const tiketBantuanData: TiketBantuan[] = [
   {
-    "id": "abddfcc9-a771-4d91-9d93-83cb83920ee8",
-    "judul": "Ambulo colo tres umbra.",
+    "id": "c8abddfc-c9a7-471d-b91d-9383cb83920e",
+    "judul": "Confugo aspernatur ambulo colo tres umbra.",
     "kategori": "Lainnya",
     "deskripsi": "Sumptus attollo utroque utrimque. Ducimus cubo vaco hic illum paens supra turbo.",
     "status": "Terbuka",
