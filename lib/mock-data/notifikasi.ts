@@ -3,163 +3,163 @@ import type { Notifikasi } from '../types';
 
 export const notifikasiData: Notifikasi[] = [
   {
-    "id": "de88d643-8034-4b2f-bd2c-ef1014c7717b",
-    "jenis": "peringatan",
-    "judul": "Suspendo caritas vivo vinum.",
-    "deskripsi": "Summopere acsi vomer colo cornu vito decipio fugiat auctor vox.",
-    "waktu": "2025-05-06T09:41:57.274Z",
+    "id": "88d64380-34b2-4fd2-acef-1014c7717bf0",
+    "jenis": "sistem",
+    "judul": "Sinkronisasi Data Selesai",
+    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
+    "waktu": "2025-05-06T05:34:42.628Z",
     "dibaca": false
   },
   {
-    "id": "35cb3bd0-0280-4579-8ed2-ec84006c033c",
+    "id": "0f45f782-f4a3-45cb-b3bd-00280579ed2e",
+    "jenis": "sistem",
+    "judul": "Pemeliharaan Terjadwal",
+    "deskripsi": "Pemeliharaan sistem akan dilakukan pada dini hari.",
+    "waktu": "2025-05-07T14:46:43.406Z",
+    "dibaca": true
+  },
+  {
+    "id": "c033c33c-17c9-4efb-975c-6206ead4ac7e",
     "jenis": "peringatan",
-    "judul": "Thymum ager delego territo.",
-    "deskripsi": "Nemo vestrum virtus suppellex delibero corrigo thesaurus curvo arcesso adulatio.",
-    "waktu": "2025-05-07T03:56:31.324Z",
+    "judul": "Cuaca Buruk",
+    "deskripsi": "Waspada gelombang tinggi di perairan Laut Sulawesi.",
+    "waktu": "2025-05-06T01:44:08.106Z",
     "dibaca": false
   },
   {
-    "id": "ad4ac7e5-3a6c-4a14-a753-6a692e0f8bb5",
+    "id": "147536a6-92e0-4f8b-ab5b-57920b2f6831",
     "jenis": "informasi",
-    "judul": "Degero non apud admoneo.",
-    "deskripsi": "Talio approbo vindico cum illo brevis amet sollers versus aufero.",
-    "waktu": "2025-05-08T02:26:00.584Z",
-    "dibaca": false
+    "judul": "Anggota Koperasi Baru",
+    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Bahari Minang.",
+    "waktu": "2025-05-09T14:10:40.383Z",
+    "dibaca": true
   },
   {
     "id": "f523af7d-aaa5-4473-9b93-57cfe9e53442",
-    "jenis": "sistem",
-    "judul": "Clamo crustulum blandior tabesco.",
-    "deskripsi": "Assumenda accendo tonsor curvo aliquam subvenio demergo curiositas audeo denuo.",
-    "waktu": "2025-05-06T09:49:44.337Z",
-    "dibaca": false
-  },
-  {
-    "id": "376db052-44d9-47d8-9b0e-7a36deabac7f",
-    "jenis": "sistem",
-    "judul": "Benevolentia comptus constans vinum.",
-    "deskripsi": "Inflammatio cimentarius victus comprehendo cuius hic cohibeo aggredior temptatio velut.",
-    "waktu": "2025-05-07T22:54:56.778Z",
-    "dibaca": false
-  },
-  {
-    "id": "c3c93f8a-2dee-461d-8db1-d6aa59349085",
-    "jenis": "peringatan",
-    "judul": "Cruciamentum tersus minima sopor.",
-    "deskripsi": "Valens ducimus id ultio audax undique exercitationem atrox vitium avaritia.",
-    "waktu": "2025-05-06T00:45:28.607Z",
-    "dibaca": true
-  },
-  {
-    "id": "ea90ed2b-fea1-4332-82ce-e9fcd231dbaa",
-    "jenis": "informasi",
-    "judul": "Thalassinus cresco triduana desparatus.",
-    "deskripsi": "Cognomen sufficio natus stips blanditiis aggero usitas aestivus annus articulus.",
-    "waktu": "2025-05-05T00:31:22.285Z",
-    "dibaca": false
-  },
-  {
-    "id": "4d27bb54-03cc-4726-8fe3-ebab52400fde",
     "jenis": "sukses",
-    "judul": "Certus antepono adulescens coniuratio.",
-    "deskripsi": "Capillus aggredior vacuus arbor careo tolero vox quidem aiunt ambulo.",
-    "waktu": "2025-05-05T01:47:25.979Z",
+    "judul": "Data Nelayan Terverifikasi",
+    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
+    "waktu": "2025-05-09T18:32:11.085Z",
     "dibaca": true
   },
   {
-    "id": "a62832d1-498c-40e0-978e-8e6bbe0af47c",
-    "jenis": "peringatan",
-    "judul": "Vester talus ater summisse.",
-    "deskripsi": "Maiores aetas color deludo allatus decet coepi creta strenuus benevolentia.",
-    "waktu": "2025-05-08T16:07:29.673Z",
-    "dibaca": true
-  },
-  {
-    "id": "6d634f92-3a00-4be9-9dc1-788338c6dac9",
+    "id": "0c61b762-74d3-476d-ab05-244d97d8b0e7",
     "jenis": "informasi",
-    "judul": "Communis tenax absconditus desipio.",
-    "deskripsi": "Vix aegre una eligendi cito umerus claustrum cerno admiratio vero.",
-    "waktu": "2025-05-06T19:15:08.652Z",
-    "dibaca": false
-  },
-  {
-    "id": "1644d8c3-3cbc-4869-835c-29fda97f0601",
-    "jenis": "peringatan",
-    "judul": "Conculco occaecati aro velum.",
-    "deskripsi": "Placeat cicuta depulso atrocitas veritas suadeo alo necessitatibus conqueror versus.",
-    "waktu": "2025-05-09T22:32:48.136Z",
-    "dibaca": false
-  },
-  {
-    "id": "4bd9a619-ba9b-478f-93d1-b5951c937c58",
-    "jenis": "sistem",
-    "judul": "Vulnus tabella color solitudo.",
-    "deskripsi": "Arceo absorbeo vestrum accusantium vilicus coma cur aiunt speciosus triumphus.",
-    "waktu": "2025-05-09T05:16:37.265Z",
+    "judul": "Kapal Sandar",
+    "deskripsi": "KM. Mina Persada telah sandar di PPI Banyuwangi.",
+    "waktu": "2025-05-06T00:54:52.332Z",
     "dibaca": true
   },
   {
-    "id": "e8ee5fe9-22e3-4fce-bb7f-99acec374919",
+    "id": "abac7f6c-355f-484e-a568-41ce98c3c93f",
     "jenis": "sistem",
-    "judul": "Subseco capillus curatio stillicidium.",
-    "deskripsi": "Depromo vae amo crux comitatus aduro antea denuo ter nulla.",
-    "waktu": "2025-05-08T19:23:33.397Z",
+    "judul": "Sinkronisasi Data Selesai",
+    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
+    "waktu": "2025-05-08T06:11:14.515Z",
     "dibaca": true
   },
   {
-    "id": "21a30bc6-7f85-4ae8-9ed9-9585f73fd4a9",
+    "id": "e61ddb1d-6aa5-4934-b908-5216c9ae88d2",
+    "jenis": "sistem",
+    "judul": "Sinkronisasi Data Selesai",
+    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
+    "waktu": "2025-05-07T15:49:09.505Z",
+    "dibaca": true
+  },
+  {
+    "id": "35ea90ed-2bfe-4a13-a322-cee9fcd231db",
+    "jenis": "sistem",
+    "judul": "Pembaruan Sistem",
+    "deskripsi": "Sistem berhasil diperbarui ke versi terbaru.",
+    "waktu": "2025-05-08T03:06:08.925Z",
+    "dibaca": true
+  },
+  {
+    "id": "d84b9a31-d112-4084-bd27-bb5403cc726f",
+    "jenis": "informasi",
+    "judul": "Anggota Koperasi Baru",
+    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Harapan Baru.",
+    "waktu": "2025-05-05T22:55:01.384Z",
+    "dibaca": false
+  },
+  {
+    "id": "b52400fd-e284-4205-a31e-23cfa1100a62",
     "jenis": "sukses",
-    "judul": "Ratione voro confido allatus.",
-    "deskripsi": "Voveo rem callide certe comedo summisse cognomen bonus sortitus molestiae.",
-    "waktu": "2025-05-06T19:50:27.276Z",
-    "dibaca": false
-  },
-  {
-    "id": "e50ecbe2-5fa0-4259-abbf-4dd208cf1f8b",
-    "jenis": "informasi",
-    "judul": "Aeneus ustilo cogo currus.",
-    "deskripsi": "Absens volutabrum audacia summopere valens tamen vomito qui aut damno.",
-    "waktu": "2025-05-09T11:42:11.988Z",
-    "dibaca": false
-  },
-  {
-    "id": "055f5cfd-d975-43e9-971c-083a9bf1b9a7",
-    "jenis": "sistem",
-    "judul": "Damno arbor ter aut.",
-    "deskripsi": "Vehemens corpus cuppedia sono inflammatio theatrum solum ulterius derideo speciosus.",
-    "waktu": "2025-05-05T14:10:29.321Z",
-    "dibaca": false
-  },
-  {
-    "id": "6b55aa59-649f-4ace-829e-aa1e642e1fb3",
-    "jenis": "sukses",
-    "judul": "Soleo usus copia coepi.",
-    "deskripsi": "Depromo aufero clementia alter tonsor sto delectus cilicium thema incidunt.",
-    "waktu": "2025-05-07T04:26:10.822Z",
-    "dibaca": false
-  },
-  {
-    "id": "e0eee3ef-cb66-4c10-8819-06b4479d7b75",
-    "jenis": "informasi",
-    "judul": "Subiungo subito ipsa apparatus.",
-    "deskripsi": "Sufficio copia sopor claro capio arma vero abbas recusandae vulgivagus.",
-    "waktu": "2025-05-05T23:48:44.669Z",
+    "judul": "Tiket Bantuan Selesai",
+    "deskripsi": "Tiket dukungan Anda telah ditandai selesai.",
+    "waktu": "2025-05-05T23:28:56.043Z",
     "dibaca": true
   },
   {
-    "id": "490acb34-f1df-4a2c-8ccd-f89dd2b95a6e",
+    "id": "498c0e07-8e8e-46bb-9e0a-f47c70eb2b91",
     "jenis": "sistem",
-    "judul": "Coadunatio cognatus adduco dolor.",
-    "deskripsi": "Tonsor bis thymum consuasor vito appositus benigne urbs adipisci desolo.",
-    "waktu": "2025-05-07T20:35:08.794Z",
+    "judul": "Pembaruan Sistem",
+    "deskripsi": "Sistem berhasil diperbarui ke versi terbaru.",
+    "waktu": "2025-05-07T08:32:02.852Z",
+    "dibaca": true
+  },
+  {
+    "id": "3b06d634-f923-4a00-abe9-dc1788338c6d",
+    "jenis": "informasi",
+    "judul": "Kapal Sandar",
+    "deskripsi": "KM. Putra Samudra telah sandar di TPI Surabaya.",
+    "waktu": "2025-05-08T19:51:46.063Z",
     "dibaca": false
   },
   {
-    "id": "04efb406-e4f1-4e37-8646-6dd659668c54",
+    "id": "08f1d84d-440e-4581-9644-d8c33cbc8693",
+    "jenis": "informasi",
+    "judul": "Kapal Sandar",
+    "deskripsi": "KM. Sumber Jaya telah sandar di TPI Surabaya.",
+    "waktu": "2025-05-08T18:31:14.130Z",
+    "dibaca": true
+  },
+  {
+    "id": "da97f060-1305-492e-a947-2eb195efa4bd",
+    "jenis": "sukses",
+    "judul": "Data Nelayan Terverifikasi",
+    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
+    "waktu": "2025-05-08T07:32:28.429Z",
+    "dibaca": true
+  },
+  {
+    "id": "a9b78f3d-1b59-451c-8937-c586dfb4a20e",
     "jenis": "peringatan",
-    "judul": "Eius tardus creber corporis.",
-    "deskripsi": "Usitas carbo calcar solitudo soluta adicio chirographum ars decor amor.",
-    "waktu": "2025-05-07T04:49:41.318Z",
+    "judul": "Dokumen Kapal Akan Kedaluwarsa",
+    "deskripsi": "SLO KM. Berkah Persada akan berakhir dalam 5 hari.",
+    "waktu": "2025-05-09T16:54:05.328Z",
+    "dibaca": true
+  },
+  {
+    "id": "dd1e8ee5-fe92-42e3-afce-b7f99acec374",
+    "jenis": "informasi",
+    "judul": "Kapal Masuk Zona Penangkapan",
+    "deskripsi": "KM. Anugerah Rejeki memasuki zona penangkapan.",
+    "waktu": "2025-05-05T08:47:05.672Z",
+    "dibaca": false
+  },
+  {
+    "id": "b36a7e16-5027-4c9c-a621-a30bc67f85ae",
+    "jenis": "sistem",
+    "judul": "Sinkronisasi Data Selesai",
+    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
+    "waktu": "2025-05-09T13:34:24.701Z",
+    "dibaca": false
+  },
+  {
+    "id": "85f73fd4-a958-4af5-81fa-345b43a959e5",
+    "jenis": "sukses",
+    "judul": "Pemeriksaan Biosecurity Lolos",
+    "deskripsi": "KM. Sumber Jaya dinyatakan lolos pemeriksaan biosecurity.",
+    "waktu": "2025-05-09T13:44:52.462Z",
+    "dibaca": false
+  },
+  {
+    "id": "25fa0259-bbf4-4dd2-b08c-f1f8b971d460",
+    "jenis": "sukses",
+    "judul": "Data Nelayan Terverifikasi",
+    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
+    "waktu": "2025-05-05T22:08:02.740Z",
     "dibaca": false
   }
 ];

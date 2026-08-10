@@ -302,14 +302,53 @@ const hasilTangkapData: HasilTangkap[] = Array.from({ length: 80 }, () => {
   };
 });
 
-const notifikasiData: Notifikasi[] = Array.from({ length: 20 }, () => ({
-  id: faker.string.uuid(),
-  jenis: faker.helpers.arrayElement(['peringatan', 'informasi', 'sukses', 'sistem']),
-  judul: faker.lorem.sentence(4),
-  deskripsi: faker.lorem.sentence(10),
-  waktu: faker.date.recent({ days: 5, refDate: SEED_DATE }).toISOString(),
-  dibaca: faker.datatype.boolean(),
-}));
+// Fixed pool of realistic Indonesian notification templates per jenis, so reseeding can
+// never reintroduce Faker's pseudo-Latin lorem text. Ship/port/koperasi names are drawn
+// live from the already-generated data above to keep references consistent.
+const NOTIFIKASI_TEMPLATE: Record<Notifikasi['jenis'], (() => { judul: string; deskripsi: string })[]> = {
+  peringatan: [
+    () => ({ judul: 'Cuaca Buruk', deskripsi: `Waspada gelombang tinggi di perairan ${faker.helpers.arrayElement(PERAIRAN_NAMA)}.` }),
+    () => ({ judul: 'Mesin Kapal Tidak Normal', deskripsi: `${faker.helpers.arrayElement(kapalData).nama}: suhu mesin melebihi batas normal.` }),
+    () => ({ judul: 'Batas BBM Menipis', deskripsi: `${faker.helpers.arrayElement(kapalData).nama}: BBM tersisa di bawah 20%.` }),
+    () => ({ judul: 'Dokumen Kapal Akan Kedaluwarsa', deskripsi: `SLO ${faker.helpers.arrayElement(kapalData).nama} akan berakhir dalam 5 hari.` }),
+    () => ({ judul: 'Kapal Keluar Jalur Pelayaran', deskripsi: `${faker.helpers.arrayElement(kapalData).nama} terdeteksi keluar dari jalur pelayaran yang ditentukan.` }),
+    () => ({ judul: 'Hasil Biosecurity Tidak Lolos', deskripsi: `Pemeriksaan biosecurity ${faker.helpers.arrayElement(kapalData).nama} menunjukkan hasil tidak lolos.` }),
+  ],
+  informasi: [
+    () => ({ judul: 'Kapal Masuk Zona Penangkapan', deskripsi: `${faker.helpers.arrayElement(kapalData).nama} memasuki zona penangkapan.` }),
+    () => ({ judul: 'Kapal Sandar', deskripsi: `${faker.helpers.arrayElement(kapalData).nama} telah sandar di ${faker.helpers.arrayElement(PELABUHAN)}.` }),
+    () => ({ judul: 'Perizinan Hampir Habis', deskripsi: `Perizinan ${faker.helpers.arrayElement(kapalData).nama} akan berakhir 5 hari lagi.` }),
+    () => ({ judul: 'Jadwal Perawatan Kapal', deskripsi: `Jadwal perawatan ${faker.helpers.arrayElement(kapalData).nama} akan dilakukan besok.` }),
+    () => ({ judul: 'Anggota Koperasi Baru', deskripsi: `Nelayan baru telah bergabung dengan ${faker.helpers.arrayElement(koperasiData).nama}.` }),
+    () => ({ judul: 'Kapal Berangkat Melaut', deskripsi: `${faker.helpers.arrayElement(kapalData).nama} berangkat melaut dari ${faker.helpers.arrayElement(PELABUHAN)}.` }),
+  ],
+  sukses: [
+    () => ({ judul: 'Hasil Tangkap Diperbarui', deskripsi: `Data hasil tangkap ${faker.helpers.arrayElement(kapalData).nama} telah diperbarui.` }),
+    () => ({ judul: 'Laporan Diterima', deskripsi: 'Laporan hasil tangkap harian telah diterima.' }),
+    () => ({ judul: 'Pemeriksaan Biosecurity Lolos', deskripsi: `${faker.helpers.arrayElement(kapalData).nama} dinyatakan lolos pemeriksaan biosecurity.` }),
+    () => ({ judul: 'Tiket Bantuan Selesai', deskripsi: 'Tiket dukungan Anda telah ditandai selesai.' }),
+    () => ({ judul: 'Data Nelayan Terverifikasi', deskripsi: 'Data nelayan baru telah berhasil diverifikasi.' }),
+  ],
+  sistem: [
+    () => ({ judul: 'Pembaruan Sistem', deskripsi: 'Sistem berhasil diperbarui ke versi terbaru.' }),
+    () => ({ judul: 'Backup Data Selesai', deskripsi: 'Backup data harian berhasil dilakukan.' }),
+    () => ({ judul: 'Pemeliharaan Terjadwal', deskripsi: 'Pemeliharaan sistem akan dilakukan pada dini hari.' }),
+    () => ({ judul: 'Sinkronisasi Data Selesai', deskripsi: 'Sinkronisasi data kapal dan nelayan telah selesai.' }),
+  ],
+};
+
+const notifikasiData: Notifikasi[] = Array.from({ length: 20 }, () => {
+  const jenis = faker.helpers.arrayElement<Notifikasi['jenis']>(['peringatan', 'informasi', 'sukses', 'sistem']);
+  const { judul, deskripsi } = faker.helpers.arrayElement(NOTIFIKASI_TEMPLATE[jenis])();
+  return {
+    id: faker.string.uuid(),
+    jenis,
+    judul,
+    deskripsi,
+    waktu: faker.date.recent({ days: 5, refDate: SEED_DATE }).toISOString(),
+    dibaca: faker.datatype.boolean(),
+  };
+});
 
 const jadwalSandarData: JadwalSandar[] = Array.from({ length: 20 }, () => {
   const kapal = faker.helpers.arrayElement(kapalData);
@@ -352,14 +391,45 @@ const biosecurityCheckData: BiosecurityCheck[] = Array.from({ length: 15 }, () =
 const KATEGORI_TIKET: TiketBantuan['kategori'][] = ['Teknis', 'Akun', 'Data', 'Lainnya'];
 const STATUS_TIKET: TiketBantuan['status'][] = ['Terbuka', 'Diproses', 'Selesai'];
 
-const tiketBantuanData: TiketBantuan[] = Array.from({ length: 6 }, () => ({
-  id: faker.string.uuid(),
-  judul: faker.lorem.sentence({ min: 4, max: 8 }),
-  kategori: faker.helpers.arrayElement(KATEGORI_TIKET),
-  deskripsi: faker.lorem.sentences(2),
-  status: faker.helpers.arrayElement(STATUS_TIKET),
-  dibuatPada: faker.date.recent({ days: 20, refDate: SEED_DATE }).toISOString(),
-}));
+// Fixed pool of realistic Indonesian support-ticket templates per kategori, so reseeding
+// can never reintroduce Faker's pseudo-Latin lorem text.
+const TIKET_TEMPLATE: Record<TiketBantuan['kategori'], { judul: string; deskripsi: string }[]> = {
+  Teknis: [
+    { judul: 'Error saat mengunggah foto hasil tangkapan', deskripsi: 'Saat mengunggah foto dokumentasi hasil tangkapan, sistem menampilkan pesan error dan data gagal tersimpan.' },
+    { judul: 'Halaman Peta Tracking tidak dapat dimuat', deskripsi: 'Peta pada halaman Peta Tracking tidak muncul sejak pagi ini, hanya area kosong yang tampil.' },
+    { judul: 'Login gagal setelah pembaruan sistem', deskripsi: 'Setelah pembaruan sistem terbaru, saya tidak bisa masuk ke akun meskipun kata sandi sudah benar.' },
+    { judul: 'Grafik hasil tangkapan tidak muncul', deskripsi: 'Grafik pada halaman Laporan & Analitik tidak menampilkan data meskipun filter tanggal sudah diatur.' },
+  ],
+  Akun: [
+    { judul: 'Permintaan reset kata sandi akun', deskripsi: 'Saya lupa kata sandi akun dan membutuhkan bantuan untuk mengatur ulang.' },
+    { judul: 'Perubahan email akun Admin DKP', deskripsi: 'Mohon bantuan untuk memperbarui alamat email yang terdaftar pada akun Admin DKP.' },
+    { judul: 'Permintaan penambahan akun pengguna', deskripsi: 'Mohon dibuatkan akun tambahan untuk petugas lapangan di pelabuhan.' },
+  ],
+  Data: [
+    { judul: 'Data hasil tangkapan tidak muncul', deskripsi: 'Data hasil tangkapan yang diinput kemarin tidak muncul pada halaman Hasil Tangkap.' },
+    { judul: 'Permintaan akses unduh laporan', deskripsi: 'Mohon diberikan akses untuk mengunduh laporan bulanan pada menu Laporan & Analitik.' },
+    { judul: 'Data kapal ganda pada sistem', deskripsi: 'Ditemukan dua entri data untuk kapal yang sama pada halaman Kapal.' },
+    { judul: 'Data nelayan belum terverifikasi', deskripsi: 'Beberapa data nelayan yang didaftarkan minggu lalu masih berstatus belum terverifikasi.' },
+  ],
+  Lainnya: [
+    { judul: 'Permintaan penambahan menu cuaca', deskripsi: 'Mohon dipertimbangkan penambahan menu khusus untuk rekap cuaca harian.' },
+    { judul: 'Saran perbaikan tampilan dashboard', deskripsi: 'Tampilan dashboard pada layar kecil terasa terlalu padat, mohon dipertimbangkan penyesuaian.' },
+    { judul: 'Pertanyaan terkait kebijakan data', deskripsi: 'Ingin menanyakan kebijakan penyimpanan data nelayan pada sistem ini.' },
+  ],
+};
+
+const tiketBantuanData: TiketBantuan[] = Array.from({ length: 6 }, () => {
+  const kategori = faker.helpers.arrayElement(KATEGORI_TIKET);
+  const { judul, deskripsi } = faker.helpers.arrayElement(TIKET_TEMPLATE[kategori]);
+  return {
+    id: faker.string.uuid(),
+    judul,
+    kategori,
+    deskripsi,
+    status: faker.helpers.arrayElement(STATUS_TIKET),
+    dibuatPada: faker.date.recent({ days: 20, refDate: SEED_DATE }).toISOString(),
+  };
+});
 
 function writeModule(fileName: string, exportName: string, typeName: string, data: unknown) {
   const filePath = path.join(__dirname, '..', 'lib', 'mock-data', fileName);
