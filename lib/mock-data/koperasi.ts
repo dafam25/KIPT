@@ -5,7 +5,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "7610803e-730b-464b-b58c-0bffbee30df7",
     "nama": "Koperasi Strosin, Rogahn and Larkin",
-    "lokasi": "Rath-Rowefort, Washington",
+    "lokasi": "Jakarta Utara, DKI Jakarta",
     "ketua": "Charlene Rohan",
     "jumlahAnggota": 232,
     "volumeKg": 11890,
@@ -15,7 +15,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "8bfc8166-0cff-4256-8396-78be13974e07",
     "nama": "Koperasi Franey-Beahan - Wiegand",
-    "lokasi": "Sugar Land, Nevada",
+    "lokasi": "Tanjung Perak, Jawa Timur",
     "ketua": "Harry Osinski",
     "jumlahAnggota": 43,
     "volumeKg": 7884,
@@ -25,7 +25,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "c567ddb7-7486-4812-bfee-ef34bc423ec7",
     "nama": "Koperasi Mann - Heidenreich",
-    "lokasi": "West Pattymouth, South Carolina",
+    "lokasi": "Bitung, Sulawesi Utara",
     "ketua": "Thalia Collier",
     "jumlahAnggota": 236,
     "volumeKg": 3549,
@@ -35,7 +35,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "d2807614-0cdf-47c2-9dcb-52cdbde7bc6c",
     "nama": "Koperasi Kuhlman, Friesen and Murray",
-    "lokasi": "Terryhaven, Iowa",
+    "lokasi": "Benoa, Bali",
     "ketua": "Tess Haley",
     "jumlahAnggota": 193,
     "volumeKg": 4484,
@@ -45,7 +45,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "8c2c98b7-3867-4131-b869-05ec922a64f1",
     "nama": "Koperasi Schumm Inc",
-    "lokasi": "Hudsonton, Idaho",
+    "lokasi": "Belawan, Sumatera Utara",
     "ketua": "Mr. Dave Upton",
     "jumlahAnggota": 194,
     "volumeKg": 14753,
@@ -55,7 +55,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "5b56f90b-d48e-4cb8-9c3a-36701ac9ebe6",
     "nama": "Koperasi Bergstrom LLC",
-    "lokasi": "North Marlon, Montana",
+    "lokasi": "Kendari, Sulawesi Tenggara",
     "ketua": "Isabell Goyette",
     "jumlahAnggota": 213,
     "volumeKg": 7865,
@@ -65,7 +65,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "effd365a-187e-439f-80e7-491516ee741c",
     "nama": "Koperasi Carroll Group",
-    "lokasi": "West Tim, Illinois",
+    "lokasi": "Pontianak, Kalimantan Barat",
     "ketua": "Presley Kuphal",
     "jumlahAnggota": 43,
     "volumeKg": 8588,
@@ -75,7 +75,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "959725d0-8eda-40e7-8fee-c71108ab31a5",
     "nama": "Koperasi Homenick and Sons",
-    "lokasi": "North Ginaport, Wisconsin",
+    "lokasi": "Ambon, Maluku",
     "ketua": "Hailee Stokes",
     "jumlahAnggota": 97,
     "volumeKg": 7653,
@@ -85,7 +85,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "c0865dc9-08a5-4b84-a84d-5492cc871d40",
     "nama": "Koperasi Herzog Group",
-    "lokasi": "Alfredcester, Mississippi",
+    "lokasi": "Cirebon, Jawa Barat",
     "ketua": "Matthew Pollich-Murray",
     "jumlahAnggota": 187,
     "volumeKg": 2950,
@@ -95,7 +95,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "53ab953c-6e8b-483c-9d39-79acb575bd37",
     "nama": "Koperasi Corkery and Sons",
-    "lokasi": "San Ramon, Mississippi",
+    "lokasi": "Padang, Sumatera Barat",
     "ketua": "Lorene Franecki",
     "jumlahAnggota": 183,
     "volumeKg": 2149,
@@ -105,7 +105,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "59a1edeb-6143-4912-9e68-61f3972f03e8",
     "nama": "Koperasi Pollich Group",
-    "lokasi": "Cuyahoga Falls, Nevada",
+    "lokasi": "Balikpapan, Kalimantan Timur",
     "ketua": "Dr. Brandt Langosh",
     "jumlahAnggota": 300,
     "volumeKg": 5690,
@@ -115,7 +115,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "7461e32b-16fd-4432-b2c5-1e6e4c8ef283",
     "nama": "Koperasi Bosco, Hamill and Crooks",
-    "lokasi": "Agnesstead, Indiana",
+    "lokasi": "Kupang, Nusa Tenggara Timur",
     "ketua": "Keara Moen",
     "jumlahAnggota": 130,
     "volumeKg": 1186,
@@ -125,7 +125,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "a654caa5-dd62-4750-b91f-ad03c709da58",
     "nama": "Koperasi Lebsack - Koepp",
-    "lokasi": "North Archiestead, Hawaii",
+    "lokasi": "Sorong, Papua Barat Daya",
     "ketua": "Miss April Zboncak",
     "jumlahAnggota": 138,
     "volumeKg": 7108,
@@ -135,7 +135,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "e897ec08-9752-491c-abeb-31f4d4d6803c",
     "nama": "Koperasi Wyman - Smitham",
-    "lokasi": "Kristinboro, Maryland",
+    "lokasi": "Mataram, Nusa Tenggara Barat",
     "ketua": "Fabian Hilll",
     "jumlahAnggota": 155,
     "volumeKg": 10020,
@@ -145,7 +145,7 @@ export const koperasiData: Koperasi[] = [
   {
     "id": "2e4746fd-4a14-424c-82a8-5db0f9e35144",
     "nama": "Koperasi Heidenreich, Kreiger and Reichel",
-    "lokasi": "Dunwoody, Arkansas",
+    "lokasi": "Palu, Sulawesi Tengah",
     "ketua": "Gilberto Deckow",
     "jumlahAnggota": 144,
     "volumeKg": 2807,
