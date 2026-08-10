@@ -4,7 +4,7 @@ import type { PasarIndustri } from '../types';
 export const pasarIndustriData: PasarIndustri[] = [
   {
     "id": "2eb36654-c5cc-45ac-999e-0c0a70d7b81a",
-    "nama": "Pasar Ikan Oakland",
+    "nama": "Pasar Ikan Muara Baru",
     "jenis": "Pasar Modern",
     "lokasi": "Jakarta Utara, DKI Jakarta",
     "pengelola": "Lakin - Aufderhar",
@@ -14,7 +14,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "f4d7ba68-83d7-4638-8d40-f5b65e4ec57e",
-    "nama": "Pasar Ikan Lake Monserratefurt",
+    "nama": "Pasar Ikan Modern BSD",
     "jenis": "Pasar Modern",
     "lokasi": "Tangerang Selatan, Banten",
     "pengelola": "Lynch Inc",
@@ -24,7 +24,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "d61930b2-ea06-45b0-a0c1-f5c44d5dff42",
-    "nama": "Pasar Ikan Port Damon",
+    "nama": "Pasar Ikan Modern Kenjeran",
     "jenis": "Pasar Modern",
     "lokasi": "Surabaya, Jawa Timur",
     "pengelola": "Emard Group",
@@ -34,7 +34,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "ea4d991d-6228-4679-aa65-c8f777db162b",
-    "nama": "Pasar Ikan Sierra Vista",
+    "nama": "Pasar Ikan Jembatan Puri",
     "jenis": "Pasar Modern",
     "lokasi": "Jakarta Barat, DKI Jakarta",
     "pengelola": "Brown-Wolff Inc",
@@ -44,7 +44,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "a8c1e0fc-fc89-4147-8b44-d953db48be8f",
-    "nama": "Pasar Ikan Harrisburg",
+    "nama": "Pasar Ikan Modern Semarang",
     "jenis": "Pasar Modern",
     "lokasi": "Semarang, Jawa Tengah",
     "pengelola": "Gutkowski, Toy and Vandervort-Bode",
@@ -54,7 +54,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "992b2378-f82b-415f-b0e0-5eaf922685cb",
-    "nama": "Pasar Ikan San Francisco",
+    "nama": "Pasar Ikan Kedonganan",
     "jenis": "Pasar Tradisional",
     "lokasi": "Badung, Bali",
     "pengelola": "Weber, Lebsack and Beer",
@@ -64,7 +64,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "97b0f238-2cc4-4b78-b1bf-c55f4c62f8fe",
-    "nama": "Pasar Ikan Bernhardstead",
+    "nama": "Pasar Ikan Paotere",
     "jenis": "Pasar Tradisional",
     "lokasi": "Makassar, Sulawesi Selatan",
     "pengelola": "Schaden, Bahringer-Gislason and Boyle",
@@ -74,7 +74,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "81414e60-c9b9-4a4c-8c76-999a144e3a6d",
-    "nama": "Pasar Ikan West Miranda",
+    "nama": "Pasar Ikan Higienis Bandung",
     "jenis": "Pasar Modern",
     "lokasi": "Bandung, Jawa Barat",
     "pengelola": "Towne - Okuneva",
@@ -84,7 +84,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "9baf79d0-ee50-42b2-bc5a-f6d936eac1ed",
-    "nama": "Pasar Ikan East Queen",
+    "nama": "Pasar Ikan Belawan",
     "jenis": "Pasar Tradisional",
     "lokasi": "Medan, Sumatera Utara",
     "pengelola": "Ledner, Hudson and Stoltenberg",
@@ -94,7 +94,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "81ae512d-8c48-4ce6-bf19-489b9ee3022f",
-    "nama": "Pasar Ikan Port Jewelton",
+    "nama": "Industri Pengolahan Ikan Musi Jaya",
     "jenis": "Industri Pengolahan",
     "lokasi": "Palembang, Sumatera Selatan",
     "pengelola": "Hilpert Group",
@@ -104,7 +104,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "dff8b17a-24a0-4ba5-be29-a7b941974a4c",
-    "nama": "Pasar Ikan Gerholdchester",
+    "nama": "Pasar Ikan Modern Banjarmasin",
     "jenis": "Pasar Modern",
     "lokasi": "Banjarmasin, Kalimantan Selatan",
     "pengelola": "Halvorson LLC",
@@ -114,7 +114,7 @@ export const pasarIndustriData: PasarIndustri[] = [
   },
   {
     "id": "9abd3d9b-190e-407e-95ae-370fe56bd1b9",
-    "nama": "Pasar Ikan Green Bay",
+    "nama": "Industri Pengolahan Ikan Manado Jaya",
     "jenis": "Industri Pengolahan",
     "lokasi": "Manado, Sulawesi Utara",
     "pengelola": "Barton Inc",

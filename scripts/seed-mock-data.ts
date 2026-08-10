@@ -72,11 +72,46 @@ nelayanData.forEach((n) => {
   if (kapal && !kapal.nahkodaId) kapal.nahkodaId = n.id;
 });
 
-const pasarIndustriData: PasarIndustri[] = Array.from({ length: 12 }, () => ({
+// Fixed pool of real Indonesian market/industry names paired 1:1 by index with
+// PASAR_INDUSTRI_LOKASI below, so reseeding can never reintroduce Faker's fake
+// American-style "Pasar Ikan {City}" names or "{City}, {State}" locations.
+// Sourced from real Indonesian fish-market/port names (several taken from the
+// project's own design-mockup slides) plus plausible modern-market naming for
+// the remainder, chosen for realistic full-archipelago spread.
+const PASAR_INDUSTRI_NAMA = [
+  'Pasar Ikan Muara Baru',
+  'Pasar Ikan Modern BSD',
+  'Pasar Ikan Modern Kenjeran',
+  'Pasar Ikan Jembatan Puri',
+  'Pasar Ikan Modern Semarang',
+  'Pasar Ikan Kedonganan',
+  'Pasar Ikan Paotere',
+  'Pasar Ikan Higienis Bandung',
+  'Pasar Ikan Belawan',
+  'Industri Pengolahan Ikan Musi Jaya',
+  'Pasar Ikan Modern Banjarmasin',
+  'Industri Pengolahan Ikan Manado Jaya',
+];
+const PASAR_INDUSTRI_LOKASI = [
+  'Jakarta Utara, DKI Jakarta',
+  'Tangerang Selatan, Banten',
+  'Surabaya, Jawa Timur',
+  'Jakarta Barat, DKI Jakarta',
+  'Semarang, Jawa Tengah',
+  'Badung, Bali',
+  'Makassar, Sulawesi Selatan',
+  'Bandung, Jawa Barat',
+  'Medan, Sumatera Utara',
+  'Palembang, Sumatera Selatan',
+  'Banjarmasin, Kalimantan Selatan',
+  'Manado, Sulawesi Utara',
+];
+
+const pasarIndustriData: PasarIndustri[] = Array.from({ length: 12 }, (_, i) => ({
   id: faker.string.uuid(),
-  nama: `Pasar Ikan ${faker.location.city()}`,
+  nama: PASAR_INDUSTRI_NAMA[i],
   jenis: faker.helpers.arrayElement(['Pasar Tradisional', 'Pasar Modern', 'Industri Pengolahan']),
-  lokasi: `${faker.location.city()}, ${faker.location.state()}`,
+  lokasi: PASAR_INDUSTRI_LOKASI[i],
   pengelola: faker.company.name(),
   volumeKg: faker.number.int({ min: 2000, max: 20000 }),
   nilaiTransaksi: faker.number.int({ min: 80_000_000, max: 800_000_000 }),
