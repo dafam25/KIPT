@@ -10,17 +10,98 @@ import { BIOSECURITY_CHECKLIST_ITEMS, determineBiosecurityHasil } from '../lib/b
 faker.seed(20250510); // fixed seed so the dataset is stable across re-runs
 const SEED_DATE = new Date('2025-05-10T00:00:00Z'); // fixed "today" (10 Mei 2025, UTC) so generated IDs/dates are stable across re-runs regardless of machine timezone
 
+// Indonesian name/place pools — replace Faker's Western-locale generators (person.fullName,
+// location.city/state/county, company.name, location.streetAddress) so reseeding can never
+// reintroduce foreign names, cities, provinces, or organizations. Several values are sourced
+// from the project's own design-mockup slides (e.g. "Budi Santoso", "KM. Bahari Jaya").
+const NAMA_DEPAN_PRIA = [
+  'Budi', 'Agus', 'Ahmad', 'Bambang', 'Slamet', 'Wahyu', 'Eko', 'Hendra', 'Rudi', 'Dedi',
+  'Asep', 'Yusuf', 'Fajar', 'Hadi', 'Iwan', 'Rizki', 'Andi', 'Dwi', 'Teguh', 'Bayu',
+  'Fauzi', 'Irfan', 'Taufik', 'Herman', 'Suryadi', 'Gunawan', 'Hasan', 'Rahman', 'Setiawan', 'Nugroho',
+  'Wibowo', 'Kurniawan', 'Prasetyo', 'Ramadhan', 'Firmansyah', 'Maulana', 'Syahrul', 'Arif', 'Yudi', 'Bagus',
+  'Sugianto', 'Zainal', 'Mukti', 'Hidayat', 'Aditya', 'Wisnu', 'Rizal', 'Fadli', 'Ilham', 'Sutrisno',
+];
+const NAMA_DEPAN_WANITA = [
+  'Siti', 'Ani', 'Dewi', 'Rina', 'Sri', 'Yuni', 'Fitri', 'Indah', 'Lestari', 'Ratna',
+  'Puspita', 'Wulandari', 'Kartika', 'Melati', 'Nur', 'Aminah', 'Wahyuni', 'Suryani', 'Astuti', 'Rahayu',
+  'Yanti', 'Novi', 'Diah', 'Ayu', 'Anisa', 'Maya', 'Dian', 'Tuti', 'Widiastuti', 'Hasanah',
+  'Kusuma', 'Wardani', 'Handayani', 'Susanti', 'Rahmawati', 'Oktaviani', 'Purnama', 'Cahyani', 'Utami', 'Yulianti',
+];
+const NAMA_BELAKANG = [
+  'Santoso', 'Wijaya', 'Kusuma', 'Setiawan', 'Susanto', 'Purnomo', 'Saputra', 'Hidayat', 'Firmansyah', 'Gunawan',
+  'Wibowo', 'Nugraha', 'Pratama', 'Permana', 'Ramadhan', 'Kurniawan', 'Hartono', 'Suhendra', 'Iskandar', 'Rasyid',
+  'Wibisono', 'Halim', 'Suryanto', 'Prakoso', 'Wahyudi', 'Rahmadi', 'Aprianto', 'Ashari', 'Utomo', 'Sudrajat',
+  'Handoko', 'Wirawan', 'Yulianto', 'Kuncoro', 'Sasongko', 'Wardhana', 'Atmaja', 'Winarno', 'Sudibyo', 'Setyawan',
+  'Nasution', 'Siregar', 'Simanjuntak', 'Harahap', 'Lubis', 'Marpaung', 'Sinaga', 'Tanjung', 'Rangkuti', 'Daulay',
+];
+function namaLengkap(): string {
+  const depan = faker.helpers.arrayElement(faker.datatype.boolean() ? NAMA_DEPAN_PRIA : NAMA_DEPAN_WANITA);
+  const belakang = faker.helpers.arrayElement(NAMA_BELAKANG);
+  return `${depan} ${belakang}`;
+}
+
+const KOTA_PESISIR = [
+  'Banyuwangi', 'Jember', 'Situbondo', 'Probolinggo', 'Pasuruan', 'Lamongan', 'Tuban', 'Gresik', 'Sidoarjo', 'Rembang',
+  'Pati', 'Jepara', 'Pekalongan', 'Tegal', 'Cirebon', 'Indramayu', 'Subang', 'Karawang', 'Cilacap', 'Kebumen',
+  'Kendal', 'Demak', 'Pemalang', 'Batang', 'Brebes', 'Serang', 'Pandeglang', 'Bengkulu', 'Palembang', 'Pangkal Pinang',
+  'Tanjung Pinang', 'Dumai', 'Bagansiapiapi', 'Sibolga', 'Padang', 'Pariaman', 'Bengkalis', 'Tembilahan', 'Bandar Lampung', 'Kalianda',
+  'Belitung', 'Pontianak', 'Singkawang', 'Sambas', 'Ketapang', 'Banjarmasin', 'Sampit', 'Kotabaru', 'Balikpapan', 'Bontang',
+  'Tarakan', 'Nunukan', 'Jembrana', 'Buleleng', 'Karangasem', 'Klungkung', 'Bima', 'Dompu', 'Sumbawa', 'Kupang',
+  'Ende', 'Maumere', 'Larantuka', 'Bau-Bau', 'Kendari', 'Bulukumba', 'Bantaeng', 'Pare-Pare', 'Palopo', 'Luwuk',
+  'Gorontalo', 'Bitung', 'Manado', 'Ternate', 'Tidore', 'Sorong', 'Fakfak', 'Biak', 'Merauke', 'Ambon',
+];
+const NAMA_DUSUN_DESA = [
+  'Sukamaju', 'Sumberejo', 'Karangrejo', 'Sidomulyo', 'Sumberagung', 'Tambakrejo', 'Wonosari', 'Sumberjo', 'Kalibaru', 'Sidorejo',
+  'Sukorejo', 'Bangunrejo', 'Tegalsari', 'Sumbermulyo', 'Karangsari', 'Banjarsari', 'Sukajaya', 'Mekarsari', 'Tanjungsari', 'Sukaraja',
+  'Cintamulya', 'Sumberwaru', 'Karanganyar', 'Sidoharjo',
+];
+function alamatNelayan(): string {
+  const dusun = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
+  const desa = faker.helpers.arrayElement(NAMA_DUSUN_DESA);
+  const rt = String(faker.number.int({ min: 1, max: 12 })).padStart(2, '0');
+  const rw = String(faker.number.int({ min: 1, max: 8 })).padStart(2, '0');
+  return `Dusun ${dusun}, Desa ${desa}, RT ${rt}/RW ${rw}`;
+}
+
+const KAPAL_NAMA_DEPAN = [
+  'Bahari', 'Samudra', 'Mina', 'Cahaya', 'Sinar', 'Bintang', 'Mutiara', 'Karya', 'Sumber', 'Anugerah',
+  'Berkah', 'Nusantara', 'Mitra', 'Putra', 'Cakrawala', 'Tunas', 'Harapan', 'Sentosa',
+];
+const KAPAL_NAMA_BELAKANG = [
+  'Jaya', 'Indah', 'Sejati', 'Makmur', 'Abadi', 'Mandiri', 'Bahari', 'Sentosa', 'Sejahtera', 'Utama',
+  'Bersama', 'Perkasa', 'Laut', 'Bahtera', 'Samudra', 'Rejeki', 'Sakti', 'Persada',
+];
+function namaKapal(existing: Set<string>): string {
+  let depan: string;
+  let belakang: string;
+  let nama: string;
+  do {
+    depan = faker.helpers.arrayElement(KAPAL_NAMA_DEPAN);
+    belakang = faker.helpers.arrayElement(KAPAL_NAMA_BELAKANG);
+    nama = `KM. ${depan} ${belakang}`;
+  } while (depan === belakang || existing.has(nama));
+  existing.add(nama);
+  return nama;
+}
+
+const PERAIRAN_NAMA = [
+  'Utara Jawa', 'Selat Bali', 'Selat Sunda', 'Laut Jawa', 'Laut Flores', 'Laut Banda', 'Laut Arafura', 'Selat Makassar',
+  'Laut Sulawesi', 'Laut Maluku', 'Selat Malaka', 'Laut Natuna', 'Teluk Tomini', 'Laut Seram', 'Selat Karimata', 'Laut Sawu',
+  'Teluk Cendrawasih', 'Laut Timor', 'Selat Lombok', 'Teluk Tolo', 'Laut Halmahera', 'Selat Berhala',
+];
+
 const JENIS_KAPAL: Kapal['jenis'][] = ['Purse Seine', 'Longline', 'Gillnet', 'Kapal Motor', 'Kapal Tanpa Motor'];
 const PELABUHAN = ['PPP Muncar', 'PPI Banyuwangi', 'TPI Jakarta', 'Pelabuhan TPI Bitung', 'TPI Surabaya', 'TPI Benoa'];
 const DERMAGA = ['Dermaga 01', 'Dermaga 02', 'Dermaga 03'];
 
 const kapalIds: string[] = [];
+const usedKapalNama = new Set<string>();
 const kapalData: Kapal[] = Array.from({ length: 40 }, () => {
   const id = nextKapalId(kapalIds, SEED_DATE);
   kapalIds.push(id);
   return {
     id,
-    nama: `KM. ${faker.person.lastName()} ${faker.word.adjective()}`,
+    nama: namaKapal(usedKapalNama),
     jenis: faker.helpers.arrayElement(JENIS_KAPAL),
     gt: faker.number.int({ min: 5, max: 120 }),
     mesinPk: faker.number.int({ min: 25, max: 250 }),
@@ -33,11 +114,67 @@ const kapalData: Kapal[] = Array.from({ length: 40 }, () => {
   };
 });
 
-const koperasiData: Koperasi[] = Array.from({ length: 15 }, () => ({
+// Fixed pool of real Indonesian koperasi names/locations/ketua, paired 1:1 by index, so
+// reseeding can never reintroduce Faker's fake Western company names or "{City}, {State}"
+// locations. Several names and the first eight locations are taken from the project's own
+// design-mockup slides; the remaining locations/names extend the same style nationwide.
+const KOPERASI_NAMA = [
+  'Koperasi Bahari Sejahtera',
+  'Koperasi Samudra Jaya',
+  'Koperasi Mina Mandiri',
+  'Koperasi Laut Makmur',
+  'Koperasi Nelayan Sejati',
+  'Koperasi Harapan Baru',
+  'Koperasi Cakrawala Bahari',
+  'Koperasi Tunas Bahari',
+  'Koperasi Mina Sejahtera',
+  'Koperasi Bahari Minang',
+  'Koperasi Mitra Bahari',
+  'Koperasi Nusa Bahari',
+  'Koperasi Papua Bahari',
+  'Koperasi Lombok Bahari',
+  'Koperasi Teluk Palu Sejahtera',
+];
+const KOPERASI_LOKASI = [
+  'Jakarta Utara, DKI Jakarta',
+  'Tanjung Perak, Jawa Timur',
+  'Bitung, Sulawesi Utara',
+  'Benoa, Bali',
+  'Belawan, Sumatera Utara',
+  'Kendari, Sulawesi Tenggara',
+  'Pontianak, Kalimantan Barat',
+  'Ambon, Maluku',
+  'Cirebon, Jawa Barat',
+  'Padang, Sumatera Barat',
+  'Balikpapan, Kalimantan Timur',
+  'Kupang, Nusa Tenggara Timur',
+  'Sorong, Papua Barat Daya',
+  'Mataram, Nusa Tenggara Barat',
+  'Palu, Sulawesi Tengah',
+];
+const KOPERASI_KETUA = [
+  'Budi Santoso',
+  'Joko Susanto',
+  'Andi Rahman',
+  'I Made Suarta',
+  'Slamet Riyadi',
+  'La Ode Hasan',
+  'Suryadi',
+  'Abdul Latif',
+  'Dedi Kurniawan',
+  'Zulfikar',
+  'Rahmat Hidayat',
+  'Yohanes Bili',
+  'Yustus Kaisiepo',
+  'Lalu Wirawan',
+  'Muhammad Yusri',
+];
+
+const koperasiData: Koperasi[] = Array.from({ length: 15 }, (_, i) => ({
   id: faker.string.uuid(),
-  nama: `Koperasi ${faker.company.name()}`,
-  lokasi: `${faker.location.city()}, ${faker.location.state()}`,
-  ketua: faker.person.fullName(),
+  nama: KOPERASI_NAMA[i],
+  lokasi: KOPERASI_LOKASI[i],
+  ketua: KOPERASI_KETUA[i],
   jumlahAnggota: faker.number.int({ min: 30, max: 300 }),
   volumeKg: faker.number.int({ min: 1000, max: 15000 }),
   nilaiTransaksi: faker.number.int({ min: 50_000_000, max: 400_000_000 }),
@@ -51,11 +188,11 @@ const nelayanData: Nelayan[] = Array.from({ length: 60 }, () => {
   const kapal = faker.helpers.arrayElement(kapalData);
   return {
     id,
-    nama: faker.person.fullName(),
+    nama: namaLengkap(),
     nik: faker.string.numeric(16),
-    tempatLahir: faker.location.city(),
+    tempatLahir: faker.helpers.arrayElement(KOTA_PESISIR),
     tanggalLahir: faker.date.birthdate({ min: 25, max: 60, mode: 'age', refDate: SEED_DATE }).toISOString().slice(0, 10),
-    alamat: faker.location.streetAddress({ useFullAddress: true }),
+    alamat: alamatNelayan(),
     noHp: `08${faker.string.numeric(9)}`,
     fotoUrl: '',
     status: faker.helpers.arrayElement(['aktif', 'aktif', 'nonaktif']),
@@ -63,7 +200,7 @@ const nelayanData: Nelayan[] = Array.from({ length: 60 }, () => {
     tanggalBergabung: faker.date.past({ years: 3, refDate: SEED_DATE }).toISOString().slice(0, 10),
     koperasiId: faker.helpers.arrayElement(koperasiData).id,
     kapalId: kapal.id,
-    pendamping: faker.person.fullName(),
+    pendamping: namaLengkap(),
   };
 });
 
@@ -107,12 +244,30 @@ const PASAR_INDUSTRI_LOKASI = [
   'Manado, Sulawesi Utara',
 ];
 
+// Fixed pool of real Indonesian market-operator names, paired 1:1 by index with the arrays
+// above (several taken from the project's own design-mockup slides), so reseeding can never
+// reintroduce Faker's fake Western company names (e.g. "Lakin - Aufderhar", "Lynch Inc").
+const PASAR_INDUSTRI_PENGELOLA = [
+  'Perumda Pasar Jaya',
+  'PT. Modern Market',
+  'PT. Bahari Sejahtera',
+  'Perumda Pasar Jaya',
+  'PT. Samudra Food',
+  'UPTD Pasar Badung',
+  'PT. Nusantara Canning',
+  'PD Pasar Bermartabat',
+  'PT. Belawan Bahari Nusantara',
+  'PT. Musi Jaya Perikanan',
+  'PT. Banjar Mina Sejahtera',
+  'PT. Manado Bahari Lestari',
+];
+
 const pasarIndustriData: PasarIndustri[] = Array.from({ length: 12 }, (_, i) => ({
   id: faker.string.uuid(),
   nama: PASAR_INDUSTRI_NAMA[i],
   jenis: faker.helpers.arrayElement(['Pasar Tradisional', 'Pasar Modern', 'Industri Pengolahan']),
   lokasi: PASAR_INDUSTRI_LOKASI[i],
-  pengelola: faker.company.name(),
+  pengelola: PASAR_INDUSTRI_PENGELOLA[i],
   volumeKg: faker.number.int({ min: 2000, max: 20000 }),
   nilaiTransaksi: faker.number.int({ min: 80_000_000, max: 800_000_000 }),
   status: faker.helpers.arrayElement(['Aktif', 'Aktif', 'Tidak Aktif']),
@@ -132,7 +287,7 @@ const hasilTangkapData: HasilTangkap[] = Array.from({ length: 80 }, () => {
     tanggal: faker.date.recent({ days: 30, refDate: SEED_DATE }).toISOString().slice(0, 10),
     waktuMulai: '06:00',
     waktuSelesai: '12:00',
-    lokasi: `Perairan ${faker.location.county()}`,
+    lokasi: `Perairan ${faker.helpers.arrayElement(PERAIRAN_NAMA)}`,
     jenisIkan,
     estimasiNilai: jenisIkan.reduce((sum, j) => sum + j.beratKg * 25000, 0),
     status: faker.helpers.arrayElement(['verified', 'verified', 'pending']),
@@ -178,7 +333,7 @@ const biosecurityCheckData: BiosecurityCheck[] = Array.from({ length: 15 }, () =
   return {
     id,
     kapalId: kapal.id,
-    petugas: `${faker.person.fullName()}, A.Md`,
+    petugas: `${namaLengkap()}, A.Md`,
     tanggal: tanggal.toISOString().slice(0, 10),
     checklist: BIOSECURITY_CHECKLIST_ITEMS.map((item) => ({ label: item.label, hasil: values[item.key] })),
     hasil: determineBiosecurityHasil(values),

@@ -3,10 +3,10 @@ import type { BiosecurityCheck } from '../types';
 
 export const biosecurityCheckData: BiosecurityCheck[] = [
   {
-    "id": "BS-2025-05-07-001",
-    "kapalId": "KAP-2505-00008",
-    "petugas": "Rebeka Huels, A.Md",
-    "tanggal": "2025-05-07",
+    "id": "BS-2025-04-22-001",
+    "kapalId": "KAP-2505-00012",
+    "petugas": "Siti Kusuma, A.Md",
+    "tanggal": "2025-04-22",
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
@@ -38,13 +38,13 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       }
     ],
     "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-05-07-001"
+    "nomorSertifikat": "BS-2025-04-22-001"
   },
   {
-    "id": "BS-2025-05-03-001",
-    "kapalId": "KAP-2505-00005",
-    "petugas": "Monique Rolfson Sr., A.Md",
-    "tanggal": "2025-05-03",
+    "id": "BS-2025-04-30-001",
+    "kapalId": "KAP-2505-00002",
+    "petugas": "Diah Handoko, A.Md",
+    "tanggal": "2025-04-30",
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
@@ -52,11 +52,11 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "3. Alat Tangkap",
-        "hasil": "Tidak Sesuai"
+        "hasil": "Sesuai"
       },
       {
         "label": "4. Dokumen Kesehatan",
@@ -75,13 +75,51 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
         "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
-    "nomorSertifikat": "BS-2025-05-03-001"
+    "hasil": "lolos",
+    "nomorSertifikat": "BS-2025-04-30-001"
+  },
+  {
+    "id": "BS-2025-05-04-001",
+    "kapalId": "KAP-2505-00022",
+    "petugas": "Ramadhan Harahap, A.Md",
+    "tanggal": "2025-05-04",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Tidak Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "lolos",
+    "nomorSertifikat": "BS-2025-05-04-001"
   },
   {
     "id": "BS-2025-04-26-001",
-    "kapalId": "KAP-2505-00003",
-    "petugas": "Mr. Muhammad Rohan PhD, A.Md",
+    "kapalId": "KAP-2505-00039",
+    "petugas": "Herman Pratama, A.Md",
     "tanggal": "2025-04-26",
     "checklist": [
       {
@@ -117,161 +155,9 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
     "nomorSertifikat": "BS-2025-04-26-001"
   },
   {
-    "id": "BS-2025-05-05-001",
-    "kapalId": "KAP-2505-00020",
-    "petugas": "Sibyl Kirlin, A.Md",
-    "tanggal": "2025-05-04",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-05-05-001"
-  },
-  {
-    "id": "BS-2025-05-08-001",
-    "kapalId": "KAP-2505-00035",
-    "petugas": "Lemuel Stokes, A.Md",
-    "tanggal": "2025-05-07",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "tidak_lolos",
-    "nomorSertifikat": "BS-2025-05-08-001"
-  },
-  {
-    "id": "BS-2025-05-06-001",
-    "kapalId": "KAP-2505-00037",
-    "petugas": "Dawn Hartmann, A.Md",
-    "tanggal": "2025-05-06",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Tidak Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "tidak_lolos",
-    "nomorSertifikat": "BS-2025-05-06-001"
-  },
-  {
     "id": "BS-2025-04-27-001",
-    "kapalId": "KAP-2505-00040",
-    "petugas": "Lizzie Leannon, A.Md",
-    "tanggal": "2025-04-26",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-04-27-001"
-  },
-  {
-    "id": "BS-2025-04-27-002",
-    "kapalId": "KAP-2505-00009",
-    "petugas": "Madelyn Schimmel, A.Md",
+    "kapalId": "KAP-2505-00020",
+    "petugas": "Yudi Winarno, A.Md",
     "tanggal": "2025-04-27",
     "checklist": [
       {
@@ -284,6 +170,234 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Tidak Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Tidak Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "tidak_lolos",
+    "nomorSertifikat": "BS-2025-04-27-001"
+  },
+  {
+    "id": "BS-2025-04-20-001",
+    "kapalId": "KAP-2505-00018",
+    "petugas": "Fitri Hartono, A.Md",
+    "tanggal": "2025-04-20",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Tidak Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "lolos",
+    "nomorSertifikat": "BS-2025-04-20-001"
+  },
+  {
+    "id": "BS-2025-04-29-001",
+    "kapalId": "KAP-2505-00011",
+    "petugas": "Kurniawan Suryanto, A.Md",
+    "tanggal": "2025-04-29",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "tidak_lolos",
+    "nomorSertifikat": "BS-2025-04-29-001"
+  },
+  {
+    "id": "BS-2025-05-07-001",
+    "kapalId": "KAP-2505-00032",
+    "petugas": "Bagus Setyawan, A.Md",
+    "tanggal": "2025-05-07",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Tidak Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "lolos",
+    "nomorSertifikat": "BS-2025-05-07-001"
+  },
+  {
+    "id": "BS-2025-05-06-001",
+    "kapalId": "KAP-2505-00027",
+    "petugas": "Tuti Kuncoro, A.Md",
+    "tanggal": "2025-05-06",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Tidak Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "lolos",
+    "nomorSertifikat": "BS-2025-05-06-001"
+  },
+  {
+    "id": "BS-2025-04-25-001",
+    "kapalId": "KAP-2505-00030",
+    "petugas": "Wahyuni Hartono, A.Md",
+    "tanggal": "2025-04-24",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "4. Dokumen Kesehatan",
+        "hasil": "Lengkap"
+      },
+      {
+        "label": "5. Hama & Penyakit",
+        "hasil": "Ditemukan"
+      },
+      {
+        "label": "6. Limbah & Buangan",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "7. Awak Kapal",
+        "hasil": "Sehat"
+      }
+    ],
+    "hasil": "tidak_lolos",
+    "nomorSertifikat": "BS-2025-04-25-001"
+  },
+  {
+    "id": "BS-2025-05-06-002",
+    "kapalId": "KAP-2505-00030",
+    "petugas": "Nur Prakoso, A.Md",
+    "tanggal": "2025-05-06",
+    "checklist": [
+      {
+        "label": "1. Kebersihan Kapal",
+        "hasil": "Bersih"
+      },
+      {
+        "label": "2. Air Ballast",
+        "hasil": "Sesuai"
+      },
+      {
+        "label": "3. Alat Tangkap",
         "hasil": "Tidak Sesuai"
       },
       {
@@ -304,88 +418,12 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       }
     ],
     "hasil": "tidak_lolos",
-    "nomorSertifikat": "BS-2025-04-27-002"
+    "nomorSertifikat": "BS-2025-05-06-002"
   },
   {
-    "id": "BS-2025-05-03-002",
-    "kapalId": "KAP-2505-00013",
-    "petugas": "August Bartoletti, A.Md",
-    "tanggal": "2025-05-03",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-05-03-002"
-  },
-  {
-    "id": "BS-2025-04-25-001",
-    "kapalId": "KAP-2505-00010",
-    "petugas": "Pasquale Davis, A.Md",
-    "tanggal": "2025-04-25",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-04-25-001"
-  },
-  {
-    "id": "BS-2025-05-10-001",
-    "kapalId": "KAP-2505-00015",
-    "petugas": "Mitchell Stokes-Krajcik, A.Md",
+    "id": "BS-2025-05-09-001",
+    "kapalId": "KAP-2505-00014",
+    "petugas": "Aminah Hartono, A.Md",
     "tanggal": "2025-05-09",
     "checklist": [
       {
@@ -418,51 +456,13 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       }
     ],
     "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-05-10-001"
-  },
-  {
-    "id": "BS-2025-05-02-001",
-    "kapalId": "KAP-2505-00019",
-    "petugas": "Keanu Conroy, A.Md",
-    "tanggal": "2025-05-02",
-    "checklist": [
-      {
-        "label": "1. Kebersihan Kapal",
-        "hasil": "Bersih"
-      },
-      {
-        "label": "2. Air Ballast",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "3. Alat Tangkap",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "4. Dokumen Kesehatan",
-        "hasil": "Tidak Lengkap"
-      },
-      {
-        "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
-      },
-      {
-        "label": "6. Limbah & Buangan",
-        "hasil": "Sesuai"
-      },
-      {
-        "label": "7. Awak Kapal",
-        "hasil": "Sehat"
-      }
-    ],
-    "hasil": "tidak_lolos",
-    "nomorSertifikat": "BS-2025-05-02-001"
+    "nomorSertifikat": "BS-2025-05-09-001"
   },
   {
     "id": "BS-2025-04-21-001",
-    "kapalId": "KAP-2505-00016",
-    "petugas": "Marc Marks, A.Md",
-    "tanggal": "2025-04-21",
+    "kapalId": "KAP-2505-00006",
+    "petugas": "Purnama Kusuma, A.Md",
+    "tanggal": "2025-04-20",
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
@@ -482,7 +482,7 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "5. Hama & Penyakit",
-        "hasil": "Tidak Ditemukan"
+        "hasil": "Ditemukan"
       },
       {
         "label": "6. Limbah & Buangan",
@@ -493,13 +493,13 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
         "hasil": "Sehat"
       }
     ],
-    "hasil": "lolos",
+    "hasil": "tidak_lolos",
     "nomorSertifikat": "BS-2025-04-21-001"
   },
   {
     "id": "BS-2025-04-26-002",
-    "kapalId": "KAP-2505-00033",
-    "petugas": "Ms. Muriel Bogisich, A.Md",
+    "kapalId": "KAP-2505-00024",
+    "petugas": "Siti Suhendra, A.Md",
     "tanggal": "2025-04-26",
     "checklist": [
       {
@@ -528,17 +528,17 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       },
       {
         "label": "7. Awak Kapal",
-        "hasil": "Sakit"
+        "hasil": "Sehat"
       }
     ],
-    "hasil": "tidak_lolos",
+    "hasil": "lolos",
     "nomorSertifikat": "BS-2025-04-26-002"
   },
   {
-    "id": "BS-2025-05-07-002",
-    "kapalId": "KAP-2505-00002",
-    "petugas": "Kelly Pfeffer, A.Md",
-    "tanggal": "2025-05-07",
+    "id": "BS-2025-05-09-002",
+    "kapalId": "KAP-2505-00032",
+    "petugas": "Kusuma Aprianto, A.Md",
+    "tanggal": "2025-05-08",
     "checklist": [
       {
         "label": "1. Kebersihan Kapal",
@@ -570,6 +570,6 @@ export const biosecurityCheckData: BiosecurityCheck[] = [
       }
     ],
     "hasil": "lolos",
-    "nomorSertifikat": "BS-2025-05-07-002"
+    "nomorSertifikat": "BS-2025-05-09-002"
   }
 ];

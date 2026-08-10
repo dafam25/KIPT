@@ -3,51 +3,51 @@ import type { TiketBantuan } from '../types';
 
 export const tiketBantuanData: TiketBantuan[] = [
   {
-    "id": "28350e10-5909-4c25-9328-ae69f2d2b405",
-    "judul": "Canis aufero uter antiquus quia alo cinis subseco.",
-    "kategori": "Teknis",
-    "deskripsi": "Canonicus vis aeger iste atavus. Suffragium defero ventosus arca.",
-    "status": "Selesai",
-    "dibuatPada": "2025-04-23T05:07:42.614Z"
-  },
-  {
-    "id": "2899d18e-a40f-475f-a334-3528a07c279c",
-    "judul": "Quod admoveo exercitationem delego.",
+    "id": "abddfcc9-a771-4d91-9d93-83cb83920ee8",
+    "judul": "Ambulo colo tres umbra.",
     "kategori": "Lainnya",
-    "deskripsi": "Auctor toties nisi vero trans suadeo assentator. Solio somnus aer patior beneficium aliquam calco aperio canonicus tabula.",
-    "status": "Selesai",
-    "dibuatPada": "2025-05-03T08:22:58.509Z"
+    "deskripsi": "Sumptus attollo utroque utrimque. Ducimus cubo vaco hic illum paens supra turbo.",
+    "status": "Terbuka",
+    "dibuatPada": "2025-05-01T21:55:11.800Z"
   },
   {
-    "id": "e7955bb3-6489-481d-8e1f-c8dbbf523fde",
-    "judul": "Defungo balbus virgo clarus.",
-    "kategori": "Akun",
-    "deskripsi": "Coerceo dignissimos sint cedo usitas despecto tondeo temporibus. Cuppedia tremo crux demo tenetur decor praesentium theatrum derelinquo absconditus.",
+    "id": "26fe7d13-009d-4c61-8bd3-f8906d6c0865",
+    "judul": "Minus conscendo altus vulticulus vapulus vindico praesentium aliquam.",
+    "kategori": "Teknis",
+    "deskripsi": "Quibusdam tersus supplanto conturbo decet ipsum aestas. Socius vorago tempore concedo contra.",
     "status": "Diproses",
-    "dibuatPada": "2025-04-26T14:41:14.124Z"
+    "dibuatPada": "2025-05-02T15:42:04.860Z"
   },
   {
-    "id": "ca7e983d-cf8f-4685-8fb0-13724cf1b53e",
-    "judul": "Taedium valde cotidie sto.",
-    "kategori": "Data",
-    "deskripsi": "Laborum voro asperiores. Admoneo venustas debilito valeo aestas vacuus.",
-    "status": "Selesai",
-    "dibuatPada": "2025-05-04T22:00:14.288Z"
-  },
-  {
-    "id": "9d903bd2-ebbb-49c3-972a-2771e6038e97",
-    "judul": "Altus congregatio arcus creta.",
-    "kategori": "Data",
-    "deskripsi": "Denique maxime annus tero. Cruciamentum optio non velum vulnus tondeo commodo arca.",
-    "status": "Selesai",
-    "dibuatPada": "2025-04-25T11:08:56.773Z"
-  },
-  {
-    "id": "144020a2-72ef-4d40-9348-2ce6856c1276",
-    "judul": "Ultra benevolentia coepi sub vulgus curatio deorsum arbustum.",
-    "kategori": "Akun",
-    "deskripsi": "Viriliter decor delicate. Adsidue cultellus mollitia viriliter coma beatae sordeo coniuratio audeo.",
+    "id": "680ea637-a4ab-4b37-b107-7142e7fd9c59",
+    "judul": "Trans repellendus alo vinculum tutis.",
+    "kategori": "Teknis",
+    "deskripsi": "Beneficium quae stabilis acervus dedico vicissitudo conatus bos terror. Accusantium sum adiuvo caries aureus congregatio casus usus vorago.",
     "status": "Diproses",
-    "dibuatPada": "2025-05-06T12:35:23.793Z"
+    "dibuatPada": "2025-05-03T20:29:58.938Z"
+  },
+  {
+    "id": "82c1b187-bd19-42cb-96fb-486900213915",
+    "judul": "Surculus depereo acervus temperantia claustrum bis.",
+    "kategori": "Lainnya",
+    "deskripsi": "Caput distinctio appello. Vivo damnatio assumenda ventosus tibi cohors vindico crebro voluptatibus.",
+    "status": "Selesai",
+    "dibuatPada": "2025-04-30T05:16:16.455Z"
+  },
+  {
+    "id": "c51b484a-6bba-4009-b9a0-133ba0f5418d",
+    "judul": "Tero absque textus aiunt tenuis.",
+    "kategori": "Lainnya",
+    "deskripsi": "Deludo constans adeptio cubicularis. Celo comminor mollitia assentator voluptas adversus advoco depereo.",
+    "status": "Selesai",
+    "dibuatPada": "2025-04-26T19:07:22.785Z"
+  },
+  {
+    "id": "e09fd98d-ef23-4725-8d8d-66e5d12ecb34",
+    "judul": "Agnosco amoveo nam blandior amita.",
+    "kategori": "Teknis",
+    "deskripsi": "Magnam illum eum. Sui crinis victus desipio soleo vapulus volaticus urbs.",
+    "status": "Terbuka",
+    "dibuatPada": "2025-04-29T13:39:27.762Z"
   }
 ];

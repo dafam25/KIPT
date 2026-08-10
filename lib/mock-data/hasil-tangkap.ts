@@ -3,323 +3,461 @@ import type { HasilTangkap } from '../types';
 
 export const hasilTangkapData: HasilTangkap[] = [
   {
-    "id": "857c5e45-1d7b-45f9-8115-02a714fe1a56",
-    "kapalId": "KAP-2505-00005",
-    "tanggal": "2025-05-06",
+    "id": "537c31a7-c1df-4f45-a115-8fa5071bda45",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-05-08",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Clwyd",
+    "lokasi": "Perairan Laut Timor",
     "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 121,
-        "jumlahEkor": 113,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 170,
-        "jumlahEkor": 141,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 100,
-        "jumlahEkor": 120,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9775000,
-    "status": "verified"
-  },
-  {
-    "id": "1d9c1651-0477-4cc9-b54d-042b4a87917a",
-    "kapalId": "KAP-2505-00026",
-    "tanggal": "2025-05-09",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Devon",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 62,
-        "jumlahEkor": 137,
-        "kondisi": "Segar"
-      },
       {
         "nama": "Ikan Tongkol",
-        "beratKg": 118,
-        "jumlahEkor": 47,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 176,
-        "jumlahEkor": 99,
+        "beratKg": 23,
+        "jumlahEkor": 55,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Cakalang",
-        "beratKg": 134,
-        "jumlahEkor": 40,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 12250000,
-    "status": "pending"
-  },
-  {
-    "id": "4a2ef314-0445-4d83-bbf4-7d4c2b3dabd0",
-    "kapalId": "KAP-2505-00006",
-    "tanggal": "2025-04-16",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Dumfries and Galloway",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 145,
-        "jumlahEkor": 138,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 135,
-        "jumlahEkor": 137,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 7000000,
-    "status": "verified"
-  },
-  {
-    "id": "b0d0c1c0-d87c-45fd-bda2-520aa743c576",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-04-10",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Grampian",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 71,
-        "jumlahEkor": 65,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 1775000,
-    "status": "verified"
-  },
-  {
-    "id": "b082e2cb-5139-4ce1-8f3f-9dd4030812ec",
-    "kapalId": "KAP-2505-00017",
-    "tanggal": "2025-04-23",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Cornwall",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 85,
-        "jumlahEkor": 45,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2125000,
-    "status": "verified"
-  },
-  {
-    "id": "1db56fde-7f4e-4a85-ae78-b0cd51e9b75f",
-    "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-05-09",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Central",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 31,
-        "jumlahEkor": 92,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 128,
-        "jumlahEkor": 23,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 3975000,
-    "status": "verified"
-  },
-  {
-    "id": "190e6264-e83f-44e8-b468-1e9a24e0fd62",
-    "kapalId": "KAP-2505-00021",
-    "tanggal": "2025-05-01",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Crawford County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 141,
-        "jumlahEkor": 116,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 3525000,
-    "status": "verified"
-  },
-  {
-    "id": "abc7ff94-372e-4126-a669-933f92e01f1c",
-    "kapalId": "KAP-2505-00022",
-    "tanggal": "2025-05-04",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Marshall County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 66,
-        "jumlahEkor": 23,
+        "beratKg": 52,
+        "jumlahEkor": 84,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Kembung",
         "beratKg": 93,
-        "jumlahEkor": 101,
+        "jumlahEkor": 135,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tongkol",
-        "beratKg": 136,
-        "jumlahEkor": 72,
+        "nama": "Ikan Layang",
+        "beratKg": 164,
+        "jumlahEkor": 80,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 8300000,
+    "status": "verified"
+  },
+  {
+    "id": "4fa1954e-5eca-4bac-82c5-ac7c0a2859e5",
+    "kapalId": "KAP-2505-00037",
+    "tanggal": "2025-04-17",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 109,
+        "jumlahEkor": 112,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 44,
+        "jumlahEkor": 81,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 113,
+        "jumlahEkor": 78,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Cakalang",
-        "beratKg": 91,
-        "jumlahEkor": 22,
+        "beratKg": 55,
+        "jumlahEkor": 98,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 9650000,
+    "estimasiNilai": 8025000,
     "status": "verified"
   },
   {
-    "id": "355eb057-a69a-41c6-8062-385ac302efa2",
-    "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-04-20",
+    "id": "de7526dd-912d-4d3c-8550-52c2fd6207e4",
+    "kapalId": "KAP-2505-00005",
+    "tanggal": "2025-04-13",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Fayette County",
+    "lokasi": "Perairan Laut Halmahera",
     "jenisIkan": [
       {
-        "nama": "Ikan Tongkol",
-        "beratKg": 20,
-        "jumlahEkor": 84,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 86,
+        "nama": "Ikan Tuna",
+        "beratKg": 67,
         "jumlahEkor": 134,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Cakalang",
-        "beratKg": 174,
-        "jumlahEkor": 90,
+        "nama": "Ikan Tenggiri",
+        "beratKg": 173,
+        "jumlahEkor": 113,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tuna",
-        "beratKg": 111,
-        "jumlahEkor": 25,
+        "nama": "Ikan Kembung",
+        "beratKg": 176,
+        "jumlahEkor": 81,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 9775000,
-    "status": "pending"
+    "estimasiNilai": 10400000,
+    "status": "verified"
   },
   {
-    "id": "c23d4030-dda6-44ab-b41f-249097d96b49",
-    "kapalId": "KAP-2505-00016",
-    "tanggal": "2025-04-23",
+    "id": "786feeba-5cd6-4dc4-a08a-384fa042ec6e",
+    "kapalId": "KAP-2505-00009",
+    "tanggal": "2025-04-12",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan North Yorkshire",
+    "lokasi": "Perairan Laut Seram",
     "jenisIkan": [
       {
-        "nama": "Ikan Tongkol",
-        "beratKg": 48,
-        "jumlahEkor": 50,
+        "nama": "Ikan Tuna",
+        "beratKg": 26,
+        "jumlahEkor": 22,
         "kondisi": "Segar"
       },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 38,
-        "jumlahEkor": 147,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2150000,
-    "status": "pending"
-  },
-  {
-    "id": "0d674c5a-773b-4446-a1d0-2182d2a5f159",
-    "kapalId": "KAP-2505-00030",
-    "tanggal": "2025-05-03",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Worcestershire",
-    "jenisIkan": [
       {
         "nama": "Ikan Tenggiri",
-        "beratKg": 170,
-        "jumlahEkor": 85,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 125,
-        "jumlahEkor": 52,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 95,
+        "beratKg": 88,
         "jumlahEkor": 37,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Kembung",
-        "beratKg": 140,
-        "jumlahEkor": 40,
+        "beratKg": 174,
+        "jumlahEkor": 32,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 13250000,
+    "estimasiNilai": 7200000,
     "status": "pending"
   },
   {
-    "id": "0eaaa34e-a66a-4081-b952-550c69e9689f",
-    "kapalId": "KAP-2505-00012",
-    "tanggal": "2025-04-23",
+    "id": "98719a85-11c9-4687-bd9f-940eeefe0870",
+    "kapalId": "KAP-2505-00002",
+    "tanggal": "2025-04-10",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Pike County",
+    "lokasi": "Perairan Laut Jawa",
     "jenisIkan": [
       {
+        "nama": "Ikan Cakalang",
+        "beratKg": 95,
+        "jumlahEkor": 84,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 132,
+        "jumlahEkor": 145,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5675000,
+    "status": "verified"
+  },
+  {
+    "id": "2aa3803e-90b7-4818-a52d-1ae5b6808afa",
+    "kapalId": "KAP-2505-00014",
+    "tanggal": "2025-05-08",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tolo",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 75,
+        "jumlahEkor": 60,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 1875000,
+    "status": "verified"
+  },
+  {
+    "id": "e5c79d2e-6d7f-4b32-8ee9-82dea6309b1d",
+    "kapalId": "KAP-2505-00025",
+    "tanggal": "2025-05-09",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Flores",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 136,
+        "jumlahEkor": 98,
+        "kondisi": "Segar"
+      },
+      {
         "nama": "Ikan Kembung",
-        "beratKg": 155,
-        "jumlahEkor": 71,
+        "beratKg": 200,
+        "jumlahEkor": 29,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 180,
+        "jumlahEkor": 144,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 12900000,
+    "status": "verified"
+  },
+  {
+    "id": "17aa3005-5a8c-4345-89ff-ec302f2d9e4f",
+    "kapalId": "KAP-2505-00037",
+    "tanggal": "2025-05-02",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Malaka",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 54,
+        "jumlahEkor": 83,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 72,
+        "jumlahEkor": 98,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 99,
+        "jumlahEkor": 142,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5625000,
+    "status": "verified"
+  },
+  {
+    "id": "f5a41b1b-ffd6-49c3-9434-c4cde685c10d",
+    "kapalId": "KAP-2505-00025",
+    "tanggal": "2025-04-22",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Seram",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 33,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 197,
+        "jumlahEkor": 133,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5750000,
+    "status": "verified"
+  },
+  {
+    "id": "2ce303cd-4696-4a11-8ede-8553f59e0251",
+    "kapalId": "KAP-2505-00027",
+    "tanggal": "2025-05-07",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Banda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 51,
+        "jumlahEkor": 72,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 186,
+        "jumlahEkor": 130,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 116,
+        "jumlahEkor": 140,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Layang",
-        "beratKg": 36,
-        "jumlahEkor": 75,
+        "beratKg": 69,
+        "jumlahEkor": 82,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 10550000,
+    "status": "verified"
+  },
+  {
+    "id": "cbea3eb7-f59b-4ceb-a620-f956fdca28b9",
+    "kapalId": "KAP-2505-00010",
+    "tanggal": "2025-05-05",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 147,
+        "jumlahEkor": 106,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 102,
+        "jumlahEkor": 124,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 187,
+        "jumlahEkor": 139,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 10900000,
+    "status": "pending"
+  },
+  {
+    "id": "dc55b81b-5d3a-4ccf-a430-bbaf907c535b",
+    "kapalId": "KAP-2505-00035",
+    "tanggal": "2025-04-11",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 80,
+        "jumlahEkor": 62,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 62,
+        "jumlahEkor": 81,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 80,
+        "jumlahEkor": 146,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5550000,
+    "status": "pending"
+  },
+  {
+    "id": "fb9a965a-d22d-45a9-8238-1da16028cf1a",
+    "kapalId": "KAP-2505-00003",
+    "tanggal": "2025-04-18",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Jawa",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 119,
+        "jumlahEkor": 51,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 105,
+        "jumlahEkor": 36,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5600000,
+    "status": "verified"
+  },
+  {
+    "id": "eb33e144-ce63-4ea5-8ec2-49a625bff5bb",
+    "kapalId": "KAP-2505-00005",
+    "tanggal": "2025-04-12",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Banda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 157,
+        "jumlahEkor": 149,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 126,
+        "jumlahEkor": 114,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 67,
+        "jumlahEkor": 90,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 8750000,
+    "status": "pending"
+  },
+  {
+    "id": "b1045a0b-3911-43b4-b2eb-4e89377a0d5d",
+    "kapalId": "KAP-2505-00019",
+    "tanggal": "2025-05-07",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Halmahera",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 87,
+        "jumlahEkor": 122,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 51,
+        "jumlahEkor": 97,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 77,
+        "jumlahEkor": 98,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 124,
+        "jumlahEkor": 109,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 8475000,
+    "status": "pending"
+  },
+  {
+    "id": "ac451f60-d699-484a-9f2e-41fed9e192d5",
+    "kapalId": "KAP-2505-00028",
+    "tanggal": "2025-04-10",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Malaka",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 191,
+        "jumlahEkor": 24,
         "kondisi": "Segar"
       }
     ],
@@ -327,29 +465,755 @@ export const hasilTangkapData: HasilTangkap[] = [
     "status": "verified"
   },
   {
-    "id": "4a66eee1-b667-4106-bc65-19d1e43eaec4",
-    "kapalId": "KAP-2505-00012",
-    "tanggal": "2025-04-22",
+    "id": "8b0a8a63-2cbf-42ec-b56a-f91d5f1811d8",
+    "kapalId": "KAP-2505-00002",
+    "tanggal": "2025-05-08",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Calhoun County",
+    "lokasi": "Perairan Laut Jawa",
     "jenisIkan": [
       {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 73,
-        "jumlahEkor": 81,
+        "nama": "Ikan Cakalang",
+        "beratKg": 146,
+        "jumlahEkor": 99,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 31,
+        "jumlahEkor": 20,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4425000,
+    "status": "verified"
+  },
+  {
+    "id": "8187aa22-a975-42e9-b5e7-77ed539a1131",
+    "kapalId": "KAP-2505-00030",
+    "tanggal": "2025-04-10",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Berhala",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 96,
+        "jumlahEkor": 137,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 195,
+        "jumlahEkor": 46,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7275000,
+    "status": "pending"
+  },
+  {
+    "id": "35c7bae7-d0ae-4d85-87fa-32b4dee40c58",
+    "kapalId": "KAP-2505-00010",
+    "tanggal": "2025-04-19",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Lombok",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 76,
+        "jumlahEkor": 50,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tongkol",
-        "beratKg": 170,
-        "jumlahEkor": 128,
+        "beratKg": 21,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 100,
+        "jumlahEkor": 43,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 84,
+        "jumlahEkor": 48,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7025000,
+    "status": "pending"
+  },
+  {
+    "id": "588c0d62-1c0e-489c-9942-d35bfb78766e",
+    "kapalId": "KAP-2505-00029",
+    "tanggal": "2025-04-11",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Cendrawasih",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 129,
+        "jumlahEkor": 41,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 42,
+        "jumlahEkor": 54,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4275000,
+    "status": "verified"
+  },
+  {
+    "id": "c1ac1dc9-c52b-4589-a1f8-321517676bfc",
+    "kapalId": "KAP-2505-00034",
+    "tanggal": "2025-04-22",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Sunda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 198,
+        "jumlahEkor": 135,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Layang",
-        "beratKg": 133,
-        "jumlahEkor": 97,
+        "beratKg": 58,
+        "jumlahEkor": 79,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 131,
+        "jumlahEkor": 80,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 138,
+        "jumlahEkor": 90,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 13125000,
+    "status": "pending"
+  },
+  {
+    "id": "588ffbac-4d6d-44f1-8b2b-5b3e9671a192",
+    "kapalId": "KAP-2505-00014",
+    "tanggal": "2025-04-14",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sulawesi",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 171,
+        "jumlahEkor": 83,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 33,
+        "jumlahEkor": 117,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 91,
+        "jumlahEkor": 91,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 74,
+        "jumlahEkor": 91,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 9225000,
+    "status": "verified"
+  },
+  {
+    "id": "29c573af-9ecf-48d6-9c06-6b91f760c2ad",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-04-14",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sulawesi",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 54,
+        "jumlahEkor": 69,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 52,
+        "jumlahEkor": 119,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 68,
+        "jumlahEkor": 145,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 116,
+        "jumlahEkor": 104,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7250000,
+    "status": "verified"
+  },
+  {
+    "id": "3063f8ac-5e36-40b4-9026-a1eee068cd9b",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-12",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Timor",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 87,
+        "jumlahEkor": 119,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 71,
+        "jumlahEkor": 51,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 124,
+        "jumlahEkor": 102,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7050000,
+    "status": "verified"
+  },
+  {
+    "id": "54bcbbda-050e-432c-b358-482eb36654c5",
+    "kapalId": "KAP-2505-00029",
+    "tanggal": "2025-05-03",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sulawesi",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 148,
+        "jumlahEkor": 80,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 162,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7750000,
+    "status": "verified"
+  },
+  {
+    "id": "7b81a6fa-6b76-4cd9-a3b7-88909baf4d7b",
+    "kapalId": "KAP-2505-00031",
+    "tanggal": "2025-04-22",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Natuna",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 164,
+        "jumlahEkor": 23,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 140,
+        "jumlahEkor": 83,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 21,
+        "jumlahEkor": 132,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 8125000,
+    "status": "verified"
+  },
+  {
+    "id": "e4ec57e2-2b5d-4ba8-9add-15399b863cad",
+    "kapalId": "KAP-2505-00010",
+    "tanggal": "2025-04-12",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Seram",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 174,
+        "jumlahEkor": 55,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 27,
+        "jumlahEkor": 143,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 79,
+        "jumlahEkor": 112,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 88,
+        "jumlahEkor": 65,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 9200000,
+    "status": "verified"
+  },
+  {
+    "id": "c1f5c44d-5dff-4429-85ca-0388539e59c2",
+    "kapalId": "KAP-2505-00003",
+    "tanggal": "2025-04-16",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Bali",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 27,
+        "jumlahEkor": 74,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 84,
+        "jumlahEkor": 115,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 31,
+        "jumlahEkor": 21,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 3550000,
+    "status": "verified"
+  },
+  {
+    "id": "79a65c8f-777d-4b16-82b8-fd78f2535a5f",
+    "kapalId": "KAP-2505-00038",
+    "tanggal": "2025-05-09",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Banda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 127,
+        "jumlahEkor": 35,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 169,
+        "jumlahEkor": 71,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 49,
+        "jumlahEkor": 36,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 111,
+        "jumlahEkor": 70,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 11400000,
+    "status": "verified"
+  },
+  {
+    "id": "c89147b4-4d95-43db-a48b-e8f2e6a71d10",
+    "kapalId": "KAP-2505-00040",
+    "tanggal": "2025-05-05",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Bali",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 37,
+        "jumlahEkor": 135,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 25,
+        "jumlahEkor": 149,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 166,
+        "jumlahEkor": 148,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5700000,
+    "status": "verified"
+  },
+  {
+    "id": "c4d992b2-378f-482b-915f-0e05eaf92268",
+    "kapalId": "KAP-2505-00013",
+    "tanggal": "2025-05-03",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sawu",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 20,
+        "jumlahEkor": 146,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 184,
+        "jumlahEkor": 30,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5100000,
+    "status": "pending"
+  },
+  {
+    "id": "9487d07a-597b-40f2-b382-cc4b781bfc55",
+    "kapalId": "KAP-2505-00035",
+    "tanggal": "2025-04-18",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Timor",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 73,
+        "jumlahEkor": 54,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 121,
+        "jumlahEkor": 93,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 167,
+        "jumlahEkor": 121,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 127,
+        "jumlahEkor": 142,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 12200000,
+    "status": "verified"
+  },
+  {
+    "id": "4f948d76-c6f0-44a4-a171-681414e60c9b",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-29",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Banda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 97,
+        "jumlahEkor": 54,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 151,
+        "jumlahEkor": 35,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 126,
+        "jumlahEkor": 39,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 30,
+        "jumlahEkor": 46,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 10100000,
+    "status": "pending"
+  },
+  {
+    "id": "44e3a6d3-6450-4ba6-aadf-3327aeecab32",
+    "kapalId": "KAP-2505-00032",
+    "tanggal": "2025-05-02",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Karimata",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 125,
+        "jumlahEkor": 101,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 135,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 6500000,
+    "status": "pending"
+  },
+  {
+    "id": "c5af6d93-6eac-41ed-ac42-a9c474cad9cb",
+    "kapalId": "KAP-2505-00020",
+    "tanggal": "2025-04-25",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Arafura",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 182,
+        "jumlahEkor": 61,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 28,
+        "jumlahEkor": 39,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 146,
+        "jumlahEkor": 42,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 8900000,
+    "status": "verified"
+  },
+  {
+    "id": "a881ae51-2d8c-448c-8e6f-19489b9ee302",
+    "kapalId": "KAP-2505-00016",
+    "tanggal": "2025-05-08",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Berhala",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 175,
+        "jumlahEkor": 110,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4375000,
+    "status": "verified"
+  },
+  {
+    "id": "405204dd-ff8b-417a-824a-0ba5e29a7b94",
+    "kapalId": "KAP-2505-00035",
+    "tanggal": "2025-04-28",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Malaka",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 40,
+        "jumlahEkor": 104,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 175,
+        "jumlahEkor": 107,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 142,
+        "jumlahEkor": 112,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 107,
+        "jumlahEkor": 88,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 11600000,
+    "status": "verified"
+  },
+  {
+    "id": "a704d416-6690-45ab-9f49-abd3d9b190e0",
+    "kapalId": "KAP-2505-00028",
+    "tanggal": "2025-05-06",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Makassar",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 150,
+        "jumlahEkor": 106,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 130,
+        "jumlahEkor": 53,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7000000,
+    "status": "verified"
+  },
+  {
+    "id": "e56bd1b9-5f5d-48af-a7f2-71f0547e1889",
+    "kapalId": "KAP-2505-00037",
+    "tanggal": "2025-04-26",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sawu",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 26,
+        "jumlahEkor": 143,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 650000,
+    "status": "pending"
+  },
+  {
+    "id": "e451d7b5-f911-4502-ba71-4fe1a562e63a",
+    "kapalId": "KAP-2505-00038",
+    "tanggal": "2025-04-15",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Malaka",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 77,
+        "jumlahEkor": 78,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 156,
+        "jumlahEkor": 61,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5825000,
+    "status": "verified"
+  },
+  {
+    "id": "d9a21d9c-1651-4047-a7cc-954d042b4a87",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-04-12",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Maluku",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 118,
+        "jumlahEkor": 47,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 2950000,
+    "status": "pending"
+  },
+  {
+    "id": "2ef31404-45d8-43bf-a47d-4c2b3dabd0c3",
+    "kapalId": "KAP-2505-00031",
+    "tanggal": "2025-04-15",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Lombok",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 26,
+        "jumlahEkor": 130,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 145,
+        "jumlahEkor": 138,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 135,
+        "jumlahEkor": 137,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 70,
+        "jumlahEkor": 103,
         "kondisi": "Segar"
       }
     ],
@@ -357,199 +1221,463 @@ export const hasilTangkapData: HasilTangkap[] = [
     "status": "verified"
   },
   {
-    "id": "e691c512-39b3-4698-a17a-140ec889696d",
-    "kapalId": "KAP-2505-00005",
-    "tanggal": "2025-04-28",
+    "id": "1c0d87c5-fdda-4252-80aa-743c576c0936",
+    "kapalId": "KAP-2505-00038",
+    "tanggal": "2025-05-08",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lawrence County",
+    "lokasi": "Perairan Laut Sulawesi",
     "jenisIkan": [
       {
-        "nama": "Ikan Kembung",
-        "beratKg": 142,
-        "jumlahEkor": 80,
+        "nama": "Ikan Tuna",
+        "beratKg": 28,
+        "jumlahEkor": 127,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tongkol",
-        "beratKg": 87,
+        "nama": "Ikan Kembung",
+        "beratKg": 22,
+        "jumlahEkor": 125,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 1250000,
+    "status": "verified"
+  },
+  {
+    "id": "2cb5139c-e1f3-4f9d-9d40-30812ec077ab",
+    "kapalId": "KAP-2505-00029",
+    "tanggal": "2025-04-15",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Sunda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 53,
+        "jumlahEkor": 139,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 1325000,
+    "status": "verified"
+  },
+  {
+    "id": "7f4ea85e-78b0-4cd5-a1e9-b75faf6080ca",
+    "kapalId": "KAP-2505-00023",
+    "tanggal": "2025-04-13",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 148,
+        "jumlahEkor": 68,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 97,
         "jumlahEkor": 145,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tuna",
-        "beratKg": 197,
-        "jumlahEkor": 44,
+        "nama": "Ikan Tongkol",
+        "beratKg": 176,
+        "jumlahEkor": 141,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 10650000,
+    "estimasiNilai": 10525000,
     "status": "verified"
   },
   {
-    "id": "7fbdd4a8-e9b7-4fc3-bb6b-5b685f334558",
-    "kapalId": "KAP-2505-00023",
-    "tanggal": "2025-04-10",
+    "id": "f4e84681-e9a2-44e0-8fd6-2fb0a8f32bb4",
+    "kapalId": "KAP-2505-00036",
+    "tanggal": "2025-04-22",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan County Antrim",
+    "lokasi": "Perairan Laut Seram",
     "jenisIkan": [
       {
         "nama": "Ikan Kembung",
-        "beratKg": 200,
-        "jumlahEkor": 75,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 175,
-        "jumlahEkor": 133,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9375000,
-    "status": "pending"
-  },
-  {
-    "id": "6ddf7797-9911-439f-9e83-812368cfcd24",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-05-04",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Shropshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 86,
-        "jumlahEkor": 92,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 26,
-        "jumlahEkor": 90,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2800000,
-    "status": "verified"
-  },
-  {
-    "id": "742d8c88-7ad3-44b2-9c0e-26c618a79107",
-    "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-04-18",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Crawford County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 108,
-        "jumlahEkor": 111,
+        "beratKg": 68,
+        "jumlahEkor": 141,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tongkol",
-        "beratKg": 199,
-        "jumlahEkor": 124,
+        "beratKg": 117,
+        "jumlahEkor": 46,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 7675000,
+    "estimasiNilai": 4625000,
     "status": "verified"
   },
   {
-    "id": "b3f7558d-9f26-4323-8d62-f69b4354794b",
-    "kapalId": "KAP-2505-00032",
-    "tanggal": "2025-04-24",
+    "id": "f94372e1-2666-4993-b3f9-2e01f1cbc374",
+    "kapalId": "KAP-2505-00016",
+    "tanggal": "2025-04-27",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Worcestershire",
+    "lokasi": "Perairan Laut Banda",
     "jenisIkan": [
       {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 44,
-        "jumlahEkor": 34,
+        "nama": "Ikan Tuna",
+        "beratKg": 155,
+        "jumlahEkor": 124,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 107,
+        "jumlahEkor": 143,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 1100000,
-    "status": "verified"
+    "estimasiNilai": 6550000,
+    "status": "pending"
   },
   {
-    "id": "116fce42-495c-43f8-8bd7-642b01279757",
-    "kapalId": "KAP-2505-00036",
-    "tanggal": "2025-04-20",
+    "id": "d880355e-b057-4a69-ba1c-6062385ac302",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-05-09",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lee County",
+    "lokasi": "Perairan Selat Karimata",
     "jenisIkan": [
       {
         "nama": "Ikan Kembung",
-        "beratKg": 108,
-        "jumlahEkor": 148,
+        "beratKg": 86,
+        "jumlahEkor": 134,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 2700000,
+    "estimasiNilai": 2150000,
     "status": "verified"
   },
   {
-    "id": "d1d1e02e-d32d-4743-9414-bbf61d47562c",
-    "kapalId": "KAP-2505-00020",
-    "tanggal": "2025-04-15",
+    "id": "231fc23d-4030-4dda-964a-b41f249097d9",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-05-02",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Worcestershire",
+    "lokasi": "Perairan Laut Arafura",
     "jenisIkan": [
       {
-        "nama": "Ikan Cakalang",
-        "beratKg": 78,
-        "jumlahEkor": 93,
+        "nama": "Ikan Layang",
+        "beratKg": 88,
+        "jumlahEkor": 73,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 116,
+        "jumlahEkor": 25,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 1950000,
+    "estimasiNilai": 5100000,
     "status": "verified"
   },
   {
-    "id": "44f0b3ac-3647-4b06-b518-8efd5845dab1",
-    "kapalId": "KAP-2505-00025",
-    "tanggal": "2025-05-03",
+    "id": "6bd79362-a20d-4674-ac5a-773b4461d021",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-04-14",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Grampian",
+    "lokasi": "Perairan Selat Lombok",
     "jenisIkan": [
       {
         "nama": "Ikan Tenggiri",
-        "beratKg": 164,
-        "jumlahEkor": 62,
+        "beratKg": 155,
+        "jumlahEkor": 123,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Layang",
-        "beratKg": 150,
-        "jumlahEkor": 91,
+        "beratKg": 89,
+        "jumlahEkor": 123,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 6100000,
+    "status": "verified"
+  },
+  {
+    "id": "fb46b8b6-160e-4aaa-834e-a66a08195255",
+    "kapalId": "KAP-2505-00027",
+    "tanggal": "2025-05-02",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Maluku",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 81,
+        "jumlahEkor": 97,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 143,
+        "jumlahEkor": 122,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5600000,
+    "status": "verified"
+  },
+  {
+    "id": "ba1247dd-a94a-466e-bee1-b667106c6519",
+    "kapalId": "KAP-2505-00036",
+    "tanggal": "2025-04-12",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tolo",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 191,
+        "jumlahEkor": 119,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 101,
+        "jumlahEkor": 56,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 109,
+        "jumlahEkor": 58,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 10025000,
+    "status": "verified"
+  },
+  {
+    "id": "9a75ff3e-691c-4512-a39b-369817a140ec",
+    "kapalId": "KAP-2505-00010",
+    "tanggal": "2025-04-25",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 197,
+        "jumlahEkor": 74,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tuna",
-        "beratKg": 31,
-        "jumlahEkor": 66,
+        "beratKg": 23,
+        "jumlahEkor": 33,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 40,
+        "jumlahEkor": 116,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 132,
+        "jumlahEkor": 25,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 8625000,
+    "estimasiNilai": 9800000,
     "status": "verified"
   },
   {
-    "id": "b0b50a10-93ee-4837-bd2f-e7b7fd6585bc",
-    "kapalId": "KAP-2505-00025",
-    "tanggal": "2025-04-29",
+    "id": "646f6dd7-fbdd-44a8-be9b-7fc3b6b5b685",
+    "kapalId": "KAP-2505-00024",
+    "tanggal": "2025-04-16",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Perry County",
+    "lokasi": "Perairan Laut Flores",
     "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 133,
+        "jumlahEkor": 42,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 22,
+        "jumlahEkor": 93,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 3875000,
+    "status": "verified"
+  },
+  {
+    "id": "79f58086-ddf7-4797-a991-139fe8381236",
+    "kapalId": "KAP-2505-00014",
+    "tanggal": "2025-05-04",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Halmahera",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 22,
+        "jumlahEkor": 78,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 160,
+        "jumlahEkor": 128,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4550000,
+    "status": "pending"
+  },
+  {
+    "id": "d7b52e7b-fc74-42d8-bc88-7ad34b2c0e26",
+    "kapalId": "KAP-2505-00034",
+    "tanggal": "2025-04-21",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Sunda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 97,
+        "jumlahEkor": 128,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 2425000,
+    "status": "verified"
+  },
+  {
+    "id": "03c2d21b-3f75-458d-89f2-6323d62f69b4",
+    "kapalId": "KAP-2505-00027",
+    "tanggal": "2025-04-19",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Arafura",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 31,
+        "jumlahEkor": 77,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 85,
+        "jumlahEkor": 55,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 2900000,
+    "status": "verified"
+  },
+  {
+    "id": "177f116f-ce42-4495-ac3f-8bd7642b0127",
+    "kapalId": "KAP-2505-00024",
+    "tanggal": "2025-04-23",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sulawesi",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 106,
+        "jumlahEkor": 150,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 98,
+        "jumlahEkor": 136,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 5100000,
+    "status": "verified"
+  },
+  {
+    "id": "9d1d1e02-ed32-4d74-b341-4bbf61d47562",
+    "kapalId": "KAP-2505-00003",
+    "tanggal": "2025-04-24",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Jawa",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 109,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 76,
+        "jumlahEkor": 62,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4625000,
+    "status": "pending"
+  },
+  {
+    "id": "544f0b3a-c364-47b0-8651-88efd5845dab",
+    "kapalId": "KAP-2505-00011",
+    "tanggal": "2025-05-08",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Cendrawasih",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 189,
+        "jumlahEkor": 124,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 78,
+        "jumlahEkor": 114,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 118,
+        "jumlahEkor": 28,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 9625000,
+    "status": "verified"
+  },
+  {
+    "id": "6508b0b5-0a10-493e-ae83-7d2fe7b7fd65",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-19",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Sawu",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 162,
+        "jumlahEkor": 100,
+        "kondisi": "Segar"
+      },
       {
         "nama": "Ikan Cakalang",
         "beratKg": 79,
@@ -557,121 +1685,115 @@ export const hasilTangkapData: HasilTangkap[] = [
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Layang",
+        "nama": "Ikan Tenggiri",
         "beratKg": 53,
         "jumlahEkor": 59,
         "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 97,
-        "jumlahEkor": 62,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 20,
-        "jumlahEkor": 92,
-        "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 6225000,
-    "status": "verified"
+    "estimasiNilai": 7350000,
+    "status": "pending"
   },
   {
-    "id": "aa8f7931-c5be-47cf-ae86-54daab006647",
-    "kapalId": "KAP-2505-00024",
-    "tanggal": "2025-04-19",
+    "id": "a5afaa8f-7931-4c5b-9e7c-fe8654daab00",
+    "kapalId": "KAP-2505-00033",
+    "tanggal": "2025-04-22",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan North Yorkshire",
+    "lokasi": "Perairan Laut Banda",
     "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 90,
-        "jumlahEkor": 58,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 143,
-        "jumlahEkor": 62,
-        "kondisi": "Segar"
-      },
       {
         "nama": "Ikan Layang",
-        "beratKg": 137,
-        "jumlahEkor": 143,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9250000,
-    "status": "verified"
-  },
-  {
-    "id": "90199403-a1d3-4d4f-88dd-440ac60c47d4",
-    "kapalId": "KAP-2505-00005",
-    "tanggal": "2025-05-03",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Washington County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 78,
-        "jumlahEkor": 64,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 110,
-        "jumlahEkor": 60,
+        "beratKg": 132,
+        "jumlahEkor": 125,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Kembung",
-        "beratKg": 127,
-        "jumlahEkor": 114,
+        "beratKg": 124,
+        "jumlahEkor": 97,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Cakalang",
-        "beratKg": 49,
-        "jumlahEkor": 79,
+        "beratKg": 90,
+        "jumlahEkor": 58,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 9100000,
+    "estimasiNilai": 8650000,
     "status": "verified"
   },
   {
-    "id": "9fbd34e4-dcb7-41c8-bb21-70654ec933ed",
-    "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-04-13",
+    "id": "e955749b-2790-4199-8403-a1d3d4f8dd44",
+    "kapalId": "KAP-2505-00028",
+    "tanggal": "2025-04-29",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Humberside",
+    "lokasi": "Perairan Laut Timor",
     "jenisIkan": [
       {
-        "nama": "Ikan Tuna",
-        "beratKg": 189,
-        "jumlahEkor": 74,
+        "nama": "Ikan Kembung",
+        "beratKg": 40,
+        "jumlahEkor": 124,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Layang",
+        "beratKg": 70,
+        "jumlahEkor": 92,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 4725000,
+    "estimasiNilai": 2750000,
     "status": "verified"
   },
   {
-    "id": "bcf682b8-057b-44f3-a5e9-4451aa3aabc5",
-    "kapalId": "KAP-2505-00025",
+    "id": "69fbd34e-4dcb-471c-b8b2-170654ec933e",
+    "kapalId": "KAP-2505-00002",
     "tanggal": "2025-05-04",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Monroe County",
+    "lokasi": "Perairan Selat Sunda",
     "jenisIkan": [
       {
-        "nama": "Ikan Tenggiri",
+        "nama": "Ikan Tongkol",
+        "beratKg": 46,
+        "jumlahEkor": 123,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 79,
+        "jumlahEkor": 32,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 65,
+        "jumlahEkor": 31,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 129,
+        "jumlahEkor": 142,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 7975000,
+    "status": "pending"
+  },
+  {
+    "id": "f682b805-7b4f-435e-8944-51aa3aabc5ac",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-26",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Arafura",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Layang",
         "beratKg": 170,
         "jumlahEkor": 30,
         "kondisi": "Segar"
@@ -681,378 +1803,324 @@ export const hasilTangkapData: HasilTangkap[] = [
         "beratKg": 99,
         "jumlahEkor": 41,
         "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6725000,
-    "status": "verified"
-  },
-  {
-    "id": "c480dd23-d3fa-463c-ab73-0ebd8b8f69df",
-    "kapalId": "KAP-2505-00012",
-    "tanggal": "2025-05-02",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Bedfordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 120,
-        "jumlahEkor": 79,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 128,
-        "jumlahEkor": 131,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 109,
-        "jumlahEkor": 132,
-        "kondisi": "Segar"
       },
       {
         "nama": "Ikan Cakalang",
-        "beratKg": 91,
-        "jumlahEkor": 95,
+        "beratKg": 148,
+        "jumlahEkor": 125,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 11200000,
+    "estimasiNilai": 10425000,
     "status": "pending"
   },
   {
-    "id": "f53ac981-d7d1-4ce1-b57f-c92c39b40024",
-    "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-04-30",
+    "id": "79d7d69c-480d-4d23-ad3f-a63cb730ebd8",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-25",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Pike County",
+    "lokasi": "Perairan Selat Berhala",
     "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 149,
-        "jumlahEkor": 81,
-        "kondisi": "Segar"
-      },
       {
         "nama": "Ikan Tuna",
-        "beratKg": 46,
-        "jumlahEkor": 149,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 4875000,
-    "status": "pending"
-  },
-  {
-    "id": "e1851e19-7979-456f-94bc-f3a55723dc70",
-    "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-05-02",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Suffolk",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 61,
-        "jumlahEkor": 123,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 172,
-        "jumlahEkor": 122,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 86,
-        "jumlahEkor": 99,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 62,
-        "jumlahEkor": 86,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9525000,
-    "status": "verified"
-  },
-  {
-    "id": "fc331c3b-c5e7-47d2-9b63-176c8b02abcf",
-    "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-05-03",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Essex",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
         "beratKg": 32,
-        "jumlahEkor": 149,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 132,
-        "jumlahEkor": 149,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 42,
-        "jumlahEkor": 40,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 105,
         "jumlahEkor": 93,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 7775000,
+    "estimasiNilai": 800000,
     "status": "verified"
   },
   {
-    "id": "8eb31088-2dc8-423a-b657-6007266fc94c",
-    "kapalId": "KAP-2505-00029",
-    "tanggal": "2025-04-18",
+    "id": "ff53ac98-1d7d-41ce-9157-fc92c39b4002",
+    "kapalId": "KAP-2505-00024",
+    "tanggal": "2025-05-02",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Highlands and Islands",
+    "lokasi": "Perairan Selat Karimata",
     "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 165,
+        "jumlahEkor": 53,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 75,
+        "jumlahEkor": 107,
+        "kondisi": "Segar"
+      },
       {
         "nama": "Ikan Tuna",
-        "beratKg": 110,
-        "jumlahEkor": 27,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 131,
-        "jumlahEkor": 114,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 23,
-        "jumlahEkor": 27,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6600000,
-    "status": "verified"
-  },
-  {
-    "id": "c22bdb07-f144-4873-9a01-c738debfd5b8",
-    "kapalId": "KAP-2505-00037",
-    "tanggal": "2025-04-10",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Cornwall",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
         "beratKg": 28,
-        "jumlahEkor": 90,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 700000,
-    "status": "pending"
-  },
-  {
-    "id": "9e6d3cb7-0a2c-457d-bb6f-17a00abe1951",
-    "kapalId": "KAP-2505-00017",
-    "tanggal": "2025-05-07",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan South Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 194,
-        "jumlahEkor": 117,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 29,
-        "jumlahEkor": 141,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 81,
-        "jumlahEkor": 51,
+        "jumlahEkor": 113,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tenggiri",
-        "beratKg": 70,
-        "jumlahEkor": 37,
+        "beratKg": 105,
+        "jumlahEkor": 39,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 9350000,
+    "estimasiNilai": 9325000,
     "status": "verified"
   },
   {
-    "id": "0fc5a5ef-502c-4b80-8c38-88a6adad51aa",
-    "kapalId": "KAP-2505-00036",
-    "tanggal": "2025-05-01",
+    "id": "583cdc59-38e1-4851-ae19-797956f4bcf3",
+    "kapalId": "KAP-2505-00039",
+    "tanggal": "2025-04-20",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Gloucestershire",
+    "lokasi": "Perairan Selat Makassar",
     "jenisIkan": [
       {
-        "nama": "Ikan Kembung",
-        "beratKg": 36,
+        "nama": "Ikan Layang",
+        "beratKg": 138,
+        "jumlahEkor": 75,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 3450000,
+    "status": "verified"
+  },
+  {
+    "id": "05ce2ad6-22a1-4f9f-9127-9fc331c3bc5e",
+    "kapalId": "KAP-2505-00007",
+    "tanggal": "2025-04-24",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Lombok",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 164,
+        "jumlahEkor": 82,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4100000,
+    "status": "verified"
+  },
+  {
+    "id": "b02abcf5-c96b-4876-8d70-9b008eb31088",
+    "kapalId": "KAP-2505-00028",
+    "tanggal": "2025-05-04",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Timor",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 104,
         "jumlahEkor": 75,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tuna",
-        "beratKg": 190,
-        "jumlahEkor": 93,
-        "kondisi": "Segar"
-      },
-      {
         "nama": "Ikan Cakalang",
-        "beratKg": 68,
-        "jumlahEkor": 50,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 124,
-        "jumlahEkor": 123,
+        "beratKg": 166,
+        "jumlahEkor": 92,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 10450000,
-    "status": "pending"
+    "estimasiNilai": 6750000,
+    "status": "verified"
   },
   {
-    "id": "d8819d26-d8e9-4042-a03b-398cad1c7486",
-    "kapalId": "KAP-2505-00021",
-    "tanggal": "2025-04-10",
+    "id": "76007266-fc94-4cc4-ba9e-1608c22bdb07",
+    "kapalId": "KAP-2505-00006",
+    "tanggal": "2025-04-12",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lincolnshire",
+    "lokasi": "Perairan Laut Arafura",
     "jenisIkan": [
       {
         "nama": "Ikan Tuna",
-        "beratKg": 163,
-        "jumlahEkor": 125,
+        "beratKg": 94,
+        "jumlahEkor": 66,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 2350000,
+    "status": "verified"
+  },
+  {
+    "id": "38debfd5-b840-47d6-9dde-07fb0e53429e",
+    "kapalId": "KAP-2505-00022",
+    "tanggal": "2025-05-05",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Flores",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 22,
+        "jumlahEkor": 30,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Cakalang",
-        "beratKg": 169,
-        "jumlahEkor": 139,
+        "beratKg": 163,
+        "jumlahEkor": 77,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 4625000,
+    "status": "pending"
+  },
+  {
+    "id": "db6f17a0-0abe-4195-91fe-d5efe3dc16f8",
+    "kapalId": "KAP-2505-00028",
+    "tanggal": "2025-04-16",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tomini",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 44,
+        "jumlahEkor": 124,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tongkol",
-        "beratKg": 74,
-        "jumlahEkor": 80,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 116,
-        "jumlahEkor": 106,
+        "beratKg": 76,
+        "jumlahEkor": 77,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 13050000,
+    "estimasiNilai": 3000000,
     "status": "pending"
   },
   {
-    "id": "91528b43-525c-4093-9d05-5bc759f922ae",
-    "kapalId": "KAP-2505-00027",
-    "tanggal": "2025-04-13",
+    "id": "0c3888a6-adad-451a-9a1b-9b8cd268ccde",
+    "kapalId": "KAP-2505-00001",
+    "tanggal": "2025-04-23",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Durham",
+    "lokasi": "Perairan Laut Natuna",
     "jenisIkan": [
       {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 72,
-        "jumlahEkor": 52,
+        "nama": "Ikan Tongkol",
+        "beratKg": 186,
+        "jumlahEkor": 150,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 78,
+        "jumlahEkor": 27,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 47,
+        "jumlahEkor": 120,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Layang",
-        "beratKg": 83,
-        "jumlahEkor": 37,
+        "beratKg": 146,
+        "jumlahEkor": 89,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 11425000,
+    "status": "verified"
+  },
+  {
+    "id": "904203b3-98ca-4d1c-8748-680beaf989b4",
+    "kapalId": "KAP-2505-00033",
+    "tanggal": "2025-04-20",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Sunda",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 169,
+        "jumlahEkor": 39,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tongkol",
+        "beratKg": 97,
+        "jumlahEkor": 133,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 119,
+        "jumlahEkor": 142,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 9625000,
+    "status": "verified"
+  },
+  {
+    "id": "c093d055-bc75-49f9-822a-e718e0ca0cca",
+    "kapalId": "KAP-2505-00008",
+    "tanggal": "2025-04-27",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Teluk Tolo",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 46,
+        "jumlahEkor": 87,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 148,
+        "jumlahEkor": 53,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Kembung",
         "beratKg": 56,
-        "jumlahEkor": 44,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 184,
-        "jumlahEkor": 22,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9875000,
-    "status": "pending"
-  },
-  {
-    "id": "859f1564-1efb-41a9-a3b1-85bf1245ca40",
-    "kapalId": "KAP-2505-00001",
-    "tanggal": "2025-05-07",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lincoln County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 142,
-        "jumlahEkor": 50,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 123,
-        "jumlahEkor": 133,
+        "jumlahEkor": 66,
         "kondisi": "Segar"
       },
       {
         "nama": "Ikan Tongkol",
-        "beratKg": 177,
-        "jumlahEkor": 23,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 31,
-        "jumlahEkor": 104,
+        "beratKg": 48,
+        "jumlahEkor": 65,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 11825000,
-    "status": "verified"
+    "estimasiNilai": 7450000,
+    "status": "pending"
   },
   {
-    "id": "5739a7bc-2f84-4a27-890c-6c53a5dc007d",
-    "kapalId": "KAP-2505-00008",
-    "tanggal": "2025-04-18",
+    "id": "9f15641e-fb1a-493b-8185-bf1245ca409e",
+    "kapalId": "KAP-2505-00002",
+    "tanggal": "2025-04-27",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Norfolk",
+    "lokasi": "Perairan Laut Flores",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 115,
+        "jumlahEkor": 67,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 2875000,
+    "status": "pending"
+  },
+  {
+    "id": "18f85739-a7bc-42f8-84a2-790c6c53a5dc",
+    "kapalId": "KAP-2505-00006",
+    "tanggal": "2025-04-11",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Malaka",
     "jenisIkan": [
       {
         "nama": "Ikan Layang",
@@ -1061,1171 +2129,73 @@ export const hasilTangkapData: HasilTangkap[] = [
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tenggiri",
+        "nama": "Ikan Cakalang",
         "beratKg": 114,
         "jumlahEkor": 88,
         "kondisi": "Segar"
-      },
+      }
+    ],
+    "estimasiNilai": 7400000,
+    "status": "pending"
+  },
+  {
+    "id": "a58994d7-e162-4811-b6a5-42869295ccbb",
+    "kapalId": "KAP-2505-00005",
+    "tanggal": "2025-04-10",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Selat Makassar",
+    "jenisIkan": [
       {
-        "nama": "Ikan Kembung",
-        "beratKg": 31,
-        "jumlahEkor": 90,
+        "nama": "Ikan Tongkol",
+        "beratKg": 75,
+        "jumlahEkor": 97,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Tongkol",
-        "beratKg": 198,
-        "jumlahEkor": 91,
+        "nama": "Ikan Layang",
+        "beratKg": 49,
+        "jumlahEkor": 50,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 13125000,
-    "status": "verified"
+    "estimasiNilai": 3100000,
+    "status": "pending"
   },
   {
-    "id": "7e162811-6a54-4286-8929-5ccbbf05b6ea",
-    "kapalId": "KAP-2505-00013",
-    "tanggal": "2025-05-04",
+    "id": "2b9c6370-02df-4e68-b97e-a64beea337ec",
+    "kapalId": "KAP-2505-00016",
+    "tanggal": "2025-04-16",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lake County",
+    "lokasi": "Perairan Selat Lombok",
     "jenisIkan": [
       {
-        "nama": "Ikan Kembung",
-        "beratKg": 81,
-        "jumlahEkor": 86,
+        "nama": "Ikan Tenggiri",
+        "beratKg": 22,
+        "jumlahEkor": 37,
         "kondisi": "Segar"
       },
       {
-        "nama": "Ikan Cakalang",
-        "beratKg": 131,
-        "jumlahEkor": 98,
+        "nama": "Ikan Tuna",
+        "beratKg": 48,
+        "jumlahEkor": 20,
         "kondisi": "Segar"
       },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 69,
-        "jumlahEkor": 132,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 7025000,
-    "status": "verified"
-  },
-  {
-    "id": "652b9c63-7002-4dfe-b689-7ea64beea337",
-    "kapalId": "KAP-2505-00006",
-    "tanggal": "2025-05-03",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan South Yorkshire",
-    "jenisIkan": [
       {
         "nama": "Ikan Tongkol",
         "beratKg": 115,
         "jumlahEkor": 42,
         "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2875000,
-    "status": "verified"
-  },
-  {
-    "id": "fd2cef10-14c7-4717-8bf0-b3ffb0f45f78",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-05-09",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Pike County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 73,
-        "jumlahEkor": 45,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 112,
-        "jumlahEkor": 23,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 63,
-        "jumlahEkor": 60,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 155,
-        "jumlahEkor": 36,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 10075000,
-    "status": "verified"
-  },
-  {
-    "id": "0280579e-d2ec-4840-b06c-033c33c17c9e",
-    "kapalId": "KAP-2505-00010",
-    "tanggal": "2025-05-01",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan County Down",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 60,
-        "jumlahEkor": 110,
-        "kondisi": "Segar"
       },
       {
         "nama": "Ikan Layang",
-        "beratKg": 167,
-        "jumlahEkor": 21,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 5675000,
-    "status": "verified"
-  },
-  {
-    "id": "4ac7e53a-6ca1-4475-936a-692e0f8bb5b5",
-    "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-04-27",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Jackson County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 98,
-        "jumlahEkor": 134,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 143,
-        "jumlahEkor": 129,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6025000,
-    "status": "verified"
-  },
-  {
-    "id": "31ae39ef-523a-4f7d-aaaa-5473b9357cfe",
-    "kapalId": "KAP-2505-00030",
-    "tanggal": "2025-05-07",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Washington County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 93,
-        "jumlahEkor": 91,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2325000,
-    "status": "verified"
-  },
-  {
-    "id": "b20c61b7-6274-4d37-b6db-05244d97d8b0",
-    "kapalId": "KAP-2505-00011",
-    "tanggal": "2025-04-23",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Gwynedd County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 192,
-        "jumlahEkor": 58,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 91,
-        "jumlahEkor": 48,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 7075000,
-    "status": "verified"
-  },
-  {
-    "id": "f84e5684-1ce9-48c3-8c93-f8a2dee61ddb",
-    "kapalId": "KAP-2505-00016",
-    "tanggal": "2025-05-04",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Cambridgeshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 162,
-        "jumlahEkor": 85,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 194,
-        "jumlahEkor": 71,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 155,
-        "jumlahEkor": 47,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 79,
-        "jumlahEkor": 66,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 14750000,
-    "status": "verified"
-  },
-  {
-    "id": "5216c9ae-88d2-4d82-8f33-5ea90ed2bfea",
-    "kapalId": "KAP-2505-00026",
-    "tanggal": "2025-04-16",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Marshall County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 74,
-        "jumlahEkor": 97,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 22,
-        "jumlahEkor": 89,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2400000,
-    "status": "verified"
-  },
-  {
-    "id": "a15c6d84-b9a3-41d1-b120-84d27bb5403c",
-    "kapalId": "KAP-2505-00006",
-    "tanggal": "2025-04-24",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Johnson County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 163,
-        "jumlahEkor": 132,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 43,
-        "jumlahEkor": 49,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 37,
-        "jumlahEkor": 129,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 151,
-        "jumlahEkor": 108,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9850000,
-    "status": "verified"
-  },
-  {
-    "id": "e2842053-1e23-4cfa-b110-0a62832d1498",
-    "kapalId": "KAP-2505-00039",
-    "tanggal": "2025-04-11",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Staffordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 154,
-        "jumlahEkor": 68,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 49,
-        "jumlahEkor": 60,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 24,
-        "jumlahEkor": 24,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 200,
-        "jumlahEkor": 130,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 10675000,
-    "status": "verified"
-  },
-  {
-    "id": "f47c70eb-2b91-4471-8746-b3b06d634f92",
-    "kapalId": "KAP-2505-00019",
-    "tanggal": "2025-04-28",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Crawford County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 88,
-        "jumlahEkor": 114,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 153,
-        "jumlahEkor": 139,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 29,
-        "jumlahEkor": 106,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6750000,
-    "status": "verified"
-  },
-  {
-    "id": "dac9745c-08f1-4d84-8d44-0e581644d8c3",
-    "kapalId": "KAP-2505-00030",
-    "tanggal": "2025-05-02",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Kent",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 108,
-        "jumlahEkor": 87,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 116,
-        "jumlahEkor": 46,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 62,
-        "jumlahEkor": 86,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 158,
-        "jumlahEkor": 74,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 11100000,
-    "status": "pending"
-  },
-  {
-    "id": "fda97f06-0130-4592-be94-72eb195efa4b",
-    "kapalId": "KAP-2505-00023",
-    "tanggal": "2025-04-28",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Hertfordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 76,
-        "jumlahEkor": 118,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 45,
-        "jumlahEkor": 99,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 3025000,
-    "status": "verified"
-  },
-  {
-    "id": "1b5951c9-37c5-486d-8fb4-a20e0f461add",
-    "kapalId": "KAP-2505-00005",
-    "tanggal": "2025-05-06",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Derbyshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 147,
-        "jumlahEkor": 80,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 117,
-        "jumlahEkor": 148,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 63,
-        "jumlahEkor": 130,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 8175000,
-    "status": "pending"
-  },
-  {
-    "id": "3fceb7f9-9ace-4c37-8491-9eeb36a7e165",
-    "kapalId": "KAP-2505-00037",
-    "tanggal": "2025-04-13",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan County Londonderry",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 127,
-        "jumlahEkor": 38,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 47,
-        "jumlahEkor": 137,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 4350000,
-    "status": "pending"
-  },
-  {
-    "id": "5ae8ed99-585f-473f-ad4a-958af51fa345",
-    "kapalId": "KAP-2505-00024",
-    "tanggal": "2025-04-19",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Marion County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 53,
-        "jumlahEkor": 23,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 145,
-        "jumlahEkor": 123,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 93,
-        "jumlahEkor": 79,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 191,
-        "jumlahEkor": 85,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 12050000,
-    "status": "pending"
-  },
-  {
-    "id": "be25fa02-59bb-4f4d-9d20-8cf1f8b971d4",
-    "kapalId": "KAP-2505-00023",
-    "tanggal": "2025-04-10",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan West Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 77,
-        "jumlahEkor": 24,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 185,
-        "jumlahEkor": 124,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6550000,
-    "status": "verified"
-  },
-  {
-    "id": "cfdd9753-e971-4c08-83a9-bf1b9a75f62c",
-    "kapalId": "KAP-2505-00029",
-    "tanggal": "2025-05-06",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Borders",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 98,
-        "jumlahEkor": 137,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 140,
-        "jumlahEkor": 27,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 84,
-        "jumlahEkor": 68,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 190,
-        "jumlahEkor": 62,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 12800000,
-    "status": "verified"
-  },
-  {
-    "id": "55aa5964-9fac-4e29-aeaa-1e642e1fb309",
-    "kapalId": "KAP-2505-00027",
-    "tanggal": "2025-05-06",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Berkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 109,
-        "jumlahEkor": 107,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 41,
-        "jumlahEkor": 134,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 88,
-        "jumlahEkor": 116,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 5950000,
-    "status": "verified"
-  },
-  {
-    "id": "b74c86de-0eee-43ef-9cb6-6c1081906b44",
-    "kapalId": "KAP-2505-00020",
-    "tanggal": "2025-04-28",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Powys",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 37,
-        "jumlahEkor": 126,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 925000,
-    "status": "verified"
-  },
-  {
-    "id": "2b5a432e-0af3-4649-b0ac-b34f1dfa2ccc",
-    "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-05-09",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Cumbria",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 106,
-        "jumlahEkor": 111,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 146,
-        "jumlahEkor": 92,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6300000,
-    "status": "verified"
-  },
-  {
-    "id": "8c3c5f23-d089-4f04-9efb-406e4f1e3764",
-    "kapalId": "KAP-2505-00035",
-    "tanggal": "2025-04-22",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Shropshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 139,
-        "jumlahEkor": 69,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 184,
-        "jumlahEkor": 23,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 156,
-        "jumlahEkor": 58,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 74,
-        "jumlahEkor": 24,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 13825000,
-    "status": "pending"
-  },
-  {
-    "id": "4218c65d-33aa-4042-8717-e4c2cca2d759",
-    "kapalId": "KAP-2505-00016",
-    "tanggal": "2025-05-01",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Bedfordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 97,
-        "jumlahEkor": 88,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 166,
-        "jumlahEkor": 62,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6575000,
-    "status": "verified"
-  },
-  {
-    "id": "7ba8ef6f-0582-4466-820c-35af2cbfd11d",
-    "kapalId": "KAP-2505-00027",
-    "tanggal": "2025-05-08",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Kent",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 45,
-        "jumlahEkor": 35,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 1125000,
-    "status": "pending"
-  },
-  {
-    "id": "aa9e3f5f-b5af-4d92-a0dc-26e5c0d16110",
-    "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-05-05",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Cleveland",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 151,
-        "jumlahEkor": 44,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 38,
-        "jumlahEkor": 128,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 4725000,
-    "status": "pending"
-  },
-  {
-    "id": "1906ed19-eab9-43ac-837c-d7cd9c3b9406",
-    "kapalId": "KAP-2505-00014",
-    "tanggal": "2025-04-15",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Central",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 115,
-        "jumlahEkor": 55,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 150,
-        "jumlahEkor": 139,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 197,
-        "jumlahEkor": 79,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 11550000,
-    "status": "pending"
-  },
-  {
-    "id": "89f9eda7-354b-4d81-bd1b-9dad2cc7ac08",
-    "kapalId": "KAP-2505-00014",
-    "tanggal": "2025-04-30",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan County Fermanagh",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 21,
-        "jumlahEkor": 74,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 133,
-        "jumlahEkor": 108,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 32,
-        "jumlahEkor": 33,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 4650000,
-    "status": "verified"
-  },
-  {
-    "id": "a5081d30-3534-4df6-aff2-746263338391",
-    "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-05-06",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lee County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 57,
+        "beratKg": 90,
         "jumlahEkor": 65,
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 1425000,
+    "estimasiNilai": 6875000,
     "status": "pending"
-  },
-  {
-    "id": "29ed6db6-f227-44ca-bf3c-bd82efe3af0b",
-    "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-04-10",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Clwyd",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 41,
-        "jumlahEkor": 130,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 1025000,
-    "status": "pending"
-  },
-  {
-    "id": "a5494e1a-18ac-4975-bfa6-a33d4756e53a",
-    "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-04-26",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Hertfordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 104,
-        "jumlahEkor": 129,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 155,
-        "jumlahEkor": 119,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6475000,
-    "status": "pending"
-  },
-  {
-    "id": "9a09c1a8-b3df-4ea6-8ca9-09f805f3ae63",
-    "kapalId": "KAP-2505-00002",
-    "tanggal": "2025-04-11",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Central",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 46,
-        "jumlahEkor": 83,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Kembung",
-        "beratKg": 33,
-        "jumlahEkor": 98,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 160,
-        "jumlahEkor": 64,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 181,
-        "jumlahEkor": 55,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 10500000,
-    "status": "pending"
-  },
-  {
-    "id": "8a9b4a26-5937-478e-b695-33f048c97699",
-    "kapalId": "KAP-2505-00004",
-    "tanggal": "2025-05-02",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lake County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 34,
-        "jumlahEkor": 49,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 143,
-        "jumlahEkor": 20,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 89,
-        "jumlahEkor": 38,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 6650000,
-    "status": "verified"
-  },
-  {
-    "id": "d777b90f-6945-46cb-a41f-20d461131c81",
-    "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-05-01",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Tayside",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 157,
-        "jumlahEkor": 27,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 79,
-        "jumlahEkor": 21,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 92,
-        "jumlahEkor": 79,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 8200000,
-    "status": "pending"
-  },
-  {
-    "id": "348741a2-5777-4c1c-847f-eb20fc15abb0",
-    "kapalId": "KAP-2505-00040",
-    "tanggal": "2025-04-19",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan County Tyrone",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 95,
-        "jumlahEkor": 71,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2375000,
-    "status": "verified"
-  },
-  {
-    "id": "a99fbd7e-50af-41a3-87fe-3105b515b343",
-    "kapalId": "KAP-2505-00003",
-    "tanggal": "2025-04-18",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Herefordshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 192,
-        "jumlahEkor": 143,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 197,
-        "jumlahEkor": 81,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 9725000,
-    "status": "verified"
-  },
-  {
-    "id": "2d7637da-474b-471f-a302-6e01d2bf17ad",
-    "kapalId": "KAP-2505-00035",
-    "tanggal": "2025-04-10",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Perry County",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 114,
-        "jumlahEkor": 76,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 2850000,
-    "status": "verified"
-  },
-  {
-    "id": "904f66f8-5556-4c6c-93f0-681d5b931076",
-    "kapalId": "KAP-2505-00004",
-    "tanggal": "2025-04-16",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan South Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 132,
-        "jumlahEkor": 146,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 60,
-        "jumlahEkor": 84,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 162,
-        "jumlahEkor": 45,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 8850000,
-    "status": "pending"
-  },
-  {
-    "id": "2551b271-6f8a-4c3b-a11d-5588698c1e69",
-    "kapalId": "KAP-2505-00033",
-    "tanggal": "2025-04-30",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan West Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 63,
-        "jumlahEkor": 125,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 1575000,
-    "status": "pending"
-  },
-  {
-    "id": "469c1337-96ac-46af-8b28-044639e0a050",
-    "kapalId": "KAP-2505-00007",
-    "tanggal": "2025-05-03",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan West Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 56,
-        "jumlahEkor": 91,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 118,
-        "jumlahEkor": 142,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Cakalang",
-        "beratKg": 88,
-        "jumlahEkor": 129,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 58,
-        "jumlahEkor": 133,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 8000000,
-    "status": "verified"
-  },
-  {
-    "id": "26b5ed0b-6e09-41b9-acb3-814f990005ee",
-    "kapalId": "KAP-2505-00034",
-    "tanggal": "2025-04-24",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan West Yorkshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 51,
-        "jumlahEkor": 99,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
-        "beratKg": 51,
-        "jumlahEkor": 143,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 179,
-        "jumlahEkor": 52,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 27,
-        "jumlahEkor": 115,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 7700000,
-    "status": "verified"
-  },
-  {
-    "id": "ce312744-203a-4210-aa80-0089508421d8",
-    "kapalId": "KAP-2505-00028",
-    "tanggal": "2025-04-25",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Lincolnshire",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 43,
-        "jumlahEkor": 71,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tuna",
-        "beratKg": 200,
-        "jumlahEkor": 63,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Tenggiri",
-        "beratKg": 63,
-        "jumlahEkor": 104,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 7650000,
-    "status": "verified"
   }
 ];
