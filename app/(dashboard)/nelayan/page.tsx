@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { Users, CheckCircle2, ShieldCheck, UsersRound, User, Plus } from 'lucide-react';
+import { Users, CheckCircle2, ShieldCheck, UsersRound, Plus } from 'lucide-react';
 import { useData } from '@/context/data-context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
@@ -67,9 +67,11 @@ export default function NelayanListPage() {
       header: 'Nama',
       cell: (n) => (
         <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
-          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
-            <User className="h-3.5 w-3.5" />
-          </span>
+          <img
+            src={n.fotoUrl || '/avatars/default.svg'}
+            alt={n.nama}
+            className="h-6 w-6 shrink-0 rounded-full border border-border object-cover"
+          />
           {n.nama}
         </Link>
       ),

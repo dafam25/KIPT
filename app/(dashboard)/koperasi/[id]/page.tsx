@@ -37,7 +37,12 @@ export default function KoperasiDetailPage() {
     {
       header: 'Nama',
       cell: (n) => (
-        <Link href={`/nelayan/${n.id}`} className="font-medium text-primary hover:underline">
+        <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
+          <img
+            src={n.fotoUrl || '/avatars/default.svg'}
+            alt={n.nama}
+            className="h-6 w-6 shrink-0 rounded-full border border-border object-cover"
+          />
           {n.nama}
         </Link>
       ),
