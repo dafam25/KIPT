@@ -18,7 +18,7 @@ import type { Nelayan } from '@/lib/types';
 import { formatDate, formatNumber } from '@/lib/format';
 import { totalNelayan, nelayanAktifCount, nelayanTerverifikasiCount, nelayanTergabungKoperasiCount } from '@/lib/stats';
 import { nextNelayanId } from '@/lib/id';
-import { randomAvatar, AVATAR_DEFAULT, type JenisKelamin } from '@/lib/avatar';
+import { avatarForGender, AVATAR_DEFAULT, type JenisKelamin } from '@/lib/avatar';
 
 const NONE_VALUE = 'none';
 const JENIS_KELAMIN_OPTIONS: { value: JenisKelamin; label: string }[] = [
@@ -53,7 +53,7 @@ export default function NelayanListPage() {
       tanggalLahir: form.tanggalLahir,
       alamat: form.alamat.trim(),
       noHp: form.noHp.trim(),
-      fotoUrl: randomAvatar(form.jenisKelamin),
+      fotoUrl: avatarForGender(form.jenisKelamin),
       status: 'aktif',
       terverifikasi: false,
       tanggalBergabung: new Date().toISOString().slice(0, 10),

@@ -6,7 +6,7 @@ import { nextNelayanId, nextKapalId, nextBiosecurityId } from '../lib/id';
 import type { Kapal, Nelayan, HasilTangkap, Koperasi, PasarIndustri, Notifikasi, JadwalSandar, BiosecurityCheck, TiketBantuan } from '../lib/types';
 import { JENIS_IKAN_OPTIONS } from '../lib/jenis-ikan';
 import { BIOSECURITY_CHECKLIST_ITEMS, determineBiosecurityHasil } from '../lib/biosecurity';
-import { AVATAR_PRIA, AVATAR_WANITA } from '../lib/avatar';
+import { avatarForGender } from '../lib/avatar';
 
 faker.seed(20250510); // fixed seed so the dataset is stable across re-runs
 const SEED_DATE = new Date('2025-05-10T00:00:00Z'); // fixed "today" (10 Mei 2025, UTC) so generated IDs/dates are stable across re-runs regardless of machine timezone
@@ -203,7 +203,7 @@ const nelayanData: Nelayan[] = Array.from({ length: 60 }, () => {
   return {
     id,
     nama,
-    fotoUrl: faker.helpers.arrayElement(isPria ? AVATAR_PRIA : AVATAR_WANITA),
+    fotoUrl: avatarForGender(isPria ? 'pria' : 'wanita'),
     nik: faker.string.numeric(16),
     tempatLahir: faker.helpers.arrayElement(KOTA_PESISIR),
     tanggalLahir: faker.date.birthdate({ min: 25, max: 60, mode: 'age', refDate: SEED_DATE }).toISOString().slice(0, 10),

@@ -3,51 +3,51 @@ import type { TiketBantuan } from '../types';
 
 export const tiketBantuanData: TiketBantuan[] = [
   {
-    "id": "1a8f9226-f53a-4ce3-8127-44203a210a80",
-    "judul": "Permintaan penambahan akun pengguna",
-    "kategori": "Akun",
-    "deskripsi": "Mohon dibuatkan akun tambahan untuk petugas lapangan di pelabuhan.",
-    "status": "Terbuka",
-    "dibuatPada": "2025-04-30T01:42:31.778Z"
+    "id": "f2de9000-292f-4e30-ab26-b5ed0b6e091b",
+    "judul": "Grafik hasil tangkapan tidak muncul",
+    "kategori": "Teknis",
+    "deskripsi": "Grafik pada halaman Laporan & Analitik tidak menampilkan data meskipun filter tanggal sudah diatur.",
+    "status": "Selesai",
+    "dibuatPada": "2025-05-04T00:26:44.995Z"
   },
   {
-    "id": "08421d89-8b4d-43c4-9525-aef4007e29b3",
-    "judul": "Permintaan akses unduh laporan",
-    "kategori": "Data",
-    "deskripsi": "Mohon diberikan akses untuk mengunduh laporan bulanan pada menu Laporan & Analitik.",
-    "status": "Terbuka",
-    "dibuatPada": "2025-04-29T12:07:11.510Z"
+    "id": "14f99000-5ee8-47f1-8a8f-9226f53ace31",
+    "judul": "Login gagal setelah pembaruan sistem",
+    "kategori": "Teknis",
+    "deskripsi": "Setelah pembaruan sistem terbaru, saya tidak bisa masuk ke akun meskipun kata sandi sudah benar.",
+    "status": "Diproses",
+    "dibuatPada": "2025-04-26T05:19:10.020Z"
   },
   {
-    "id": "96f0a36c-c701-4493-8995-c2547dd17e8b",
+    "id": "03a210a8-0008-4950-8842-1d898b4d3c45",
     "judul": "Permintaan reset kata sandi akun",
     "kategori": "Akun",
     "deskripsi": "Saya lupa kata sandi akun dan membutuhkan bantuan untuk mengatur ulang.",
-    "status": "Diproses",
-    "dibuatPada": "2025-04-28T19:40:13.930Z"
+    "status": "Terbuka",
+    "dibuatPada": "2025-05-03T07:22:42.594Z"
   },
   {
-    "id": "b5eb5192-ccad-4ae8-aa26-5daab31cd3f3",
+    "id": "4007e29b-3737-4509-a6f0-a36cc7014939",
     "judul": "Pertanyaan terkait kebijakan data",
     "kategori": "Lainnya",
     "deskripsi": "Ingin menanyakan kebijakan penyimpanan data nelayan pada sistem ini.",
-    "status": "Selesai",
-    "dibuatPada": "2025-04-28T11:38:20.173Z"
-  },
-  {
-    "id": "c2cf2b6c-e575-4f0c-b899-1bd652093b5f",
-    "judul": "Permintaan penambahan akun pengguna",
-    "kategori": "Akun",
-    "deskripsi": "Mohon dibuatkan akun tambahan untuk petugas lapangan di pelabuhan.",
     "status": "Terbuka",
-    "dibuatPada": "2025-05-05T22:57:27.424Z"
+    "dibuatPada": "2025-05-05T21:50:59.629Z"
   },
   {
-    "id": "952cc4b1-2a05-4cf8-b11d-325dc8abddfc",
-    "judul": "Permintaan penambahan menu cuaca",
-    "kategori": "Lainnya",
-    "deskripsi": "Mohon dipertimbangkan penambahan menu khusus untuk rekap cuaca harian.",
+    "id": "47dd17e8-b097-4cdb-85eb-5192ccadae8a",
+    "judul": "Halaman Peta Tracking tidak dapat dimuat",
+    "kategori": "Teknis",
+    "deskripsi": "Peta pada halaman Peta Tracking tidak muncul sejak pagi ini, hanya area kosong yang tampil.",
     "status": "Diproses",
-    "dibuatPada": "2025-05-02T23:24:19.761Z"
+    "dibuatPada": "2025-04-27T00:29:39.193Z"
+  },
+  {
+    "id": "ab31cd3f-39e6-45bc-a2cf-2b6ce575f0c8",
+    "judul": "Pertanyaan terkait kebijakan data",
+    "kategori": "Lainnya",
+    "deskripsi": "Ingin menanyakan kebijakan penyimpanan data nelayan pada sistem ini.",
+    "status": "Diproses",
+    "dibuatPada": "2025-04-21T15:20:07.609Z"
   }
 ];
