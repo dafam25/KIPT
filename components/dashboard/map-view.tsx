@@ -41,9 +41,9 @@ function shadeTriple(hslParams: string): { light: string; mid: string; dark: str
 // bamboo outriggers (cadik) with floats (the single most recognizable feature of a
 // small-scale Indonesian fishing vessel vs. a generic motorboat/yacht), a modest
 // wood-roofed wheelhouse with one small window, a coil of net and stacked baskets on
-// the open deck, mast with an antenna boom and status-colored pennant, plus water-wake
-// strokes and a soft drop shadow, so vessels read as an actual fishing boat rather than
-// a flat dot, plain line glyph, or glassy pleasure boat.
+// the open deck, a mast with a status-colored pennant, plus water-wake strokes and a
+// soft drop shadow, so vessels read as an actual fishing boat rather than a flat dot,
+// plain line glyph, or glassy pleasure boat.
 // True photorealistic imagery isn't achievable here (no image-generation/photo-sourcing
 // capability), so this pushes the hand-authored inline SVG as far as that allows.
 // Inlined as a raw SVG string because Leaflet's divIcon only accepts HTML markup.
@@ -72,7 +72,6 @@ function vesselIconForStatus(status: KapalStatus) {
       <circle cx="16" cy="30.5" r="1.4" fill="none" stroke="#92400E" stroke-width="0.9" opacity="0.85"/>
       <ellipse cx="45" cy="32" rx="3" ry="2" fill="#B45309"/>
       <ellipse cx="49" cy="33" rx="2.6" ry="1.8" fill="#C2691E"/>
-      <line x1="30" y1="3" x2="12" y2="10" stroke="#334155" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
       <rect x="25" y="16" width="16" height="19" rx="1.4" fill="#CBD5E1"/>
       <rect x="21" y="16" width="14" height="19" rx="1.4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="0.6"/>
       <path d="M19 16 L28 9 L37 16 Z" fill="#0E7490"/>
