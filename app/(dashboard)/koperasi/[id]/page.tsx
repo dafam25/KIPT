@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import type { Nelayan } from '@/lib/types';
 import { formatNumber, formatRupiah } from '@/lib/format';
 import { peringkatVolume } from '@/lib/stats';
+import { AVATAR_DEFAULT } from '@/lib/avatar';
 
 export default function KoperasiDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -39,7 +40,7 @@ export default function KoperasiDetailPage() {
       cell: (n) => (
         <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
           <img
-            src={n.fotoUrl || '/avatars/default.svg'}
+            src={n.fotoUrl || AVATAR_DEFAULT}
             alt={n.nama}
             className="h-6 w-6 shrink-0 rounded-full border border-border object-cover"
           />

@@ -13,6 +13,7 @@ import {
   totalHasilTangkapKg, trenHasilTangkapHarian,
 } from '@/lib/stats';
 import { formatDate, formatNumber, formatRupiah } from '@/lib/format';
+import { AVATAR_DEFAULT } from '@/lib/avatar';
 
 export default function NelayanDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -55,7 +56,7 @@ export default function NelayanDetailPage() {
       <Card>
         <CardContent className="grid gap-6 p-6 md:grid-cols-[auto_1fr]">
           <img
-            src={orang.fotoUrl || '/avatars/default.svg'}
+            src={orang.fotoUrl || AVATAR_DEFAULT}
             alt={orang.nama}
             className="h-28 w-28 rounded-lg border border-border object-cover"
           />

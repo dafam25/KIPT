@@ -1,4 +1,5 @@
 import type { Nelayan } from '@/lib/types';
+import { AVATAR_DEFAULT } from '@/lib/avatar';
 
 export interface IdCardProps {
   nelayan: Nelayan;
@@ -16,7 +17,7 @@ export function IdCard({ nelayan, koperasiNama, kapalNama }: IdCardProps) {
       <div className="p-5">
         <div className="flex items-center gap-3">
           <img
-            src={nelayan.fotoUrl || '/avatars/default.svg'}
+            src={nelayan.fotoUrl || AVATAR_DEFAULT}
             alt={nelayan.nama}
             className="h-16 w-16 rounded-full border border-border object-cover"
           />

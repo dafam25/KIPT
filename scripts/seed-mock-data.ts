@@ -6,6 +6,7 @@ import { nextNelayanId, nextKapalId, nextBiosecurityId } from '../lib/id';
 import type { Kapal, Nelayan, HasilTangkap, Koperasi, PasarIndustri, Notifikasi, JadwalSandar, BiosecurityCheck, TiketBantuan } from '../lib/types';
 import { JENIS_IKAN_OPTIONS } from '../lib/jenis-ikan';
 import { BIOSECURITY_CHECKLIST_ITEMS, determineBiosecurityHasil } from '../lib/biosecurity';
+import { AVATAR_PRIA, AVATAR_WANITA } from '../lib/avatar';
 
 faker.seed(20250510); // fixed seed so the dataset is stable across re-runs
 const SEED_DATE = new Date('2025-05-10T00:00:00Z'); // fixed "today" (10 Mei 2025, UTC) so generated IDs/dates are stable across re-runs regardless of machine timezone
@@ -47,12 +48,6 @@ function namaLengkapDenganGender(): { nama: string; isPria: boolean } {
 function namaLengkap(): string {
   return namaLengkapDenganGender().nama;
 }
-
-// Local illustrated avatar pool (public/avatars/*.svg) — no real photo-sourcing capability
-// is available, so these hand-authored SVGs stand in for "foto nelayan" instead of leaving
-// fotoUrl empty or pointing at an external placeholder service.
-const AVATAR_PRIA = ['/avatars/pria-01.svg', '/avatars/pria-02.svg', '/avatars/pria-03.svg', '/avatars/pria-04.svg', '/avatars/pria-05.svg'];
-const AVATAR_WANITA = ['/avatars/wanita-01.svg', '/avatars/wanita-02.svg', '/avatars/wanita-03.svg', '/avatars/wanita-04.svg', '/avatars/wanita-05.svg'];
 
 const KOTA_PESISIR = [
   'Banyuwangi', 'Jember', 'Situbondo', 'Probolinggo', 'Pasuruan', 'Lamongan', 'Tuban', 'Gresik', 'Sidoarjo', 'Rembang',

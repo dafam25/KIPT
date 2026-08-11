@@ -18,13 +18,18 @@ import type { Nelayan } from '@/lib/types';
 import { formatDate, formatNumber } from '@/lib/format';
 import { totalNelayan, nelayanAktifCount, nelayanTerverifikasiCount, nelayanTergabungKoperasiCount } from '@/lib/stats';
 import { nextNelayanId } from '@/lib/id';
+import { randomAvatar, AVATAR_DEFAULT, type JenisKelamin } from '@/lib/avatar';
 
 const NONE_VALUE = 'none';
+const JENIS_KELAMIN_OPTIONS: { value: JenisKelamin; label: string }[] = [
+  { value: 'pria', label: 'Pria' },
+  { value: 'wanita', label: 'Wanita' },
+];
 
 function emptyForm() {
   return {
     nama: '', nik: '', tempatLahir: '', tanggalLahir: '', alamat: '', noHp: '', pendamping: '',
-    koperasiId: NONE_VALUE, kapalId: NONE_VALUE,
+    jenisKelamin: 'pria' as JenisKelamin, koperasiId: NONE_VALUE, kapalId: NONE_VALUE,
   };
 }
 
@@ -48,7 +53,7 @@ export default function NelayanListPage() {
       tanggalLahir: form.tanggalLahir,
       alamat: form.alamat.trim(),
       noHp: form.noHp.trim(),
-      fotoUrl: '',
+      fotoUrl: randomAvatar(form.jenisKelamin),
       status: 'aktif',
       terverifikasi: false,
       tanggalBergabung: new Date().toISOString().slice(0, 10),
@@ -68,7 +73,7 @@ export default function NelayanListPage() {
       cell: (n) => (
         <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
           <img
-            src={n.fotoUrl || '/avatars/default.svg'}
+            src={n.fotoUrl || AVATAR_DEFAULT}
             alt={n.nama}
             className="h-6 w-6 shrink-0 rounded-full border border-border object-cover"
           />
@@ -134,6 +139,21 @@ export default function NelayanListPage() {
                 <div className="space-y-1.5">
                   <label htmlFor="nelayan-nik" className="text-sm text-muted-foreground">NIK</label>
                   <Input id="nelayan-nik" value={form.nik} onChange={(e) => setForm((f) => ({ ...f, nik: e.target.value }))} />
+                </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="nelayan-jenis-kelamin" className="text-sm text-muted-foreground">Jenis Kelamin</label>
+                  <Select
+                    items={JENIS_KELAMIN_OPTIONS}
+                    value={form.jenisKelamin}
+                    onValueChange={(v) => setForm((f) => ({ ...f, jenisKelamin: (v ?? 'pria') as JenisKelamin }))}
+                  >
+                    <SelectTrigger id="nelayan-jenis-kelamin"><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {JENIS_KELAMIN_OPTIONS.map((opt) => (
+                        <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="nelayan-no-hp" className="text-sm text-muted-foreground">No HP</label>
