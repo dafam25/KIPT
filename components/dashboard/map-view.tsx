@@ -36,11 +36,14 @@ function shadeTriple(hslParams: string): { light: string; mid: string; dark: str
   };
 }
 
-// A more detailed shaded boat illustration — banded hull shading, a white racing
-// stripe, gunwale rail dots, a peaked-roof wheelhouse with glossy windows and a door,
-// mast with an outrigger boom and status-colored pennant, plus water-wake strokes and
-// a soft drop shadow — so vessels read closer to the small 3D-rendered boat look used
-// in the project's own design mockups, rather than a flat dot or plain line glyph.
+// A small Indonesian-style traditional fishing boat ("kapal nelayan" / "perahu cadik")
+// illustration — banded hull shading, a white hull stripe, gunwale rail dots, twin
+// bamboo outriggers (cadik) with floats (the single most recognizable feature of a
+// small-scale Indonesian fishing vessel vs. a generic motorboat/yacht), a modest
+// wood-roofed wheelhouse with one small window, a coil of net and stacked baskets on
+// the open deck, mast with an antenna boom and status-colored pennant, plus water-wake
+// strokes and a soft drop shadow, so vessels read as an actual fishing boat rather than
+// a flat dot, plain line glyph, or glassy pleasure boat.
 // True photorealistic imagery isn't achievable here (no image-generation/photo-sourcing
 // capability), so this pushes the hand-authored inline SVG as far as that allows.
 // Inlined as a raw SVG string because Leaflet's divIcon only accepts HTML markup.
@@ -49,28 +52,31 @@ function vesselIconForStatus(status: KapalStatus) {
   const hslParams = TONE_HSL[tone as keyof typeof TONE_HSL] ?? TONE_HSL.muted;
   const { light, mid, dark } = shadeTriple(hslParams);
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" width="40" height="37" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.45))">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" width="42" height="39" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.45))">
       <path d="M2 44 Q8 40 14 44" stroke="#FFFFFF" stroke-width="1.3" fill="none" opacity="0.55"/>
       <path d="M50 44 Q56 40 62 44" stroke="#FFFFFF" stroke-width="1.3" fill="none" opacity="0.55"/>
       <ellipse cx="32" cy="50" rx="22" ry="4" fill="#0F172A" opacity="0.18"/>
+      <line x1="14" y1="34" x2="1" y2="43" stroke="#92652E" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="1" cy="44" rx="3.4" ry="1.5" fill="#A9744A"/>
+      <line x1="50" y1="34" x2="63" y2="43" stroke="#92652E" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="63" cy="44" rx="3.4" ry="1.5" fill="#A9744A"/>
       <path d="M6 34 L58 34 L50 48 Q32 53 14 48 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
       <path d="M8 34 L56 34 L52.5 42 L11.5 42 Z" fill="${mid}"/>
       <path d="M10 34 L54 34 L52.5 37.5 L11.5 37.5 Z" fill="${light}"/>
       <path d="M12 44 Q32 47 52 44 L52 45.6 Q32 48.6 12 45.6 Z" fill="#FFFFFF" opacity="0.85"/>
+      <circle cx="14" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
       <circle cx="20" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
-      <circle cx="28" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
-      <circle cx="36" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
       <circle cx="44" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
-      <line x1="28" y1="3" x2="8" y2="11" stroke="#334155" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
-      <line x1="28" y1="3" x2="50" y2="13" stroke="#334155" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
-      <rect x="23" y="16" width="20" height="19" rx="2" fill="#CBD5E1"/>
-      <rect x="19" y="16" width="18" height="19" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.6"/>
-      <path d="M17 16 L28 9 L39 16 Z" fill="#64748B"/>
-      <line x1="28" y1="9" x2="28" y2="16" stroke="#94A3B8" stroke-width="0.6" opacity="0.6"/>
-      <rect x="22" y="21" width="5" height="5" rx="0.8" fill="#1D4ED8"/>
-      <path d="M22.5 21.5 L25 21.5 L22.5 25 Z" fill="#FFFFFF" opacity="0.4"/>
-      <rect x="30" y="21" width="5" height="5" rx="0.8" fill="#1D4ED8"/>
-      <path d="M30.5 21.5 L33 21.5 L30.5 25 Z" fill="#FFFFFF" opacity="0.4"/>
+      <circle cx="50" cy="36" r="0.8" fill="#1E293B" opacity="0.6"/>
+      <circle cx="16" cy="30.5" r="3.2" fill="none" stroke="#92400E" stroke-width="1.1" opacity="0.85"/>
+      <circle cx="16" cy="30.5" r="1.4" fill="none" stroke="#92400E" stroke-width="0.9" opacity="0.85"/>
+      <ellipse cx="45" cy="32" rx="3" ry="2" fill="#B45309"/>
+      <ellipse cx="49" cy="33" rx="2.6" ry="1.8" fill="#C2691E"/>
+      <line x1="30" y1="3" x2="12" y2="10" stroke="#334155" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+      <rect x="25" y="16" width="16" height="19" rx="1.4" fill="#CBD5E1"/>
+      <rect x="21" y="16" width="14" height="19" rx="1.4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="0.6"/>
+      <path d="M19 16 L28 9 L37 16 Z" fill="#0E7490"/>
+      <rect x="25.5" y="21" width="4.5" height="4.5" rx="0.6" fill="#1E293B"/>
       <rect x="26.5" y="29" width="3" height="6" rx="0.5" fill="#94A3B8"/>
       <line x1="28" y1="9" x2="28" y2="1" stroke="#334155" stroke-width="1.4" stroke-linecap="round"/>
       <path d="M28 1 L34 3.2 L28 4.8 Z" fill="${dark}"/>
@@ -78,8 +84,8 @@ function vesselIconForStatus(status: KapalStatus) {
   return L.divIcon({
     className: '',
     html: svg,
-    iconSize: [40, 37],
-    iconAnchor: [20, 26],
+    iconSize: [42, 39],
+    iconAnchor: [21, 27],
   });
 }
 
