@@ -19,30 +19,45 @@ const TONE_HSL: Record<'success' | 'warning' | 'destructive' | 'muted', string> 
   muted: '215 16% 47%',
 };
 
-// Ship glyph path data reused from lucide-react's bundled "Ship" icon (ISC licensed,
-// already a project dependency) so the marker renders an actual vessel silhouette
-// instead of a plain dot. Inlined as a raw SVG string because Leaflet's divIcon only
-// accepts HTML markup, not a React icon component.
-const SHIP_GLYPH_PATHS = [
-  'M12 10.189V14',
-  'M12 2v3',
-  'M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6',
-  'M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76',
-  'M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1',
-]
-  .map((d) => `<path d="${d}"/>`)
-  .join('');
+// Builds a light/dark shade pair from a bare "H S% L%" HSL triple so the hull can be
+// rendered with a two-tone highlight (top) / shadow (bottom) fill instead of one flat
+// color — a simple, dependency-free way to give the flat SVG boat some 3D depth.
+function shadePair(hslParams: string): { light: string; dark: string } {
+  const [h, sRaw, lRaw] = hslParams.split(' ');
+  const s = parseFloat(sRaw);
+  const l = parseFloat(lRaw);
+  const clamp = (n: number) => Math.min(94, Math.max(8, n));
+  return {
+    light: `hsl(${h} ${s}% ${clamp(l + 22)}%)`,
+    dark: `hsl(${h} ${s}% ${clamp(l - 8)}%)`,
+  };
+}
 
+// A small shaded boat illustration (hull with highlight/shadow tones, cabin with
+// windows, mast + pennant) instead of a plain dot or a flat line-art glyph, so vessels
+// read as an actual 3D-looking ship on the map. Inlined as a raw SVG string because
+// Leaflet's divIcon only accepts HTML markup, not a React component.
 function vesselIconForStatus(status: KapalStatus) {
   const tone = KAPAL_STATUS_TONE[status];
   const hslParams = TONE_HSL[tone as keyof typeof TONE_HSL] ?? TONE_HSL.muted;
+  const { light, dark } = shadePair(hslParams);
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 40" width="36" height="30" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.45))">
+      <ellipse cx="24" cy="35" rx="17" ry="3" fill="#0F172A" opacity="0.18"/>
+      <path d="M5 22 L43 22 L37 33 Q24 37.5 11 33 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
+      <path d="M8 22 L40 22 L38.5 26 L9.5 26 Z" fill="${light}"/>
+      <rect x="18" y="6" width="16" height="15" rx="2" fill="#CBD5E1"/>
+      <rect x="15" y="6" width="14" height="15" rx="2" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.6"/>
+      <rect x="18" y="11" width="3.5" height="3.5" rx="0.6" fill="#1D4ED8"/>
+      <rect x="24" y="11" width="3.5" height="3.5" rx="0.6" fill="#1D4ED8"/>
+      <line x1="22" y1="6" x2="22" y2="1" stroke="#334155" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M22 1 L28 3 L22 4.5 Z" fill="${dark}"/>
+    </svg>`;
   return L.divIcon({
     className: '',
-    html: `<div style="width:26px;height:26px;border-radius:9999px;background:hsl(${hslParams});box-shadow:0 1px 4px rgba(15,23,42,0.35),0 0 0 2px white;display:flex;align-items:center;justify-content:center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">${SHIP_GLYPH_PATHS}</svg>
-    </div>`,
-    iconSize: [26, 26],
-    iconAnchor: [13, 13],
+    html: svg,
+    iconSize: [36, 30],
+    iconAnchor: [18, 20],
   });
 }
 
