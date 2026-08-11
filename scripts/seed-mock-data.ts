@@ -34,15 +34,25 @@ const NAMA_BELAKANG = [
   'Handoko', 'Wirawan', 'Yulianto', 'Kuncoro', 'Sasongko', 'Wardhana', 'Atmaja', 'Winarno', 'Sudibyo', 'Setyawan',
   'Nasution', 'Siregar', 'Simanjuntak', 'Harahap', 'Lubis', 'Marpaung', 'Sinaga', 'Tanjung', 'Rangkuti', 'Daulay',
 ];
-function namaLengkap(): string {
+function namaLengkapDenganGender(): { nama: string; isPria: boolean } {
+  const isPria = faker.datatype.boolean();
   let depan: string;
   let belakang: string;
   do {
-    depan = faker.helpers.arrayElement(faker.datatype.boolean() ? NAMA_DEPAN_PRIA : NAMA_DEPAN_WANITA);
+    depan = faker.helpers.arrayElement(isPria ? NAMA_DEPAN_PRIA : NAMA_DEPAN_WANITA);
     belakang = faker.helpers.arrayElement(NAMA_BELAKANG);
   } while (depan === belakang);
-  return `${depan} ${belakang}`;
+  return { nama: `${depan} ${belakang}`, isPria };
 }
+function namaLengkap(): string {
+  return namaLengkapDenganGender().nama;
+}
+
+// Local illustrated avatar pool (public/avatars/*.svg) — no real photo-sourcing capability
+// is available, so these hand-authored SVGs stand in for "foto nelayan" instead of leaving
+// fotoUrl empty or pointing at an external placeholder service.
+const AVATAR_PRIA = ['/avatars/pria-01.svg', '/avatars/pria-02.svg', '/avatars/pria-03.svg', '/avatars/pria-04.svg', '/avatars/pria-05.svg'];
+const AVATAR_WANITA = ['/avatars/wanita-01.svg', '/avatars/wanita-02.svg', '/avatars/wanita-03.svg', '/avatars/wanita-04.svg', '/avatars/wanita-05.svg'];
 
 const KOTA_PESISIR = [
   'Banyuwangi', 'Jember', 'Situbondo', 'Probolinggo', 'Pasuruan', 'Lamongan', 'Tuban', 'Gresik', 'Sidoarjo', 'Rembang',
@@ -194,15 +204,16 @@ const nelayanData: Nelayan[] = Array.from({ length: 60 }, () => {
   const id = nextNelayanId(nelayanIds, SEED_DATE);
   nelayanIds.push(id);
   const kapal = faker.helpers.arrayElement(kapalData);
+  const { nama, isPria } = namaLengkapDenganGender();
   return {
     id,
-    nama: namaLengkap(),
+    nama,
+    fotoUrl: faker.helpers.arrayElement(isPria ? AVATAR_PRIA : AVATAR_WANITA),
     nik: faker.string.numeric(16),
     tempatLahir: faker.helpers.arrayElement(KOTA_PESISIR),
     tanggalLahir: faker.date.birthdate({ min: 25, max: 60, mode: 'age', refDate: SEED_DATE }).toISOString().slice(0, 10),
     alamat: alamatNelayan(),
     noHp: `08${faker.string.numeric(9)}`,
-    fotoUrl: '',
     status: faker.helpers.arrayElement(['aktif', 'aktif', 'nonaktif']),
     terverifikasi: faker.datatype.boolean(),
     tanggalBergabung: faker.date.past({ years: 3, refDate: SEED_DATE }).toISOString().slice(0, 10),

@@ -8,6 +8,13 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { formatNumber, formatRupiah } from '@/lib/format';
 import { peringkatVolume } from '@/lib/stats';
+import type { PasarIndustri } from '@/lib/types';
+
+const ILUSTRASI_JENIS: Record<PasarIndustri['jenis'], string> = {
+  'Pasar Tradisional': '/images/pasar-industri/pasar-tradisional.svg',
+  'Pasar Modern': '/images/pasar-industri/pasar-modern.svg',
+  'Industri Pengolahan': '/images/pasar-industri/industri-pengolahan.svg',
+};
 
 export default function PasarIndustriDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -45,6 +52,11 @@ export default function PasarIndustriDetailPage() {
           {item.nama}
           <StatusBadge label={item.status} tone={item.status === 'Aktif' ? 'success' : 'muted'} />
         </CardHeader>
+        <img
+          src={ILUSTRASI_JENIS[item.jenis]}
+          alt={`Ilustrasi ${item.jenis.toLowerCase()} ${item.nama}`}
+          className="h-48 w-full border-y border-border object-cover"
+        />
         <CardContent className="grid grid-cols-2 gap-y-2 text-sm sm:grid-cols-3">
           <div><span className="text-muted-foreground">Jenis</span><p className="font-medium">{item.jenis}</p></div>
           <div><span className="text-muted-foreground">Lokasi</span><p className="font-medium">{item.lokasi}</p></div>

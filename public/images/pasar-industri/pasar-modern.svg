@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="Ilustrasi pasar ikan modern">
+  <rect width="400" height="200" fill="#E0F2FE"/>
+  <rect y="165" width="400" height="35" fill="#BAE6FD"/>
+  <rect x="55" y="60" width="230" height="105" fill="#F1F5F9"/>
+  <rect x="55" y="60" width="230" height="16" fill="#2563EB"/>
+  <g fill="#93C5FD">
+    <rect x="70" y="88" width="26" height="26"/>
+    <rect x="104" y="88" width="26" height="26"/>
+    <rect x="138" y="88" width="26" height="26"/>
+    <rect x="172" y="88" width="26" height="26"/>
+    <rect x="206" y="88" width="26" height="26"/>
+    <rect x="240" y="88" width="26" height="26"/>
+    <rect x="70" y="122" width="26" height="26"/>
+    <rect x="104" y="122" width="26" height="26"/>
+    <rect x="138" y="122" width="26" height="26"/>
+    <rect x="172" y="122" width="26" height="26"/>
+    <rect x="206" y="122" width="26" height="26"/>
+    <rect x="240" y="122" width="26" height="26"/>
+  </g>
+  <rect x="150" y="150" width="36" height="15" fill="#0EA5E9"/>
+  <path d="M310 150c10-14 30-14 40 0-14 6-26 6-40 0Z" fill="#1D4ED8"/>
+  <rect x="325" y="140" width="6" height="12" fill="#1D4ED8"/>
+</svg>

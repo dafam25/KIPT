@@ -55,9 +55,9 @@ export default function NelayanDetailPage() {
       <Card>
         <CardContent className="grid gap-6 p-6 md:grid-cols-[auto_1fr]">
           <img
-            src={orang.fotoUrl || 'https://placehold.co/120x120?text=Foto'}
+            src={orang.fotoUrl || '/avatars/default.svg'}
             alt={orang.nama}
-            className="h-28 w-28 rounded-lg object-cover"
+            className="h-28 w-28 rounded-lg border border-border object-cover"
           />
           <div className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
             <div><span className="text-muted-foreground">ID Nelayan</span><p className="font-medium">{orang.id}</p></div>

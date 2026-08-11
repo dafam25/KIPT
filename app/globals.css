@@ -54,87 +54,87 @@
 }
 
 /*
- * Digital Fisherman ID has a single fixed dark-navy theme (no light/dark
+ * Digital Fisherman ID has a single fixed light theme (no light/dark
  * toggle is in scope). The :root and .dark blocks intentionally hold the
  * same values so the palette is consistent whether or not the `dark`
  * class is present on <html>.
  */
 :root {
-  --background: hsl(222 47% 8%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(222 40% 12%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(222 40% 12%);
-  --popover-foreground: hsl(210 40% 98%);
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
   --primary: hsl(217 91% 60%);
-  --primary-foreground: hsl(210 40% 98%);
-  --secondary: hsl(217 33% 17%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(217 33% 17%);
-  --muted-foreground: hsl(215 20% 65%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 20% 95%);
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted: hsl(210 20% 95%);
+  --muted-foreground: hsl(215 16% 47%);
   --accent: hsl(199 89% 48%);
-  --accent-foreground: hsl(210 40% 98%);
-  --success: hsl(142 71% 45%);
-  --success-foreground: hsl(210 40% 98%);
-  --warning: hsl(38 92% 50%);
-  --warning-foreground: hsl(222 47% 8%);
-  --destructive: hsl(0 72% 51%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(217 33% 20%);
-  --input: hsl(217 33% 20%);
+  --accent-foreground: hsl(0 0% 100%);
+  --success: hsl(142 71% 38%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(38 92% 42%);
+  --warning-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 72% 45%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(214 32% 89%);
+  --input: hsl(214 32% 89%);
   --ring: hsl(217 91% 60%);
-  --chart-1: hsl(217 91% 60%);
-  --chart-2: hsl(199 89% 48%);
-  --chart-3: hsl(142 71% 45%);
-  --chart-4: hsl(262 83% 58%);
-  --chart-5: hsl(38 92% 50%);
+  --chart-1: hsl(217 91% 55%);
+  --chart-2: hsl(199 89% 42%);
+  --chart-3: hsl(142 71% 38%);
+  --chart-4: hsl(262 83% 55%);
+  --chart-5: hsl(38 92% 45%);
   --radius: 0.75rem;
-  --sidebar: hsl(222 40% 12%);
-  --sidebar-foreground: hsl(210 40% 98%);
+  --sidebar: hsl(210 25% 97%);
+  --sidebar-foreground: hsl(222 47% 11%);
   --sidebar-primary: hsl(217 91% 60%);
-  --sidebar-primary-foreground: hsl(210 40% 98%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
   --sidebar-accent: hsl(199 89% 48%);
-  --sidebar-accent-foreground: hsl(210 40% 98%);
-  --sidebar-border: hsl(217 33% 20%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(214 32% 89%);
   --sidebar-ring: hsl(217 91% 60%);
 }
 
 .dark {
-  --background: hsl(222 47% 8%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(222 40% 12%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(222 40% 12%);
-  --popover-foreground: hsl(210 40% 98%);
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
   --primary: hsl(217 91% 60%);
-  --primary-foreground: hsl(210 40% 98%);
-  --secondary: hsl(217 33% 17%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(217 33% 17%);
-  --muted-foreground: hsl(215 20% 65%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 20% 95%);
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted: hsl(210 20% 95%);
+  --muted-foreground: hsl(215 16% 47%);
   --accent: hsl(199 89% 48%);
-  --accent-foreground: hsl(210 40% 98%);
-  --success: hsl(142 71% 45%);
-  --success-foreground: hsl(210 40% 98%);
-  --warning: hsl(38 92% 50%);
-  --warning-foreground: hsl(222 47% 8%);
-  --destructive: hsl(0 72% 51%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(217 33% 20%);
-  --input: hsl(217 33% 20%);
+  --accent-foreground: hsl(0 0% 100%);
+  --success: hsl(142 71% 38%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(38 92% 42%);
+  --warning-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 72% 45%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(214 32% 89%);
+  --input: hsl(214 32% 89%);
   --ring: hsl(217 91% 60%);
-  --chart-1: hsl(217 91% 60%);
-  --chart-2: hsl(199 89% 48%);
-  --chart-3: hsl(142 71% 45%);
-  --chart-4: hsl(262 83% 58%);
-  --chart-5: hsl(38 92% 50%);
-  --sidebar: hsl(222 40% 12%);
-  --sidebar-foreground: hsl(210 40% 98%);
+  --chart-1: hsl(217 91% 55%);
+  --chart-2: hsl(199 89% 42%);
+  --chart-3: hsl(142 71% 38%);
+  --chart-4: hsl(262 83% 55%);
+  --chart-5: hsl(38 92% 45%);
+  --sidebar: hsl(210 25% 97%);
+  --sidebar-foreground: hsl(222 47% 11%);
   --sidebar-primary: hsl(217 91% 60%);
-  --sidebar-primary-foreground: hsl(210 40% 98%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
   --sidebar-accent: hsl(199 89% 48%);
-  --sidebar-accent-foreground: hsl(210 40% 98%);
-  --sidebar-border: hsl(217 33% 20%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(214 32% 89%);
   --sidebar-ring: hsl(217 91% 60%);
 }
 

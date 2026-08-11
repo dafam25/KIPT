@@ -13,19 +13,36 @@ import { KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 // string and can't reference CSS custom properties from a Tailwind class.
 // Stored as bare HSL parameters (without hsl() wrapper) to allow building both solid and translucent colors.
 const TONE_HSL: Record<'success' | 'warning' | 'destructive' | 'muted', string> = {
-  success: '142 71% 45%',
-  warning: '38 92% 50%',
-  destructive: '0 72% 51%',
-  muted: '215 20% 65%',
+  success: '142 71% 38%',
+  warning: '38 92% 42%',
+  destructive: '0 72% 45%',
+  muted: '215 16% 47%',
 };
+
+// Ship glyph path data reused from lucide-react's bundled "Ship" icon (ISC licensed,
+// already a project dependency) so the marker renders an actual vessel silhouette
+// instead of a plain dot. Inlined as a raw SVG string because Leaflet's divIcon only
+// accepts HTML markup, not a React icon component.
+const SHIP_GLYPH_PATHS = [
+  'M12 10.189V14',
+  'M12 2v3',
+  'M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6',
+  'M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76',
+  'M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1',
+]
+  .map((d) => `<path d="${d}"/>`)
+  .join('');
 
 function vesselIconForStatus(status: KapalStatus) {
   const tone = KAPAL_STATUS_TONE[status];
   const hslParams = TONE_HSL[tone as keyof typeof TONE_HSL] ?? TONE_HSL.muted;
   return L.divIcon({
     className: '',
-    html: `<div style="width:10px;height:10px;border-radius:9999px;background:hsl(${hslParams});box-shadow:0 0 0 3px hsl(${hslParams} / 0.3)"></div>`,
-    iconSize: [10, 10],
+    html: `<div style="width:26px;height:26px;border-radius:9999px;background:hsl(${hslParams});box-shadow:0 1px 4px rgba(15,23,42,0.35),0 0 0 2px white;display:flex;align-items:center;justify-content:center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">${SHIP_GLYPH_PATHS}</svg>
+    </div>`,
+    iconSize: [26, 26],
+    iconAnchor: [13, 13],
   });
 }
 
@@ -84,7 +101,7 @@ export function MapView({
       <MapContainer center={[-2.5, 118]} zoom={5} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
         {tileMode === 'peta' ? (
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
             attribution="&copy; OpenStreetMap contributors &copy; CARTO"
           />
         ) : (

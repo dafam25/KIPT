@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Avatar nelayan wanita">
+  <circle cx="32" cy="32" r="32" fill="#FEF3C7"/>
+  <path d="M6 62c0-15.5 11.6-26 26-26s26 10.5 26 26" fill="#0D9488"/>
+  <path d="M14 40c-2-18 8-27 18-27s20 9 18 27c-1-3-3-5-3-5-2 6-7 8-15 8s-13-2-15-8c0 0-2 2-3 5Z" fill="#2B2118"/>
+  <circle cx="32" cy="27" r="13" fill="#E0A972"/>
+</svg>

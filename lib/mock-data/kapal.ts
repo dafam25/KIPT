@@ -20,7 +20,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000019"
+    "nahkodaId": "NEL-2505-000006"
   },
   {
     "id": "KAP-2505-00002",
@@ -40,7 +40,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000027"
   },
   {
     "id": "KAP-2505-00003",
@@ -60,7 +60,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000029"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00004",
@@ -80,7 +80,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000020"
+    "nahkodaId": "NEL-2505-000017"
   },
   {
     "id": "KAP-2505-00005",
@@ -100,7 +100,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000057"
+    "nahkodaId": "NEL-2505-000034"
   },
   {
     "id": "KAP-2505-00006",
@@ -120,7 +120,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000011"
   },
   {
     "id": "KAP-2505-00007",
@@ -140,7 +140,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000056"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00008",
@@ -180,7 +180,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000021"
+    "nahkodaId": "NEL-2505-000002"
   },
   {
     "id": "KAP-2505-00010",
@@ -200,7 +200,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000046"
+    "nahkodaId": "NEL-2505-000045"
   },
   {
     "id": "KAP-2505-00011",
@@ -220,7 +220,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000028"
+    "nahkodaId": "NEL-2505-000009"
   },
   {
     "id": "KAP-2505-00012",
@@ -260,7 +260,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000038"
+    "nahkodaId": "NEL-2505-000008"
   },
   {
     "id": "KAP-2505-00014",
@@ -280,7 +280,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000002"
+    "nahkodaId": "NEL-2505-000033"
   },
   {
     "id": "KAP-2505-00015",
@@ -300,7 +300,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000007"
   },
   {
     "id": "KAP-2505-00016",
@@ -320,7 +320,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000013"
+    "nahkodaId": "NEL-2505-000057"
   },
   {
     "id": "KAP-2505-00017",
@@ -340,7 +340,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000021"
   },
   {
     "id": "KAP-2505-00018",
@@ -360,7 +360,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000003"
+    "nahkodaId": "NEL-2505-000019"
   },
   {
     "id": "KAP-2505-00019",
@@ -380,7 +380,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000034"
+    "nahkodaId": "NEL-2505-000037"
   },
   {
     "id": "KAP-2505-00020",
@@ -400,7 +400,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000012"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00021",
@@ -420,7 +420,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000043"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00022",
@@ -440,7 +440,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000005"
+    "nahkodaId": "NEL-2505-000023"
   },
   {
     "id": "KAP-2505-00023",
@@ -460,7 +460,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000007"
+    "nahkodaId": "NEL-2505-000031"
   },
   {
     "id": "KAP-2505-00024",
@@ -480,7 +480,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000015"
+    "nahkodaId": "NEL-2505-000026"
   },
   {
     "id": "KAP-2505-00025",
@@ -500,7 +500,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000059"
+    "nahkodaId": "NEL-2505-000052"
   },
   {
     "id": "KAP-2505-00026",
@@ -520,7 +520,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000014"
+    "nahkodaId": "NEL-2505-000003"
   },
   {
     "id": "KAP-2505-00027",
@@ -540,7 +540,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000032"
   },
   {
     "id": "KAP-2505-00028",
@@ -560,7 +560,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000026"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00029",
@@ -600,7 +600,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000018"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00031",
@@ -620,7 +620,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000020"
   },
   {
     "id": "KAP-2505-00032",
@@ -640,7 +640,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000033"
+    "nahkodaId": null
   },
   {
     "id": "KAP-2505-00033",
@@ -660,7 +660,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000041"
+    "nahkodaId": "NEL-2505-000018"
   },
   {
     "id": "KAP-2505-00034",
@@ -680,7 +680,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": null
+    "nahkodaId": "NEL-2505-000010"
   },
   {
     "id": "KAP-2505-00035",
@@ -720,7 +720,7 @@ export const kapalData: Kapal[] = [
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000022"
+    "nahkodaId": "NEL-2505-000013"
   },
   {
     "id": "KAP-2505-00037",
@@ -740,7 +740,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000008"
+    "nahkodaId": "NEL-2505-000044"
   },
   {
     "id": "KAP-2505-00038",
@@ -760,7 +760,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000030"
+    "nahkodaId": "NEL-2505-000035"
   },
   {
     "id": "KAP-2505-00039",
@@ -780,7 +780,7 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000010"
+    "nahkodaId": "NEL-2505-000024"
   },
   {
     "id": "KAP-2505-00040",
@@ -800,6 +800,6 @@ export const kapalData: Kapal[] = [
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000006"
+    "nahkodaId": "NEL-2505-000005"
   }
 ];

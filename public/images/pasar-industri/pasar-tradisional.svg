@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="Ilustrasi pasar ikan tradisional">
+  <rect width="400" height="200" fill="#DBEAFE"/>
+  <circle cx="350" cy="40" r="22" fill="#FDE68A"/>
+  <rect y="160" width="400" height="40" fill="#BFDBFE"/>
+  <path d="M0 165c40-10 60 10 100 0s60 10 100 0 60 10 100 0 60 10 100 0v10H0Z" fill="#93C5FD"/>
+  <rect x="60" y="90" width="200" height="80" fill="#FDF6E3"/>
+  <path d="M50 90 160 55 270 90Z" fill="#C2410C"/>
+  <g>
+    <rect x="60" y="95" width="200" height="14" fill="#C2410C"/>
+    <rect x="60" y="95" width="20" height="14" fill="#FDF6E3"/>
+    <rect x="100" y="95" width="20" height="14" fill="#FDF6E3"/>
+    <rect x="140" y="95" width="20" height="14" fill="#FDF6E3"/>
+    <rect x="180" y="95" width="20" height="14" fill="#FDF6E3"/>
+    <rect x="220" y="95" width="20" height="14" fill="#FDF6E3"/>
+  </g>
+  <rect x="150" y="130" width="20" height="40" fill="#B45309"/>
+  <rect x="90" y="140" width="26" height="18" rx="2" fill="#92400E"/>
+  <rect x="205" y="140" width="26" height="18" rx="2" fill="#92400E"/>
+  <path d="M300 150c10-14 30-14 40 0-14 6-26 6-40 0Z" fill="#1D4ED8"/>
+  <rect x="315" y="140" width="6" height="12" fill="#1D4ED8"/>
+</svg>

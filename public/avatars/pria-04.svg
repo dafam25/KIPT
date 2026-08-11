@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Avatar nelayan pria">
+  <circle cx="32" cy="32" r="32" fill="#E2E8F0"/>
+  <path d="M6 62c0-15.5 11.6-26 26-26s26 10.5 26 26" fill="#334155"/>
+  <circle cx="32" cy="24" r="15" fill="#2B2118"/>
+  <circle cx="32" cy="27" r="13" fill="#C88B5B"/>
+  <ellipse cx="32" cy="15" rx="17" ry="4" fill="#D9A441"/>
+  <path d="M20 15c0-8 5.4-13 12-13s12 5 12 13" fill="#D9A441"/>
+</svg>
