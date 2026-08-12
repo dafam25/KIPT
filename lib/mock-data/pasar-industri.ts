@@ -3,123 +3,123 @@ import type { PasarIndustri } from '../types';
 
 export const pasarIndustriData: PasarIndustri[] = [
   {
-    "id": "e22003ab-9fa6-4bca-8052-3054a57f1185",
+    "id": "03808591-a341-48b9-ab47-9e0ea2415a46",
     "nama": "Pasar Ikan Muara Baru",
     "jenis": "Pasar Tradisional",
     "lokasi": "Jakarta Utara, DKI Jakarta",
     "pengelola": "Perumda Pasar Jaya",
-    "volumeKg": 15027,
-    "nilaiTransaksi": 175887759,
+    "volumeKg": 17751,
+    "nilaiTransaksi": 293596209,
     "status": "Aktif"
   },
   {
-    "id": "3c7ef3a0-3808-4591-8a34-18b9b479e0ea",
+    "id": "1be0547b-f6ee-41b8-8312-916d0ec7ef3e",
     "nama": "Pasar Ikan Modern BSD",
-    "jenis": "Pasar Tradisional",
+    "jenis": "Industri Pengolahan",
     "lokasi": "Tangerang Selatan, Banten",
     "pengelola": "PT. Modern Market",
-    "volumeKg": 4031,
-    "nilaiTransaksi": 346678532,
+    "volumeKg": 2472,
+    "nilaiTransaksi": 736241463,
     "status": "Aktif"
   },
   {
-    "id": "46b5e421-be05-447b-bf6e-e1b8312916d0",
+    "id": "2f5a65a3-4a89-4cfb-8316-c7c63787ec81",
     "nama": "Pasar Ikan Modern Kenjeran",
     "jenis": "Industri Pengolahan",
     "lokasi": "Surabaya, Jawa Timur",
     "pengelola": "PT. Bahari Sejahtera",
-    "volumeKg": 10533,
-    "nilaiTransaksi": 753448914,
-    "status": "Tidak Aktif"
+    "volumeKg": 17561,
+    "nilaiTransaksi": 100741418,
+    "status": "Aktif"
   },
   {
-    "id": "3e3f0e52-f5a6-45a3-94a8-9cfb316c7c63",
+    "id": "b64874ef-6750-46c0-ac0c-66e61b07d4f4",
     "nama": "Pasar Ikan Jembatan Puri",
-    "jenis": "Pasar Modern",
+    "jenis": "Pasar Tradisional",
     "lokasi": "Jakarta Barat, DKI Jakarta",
     "pengelola": "Perumda Pasar Jaya",
-    "volumeKg": 10589,
-    "nilaiTransaksi": 741796695,
-    "status": "Tidak Aktif"
+    "volumeKg": 9088,
+    "nilaiTransaksi": 670447548,
+    "status": "Aktif"
   },
   {
-    "id": "812dd08b-6487-44ef-a675-06c0c0c66e61",
+    "id": "f2620a8f-dd39-4b4b-b4fb-fd7562d7230c",
     "nama": "Pasar Ikan Modern Semarang",
     "jenis": "Pasar Tradisional",
     "lokasi": "Semarang, Jawa Tengah",
     "pengelola": "PT. Samudra Food",
-    "volumeKg": 10236,
-    "nilaiTransaksi": 682610196,
-    "status": "Aktif"
+    "volumeKg": 11408,
+    "nilaiTransaksi": 754722504,
+    "status": "Tidak Aktif"
   },
   {
-    "id": "f4916d4f-2620-4a8f-8dd3-9b4b4fbfd756",
+    "id": "6f145569-bcb8-4943-99ef-4529a2f36f30",
     "nama": "Pasar Ikan Kedonganan",
     "jenis": "Industri Pengolahan",
     "lokasi": "Badung, Bali",
     "pengelola": "UPTD Pasar Badung",
-    "volumeKg": 10476,
-    "nilaiTransaksi": 170856589,
+    "volumeKg": 8698,
+    "nilaiTransaksi": 310046004,
     "status": "Aktif"
   },
   {
-    "id": "0cf18ec6-f145-4569-8bcb-89439ef4529a",
+    "id": "c386513d-a618-4072-b24e-1c93c3480507",
     "nama": "Pasar Ikan Paotere",
-    "jenis": "Industri Pengolahan",
+    "jenis": "Pasar Tradisional",
     "lokasi": "Makassar, Sulawesi Selatan",
     "pengelola": "PT. Nusantara Canning",
-    "volumeKg": 5419,
-    "nilaiTransaksi": 384600759,
-    "status": "Tidak Aktif"
+    "volumeKg": 19739,
+    "nilaiTransaksi": 627424967,
+    "status": "Aktif"
   },
   {
-    "id": "306b554c-3865-413d-8a61-807224e1c93c",
+    "id": "6199ec4b-f7b0-4d14-b180-2e868b78847d",
     "nama": "Pasar Ikan Higienis Bandung",
     "jenis": "Pasar Tradisional",
     "lokasi": "Bandung, Jawa Barat",
     "pengelola": "PD Pasar Bermartabat",
-    "volumeKg": 11104,
-    "nilaiTransaksi": 91962786,
+    "volumeKg": 18575,
+    "nilaiTransaksi": 221625513,
     "status": "Aktif"
   },
   {
-    "id": "07d2fc26-199e-4c4b-af7b-0d141802e868",
+    "id": "37136c70-9dc3-410e-b65c-feb5f4ec273d",
     "nama": "Pasar Ikan Belawan",
-    "jenis": "Pasar Modern",
+    "jenis": "Industri Pengolahan",
     "lokasi": "Medan, Sumatera Utara",
     "pengelola": "PT. Belawan Bahari Nusantara",
-    "volumeKg": 11901,
-    "nilaiTransaksi": 457042449,
+    "volumeKg": 14756,
+    "nilaiTransaksi": 762002104,
     "status": "Aktif"
   },
   {
-    "id": "7df1e353-7136-4c70-99dc-310e65cfeb5f",
+    "id": "fccfde34-e208-47a4-92a8-ba46f7eba785",
     "nama": "Industri Pengolahan Ikan Musi Jaya",
     "jenis": "Industri Pengolahan",
     "lokasi": "Palembang, Sumatera Selatan",
     "pengelola": "PT. Musi Jaya Perikanan",
-    "volumeKg": 15518,
-    "nilaiTransaksi": 209679629,
+    "volumeKg": 5967,
+    "nilaiTransaksi": 133397671,
     "status": "Aktif"
   },
   {
-    "id": "3dffbf4f-ccfd-4e34-9e20-87a42a8ba46f",
+    "id": "e5652c46-502b-4860-8b62-ebece2ffc843",
     "nama": "Pasar Ikan Modern Banjarmasin",
-    "jenis": "Industri Pengolahan",
+    "jenis": "Pasar Tradisional",
     "lokasi": "Banjarmasin, Kalimantan Selatan",
     "pengelola": "PT. Banjar Mina Sejahtera",
-    "volumeKg": 14432,
-    "nilaiTransaksi": 545116483,
+    "volumeKg": 5275,
+    "nilaiTransaksi": 433840830,
     "status": "Aktif"
   },
   {
-    "id": "857f313e-5652-4c46-8502-b860b62ebece",
+    "id": "ec7537c3-1a7c-41df-af45-1158fa5071bd",
     "nama": "Industri Pengolahan Ikan Manado Jaya",
-    "jenis": "Industri Pengolahan",
+    "jenis": "Pasar Tradisional",
     "lokasi": "Manado, Sulawesi Utara",
     "pengelola": "PT. Manado Bahari Lestari",
-    "volumeKg": 19901,
-    "nilaiTransaksi": 663412477,
-    "status": "Aktif"
+    "volumeKg": 8179,
+    "nilaiTransaksi": 602747817,
+    "status": "Tidak Aktif"
   }
 ];

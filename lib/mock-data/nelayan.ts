@@ -4,22 +4,6 @@ import type { Nelayan } from '../types';
 export const nelayanData: Nelayan[] = [
   {
     "id": "NEL-2505-000001",
-    "nama": "Kartika Pratama",
-    "fotoUrl": "/avatars/wanita.svg",
-    "nik": "5188540820742631",
-    "tempatLahir": "Sampit",
-    "tanggalLahir": "1997-07-22",
-    "alamat": "Dusun Sidorejo, Desa Sukamaju, RT 09/RW 04",
-    "noHp": "08926966351",
-    "status": "nonaktif",
-    "terverifikasi": false,
-    "tanggalBergabung": "2023-05-19",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
-    "kapalId": "KAP-2505-00012",
-    "pendamping": "Widiastuti Handoko"
-  },
-  {
-    "id": "NEL-2505-000002",
     "nama": "Sugianto Rasyid",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8565288264568734",
@@ -30,12 +14,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-12-07",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00014",
     "pendamping": "Diah Susanto"
   },
   {
-    "id": "NEL-2505-000003",
+    "id": "NEL-2505-000002",
     "nama": "Nur Utomo",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "6098974032601935",
@@ -46,12 +30,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-12-28",
-    "koperasiId": "6d004557-fbe6-44d8-9379-0c0865dc908a",
+    "koperasiId": "c871d40b-74b5-429e-960b-7f4afba692f9",
     "kapalId": "KAP-2505-00018",
     "pendamping": "Rahman Kurniawan"
   },
   {
-    "id": "NEL-2505-000004",
+    "id": "NEL-2505-000003",
     "nama": "Bambang Rahmadi",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8893664230811713",
@@ -62,12 +46,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-10-31",
-    "koperasiId": "00abbeed-4eae-4453-9938-f8c2c98b7386",
+    "koperasiId": "22a64f1d-8edd-44af-9461-3b231ec99f0a",
     "kapalId": "KAP-2505-00035",
     "pendamping": "Rizal Setyawan"
   },
   {
-    "id": "NEL-2505-000005",
+    "id": "NEL-2505-000004",
     "nama": "Slamet Simanjuntak",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8395151406228576",
@@ -78,12 +62,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-10-21",
-    "koperasiId": "d8f268aa-078d-4c56-b7dd-b77486812fee",
+    "koperasiId": "e1989d45-2478-4c8c-94fe-920c284d2807",
     "kapalId": "KAP-2505-00022",
     "pendamping": "Setiawan Susanto"
   },
   {
-    "id": "NEL-2505-000006",
+    "id": "NEL-2505-000005",
     "nama": "Susanti Santoso",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "1740686357294531",
@@ -94,12 +78,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-08-31",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00040",
     "pendamping": "Purnama Aprianto"
   },
   {
-    "id": "NEL-2505-000007",
+    "id": "NEL-2505-000006",
     "nama": "Aditya Setyawan",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "0564316077872192",
@@ -110,12 +94,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-09-19",
-    "koperasiId": "2b52e797-6108-403e-b730-b64b58c0bffb",
+    "koperasiId": "1db8c8b2-fbcb-4f36-92fb-bbcda8bfc816",
     "kapalId": "KAP-2505-00023",
     "pendamping": "Wulandari Rasyid"
   },
   {
-    "id": "NEL-2505-000008",
+    "id": "NEL-2505-000007",
     "nama": "Melati Gunawan",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "3246631934249826",
@@ -126,12 +110,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-07-28",
-    "koperasiId": "1660cff2-5639-4678-8be1-3974e07306f3",
+    "koperasiId": "a078dc56-7ddb-4774-8868-12feeef34bc4",
     "kapalId": "KAP-2505-00037",
     "pendamping": "Yusuf Sudibyo"
   },
   {
-    "id": "NEL-2505-000009",
+    "id": "NEL-2505-000008",
     "nama": "Dwi Rasyid",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3457782092371241",
@@ -142,12 +126,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-07-22",
-    "koperasiId": "1660cff2-5639-4678-8be1-3974e07306f3",
+    "koperasiId": "a078dc56-7ddb-4774-8868-12feeef34bc4",
     "kapalId": "KAP-2505-00012",
     "pendamping": "Ani Suryanto"
   },
   {
-    "id": "NEL-2505-000010",
+    "id": "NEL-2505-000009",
     "nama": "Dewi Wirawan",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "2542205846870945",
@@ -158,12 +142,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-01-06",
-    "koperasiId": "75f874ef-5461-4e7d-8ed9-8f8e054a4781",
+    "koperasiId": "43f4028b-9726-4da5-9efc-e2ac9563062b",
     "kapalId": "KAP-2505-00039",
     "pendamping": "Widiastuti Santoso"
   },
   {
-    "id": "NEL-2505-000011",
+    "id": "NEL-2505-000010",
     "nama": "Anisa Sudrajat",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "0334674217539249",
@@ -174,12 +158,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-02-15",
-    "koperasiId": "d8f268aa-078d-4c56-b7dd-b77486812fee",
+    "koperasiId": "e1989d45-2478-4c8c-94fe-920c284d2807",
     "kapalId": "KAP-2505-00014",
     "pendamping": "Sri Handoko"
   },
   {
-    "id": "NEL-2505-000012",
+    "id": "NEL-2505-000011",
     "nama": "Maulana Sudrajat",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8711216572142340",
@@ -190,12 +174,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2025-04-24",
-    "koperasiId": "1660cff2-5639-4678-8be1-3974e07306f3",
+    "koperasiId": "a078dc56-7ddb-4774-8868-12feeef34bc4",
     "kapalId": "KAP-2505-00020",
     "pendamping": "Rahmawati Nasution"
   },
   {
-    "id": "NEL-2505-000013",
+    "id": "NEL-2505-000012",
     "nama": "Prasetyo Saputra",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3006012151848824",
@@ -206,12 +190,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-09-17",
-    "koperasiId": "e7491516-ee74-41c3-9870-135597e47bc0",
+    "koperasiId": "d08eda0e-7fee-4c71-8108-ab31a5267d6d",
     "kapalId": "KAP-2505-00016",
     "pendamping": "Dian Yulianto"
   },
   {
-    "id": "NEL-2505-000014",
+    "id": "NEL-2505-000013",
     "nama": "Aminah Utomo",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "4556489540392899",
@@ -222,12 +206,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2024-05-22",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00026",
     "pendamping": "Wisnu Permana"
   },
   {
-    "id": "NEL-2505-000015",
+    "id": "NEL-2505-000014",
     "nama": "Yudi Rahmadi",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "4529188627352898",
@@ -238,12 +222,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-10-07",
-    "koperasiId": "076140cd-f7c2-4dcb-a52c-dbde7bc6c4c6",
+    "koperasiId": "d4eae453-938f-48c2-8c98-b73867131869",
     "kapalId": "KAP-2505-00024",
     "pendamping": "Susanti Aprianto"
   },
   {
-    "id": "NEL-2505-000016",
+    "id": "NEL-2505-000015",
     "nama": "Yuni Wahyudi",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "1347241272657185",
@@ -254,12 +238,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-03-24",
-    "koperasiId": "2b52e797-6108-403e-b730-b64b58c0bffb",
+    "koperasiId": "1db8c8b2-fbcb-4f36-92fb-bbcda8bfc816",
     "kapalId": "KAP-2505-00020",
     "pendamping": "Fauzi Wahyudi"
   },
   {
-    "id": "NEL-2505-000017",
+    "id": "NEL-2505-000016",
     "nama": "Ramadhan Siregar",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "5183245335061600",
@@ -270,12 +254,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-06-14",
-    "koperasiId": "6905ec92-2a64-4f1d-b8ed-d4af4613b231",
+    "koperasiId": "90bd48ec-b8c3-4a36-a701-ac9ebe645d51",
     "kapalId": "KAP-2505-00026",
     "pendamping": "Ayu Sinaga"
   },
   {
-    "id": "NEL-2505-000018",
+    "id": "NEL-2505-000017",
     "nama": "Yudi Wibisono",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "4519855865713868",
@@ -286,12 +270,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-05-04",
-    "koperasiId": "f280d854-3f40-428b-9972-6da5efce2ac9",
+    "koperasiId": "7610803e-730b-464b-b58c-0bffbee30df7",
     "kapalId": "KAP-2505-00030",
     "pendamping": "Agus Winarno"
   },
   {
-    "id": "NEL-2505-000019",
+    "id": "NEL-2505-000018",
     "nama": "Yulianti Handoko",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "2641368575463971",
@@ -302,12 +286,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-12-12",
-    "koperasiId": "00abbeed-4eae-4453-9938-f8c2c98b7386",
+    "koperasiId": "22a64f1d-8edd-44af-9461-3b231ec99f0a",
     "kapalId": "KAP-2505-00001",
     "pendamping": "Suryadi Hidayat"
   },
   {
-    "id": "NEL-2505-000020",
+    "id": "NEL-2505-000019",
     "nama": "Ahmad Kuncoro",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "5632716691543062",
@@ -318,12 +302,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-11-15",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00004",
     "pendamping": "Fauzi Kurniawan"
   },
   {
-    "id": "NEL-2505-000021",
+    "id": "NEL-2505-000020",
     "nama": "Astuti Hidayat",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "6969261176137099",
@@ -334,12 +318,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-08-11",
-    "koperasiId": "f959725d-08ed-4a0e-97fe-ec71108ab31a",
+    "koperasiId": "7fbe64d8-3790-4c08-965d-c908a5b8484d",
     "kapalId": "KAP-2505-00009",
     "pendamping": "Nugroho Wardhana"
   },
   {
-    "id": "NEL-2505-000022",
+    "id": "NEL-2505-000021",
     "nama": "Setiawan Hartono",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8389679664894558",
@@ -350,12 +334,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2024-09-26",
-    "koperasiId": "1660cff2-5639-4678-8be1-3974e07306f3",
+    "koperasiId": "a078dc56-7ddb-4774-8868-12feeef34bc4",
     "kapalId": "KAP-2505-00036",
     "pendamping": "Yudi Wahyudi"
   },
   {
-    "id": "NEL-2505-000023",
+    "id": "NEL-2505-000022",
     "nama": "Suryadi Susanto",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3339397770272878",
@@ -366,12 +350,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-01-06",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00023",
     "pendamping": "Handayani Nugraha"
   },
   {
-    "id": "NEL-2505-000024",
+    "id": "NEL-2505-000023",
     "nama": "Dewi Atmaja",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "5510362595526960",
@@ -382,12 +366,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-05-10",
-    "koperasiId": "51b40a3a-8fc7-4f48-ba7a-ceffd365a187",
+    "koperasiId": "6ee741c3-8701-4355-997e-47bc07908bf9",
     "kapalId": "KAP-2505-00009",
     "pendamping": "Sugianto Hidayat"
   },
   {
-    "id": "NEL-2505-000025",
+    "id": "NEL-2505-000024",
     "nama": "Purnama Kuncoro",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "4193230923698061",
@@ -398,12 +382,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-07-19",
-    "koperasiId": "75f874ef-5461-4e7d-8ed9-8f8e054a4781",
+    "koperasiId": "43f4028b-9726-4da5-9efc-e2ac9563062b",
     "kapalId": "KAP-2505-00004",
     "pendamping": "Rina Nugraha"
   },
   {
-    "id": "NEL-2505-000026",
+    "id": "NEL-2505-000025",
     "nama": "Utami Wijaya",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "9534202818122092",
@@ -414,12 +398,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-11-07",
-    "koperasiId": "c423ec7e-1989-4d45-a247-8c8c4fe920c2",
+    "koperasiId": "df7c2dcb-52cd-4bde-a7bc-6c4c6a7dd400",
     "kapalId": "KAP-2505-00028",
     "pendamping": "Rizal Saputra"
   },
   {
-    "id": "NEL-2505-000027",
+    "id": "NEL-2505-000026",
     "nama": "Ilham Atmaja",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3563320388826171",
@@ -430,12 +414,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-09-23",
-    "koperasiId": "6905ec92-2a64-4f1d-b8ed-d4af4613b231",
+    "koperasiId": "90bd48ec-b8c3-4a36-a701-ac9ebe645d51",
     "kapalId": "KAP-2505-00018",
     "pendamping": "Wulandari Kurniawan"
   },
   {
-    "id": "NEL-2505-000028",
+    "id": "NEL-2505-000027",
     "nama": "Andi Prakoso",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3674280054093166",
@@ -446,12 +430,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-10-02",
-    "koperasiId": "e7491516-ee74-41c3-9870-135597e47bc0",
+    "koperasiId": "d08eda0e-7fee-4c71-8108-ab31a5267d6d",
     "kapalId": "KAP-2505-00011",
     "pendamping": "Oktaviani Sudibyo"
   },
   {
-    "id": "NEL-2505-000029",
+    "id": "NEL-2505-000028",
     "nama": "Syahrul Hartono",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "1762413926254761",
@@ -462,12 +446,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-02-28",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00003",
     "pendamping": "Wibowo Gunawan"
   },
   {
-    "id": "NEL-2505-000030",
+    "id": "NEL-2505-000029",
     "nama": "Diah Lubis",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "5327770397803833",
@@ -478,12 +462,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-03-16",
-    "koperasiId": "076140cd-f7c2-4dcb-a52c-dbde7bc6c4c6",
+    "koperasiId": "d4eae453-938f-48c2-8c98-b73867131869",
     "kapalId": "KAP-2505-00038",
     "pendamping": "Ramadhan Prakoso"
   },
   {
-    "id": "NEL-2505-000031",
+    "id": "NEL-2505-000030",
     "nama": "Cahyani Simanjuntak",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "3155557533151577",
@@ -494,12 +478,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-09-25",
-    "koperasiId": "c423ec7e-1989-4d45-a247-8c8c4fe920c2",
+    "koperasiId": "df7c2dcb-52cd-4bde-a7bc-6c4c6a7dd400",
     "kapalId": "KAP-2505-00026",
     "pendamping": "Eko Suhendra"
   },
   {
-    "id": "NEL-2505-000032",
+    "id": "NEL-2505-000031",
     "nama": "Nur Rahmadi",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "2100243013175486",
@@ -510,12 +494,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-05-16",
-    "koperasiId": "d8f268aa-078d-4c56-b7dd-b77486812fee",
+    "koperasiId": "e1989d45-2478-4c8c-94fe-920c284d2807",
     "kapalId": "KAP-2505-00009",
     "pendamping": "Widiastuti Rasyid"
   },
   {
-    "id": "NEL-2505-000033",
+    "id": "NEL-2505-000032",
     "nama": "Kurniawan Firmansyah",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "9656409776921196",
@@ -526,12 +510,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-06-09",
-    "koperasiId": "d8f268aa-078d-4c56-b7dd-b77486812fee",
+    "koperasiId": "e1989d45-2478-4c8c-94fe-920c284d2807",
     "kapalId": "KAP-2505-00032",
     "pendamping": "Eko Rasyid"
   },
   {
-    "id": "NEL-2505-000034",
+    "id": "NEL-2505-000033",
     "nama": "Asep Wahyudi",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "7560444931551919",
@@ -542,12 +526,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-02-21",
-    "koperasiId": "076140cd-f7c2-4dcb-a52c-dbde7bc6c4c6",
+    "koperasiId": "d4eae453-938f-48c2-8c98-b73867131869",
     "kapalId": "KAP-2505-00019",
     "pendamping": "Agus Santoso"
   },
   {
-    "id": "NEL-2505-000035",
+    "id": "NEL-2505-000034",
     "nama": "Kurniawan Pratama",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "1827473198705853",
@@ -558,12 +542,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-04-04",
-    "koperasiId": "0a5b56f9-0bd4-48ec-bb8c-3a36701ac9eb",
+    "koperasiId": "a8fc7f48-a7ac-4eff-9d36-5a187e39f0e7",
     "kapalId": "KAP-2505-00032",
     "pendamping": "Nur Susanto"
   },
   {
-    "id": "NEL-2505-000036",
+    "id": "NEL-2505-000035",
     "nama": "Fauzi Suhendra",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "6980444900282190",
@@ -574,12 +558,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-02-09",
-    "koperasiId": "0a5b56f9-0bd4-48ec-bb8c-3a36701ac9eb",
+    "koperasiId": "a8fc7f48-a7ac-4eff-9d36-5a187e39f0e7",
     "kapalId": "KAP-2505-00020",
     "pendamping": "Yulianti Marpaung"
   },
   {
-    "id": "NEL-2505-000037",
+    "id": "NEL-2505-000036",
     "nama": "Ilham Daulay",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "3332184775562475",
@@ -590,12 +574,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-02-22",
-    "koperasiId": "00abbeed-4eae-4453-9938-f8c2c98b7386",
+    "koperasiId": "22a64f1d-8edd-44af-9461-3b231ec99f0a",
     "kapalId": "KAP-2505-00026",
     "pendamping": "Lestari Wirawan"
   },
   {
-    "id": "NEL-2505-000038",
+    "id": "NEL-2505-000037",
     "nama": "Yudi Gunawan",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "0072164895618870",
@@ -606,12 +590,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2024-05-16",
-    "koperasiId": "e7491516-ee74-41c3-9870-135597e47bc0",
+    "koperasiId": "d08eda0e-7fee-4c71-8108-ab31a5267d6d",
     "kapalId": "KAP-2505-00013",
     "pendamping": "Irfan Marpaung"
   },
   {
-    "id": "NEL-2505-000039",
+    "id": "NEL-2505-000038",
     "nama": "Melati Winarno",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "2119963055111862",
@@ -622,12 +606,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-04-17",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00028",
     "pendamping": "Fitri Sudrajat"
   },
   {
-    "id": "NEL-2505-000040",
+    "id": "NEL-2505-000039",
     "nama": "Novi Handoko",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "6876455075821331",
@@ -638,12 +622,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-07-24",
-    "koperasiId": "f7eb8cd1-db8c-48b2-afbc-bf362fbbbcda",
+    "koperasiId": "25639678-be13-4974-be07-306f3083fed8",
     "kapalId": "KAP-2505-00022",
     "pendamping": "Ramadhan Aprianto"
   },
   {
-    "id": "NEL-2505-000041",
+    "id": "NEL-2505-000040",
     "nama": "Yulianti Suhendra",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "6879562625510273",
@@ -654,12 +638,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2024-07-26",
-    "koperasiId": "2b52e797-6108-403e-b730-b64b58c0bffb",
+    "koperasiId": "1db8c8b2-fbcb-4f36-92fb-bbcda8bfc816",
     "kapalId": "KAP-2505-00033",
     "pendamping": "Ahmad Wahyudi"
   },
   {
-    "id": "NEL-2505-000042",
+    "id": "NEL-2505-000041",
     "nama": "Wibowo Wibisono",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "2689066131073400",
@@ -670,12 +654,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-12-24",
-    "koperasiId": "2b52e797-6108-403e-b730-b64b58c0bffb",
+    "koperasiId": "1db8c8b2-fbcb-4f36-92fb-bbcda8bfc816",
     "kapalId": "KAP-2505-00035",
     "pendamping": "Kurniawan Atmaja"
   },
   {
-    "id": "NEL-2505-000043",
+    "id": "NEL-2505-000042",
     "nama": "Nugroho Susanto",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "8814310434861449",
@@ -686,12 +670,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-04-10",
-    "koperasiId": "6d004557-fbe6-44d8-9379-0c0865dc908a",
+    "koperasiId": "c871d40b-74b5-429e-960b-7f4afba692f9",
     "kapalId": "KAP-2505-00021",
     "pendamping": "Fadli Tanjung"
   },
   {
-    "id": "NEL-2505-000044",
+    "id": "NEL-2505-000043",
     "nama": "Anisa Kurniawan",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "8766584576741349",
@@ -702,12 +686,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-01-31",
-    "koperasiId": "f280d854-3f40-428b-9972-6da5efce2ac9",
+    "koperasiId": "7610803e-730b-464b-b58c-0bffbee30df7",
     "kapalId": "KAP-2505-00013",
     "pendamping": "Ramadhan Marpaung"
   },
   {
-    "id": "NEL-2505-000045",
+    "id": "NEL-2505-000044",
     "nama": "Dian Rahmadi",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "4702774945824371",
@@ -718,12 +702,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-07-06",
-    "koperasiId": "d8f268aa-078d-4c56-b7dd-b77486812fee",
+    "koperasiId": "e1989d45-2478-4c8c-94fe-920c284d2807",
     "kapalId": "KAP-2505-00009",
     "pendamping": "Novi Wahyudi"
   },
   {
-    "id": "NEL-2505-000046",
+    "id": "NEL-2505-000045",
     "nama": "Wibowo Simanjuntak",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "6380001443546926",
@@ -734,12 +718,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-11-08",
-    "koperasiId": "51b40a3a-8fc7-4f48-ba7a-ceffd365a187",
+    "koperasiId": "6ee741c3-8701-4355-997e-47bc07908bf9",
     "kapalId": "KAP-2505-00010",
     "pendamping": "Suryani Santoso"
   },
   {
-    "id": "NEL-2505-000047",
+    "id": "NEL-2505-000046",
     "nama": "Astuti Setiawan",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "3646288915684830",
@@ -750,12 +734,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-02-11",
-    "koperasiId": "75f874ef-5461-4e7d-8ed9-8f8e054a4781",
+    "koperasiId": "43f4028b-9726-4da5-9efc-e2ac9563062b",
     "kapalId": "KAP-2505-00023",
     "pendamping": "Sugianto Sudibyo"
   },
   {
-    "id": "NEL-2505-000048",
+    "id": "NEL-2505-000047",
     "nama": "Siti Setyawan",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "1736563492987649",
@@ -766,12 +750,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-10-08",
-    "koperasiId": "f959725d-08ed-4a0e-97fe-ec71108ab31a",
+    "koperasiId": "7fbe64d8-3790-4c08-965d-c908a5b8484d",
     "kapalId": "KAP-2505-00014",
     "pendamping": "Nur Susanto"
   },
   {
-    "id": "NEL-2505-000049",
+    "id": "NEL-2505-000048",
     "nama": "Utami Harahap",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "8149275962912529",
@@ -782,12 +766,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2023-09-26",
-    "koperasiId": "c423ec7e-1989-4d45-a247-8c8c4fe920c2",
+    "koperasiId": "df7c2dcb-52cd-4bde-a7bc-6c4c6a7dd400",
     "kapalId": "KAP-2505-00039",
     "pendamping": "Zainal Pratama"
   },
   {
-    "id": "NEL-2505-000050",
+    "id": "NEL-2505-000049",
     "nama": "Widiastuti Winarno",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "2475317650224191",
@@ -798,12 +782,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-01-01",
-    "koperasiId": "0a5b56f9-0bd4-48ec-bb8c-3a36701ac9eb",
+    "koperasiId": "a8fc7f48-a7ac-4eff-9d36-5a187e39f0e7",
     "kapalId": "KAP-2505-00020",
     "pendamping": "Yulianti Wijaya"
   },
   {
-    "id": "NEL-2505-000051",
+    "id": "NEL-2505-000050",
     "nama": "Ratna Sudrajat",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "1985829467156408",
@@ -814,12 +798,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-03-22",
-    "koperasiId": "f959725d-08ed-4a0e-97fe-ec71108ab31a",
+    "koperasiId": "7fbe64d8-3790-4c08-965d-c908a5b8484d",
     "kapalId": "KAP-2505-00004",
     "pendamping": "Diah Hartono"
   },
   {
-    "id": "NEL-2505-000052",
+    "id": "NEL-2505-000051",
     "nama": "Siti Wardhana",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "8479580829216019",
@@ -830,12 +814,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-12-12",
-    "koperasiId": "1660cff2-5639-4678-8be1-3974e07306f3",
+    "koperasiId": "a078dc56-7ddb-4774-8868-12feeef34bc4",
     "kapalId": "KAP-2505-00009",
     "pendamping": "Tuti Susanto"
   },
   {
-    "id": "NEL-2505-000053",
+    "id": "NEL-2505-000052",
     "nama": "Puspita Simanjuntak",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "7646386042217227",
@@ -846,12 +830,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-09-11",
-    "koperasiId": "2b52e797-6108-403e-b730-b64b58c0bffb",
+    "koperasiId": "1db8c8b2-fbcb-4f36-92fb-bbcda8bfc816",
     "kapalId": "KAP-2505-00013",
     "pendamping": "Tuti Yulianto"
   },
   {
-    "id": "NEL-2505-000054",
+    "id": "NEL-2505-000053",
     "nama": "Budi Rahmadi",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "5739948372612318",
@@ -862,12 +846,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2022-05-23",
-    "koperasiId": "e7491516-ee74-41c3-9870-135597e47bc0",
+    "koperasiId": "d08eda0e-7fee-4c71-8108-ab31a5267d6d",
     "kapalId": "KAP-2505-00037",
     "pendamping": "Aditya Wibowo"
   },
   {
-    "id": "NEL-2505-000055",
+    "id": "NEL-2505-000054",
     "nama": "Yuni Handoko",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "4998604747319965",
@@ -878,12 +862,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2024-05-19",
-    "koperasiId": "076140cd-f7c2-4dcb-a52c-dbde7bc6c4c6",
+    "koperasiId": "d4eae453-938f-48c2-8c98-b73867131869",
     "kapalId": "KAP-2505-00022",
     "pendamping": "Wibowo Marpaung"
   },
   {
-    "id": "NEL-2505-000056",
+    "id": "NEL-2505-000055",
     "nama": "Wahyu Pratama",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "7546625015233581",
@@ -894,12 +878,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": true,
     "tanggalBergabung": "2025-04-18",
-    "koperasiId": "c423ec7e-1989-4d45-a247-8c8c4fe920c2",
+    "koperasiId": "df7c2dcb-52cd-4bde-a7bc-6c4c6a7dd400",
     "kapalId": "KAP-2505-00007",
     "pendamping": "Rudi Kusuma"
   },
   {
-    "id": "NEL-2505-000057",
+    "id": "NEL-2505-000056",
     "nama": "Andi Kurniawan",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "0325522092612251",
@@ -910,12 +894,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-08-20",
-    "koperasiId": "e7491516-ee74-41c3-9870-135597e47bc0",
+    "koperasiId": "d08eda0e-7fee-4c71-8108-ab31a5267d6d",
     "kapalId": "KAP-2505-00005",
     "pendamping": "Hendra Siregar"
   },
   {
-    "id": "NEL-2505-000058",
+    "id": "NEL-2505-000057",
     "nama": "Rina Santoso",
     "fotoUrl": "/avatars/wanita.svg",
     "nik": "7900603438114805",
@@ -926,12 +910,12 @@ export const nelayanData: Nelayan[] = [
     "status": "nonaktif",
     "terverifikasi": false,
     "tanggalBergabung": "2022-11-07",
-    "koperasiId": "51b40a3a-8fc7-4f48-ba7a-ceffd365a187",
+    "koperasiId": "6ee741c3-8701-4355-997e-47bc07908bf9",
     "kapalId": "KAP-2505-00032",
     "pendamping": "Purnama Wahyudi"
   },
   {
-    "id": "NEL-2505-000059",
+    "id": "NEL-2505-000058",
     "nama": "Hadi Sasongko",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "0134922186481019",
@@ -942,12 +926,12 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-02-22",
-    "koperasiId": "6905ec92-2a64-4f1d-b8ed-d4af4613b231",
+    "koperasiId": "90bd48ec-b8c3-4a36-a701-ac9ebe645d51",
     "kapalId": "KAP-2505-00025",
     "pendamping": "Irfan Setiawan"
   },
   {
-    "id": "NEL-2505-000060",
+    "id": "NEL-2505-000059",
     "nama": "Prasetyo Lubis",
     "fotoUrl": "/avatars/pria.svg",
     "nik": "6785888716892780",
@@ -958,8 +942,24 @@ export const nelayanData: Nelayan[] = [
     "status": "aktif",
     "terverifikasi": false,
     "tanggalBergabung": "2023-09-02",
-    "koperasiId": "51b40a3a-8fc7-4f48-ba7a-ceffd365a187",
+    "koperasiId": "6ee741c3-8701-4355-997e-47bc07908bf9",
     "kapalId": "KAP-2505-00014",
     "pendamping": "Anisa Sinaga"
+  },
+  {
+    "id": "NEL-2505-000060",
+    "nama": "Dedi Wijaya",
+    "fotoUrl": "/avatars/pria.svg",
+    "nik": "0267596368603120",
+    "tempatLahir": "Bengkulu",
+    "tanggalLahir": "1975-06-07",
+    "alamat": "Dusun Banjarsari, Desa Sumberjo, RT 06/RW 08",
+    "noHp": "08005300713",
+    "status": "aktif",
+    "terverifikasi": false,
+    "tanggalBergabung": "2023-10-25",
+    "koperasiId": "7fbe64d8-3790-4c08-965d-c908a5b8484d",
+    "kapalId": "KAP-2505-00037",
+    "pendamping": "Lestari Kuncoro"
   }
 ];

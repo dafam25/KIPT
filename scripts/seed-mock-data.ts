@@ -103,6 +103,45 @@ const PERAIRAN_NAMA = [
   'Teluk Cendrawasih', 'Laut Timor', 'Selat Lombok', 'Teluk Tolo', 'Laut Halmahera', 'Selat Berhala',
 ];
 
+// Approximate open-water center point for each name in PERAIRAN_NAMA above, paired 1:1
+// by index. A uniform-random lat/lng across Indonesia's whole bounding box lands on
+// land far more often than water (the archipelago is mostly islands), so kapal
+// positions are instead jittered around these known sea/strait centers to keep them
+// out on the water. Straits/bays get a tighter jitter than open seas since they're
+// narrower and closer to surrounding coastlines.
+const PERAIRAN_KOORDINAT: { pusat: { lat: number; lng: number }; sebaran: number }[] = [
+  { pusat: { lat: -5.9, lng: 110.3 }, sebaran: 0.5 },   // Utara Jawa
+  { pusat: { lat: -8.15, lng: 114.41 }, sebaran: 0.015 }, // Selat Bali (very narrow — Java/Bali gap, near Ketapang-Gilimanuk crossing)
+  { pusat: { lat: -6.1, lng: 105.6 }, sebaran: 0.15 },  // Selat Sunda
+  { pusat: { lat: -5.5, lng: 111.5 }, sebaran: 1.1 },   // Laut Jawa
+  { pusat: { lat: -7.9, lng: 121.0 }, sebaran: 0.7 },   // Laut Flores
+  { pusat: { lat: -5.2, lng: 128.5 }, sebaran: 1.2 },   // Laut Banda
+  { pusat: { lat: -8.3, lng: 135.0 }, sebaran: 1.2 },   // Laut Arafura
+  { pusat: { lat: -1.0, lng: 118.6 }, sebaran: 0.45 },  // Selat Makassar
+  { pusat: { lat: 3.8, lng: 122.5 }, sebaran: 1.0 },    // Laut Sulawesi
+  { pusat: { lat: 0.8, lng: 126.3 }, sebaran: 0.8 },    // Laut Maluku
+  { pusat: { lat: 3.2, lng: 99.7 }, sebaran: 0.4 },     // Selat Malaka
+  { pusat: { lat: 3.8, lng: 108.5 }, sebaran: 1.0 },    // Laut Natuna
+  { pusat: { lat: -0.3, lng: 121.7 }, sebaran: 0.25 },  // Teluk Tomini
+  { pusat: { lat: -2.7, lng: 129.5 }, sebaran: 0.7 },   // Laut Seram
+  { pusat: { lat: -1.6, lng: 108.1 }, sebaran: 0.3 },   // Selat Karimata (west of Kalimantan's coast, near Belitung)
+  { pusat: { lat: -9.6, lng: 122.0 }, sebaran: 0.5 },   // Laut Sawu
+  { pusat: { lat: -2.5, lng: 135.5 }, sebaran: 0.3 },   // Teluk Cendrawasih
+  { pusat: { lat: -10.0, lng: 127.5 }, sebaran: 0.8 },  // Laut Timor
+  { pusat: { lat: -8.62, lng: 115.85 }, sebaran: 0.05 }, // Selat Lombok (narrow — Bali/Lombok gap)
+  { pusat: { lat: -2.0, lng: 122.6 }, sebaran: 0.18 },  // Teluk Tolo
+  { pusat: { lat: 0.2, lng: 129.0 }, sebaran: 0.6 },    // Laut Halmahera
+  { pusat: { lat: 3.55, lng: 99.75 }, sebaran: 0.08 },  // Selat Berhala (narrow — Sumatra/Berhala gap)
+];
+
+function posisiKapal(): Kapal['posisi'] {
+  const { pusat, sebaran } = faker.helpers.arrayElement(PERAIRAN_KOORDINAT);
+  return {
+    lat: Number((pusat.lat + faker.number.float({ min: -sebaran, max: sebaran, fractionDigits: 4 })).toFixed(4)),
+    lng: Number((pusat.lng + faker.number.float({ min: -sebaran, max: sebaran, fractionDigits: 4 })).toFixed(4)),
+  };
+}
+
 const JENIS_KAPAL: Kapal['jenis'][] = ['Purse Seine', 'Longline', 'Gillnet', 'Kapal Motor', 'Kapal Tanpa Motor'];
 const PELABUHAN = ['PPP Muncar', 'PPI Banyuwangi', 'TPI Jakarta', 'Pelabuhan TPI Bitung', 'TPI Surabaya', 'TPI Benoa'];
 const DERMAGA = ['Dermaga 01', 'Dermaga 02', 'Dermaga 03'];
@@ -121,7 +160,7 @@ const kapalData: Kapal[] = Array.from({ length: 40 }, () => {
     kecepatanKnot: faker.number.int({ min: 8, max: 25 }),
     pelabuhanInduk: faker.helpers.arrayElement(PELABUHAN),
     status: faker.helpers.arrayElement(['melaut', 'sandar', 'tidak_aktif', 'perbaikan']),
-    posisi: { lat: faker.number.float({ min: -8.9, max: 5.9, fractionDigits: 4 }), lng: faker.number.float({ min: 95.0, max: 141.0, fractionDigits: 4 }) },
+    posisi: posisiKapal(),
     dokumen: { siup: true, slo: faker.datatype.boolean(), pasKecil: faker.datatype.boolean() },
     nahkodaId: null,
   };

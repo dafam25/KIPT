@@ -3,163 +3,163 @@ import type { Notifikasi } from '../types';
 
 export const notifikasiData: Notifikasi[] = [
   {
-    "id": "88d64380-34b2-4fd2-acef-1014c7717bf0",
-    "jenis": "sistem",
-    "judul": "Sinkronisasi Data Selesai",
-    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
-    "waktu": "2025-05-06T05:34:42.628Z",
-    "dibaca": false
-  },
-  {
-    "id": "0f45f782-f4a3-45cb-b3bd-00280579ed2e",
-    "jenis": "sistem",
-    "judul": "Pemeliharaan Terjadwal",
-    "deskripsi": "Pemeliharaan sistem akan dilakukan pada dini hari.",
-    "waktu": "2025-05-07T14:46:43.406Z",
-    "dibaca": true
-  },
-  {
-    "id": "c033c33c-17c9-4efb-975c-6206ead4ac7e",
+    "id": "b3bd0028-0579-4ed2-8ec8-4006c033c33c",
     "jenis": "peringatan",
-    "judul": "Cuaca Buruk",
-    "deskripsi": "Waspada gelombang tinggi di perairan Laut Sulawesi.",
-    "waktu": "2025-05-06T01:44:08.106Z",
+    "judul": "Batas BBM Menipis",
+    "deskripsi": "KM. Nusantara Makmur: BBM tersisa di bawah 20%.",
+    "waktu": "2025-05-07T07:46:28.856Z",
     "dibaca": false
   },
   {
-    "id": "147536a6-92e0-4f8b-ab5b-57920b2f6831",
-    "jenis": "informasi",
-    "judul": "Anggota Koperasi Baru",
-    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Bahari Minang.",
-    "waktu": "2025-05-09T14:10:40.383Z",
-    "dibaca": true
-  },
-  {
-    "id": "f523af7d-aaa5-4473-9b93-57cfe9e53442",
+    "id": "fb75c620-6ead-44ac-97e5-3a6ca147536a",
     "jenis": "sukses",
     "judul": "Data Nelayan Terverifikasi",
     "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
-    "waktu": "2025-05-09T18:32:11.085Z",
+    "waktu": "2025-05-08T02:23:49.021Z",
     "dibaca": true
   },
   {
-    "id": "0c61b762-74d3-476d-ab05-244d97d8b0e7",
-    "jenis": "informasi",
-    "judul": "Kapal Sandar",
-    "deskripsi": "KM. Mina Persada telah sandar di PPI Banyuwangi.",
-    "waktu": "2025-05-06T00:54:52.332Z",
-    "dibaca": true
-  },
-  {
-    "id": "abac7f6c-355f-484e-a568-41ce98c3c93f",
-    "jenis": "sistem",
-    "judul": "Sinkronisasi Data Selesai",
-    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
-    "waktu": "2025-05-08T06:11:14.515Z",
-    "dibaca": true
-  },
-  {
-    "id": "e61ddb1d-6aa5-4934-b908-5216c9ae88d2",
-    "jenis": "sistem",
-    "judul": "Sinkronisasi Data Selesai",
-    "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
-    "waktu": "2025-05-07T15:49:09.505Z",
-    "dibaca": true
-  },
-  {
-    "id": "35ea90ed-2bfe-4a13-a322-cee9fcd231db",
+    "id": "f8bb5b57-920b-42f6-b831-ae39ef523af7",
     "jenis": "sistem",
     "judul": "Pembaruan Sistem",
     "deskripsi": "Sistem berhasil diperbarui ke versi terbaru.",
-    "waktu": "2025-05-08T03:06:08.925Z",
-    "dibaca": true
-  },
-  {
-    "id": "d84b9a31-d112-4084-bd27-bb5403cc726f",
-    "jenis": "informasi",
-    "judul": "Anggota Koperasi Baru",
-    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Harapan Baru.",
-    "waktu": "2025-05-05T22:55:01.384Z",
+    "waktu": "2025-05-08T10:24:20.589Z",
     "dibaca": false
   },
   {
-    "id": "b52400fd-e284-4205-a31e-23cfa1100a62",
+    "id": "473b9357-cfe9-4e53-9442-5f463b20c61b",
+    "jenis": "sukses",
+    "judul": "Laporan Diterima",
+    "deskripsi": "Laporan hasil tangkap harian telah diterima.",
+    "waktu": "2025-05-07T02:27:30.979Z",
+    "dibaca": true
+  },
+  {
+    "id": "76db0524-4d97-4d8b-b0e7-a36deabac7f6",
+    "jenis": "informasi",
+    "judul": "Kapal Sandar",
+    "deskripsi": "KM. Mina Rejeki telah sandar di PPI Banyuwangi.",
+    "waktu": "2025-05-06T01:33:02.349Z",
+    "dibaca": true
+  },
+  {
+    "id": "e56841ce-98c3-4c93-af8a-2dee61ddb1d6",
+    "jenis": "informasi",
+    "judul": "Kapal Berangkat Melaut",
+    "deskripsi": "KM. Sentosa Laut berangkat melaut dari PPI Banyuwangi.",
+    "waktu": "2025-05-08T05:52:16.538Z",
+    "dibaca": true
+  },
+  {
+    "id": "49085216-c9ae-488d-a2d8-2f335ea90ed2",
+    "jenis": "sukses",
+    "judul": "Laporan Diterima",
+    "deskripsi": "Laporan hasil tangkap harian telah diterima.",
+    "waktu": "2025-05-09T16:40:27.314Z",
+    "dibaca": false
+  },
+  {
+    "id": "322cee9f-cd23-41db-8aa1-5c6d84b9a31d",
+    "jenis": "sukses",
+    "judul": "Hasil Tangkap Diperbarui",
+    "deskripsi": "Data hasil tangkap KM. Mina Makmur telah diperbarui.",
+    "waktu": "2025-05-05T14:39:26.750Z",
+    "dibaca": true
+  },
+  {
+    "id": "d27bb540-3cc7-426f-ae3e-bab52400fde2",
+    "jenis": "peringatan",
+    "judul": "Dokumen Kapal Akan Kedaluwarsa",
+    "deskripsi": "SLO KM. Cakrawala Sakti akan berakhir dalam 5 hari.",
+    "waktu": "2025-05-06T08:53:16.530Z",
+    "dibaca": true
+  },
+  {
+    "id": "1e23cfa1-100a-4628-b32d-1498c0e078e8",
+    "jenis": "peringatan",
+    "judul": "Batas BBM Menipis",
+    "deskripsi": "KM. Cakrawala Sentosa: BBM tersisa di bawah 20%.",
+    "waktu": "2025-05-06T21:40:20.151Z",
+    "dibaca": false
+  },
+  {
+    "id": "0af47c70-eb2b-4914-a717-46b3b06d634f",
+    "jenis": "sukses",
+    "judul": "Data Nelayan Terverifikasi",
+    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
+    "waktu": "2025-05-05T22:20:32.957Z",
+    "dibaca": true
+  },
+  {
+    "id": "be9dc178-8338-4c6d-9ac9-745c08f1d84d",
+    "jenis": "sukses",
+    "judul": "Hasil Tangkap Diperbarui",
+    "deskripsi": "Data hasil tangkap KM. Mina Bersama telah diperbarui.",
+    "waktu": "2025-05-06T08:28:24.038Z",
+    "dibaca": true
+  },
+  {
+    "id": "81644d8c-33cb-4c86-8935-c29fda97f060",
+    "jenis": "sistem",
+    "judul": "Backup Data Selesai",
+    "deskripsi": "Backup data harian berhasil dilakukan.",
+    "waktu": "2025-05-05T23:57:29.183Z",
+    "dibaca": true
+  },
+  {
+    "id": "e9472eb1-95ef-4a4b-8d9a-619ba9b78f3d",
+    "jenis": "informasi",
+    "judul": "Jadwal Perawatan Kapal",
+    "deskripsi": "Jadwal perawatan KM. Sumber Makmur akan dilakukan besok.",
+    "waktu": "2025-05-08T13:12:32.326Z",
+    "dibaca": true
+  },
+  {
+    "id": "1c937c58-6dfb-44a2-90e0-f461add1e8ee",
+    "jenis": "sukses",
+    "judul": "Laporan Diterima",
+    "deskripsi": "Laporan hasil tangkap harian telah diterima.",
+    "waktu": "2025-05-09T17:18:26.467Z",
+    "dibaca": false
+  },
+  {
+    "id": "e3fceb7f-99ac-4ec3-9749-19eeb36a7e16",
+    "jenis": "sukses",
+    "judul": "Hasil Tangkap Diperbarui",
+    "deskripsi": "Data hasil tangkap KM. Sumber Makmur telah diperbarui.",
+    "waktu": "2025-05-05T07:21:58.043Z",
+    "dibaca": true
+  },
+  {
+    "id": "c621a30b-c67f-485a-ae8e-d99585f73fd4",
+    "jenis": "informasi",
+    "judul": "Anggota Koperasi Baru",
+    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Mina Sejahtera.",
+    "waktu": "2025-05-07T19:50:27.082Z",
+    "dibaca": true
+  },
+  {
+    "id": "f51fa345-b43a-4959-ae50-ecbe25fa0259",
     "jenis": "sukses",
     "judul": "Tiket Bantuan Selesai",
     "deskripsi": "Tiket dukungan Anda telah ditandai selesai.",
-    "waktu": "2025-05-05T23:28:56.043Z",
-    "dibaca": true
-  },
-  {
-    "id": "498c0e07-8e8e-46bb-9e0a-f47c70eb2b91",
-    "jenis": "sistem",
-    "judul": "Pembaruan Sistem",
-    "deskripsi": "Sistem berhasil diperbarui ke versi terbaru.",
-    "waktu": "2025-05-07T08:32:02.852Z",
-    "dibaca": true
-  },
-  {
-    "id": "3b06d634-f923-4a00-abe9-dc1788338c6d",
-    "jenis": "informasi",
-    "judul": "Kapal Sandar",
-    "deskripsi": "KM. Putra Samudra telah sandar di TPI Surabaya.",
-    "waktu": "2025-05-08T19:51:46.063Z",
+    "waktu": "2025-05-08T16:33:10.998Z",
     "dibaca": false
   },
   {
-    "id": "08f1d84d-440e-4581-9644-d8c33cbc8693",
+    "id": "208cf1f8-b971-4d46-b0f2-bebf936ea055",
     "jenis": "informasi",
-    "judul": "Kapal Sandar",
-    "deskripsi": "KM. Sumber Jaya telah sandar di TPI Surabaya.",
-    "waktu": "2025-05-08T18:31:14.130Z",
-    "dibaca": true
-  },
-  {
-    "id": "da97f060-1305-492e-a947-2eb195efa4bd",
-    "jenis": "sukses",
-    "judul": "Data Nelayan Terverifikasi",
-    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
-    "waktu": "2025-05-08T07:32:28.429Z",
-    "dibaca": true
-  },
-  {
-    "id": "a9b78f3d-1b59-451c-8937-c586dfb4a20e",
-    "jenis": "peringatan",
-    "judul": "Dokumen Kapal Akan Kedaluwarsa",
-    "deskripsi": "SLO KM. Berkah Persada akan berakhir dalam 5 hari.",
-    "waktu": "2025-05-09T16:54:05.328Z",
-    "dibaca": true
-  },
-  {
-    "id": "dd1e8ee5-fe92-42e3-afce-b7f99acec374",
-    "jenis": "informasi",
-    "judul": "Kapal Masuk Zona Penangkapan",
-    "deskripsi": "KM. Anugerah Rejeki memasuki zona penangkapan.",
-    "waktu": "2025-05-05T08:47:05.672Z",
+    "judul": "Anggota Koperasi Baru",
+    "deskripsi": "Nelayan baru telah bergabung dengan Koperasi Papua Bahari.",
+    "waktu": "2025-05-06T15:17:05.268Z",
     "dibaca": false
   },
   {
-    "id": "b36a7e16-5027-4c9c-a621-a30bc67f85ae",
+    "id": "d9753e97-1c08-43a9-9bf1-b9a75f62c3e5",
     "jenis": "sistem",
     "judul": "Sinkronisasi Data Selesai",
     "deskripsi": "Sinkronisasi data kapal dan nelayan telah selesai.",
-    "waktu": "2025-05-09T13:34:24.701Z",
-    "dibaca": false
-  },
-  {
-    "id": "85f73fd4-a958-4af5-81fa-345b43a959e5",
-    "jenis": "sukses",
-    "judul": "Pemeriksaan Biosecurity Lolos",
-    "deskripsi": "KM. Sumber Jaya dinyatakan lolos pemeriksaan biosecurity.",
-    "waktu": "2025-05-09T13:44:52.462Z",
-    "dibaca": false
-  },
-  {
-    "id": "25fa0259-bbf4-4dd2-b08c-f1f8b971d460",
-    "jenis": "sukses",
-    "judul": "Data Nelayan Terverifikasi",
-    "deskripsi": "Data nelayan baru telah berhasil diverifikasi.",
-    "waktu": "2025-05-05T22:08:02.740Z",
+    "waktu": "2025-05-08T07:48:06.644Z",
     "dibaca": false
   }
 ];

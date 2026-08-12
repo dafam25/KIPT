@@ -3,39 +3,15 @@ import type { HasilTangkap } from '../types';
 
 export const hasilTangkapData: HasilTangkap[] = [
   {
-    "id": "76ec7537-c31a-47c1-adff-451158fa5071",
-    "kapalId": "KAP-2505-00013",
-    "tanggal": "2025-05-05",
-    "waktuMulai": "06:00",
-    "waktuSelesai": "12:00",
-    "lokasi": "Perairan Laut Sawu",
-    "jenisIkan": [
-      {
-        "nama": "Ikan Tongkol",
-        "beratKg": 69,
-        "jumlahEkor": 43,
-        "kondisi": "Segar"
-      }
-    ],
-    "estimasiNilai": 1725000,
-    "status": "verified"
-  },
-  {
     "id": "7b278739-4fa1-4954-8e5e-cabac2c5ac7c",
-    "kapalId": "KAP-2505-00014",
+    "kapalId": "KAP-2505-00033",
     "tanggal": "2025-04-30",
     "waktuMulai": "06:00",
     "waktuSelesai": "12:00",
     "lokasi": "Perairan Laut Jawa",
     "jenisIkan": [
       {
-        "nama": "Ikan Cakalang",
-        "beratKg": 185,
-        "jumlahEkor": 118,
-        "kondisi": "Segar"
-      },
-      {
-        "nama": "Ikan Layang",
+        "nama": "Ikan Tuna",
         "beratKg": 78,
         "jumlahEkor": 88,
         "kondisi": "Segar"
@@ -47,7 +23,7 @@ export const hasilTangkapData: HasilTangkap[] = [
         "kondisi": "Segar"
       }
     ],
-    "estimasiNilai": 11350000,
+    "estimasiNilai": 6725000,
     "status": "verified"
   },
   {
@@ -2184,6 +2160,42 @@ export const hasilTangkapData: HasilTangkap[] = [
       }
     ],
     "estimasiNilai": 2875000,
+    "status": "verified"
+  },
+  {
+    "id": "fd2cef10-14c7-4717-8bf0-b3ffb0f45f78",
+    "kapalId": "KAP-2505-00034",
+    "tanggal": "2025-05-09",
+    "waktuMulai": "06:00",
+    "waktuSelesai": "12:00",
+    "lokasi": "Perairan Laut Arafura",
+    "jenisIkan": [
+      {
+        "nama": "Ikan Cakalang",
+        "beratKg": 73,
+        "jumlahEkor": 45,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tenggiri",
+        "beratKg": 112,
+        "jumlahEkor": 23,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Kembung",
+        "beratKg": 63,
+        "jumlahEkor": 60,
+        "kondisi": "Segar"
+      },
+      {
+        "nama": "Ikan Tuna",
+        "beratKg": 155,
+        "jumlahEkor": 36,
+        "kondisi": "Segar"
+      }
+    ],
+    "estimasiNilai": 10075000,
     "status": "verified"
   }
 ];

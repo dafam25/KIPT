@@ -12,28 +12,28 @@ export const kapalData: Kapal[] = [
     "pelabuhanInduk": "TPI Benoa",
     "status": "perbaikan",
     "posisi": {
-      "lat": 3.4987,
-      "lng": 99.7344
+      "lat": -8.6597,
+      "lng": 115.8206
     },
     "dokumen": {
       "siup": true,
-      "slo": true,
+      "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000019"
+    "nahkodaId": "NEL-2505-000018"
   },
   {
     "id": "KAP-2505-00002",
-    "nama": "KM. Berkah Sejati",
-    "jenis": "Gillnet",
-    "gt": 85,
-    "mesinPk": 183,
-    "kecepatanKnot": 10,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
+    "nama": "KM. Mina Bersama",
+    "jenis": "Kapal Motor",
+    "gt": 86,
+    "mesinPk": 56,
+    "kecepatanKnot": 18,
+    "pelabuhanInduk": "TPI Jakarta",
     "status": "sandar",
     "posisi": {
-      "lat": -1.9833,
-      "lng": 124.7507
+      "lat": -1.554,
+      "lng": 108.0847
     },
     "dokumen": {
       "siup": true,
@@ -44,76 +44,76 @@ export const kapalData: Kapal[] = [
   },
   {
     "id": "KAP-2505-00003",
-    "nama": "KM. Putra Bahari",
-    "jenis": "Purse Seine",
-    "gt": 85,
-    "mesinPk": 133,
-    "kecepatanKnot": 8,
-    "pelabuhanInduk": "PPP Muncar",
-    "status": "sandar",
+    "nama": "KM. Bahari Laut",
+    "jenis": "Gillnet",
+    "gt": 7,
+    "mesinPk": 33,
+    "kecepatanKnot": 13,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 2.5212,
-      "lng": 129.5925
+      "lat": -8.6396,
+      "lng": 115.8725
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000029"
+    "nahkodaId": "NEL-2505-000028"
   },
   {
     "id": "KAP-2505-00004",
-    "nama": "KM. Putra Bahtera",
-    "jenis": "Gillnet",
-    "gt": 57,
-    "mesinPk": 102,
-    "kecepatanKnot": 15,
-    "pelabuhanInduk": "TPI Jakarta",
-    "status": "sandar",
+    "nama": "KM. Sumber Bahari",
+    "jenis": "Longline",
+    "gt": 44,
+    "mesinPk": 125,
+    "kecepatanKnot": 10,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "perbaikan",
     "posisi": {
-      "lat": -6.9056,
-      "lng": 128.1917
+      "lat": -1.8644,
+      "lng": 122.4785
     },
     "dokumen": {
       "siup": true,
       "slo": false,
-      "pasKecil": false
+      "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000020"
+    "nahkodaId": "NEL-2505-000019"
   },
   {
     "id": "KAP-2505-00005",
-    "nama": "KM. Tunas Sejati",
-    "jenis": "Gillnet",
-    "gt": 27,
-    "mesinPk": 244,
+    "nama": "KM. Sentosa Sejahtera",
+    "jenis": "Kapal Motor",
+    "gt": 50,
+    "mesinPk": 193,
     "kecepatanKnot": 16,
     "pelabuhanInduk": "TPI Surabaya",
-    "status": "sandar",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 2.1112,
-      "lng": 115.7521
+      "lat": -0.5898,
+      "lng": 118.516
     },
     "dokumen": {
       "siup": true,
       "slo": false,
-      "pasKecil": false
+      "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000057"
+    "nahkodaId": "NEL-2505-000056"
   },
   {
     "id": "KAP-2505-00006",
-    "nama": "KM. Bintang Persada",
-    "jenis": "Gillnet",
-    "gt": 81,
-    "mesinPk": 60,
-    "kecepatanKnot": 10,
-    "pelabuhanInduk": "TPI Surabaya",
+    "nama": "KM. Mina Samudra",
+    "jenis": "Longline",
+    "gt": 43,
+    "mesinPk": 49,
+    "kecepatanKnot": 8,
+    "pelabuhanInduk": "PPI Banyuwangi",
     "status": "sandar",
     "posisi": {
-      "lat": -3.9755,
-      "lng": 100.0464
+      "lat": -8.1497,
+      "lng": 114.3967
     },
     "dokumen": {
       "siup": true,
@@ -124,106 +124,86 @@ export const kapalData: Kapal[] = [
   },
   {
     "id": "KAP-2505-00007",
-    "nama": "KM. Bintang Indah",
-    "jenis": "Gillnet",
-    "gt": 11,
-    "mesinPk": 39,
-    "kecepatanKnot": 15,
-    "pelabuhanInduk": "TPI Jakarta",
-    "status": "melaut",
-    "posisi": {
-      "lat": 4.6379,
-      "lng": 134.1331
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": false,
-      "pasKecil": false
-    },
-    "nahkodaId": "NEL-2505-000056"
-  },
-  {
-    "id": "KAP-2505-00008",
-    "nama": "KM. Harapan Mandiri",
-    "jenis": "Longline",
-    "gt": 57,
-    "mesinPk": 127,
-    "kecepatanKnot": 11,
+    "nama": "KM. Sumber Makmur",
+    "jenis": "Kapal Tanpa Motor",
+    "gt": 103,
+    "mesinPk": 161,
+    "kecepatanKnot": 24,
     "pelabuhanInduk": "TPI Benoa",
     "status": "sandar",
     "posisi": {
-      "lat": -4.7198,
-      "lng": 101.0928
+      "lat": -7.9672,
+      "lng": 120.9349
     },
     "dokumen": {
       "siup": true,
       "slo": true,
       "pasKecil": false
+    },
+    "nahkodaId": "NEL-2505-000055"
+  },
+  {
+    "id": "KAP-2505-00008",
+    "nama": "KM. Karya Mandiri",
+    "jenis": "Purse Seine",
+    "gt": 18,
+    "mesinPk": 232,
+    "kecepatanKnot": 21,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "sandar",
+    "posisi": {
+      "lat": 2.9909,
+      "lng": 109.4537
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": true
     },
     "nahkodaId": null
   },
   {
     "id": "KAP-2505-00009",
-    "nama": "KM. Putra Jaya",
+    "nama": "KM. Mina Makmur",
     "jenis": "Longline",
-    "gt": 64,
-    "mesinPk": 46,
-    "kecepatanKnot": 25,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
-    "status": "sandar",
+    "gt": 74,
+    "mesinPk": 28,
+    "kecepatanKnot": 21,
+    "pelabuhanInduk": "PPI Banyuwangi",
+    "status": "melaut",
     "posisi": {
-      "lat": -1.9936,
-      "lng": 103.5106
+      "lat": 3.3251,
+      "lng": 99.8064
     },
     "dokumen": {
       "siup": true,
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000021"
+    "nahkodaId": "NEL-2505-000020"
   },
   {
     "id": "KAP-2505-00010",
-    "nama": "KM. Sinar Bersama",
-    "jenis": "Purse Seine",
-    "gt": 89,
-    "mesinPk": 91,
-    "kecepatanKnot": 11,
-    "pelabuhanInduk": "TPI Jakarta",
-    "status": "tidak_aktif",
+    "nama": "KM. Cakrawala Sentosa",
+    "jenis": "Kapal Motor",
+    "gt": 16,
+    "mesinPk": 132,
+    "kecepatanKnot": 15,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 0.4684,
-      "lng": 97.4562
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": false
-    },
-    "nahkodaId": "NEL-2505-000046"
-  },
-  {
-    "id": "KAP-2505-00011",
-    "nama": "KM. Karya Bahtera",
-    "jenis": "Purse Seine",
-    "gt": 59,
-    "mesinPk": 122,
-    "kecepatanKnot": 23,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "melaut",
-    "posisi": {
-      "lat": -1.164,
-      "lng": 131.5591
+      "lat": -5.4501,
+      "lng": 112.1485
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000028"
+    "nahkodaId": "NEL-2505-000045"
   },
   {
-    "id": "KAP-2505-00012",
+    "id": "KAP-2505-00011",
     "nama": "KM. Cakrawala Sakti",
     "jenis": "Purse Seine",
     "gt": 102,
@@ -232,8 +212,68 @@ export const kapalData: Kapal[] = [
     "pelabuhanInduk": "Pelabuhan TPI Bitung",
     "status": "melaut",
     "posisi": {
-      "lat": -4.8736,
-      "lng": 124.7506
+      "lat": -4.8478,
+      "lng": 129.6982
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000027"
+  },
+  {
+    "id": "KAP-2505-00012",
+    "nama": "KM. Bahari Rejeki",
+    "jenis": "Kapal Tanpa Motor",
+    "gt": 96,
+    "mesinPk": 41,
+    "kecepatanKnot": 18,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": 3.0135,
+      "lng": 99.6364
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": true,
+      "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000008"
+  },
+  {
+    "id": "KAP-2505-00013",
+    "nama": "KM. Tunas Indah",
+    "jenis": "Gillnet",
+    "gt": 109,
+    "mesinPk": 246,
+    "kecepatanKnot": 12,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "tidak_aktif",
+    "posisi": {
+      "lat": -8.6431,
+      "lng": 115.8534
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": true,
+      "pasKecil": false
+    },
+    "nahkodaId": "NEL-2505-000037"
+  },
+  {
+    "id": "KAP-2505-00014",
+    "nama": "KM. Bahari Bahtera",
+    "jenis": "Purse Seine",
+    "gt": 33,
+    "mesinPk": 240,
+    "kecepatanKnot": 23,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": 4.0802,
+      "lng": 123.2379
     },
     "dokumen": {
       "siup": true,
@@ -243,57 +283,17 @@ export const kapalData: Kapal[] = [
     "nahkodaId": "NEL-2505-000001"
   },
   {
-    "id": "KAP-2505-00013",
-    "nama": "KM. Sumber Jaya",
-    "jenis": "Kapal Tanpa Motor",
-    "gt": 111,
-    "mesinPk": 203,
-    "kecepatanKnot": 9,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
-    "status": "tidak_aktif",
-    "posisi": {
-      "lat": 2.9669,
-      "lng": 116.3788
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000038"
-  },
-  {
-    "id": "KAP-2505-00014",
-    "nama": "KM. Tunas Indah",
-    "jenis": "Gillnet",
-    "gt": 109,
-    "mesinPk": 246,
-    "kecepatanKnot": 12,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "tidak_aktif",
-    "posisi": {
-      "lat": 3.6875,
-      "lng": 107.3716
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": false,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000002"
-  },
-  {
     "id": "KAP-2505-00015",
-    "nama": "KM. Cakrawala Jaya",
-    "jenis": "Kapal Motor",
-    "gt": 27,
-    "mesinPk": 81,
-    "kecepatanKnot": 25,
+    "nama": "KM. Karya Sentosa",
+    "jenis": "Gillnet",
+    "gt": 29,
+    "mesinPk": 183,
+    "kecepatanKnot": 24,
     "pelabuhanInduk": "TPI Benoa",
-    "status": "melaut",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 3.5498,
-      "lng": 112.3537
+      "lat": 3.5603,
+      "lng": 99.3862
     },
     "dokumen": {
       "siup": true,
@@ -304,186 +304,146 @@ export const kapalData: Kapal[] = [
   },
   {
     "id": "KAP-2505-00016",
-    "nama": "KM. Putra Samudra",
-    "jenis": "Longline",
-    "gt": 50,
-    "mesinPk": 144,
-    "kecepatanKnot": 11,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "perbaikan",
-    "posisi": {
-      "lat": 5.1637,
-      "lng": 132.5168
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": false
-    },
-    "nahkodaId": "NEL-2505-000013"
-  },
-  {
-    "id": "KAP-2505-00017",
-    "nama": "KM. Samudra Bersama",
+    "nama": "KM. Tunas Bahari",
     "jenis": "Kapal Motor",
-    "gt": 99,
-    "mesinPk": 115,
-    "kecepatanKnot": 23,
-    "pelabuhanInduk": "TPI Jakarta",
-    "status": "perbaikan",
+    "gt": 27,
+    "mesinPk": 37,
+    "kecepatanKnot": 24,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "sandar",
     "posisi": {
-      "lat": -6.0318,
-      "lng": 97.5266
+      "lat": 3.1845,
+      "lng": 99.8714
     },
     "dokumen": {
       "siup": true,
       "slo": false,
+      "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000012"
+  },
+  {
+    "id": "KAP-2505-00017",
+    "nama": "KM. Nusantara Sakti",
+    "jenis": "Purse Seine",
+    "gt": 11,
+    "mesinPk": 48,
+    "kecepatanKnot": 13,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "tidak_aktif",
+    "posisi": {
+      "lat": -7.3191,
+      "lng": 134.1078
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": true,
       "pasKecil": true
     },
     "nahkodaId": null
   },
   {
     "id": "KAP-2505-00018",
-    "nama": "KM. Karya Sejahtera",
-    "jenis": "Gillnet",
-    "gt": 87,
-    "mesinPk": 222,
-    "kecepatanKnot": 9,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
-    "status": "perbaikan",
-    "posisi": {
-      "lat": -7.6543,
-      "lng": 97.6112
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000003"
-  },
-  {
-    "id": "KAP-2505-00019",
-    "nama": "KM. Mitra Perkasa",
-    "jenis": "Longline",
-    "gt": 110,
-    "mesinPk": 53,
-    "kecepatanKnot": 12,
+    "nama": "KM. Tunas Utama",
+    "jenis": "Kapal Tanpa Motor",
+    "gt": 70,
+    "mesinPk": 217,
+    "kecepatanKnot": 20,
     "pelabuhanInduk": "PPP Muncar",
     "status": "perbaikan",
     "posisi": {
-      "lat": -1.0982,
-      "lng": 135.9505
+      "lat": -5.4311,
+      "lng": 112.0286
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": true,
+      "pasKecil": false
+    },
+    "nahkodaId": "NEL-2505-000002"
+  },
+  {
+    "id": "KAP-2505-00019",
+    "nama": "KM. Sumber Sakti",
+    "jenis": "Longline",
+    "gt": 97,
+    "mesinPk": 74,
+    "kecepatanKnot": 15,
+    "pelabuhanInduk": "PPI Banyuwangi",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": 0.8473,
+      "lng": 126.8272
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000034"
+    "nahkodaId": "NEL-2505-000033"
   },
   {
     "id": "KAP-2505-00020",
-    "nama": "KM. Mitra Indah",
-    "jenis": "Kapal Tanpa Motor",
-    "gt": 25,
-    "mesinPk": 145,
-    "kecepatanKnot": 21,
-    "pelabuhanInduk": "PPI Banyuwangi",
-    "status": "tidak_aktif",
+    "nama": "KM. Berkah Sejahtera",
+    "jenis": "Purse Seine",
+    "gt": 61,
+    "mesinPk": 229,
+    "kecepatanKnot": 16,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "perbaikan",
     "posisi": {
-      "lat": -2.3196,
-      "lng": 138.2348
+      "lat": -1.7545,
+      "lng": 108.2209
     },
     "dokumen": {
       "siup": true,
       "slo": true,
-      "pasKecil": false
+      "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000012"
+    "nahkodaId": "NEL-2505-000011"
   },
   {
     "id": "KAP-2505-00021",
-    "nama": "KM. Cahaya Sentosa",
-    "jenis": "Longline",
-    "gt": 106,
-    "mesinPk": 126,
-    "kecepatanKnot": 17,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "tidak_aktif",
+    "nama": "KM. Samudra Abadi",
+    "jenis": "Kapal Tanpa Motor",
+    "gt": 118,
+    "mesinPk": 35,
+    "kecepatanKnot": 20,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "melaut",
     "posisi": {
-      "lat": -0.9149,
-      "lng": 121.8296
+      "lat": -2.6916,
+      "lng": 128.9681
     },
     "dokumen": {
       "siup": true,
-      "slo": true,
+      "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000043"
+    "nahkodaId": "NEL-2505-000042"
   },
   {
     "id": "KAP-2505-00022",
-    "nama": "KM. Sumber Sakti",
-    "jenis": "Gillnet",
-    "gt": 118,
-    "mesinPk": 212,
-    "kecepatanKnot": 20,
-    "pelabuhanInduk": "PPI Banyuwangi",
-    "status": "tidak_aktif",
+    "nama": "KM. Sentosa Laut",
+    "jenis": "Kapal Tanpa Motor",
+    "gt": 63,
+    "mesinPk": 234,
+    "kecepatanKnot": 14,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "perbaikan",
     "posisi": {
-      "lat": -6.3946,
-      "lng": 98.2559
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000005"
-  },
-  {
-    "id": "KAP-2505-00023",
-    "nama": "KM. Tunas Persada",
-    "jenis": "Purse Seine",
-    "gt": 88,
-    "mesinPk": 246,
-    "kecepatanKnot": 10,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
-    "status": "tidak_aktif",
-    "posisi": {
-      "lat": -7.123,
-      "lng": 122.7855
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": false
-    },
-    "nahkodaId": "NEL-2505-000007"
-  },
-  {
-    "id": "KAP-2505-00024",
-    "nama": "KM. Mitra Sakti",
-    "jenis": "Gillnet",
-    "gt": 112,
-    "mesinPk": 109,
-    "kecepatanKnot": 22,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "sandar",
-    "posisi": {
-      "lat": -5.0808,
-      "lng": 133.7388
+      "lat": -8.8807,
+      "lng": 135.8212
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000015"
+    "nahkodaId": "NEL-2505-000004"
   },
   {
-    "id": "KAP-2505-00025",
+    "id": "KAP-2505-00023",
     "nama": "KM. Bintang Rejeki",
     "jenis": "Kapal Motor",
     "gt": 18,
@@ -492,28 +452,28 @@ export const kapalData: Kapal[] = [
     "pelabuhanInduk": "PPI Banyuwangi",
     "status": "melaut",
     "posisi": {
-      "lat": 4.5956,
-      "lng": 117.1887
+      "lat": 0.1788,
+      "lng": 129.0212
     },
     "dokumen": {
       "siup": true,
-      "slo": false,
-      "pasKecil": true
+      "slo": true,
+      "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000059"
+    "nahkodaId": "NEL-2505-000006"
   },
   {
-    "id": "KAP-2505-00026",
-    "nama": "KM. Sumber Indah",
-    "jenis": "Kapal Motor",
-    "gt": 16,
-    "mesinPk": 192,
-    "kecepatanKnot": 10,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "tidak_aktif",
+    "id": "KAP-2505-00024",
+    "nama": "KM. Mina Sejahtera",
+    "jenis": "Purse Seine",
+    "gt": 93,
+    "mesinPk": 47,
+    "kecepatanKnot": 21,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 5.7895,
-      "lng": 115.8432
+      "lat": -2.0104,
+      "lng": 129.4344
     },
     "dokumen": {
       "siup": true,
@@ -523,7 +483,7 @@ export const kapalData: Kapal[] = [
     "nahkodaId": "NEL-2505-000014"
   },
   {
-    "id": "KAP-2505-00027",
+    "id": "KAP-2505-00025",
     "nama": "KM. Anugerah Rejeki",
     "jenis": "Kapal Motor",
     "gt": 81,
@@ -532,178 +492,158 @@ export const kapalData: Kapal[] = [
     "pelabuhanInduk": "PPP Muncar",
     "status": "tidak_aktif",
     "posisi": {
-      "lat": 0.2441,
-      "lng": 123.8524
+      "lat": -2.5219,
+      "lng": 129.073
     },
     "dokumen": {
       "siup": true,
-      "slo": true,
+      "slo": false,
+      "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000058"
+  },
+  {
+    "id": "KAP-2505-00026",
+    "nama": "KM. Putra Laut",
+    "jenis": "Gillnet",
+    "gt": 84,
+    "mesinPk": 235,
+    "kecepatanKnot": 22,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "sandar",
+    "posisi": {
+      "lat": -2.6266,
+      "lng": 135.796
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
       "pasKecil": false
+    },
+    "nahkodaId": "NEL-2505-000013"
+  },
+  {
+    "id": "KAP-2505-00027",
+    "nama": "KM. Berkah Mandiri",
+    "jenis": "Kapal Motor",
+    "gt": 110,
+    "mesinPk": 178,
+    "kecepatanKnot": 9,
+    "pelabuhanInduk": "Pelabuhan TPI Bitung",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": -7.3991,
+      "lng": 120.4638
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": true
     },
     "nahkodaId": null
   },
   {
     "id": "KAP-2505-00028",
-    "nama": "KM. Samudra Bahtera",
-    "jenis": "Kapal Motor",
-    "gt": 70,
-    "mesinPk": 179,
-    "kecepatanKnot": 24,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "melaut",
+    "nama": "KM. Bahari Persada",
+    "jenis": "Purse Seine",
+    "gt": 84,
+    "mesinPk": 117,
+    "kecepatanKnot": 22,
+    "pelabuhanInduk": "Pelabuhan TPI Bitung",
+    "status": "sandar",
     "posisi": {
-      "lat": -2.0163,
-      "lng": 130.32
+      "lat": 1.038,
+      "lng": 126.7355
     },
     "dokumen": {
       "siup": true,
-      "slo": true,
+      "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000026"
+    "nahkodaId": "NEL-2505-000025"
   },
   {
     "id": "KAP-2505-00029",
-    "nama": "KM. Berkah Persada",
+    "nama": "KM. Sentosa Rejeki",
     "jenis": "Gillnet",
-    "gt": 43,
-    "mesinPk": 191,
-    "kecepatanKnot": 24,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "melaut",
+    "gt": 57,
+    "mesinPk": 29,
+    "kecepatanKnot": 11,
+    "pelabuhanInduk": "TPI Jakarta",
+    "status": "tidak_aktif",
     "posisi": {
-      "lat": 0.3439,
-      "lng": 137.0758
+      "lat": -0.7483,
+      "lng": 118.2746
     },
     "dokumen": {
       "siup": true,
       "slo": true,
-      "pasKecil": false
+      "pasKecil": true
     },
     "nahkodaId": null
   },
   {
     "id": "KAP-2505-00030",
-    "nama": "KM. Mina Persada",
+    "nama": "KM. Harapan Sejahtera",
     "jenis": "Longline",
-    "gt": 20,
-    "mesinPk": 162,
-    "kecepatanKnot": 8,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "melaut",
+    "gt": 98,
+    "mesinPk": 73,
+    "kecepatanKnot": 12,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "sandar",
     "posisi": {
-      "lat": 1.184,
-      "lng": 113.8284
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": false,
-      "pasKecil": false
-    },
-    "nahkodaId": "NEL-2505-000018"
-  },
-  {
-    "id": "KAP-2505-00031",
-    "nama": "KM. Sumber Sentosa",
-    "jenis": "Kapal Motor",
-    "gt": 94,
-    "mesinPk": 201,
-    "kecepatanKnot": 18,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "perbaikan",
-    "posisi": {
-      "lat": -1.4064,
-      "lng": 115.8632
+      "lat": -8.5715,
+      "lng": 120.6931
     },
     "dokumen": {
       "siup": true,
       "slo": true,
       "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000017"
+  },
+  {
+    "id": "KAP-2505-00031",
+    "nama": "KM. Nusantara Makmur",
+    "jenis": "Gillnet",
+    "gt": 84,
+    "mesinPk": 139,
+    "kecepatanKnot": 14,
+    "pelabuhanInduk": "TPI Jakarta",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": -6.1672,
+      "lng": 105.627
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": true,
+      "pasKecil": false
     },
     "nahkodaId": null
   },
   {
     "id": "KAP-2505-00032",
-    "nama": "KM. Sumber Bahtera",
-    "jenis": "Longline",
-    "gt": 95,
-    "mesinPk": 56,
-    "kecepatanKnot": 15,
-    "pelabuhanInduk": "PPI Banyuwangi",
-    "status": "melaut",
+    "nama": "KM. Bintang Laut",
+    "jenis": "Purse Seine",
+    "gt": 118,
+    "mesinPk": 92,
+    "kecepatanKnot": 25,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "perbaikan",
     "posisi": {
-      "lat": 1.7485,
-      "lng": 137.9803
+      "lat": 1.2932,
+      "lng": 126.0661
     },
     "dokumen": {
       "siup": true,
       "slo": true,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000033"
+    "nahkodaId": "NEL-2505-000032"
   },
   {
     "id": "KAP-2505-00033",
-    "nama": "KM. Cakrawala Makmur",
-    "jenis": "Longline",
-    "gt": 14,
-    "mesinPk": 120,
-    "kecepatanKnot": 11,
-    "pelabuhanInduk": "PPP Muncar",
-    "status": "sandar",
-    "posisi": {
-      "lat": -8.7539,
-      "lng": 115.3263
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": false,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000041"
-  },
-  {
-    "id": "KAP-2505-00034",
-    "nama": "KM. Sumber Laut",
-    "jenis": "Gillnet",
-    "gt": 43,
-    "mesinPk": 129,
-    "kecepatanKnot": 25,
-    "pelabuhanInduk": "PPP Muncar",
-    "status": "sandar",
-    "posisi": {
-      "lat": -0.1663,
-      "lng": 107.5479
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": false,
-      "pasKecil": true
-    },
-    "nahkodaId": null
-  },
-  {
-    "id": "KAP-2505-00035",
-    "nama": "KM. Mitra Makmur",
-    "jenis": "Kapal Tanpa Motor",
-    "gt": 39,
-    "mesinPk": 241,
-    "kecepatanKnot": 24,
-    "pelabuhanInduk": "TPI Benoa",
-    "status": "sandar",
-    "posisi": {
-      "lat": 3.0617,
-      "lng": 111.2767
-    },
-    "dokumen": {
-      "siup": true,
-      "slo": true,
-      "pasKecil": true
-    },
-    "nahkodaId": "NEL-2505-000004"
-  },
-  {
-    "id": "KAP-2505-00036",
     "nama": "KM. Bahari Indah",
     "jenis": "Kapal Tanpa Motor",
     "gt": 60,
@@ -712,94 +652,154 @@ export const kapalData: Kapal[] = [
     "pelabuhanInduk": "TPI Jakarta",
     "status": "sandar",
     "posisi": {
-      "lat": -7.2882,
-      "lng": 104.3069
+      "lat": -6.1893,
+      "lng": 105.4807
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": true
+    },
+    "nahkodaId": "NEL-2505-000040"
+  },
+  {
+    "id": "KAP-2505-00034",
+    "nama": "KM. Harapan Bahtera",
+    "jenis": "Kapal Motor",
+    "gt": 90,
+    "mesinPk": 164,
+    "kecepatanKnot": 9,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "melaut",
+    "posisi": {
+      "lat": -9.9989,
+      "lng": 127.3681
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": false
+    },
+    "nahkodaId": null
+  },
+  {
+    "id": "KAP-2505-00035",
+    "nama": "KM. Mina Rejeki",
+    "jenis": "Purse Seine",
+    "gt": 107,
+    "mesinPk": 191,
+    "kecepatanKnot": 23,
+    "pelabuhanInduk": "TPI Surabaya",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": -9.3938,
+      "lng": 122.2056
+    },
+    "dokumen": {
+      "siup": true,
+      "slo": false,
+      "pasKecil": false
+    },
+    "nahkodaId": "NEL-2505-000003"
+  },
+  {
+    "id": "KAP-2505-00036",
+    "nama": "KM. Putra Sakti",
+    "jenis": "Gillnet",
+    "gt": 79,
+    "mesinPk": 188,
+    "kecepatanKnot": 17,
+    "pelabuhanInduk": "Pelabuhan TPI Bitung",
+    "status": "perbaikan",
+    "posisi": {
+      "lat": -8.1626,
+      "lng": 134.7251
     },
     "dokumen": {
       "siup": true,
       "slo": true,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000022"
+    "nahkodaId": "NEL-2505-000021"
   },
   {
     "id": "KAP-2505-00037",
-    "nama": "KM. Cahaya Sakti",
-    "jenis": "Kapal Motor",
-    "gt": 74,
-    "mesinPk": 190,
-    "kecepatanKnot": 19,
+    "nama": "KM. Cakrawala Indah",
+    "jenis": "Purse Seine",
+    "gt": 12,
+    "mesinPk": 82,
+    "kecepatanKnot": 17,
     "pelabuhanInduk": "PPP Muncar",
     "status": "melaut",
     "posisi": {
-      "lat": -7.1801,
-      "lng": 131.3824
+      "lat": -9.8494,
+      "lng": 121.9486
     },
     "dokumen": {
       "siup": true,
-      "slo": false,
-      "pasKecil": true
+      "slo": true,
+      "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000008"
+    "nahkodaId": "NEL-2505-000007"
   },
   {
     "id": "KAP-2505-00038",
-    "nama": "KM. Tunas Laut",
-    "jenis": "Purse Seine",
-    "gt": 103,
-    "mesinPk": 52,
-    "kecepatanKnot": 23,
-    "pelabuhanInduk": "TPI Surabaya",
-    "status": "perbaikan",
+    "nama": "KM. Anugerah Sentosa",
+    "jenis": "Longline",
+    "gt": 108,
+    "mesinPk": 239,
+    "kecepatanKnot": 13,
+    "pelabuhanInduk": "PPI Banyuwangi",
+    "status": "sandar",
     "posisi": {
-      "lat": 2.3121,
-      "lng": 139.0905
+      "lat": -8.1379,
+      "lng": 114.4096
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000030"
+    "nahkodaId": "NEL-2505-000029"
   },
   {
     "id": "KAP-2505-00039",
-    "nama": "KM. Sentosa Bahtera",
-    "jenis": "Kapal Tanpa Motor",
-    "gt": 68,
-    "mesinPk": 170,
-    "kecepatanKnot": 21,
-    "pelabuhanInduk": "Pelabuhan TPI Bitung",
-    "status": "tidak_aktif",
+    "nama": "KM. Cakrawala Bersama",
+    "jenis": "Gillnet",
+    "gt": 118,
+    "mesinPk": 151,
+    "kecepatanKnot": 24,
+    "pelabuhanInduk": "PPP Muncar",
+    "status": "sandar",
     "posisi": {
-      "lat": 2.9604,
-      "lng": 109.5583
+      "lat": -7.9209,
+      "lng": 134.4214
     },
     "dokumen": {
       "siup": true,
-      "slo": false,
-      "pasKecil": true
+      "slo": true,
+      "pasKecil": false
     },
-    "nahkodaId": "NEL-2505-000010"
+    "nahkodaId": "NEL-2505-000009"
   },
   {
     "id": "KAP-2505-00040",
-    "nama": "KM. Bahari Sakti",
-    "jenis": "Kapal Motor",
-    "gt": 12,
-    "mesinPk": 47,
-    "kecepatanKnot": 9,
-    "pelabuhanInduk": "PPI Banyuwangi",
-    "status": "tidak_aktif",
+    "nama": "KM. Samudra Sejati",
+    "jenis": "Purse Seine",
+    "gt": 46,
+    "mesinPk": 183,
+    "kecepatanKnot": 10,
+    "pelabuhanInduk": "TPI Benoa",
+    "status": "melaut",
     "posisi": {
-      "lat": -6.8168,
-      "lng": 105.8075
+      "lat": -0.5191,
+      "lng": 121.8742
     },
     "dokumen": {
       "siup": true,
       "slo": false,
       "pasKecil": true
     },
-    "nahkodaId": "NEL-2505-000006"
+    "nahkodaId": "NEL-2505-000005"
   }
 ];
