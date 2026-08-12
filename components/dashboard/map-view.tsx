@@ -35,10 +35,10 @@ function shadePair(hslParams: string): { light: string; dark: string } {
   };
 }
 
-// Just the boat body — no cabin/wheelhouse "building" on deck. A rounded 2-tone hull
-// (highlight/shadow, still reads as dimensional) topped with a small ship's wheel on a
-// post (the requested reference art has one), two porthole dots, and small paddle-like
-// flourishes on each side, plus a soft drop shadow for "floating on water" lift.
+// A small dinghy/rowboat, matching the requested reference art: a rounded 2-tone hull
+// (highlight/shadow, still reads as dimensional) with a pair of diagonal oars, four
+// gunwale portholes, a striped life-ring on the left and a life-vest/cushion on the
+// right, plus a soft drop shadow for "floating on water" lift. No wheel/cabin.
 // Inlined as a raw SVG string because Leaflet's divIcon only accepts HTML markup, not
 // a React component.
 function vesselIconForStatus(status: KapalStatus) {
@@ -46,27 +46,27 @@ function vesselIconForStatus(status: KapalStatus) {
   const hslParams = TONE_HSL[tone as keyof typeof TONE_HSL] ?? TONE_HSL.muted;
   const { light, dark } = shadePair(hslParams);
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 34" width="38" height="27" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))">
-      <ellipse cx="24" cy="30" rx="16" ry="2.6" fill="#0F172A" opacity="0.18"/>
-      <path d="M4 16 Q2 15 3 22 Q6 20 6 17 Z" fill="${dark}"/>
-      <path d="M44 16 Q46 15 45 22 Q42 20 42 17 Z" fill="${dark}"/>
-      <path d="M4 15 Q24 12 44 15 Q44 24 24 25.5 Q4 24 4 15 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
-      <path d="M6 15.5 Q24 13.4 42 15.5 Q42 17.5 24 18.5 Q6 17.5 6 15.5 Z" fill="${light}"/>
-      <circle cx="16" cy="19.5" r="1.2" fill="#0F172A" opacity="0.55"/>
-      <circle cx="32" cy="19.5" r="1.2" fill="#0F172A" opacity="0.55"/>
-      <line x1="24" y1="12" x2="24" y2="8.5" stroke="#5B3A1E" stroke-width="1.3" stroke-linecap="round"/>
-      <circle cx="24" cy="6" r="3.4" fill="none" stroke="#5B3A1E" stroke-width="1.3"/>
-      <circle cx="24" cy="6" r="1" fill="#5B3A1E"/>
-      <line x1="24" y1="3" x2="24" y2="9" stroke="#5B3A1E" stroke-width="1"/>
-      <line x1="21" y1="6" x2="27" y2="6" stroke="#5B3A1E" stroke-width="1"/>
-      <line x1="21.8" y1="3.8" x2="26.2" y2="8.2" stroke="#5B3A1E" stroke-width="1"/>
-      <line x1="26.2" y1="3.8" x2="21.8" y2="8.2" stroke="#5B3A1E" stroke-width="1"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 30" width="42" height="24" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))">
+      <ellipse cx="26" cy="26" rx="17" ry="2.6" fill="#0F172A" opacity="0.18"/>
+      <line x1="10" y1="10" x2="1" y2="19" stroke="#8B5A2B" stroke-width="1.6" stroke-linecap="round"/>
+      <ellipse cx="1" cy="19" rx="2.6" ry="1.3" fill="#8B5A2B" transform="rotate(-42 1 19)"/>
+      <line x1="42" y1="10" x2="51" y2="19" stroke="#8B5A2B" stroke-width="1.6" stroke-linecap="round"/>
+      <ellipse cx="51" cy="19" rx="2.6" ry="1.3" fill="#8B5A2B" transform="rotate(42 51 19)"/>
+      <path d="M8 12 Q26 9 44 12 Q44 21 26 22.5 Q8 21 8 12 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
+      <path d="M10 12.5 Q26 10.8 42 12.5 Q42 14.5 26 15.5 Q10 14.5 10 12.5 Z" fill="${light}"/>
+      <circle cx="14" cy="16.5" r="1.1" fill="#0F172A" opacity="0.55"/>
+      <circle cx="20" cy="16.5" r="1.1" fill="#0F172A" opacity="0.55"/>
+      <circle cx="32" cy="16.5" r="1.1" fill="#0F172A" opacity="0.55"/>
+      <circle cx="38" cy="16.5" r="1.1" fill="#0F172A" opacity="0.55"/>
+      <circle cx="17" cy="8" r="2.6" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-dasharray="2 2"/>
+      <circle cx="17" cy="8" r="2.6" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="2 2" stroke-dashoffset="2"/>
+      <path d="M32.5 7 Q32.5 5.3 34.2 5.6 Q35.8 5.2 36.3 6.8 L35.8 9.3 Q34.2 10 32.8 9.3 Z" fill="#C2410C"/>
     </svg>`;
   return L.divIcon({
     className: '',
     html: svg,
-    iconSize: [38, 27],
-    iconAnchor: [19, 24],
+    iconSize: [42, 24],
+    iconAnchor: [21, 16],
   });
 }
 
