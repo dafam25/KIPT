@@ -25,10 +25,25 @@ export function Header() {
         <SheetTrigger className="md:hidden rounded-md border border-border p-2">
           <Menu className="h-4 w-4" />
         </SheetTrigger>
-        <SheetContent side="left" className="w-64 bg-card p-4">
+        <SheetContent side="left" className="w-64 bg-sidebar p-4 text-sidebar-foreground">
+          <div className="mb-6 flex flex-col items-center gap-2 text-center">
+            <img
+              src="/images/kipt-nelayan-sejahtera.jpg"
+              alt="Logo KIPT Nelayan Sejahtera"
+              className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-white/25"
+            />
+            <div>
+              <p className="text-sm font-bold tracking-wide">DIGITAL FISHERMAN ID</p>
+              <p className="text-xs text-sidebar-foreground/60">TRACKING KAPAL & HASIL TANGKAP</p>
+            </div>
+          </div>
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm hover:bg-muted">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-3 py-2 text-sm text-sidebar-foreground/80 hover:bg-white/10 hover:text-sidebar-foreground"
+              >
                 {item.label}
               </Link>
             ))}
