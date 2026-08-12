@@ -35,11 +35,10 @@ function shadePair(hslParams: string): { light: string; dark: string } {
   };
 }
 
-// A simple 3D-shaded fishing boat ("kapal nelayan sederhana") — a 2-tone hull
-// (highlight/shadow, still readable as rounded hull depth), a plain cabin with a
-// peaked roof, a mast with a status-colored pennant, and a soft drop shadow for a bit
-// of "floating on water" lift. Deliberately minimal (no outriggers, deck cargo, or
-// window/door detail) so it reads cleanly at map-marker size instead of looking busy.
+// Just the boat body — no cabin/wheelhouse "building" on deck. A rounded 2-tone hull
+// (highlight/shadow, still reads as dimensional) topped with a small ship's wheel on a
+// post (the requested reference art has one), two porthole dots, and small paddle-like
+// flourishes on each side, plus a soft drop shadow for "floating on water" lift.
 // Inlined as a raw SVG string because Leaflet's divIcon only accepts HTML markup, not
 // a React component.
 function vesselIconForStatus(status: KapalStatus) {
@@ -47,20 +46,27 @@ function vesselIconForStatus(status: KapalStatus) {
   const hslParams = TONE_HSL[tone as keyof typeof TONE_HSL] ?? TONE_HSL.muted;
   const { light, dark } = shadePair(hslParams);
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 44" width="34" height="31" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))">
-      <ellipse cx="24" cy="38" rx="15" ry="3" fill="#0F172A" opacity="0.18"/>
-      <path d="M6 26 L42 26 L36 36 Q24 40 12 36 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
-      <path d="M9 26 L39 26 L37 29.5 L11 29.5 Z" fill="${light}"/>
-      <rect x="17" y="12" width="14" height="14" rx="1.5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.6"/>
-      <path d="M15 12 L24 5 L33 12 Z" fill="#0E7490"/>
-      <line x1="24" y1="5" x2="24" y2="0" stroke="#334155" stroke-width="1.3" stroke-linecap="round"/>
-      <path d="M24 0 L30 2 L24 3.6 Z" fill="${dark}"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 34" width="38" height="27" style="filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))">
+      <ellipse cx="24" cy="30" rx="16" ry="2.6" fill="#0F172A" opacity="0.18"/>
+      <path d="M4 16 Q2 15 3 22 Q6 20 6 17 Z" fill="${dark}"/>
+      <path d="M44 16 Q46 15 45 22 Q42 20 42 17 Z" fill="${dark}"/>
+      <path d="M4 15 Q24 12 44 15 Q44 24 24 25.5 Q4 24 4 15 Z" fill="${dark}" stroke="#0F172A" stroke-opacity="0.3" stroke-width="0.75"/>
+      <path d="M6 15.5 Q24 13.4 42 15.5 Q42 17.5 24 18.5 Q6 17.5 6 15.5 Z" fill="${light}"/>
+      <circle cx="16" cy="19.5" r="1.2" fill="#0F172A" opacity="0.55"/>
+      <circle cx="32" cy="19.5" r="1.2" fill="#0F172A" opacity="0.55"/>
+      <line x1="24" y1="12" x2="24" y2="8.5" stroke="#5B3A1E" stroke-width="1.3" stroke-linecap="round"/>
+      <circle cx="24" cy="6" r="3.4" fill="none" stroke="#5B3A1E" stroke-width="1.3"/>
+      <circle cx="24" cy="6" r="1" fill="#5B3A1E"/>
+      <line x1="24" y1="3" x2="24" y2="9" stroke="#5B3A1E" stroke-width="1"/>
+      <line x1="21" y1="6" x2="27" y2="6" stroke="#5B3A1E" stroke-width="1"/>
+      <line x1="21.8" y1="3.8" x2="26.2" y2="8.2" stroke="#5B3A1E" stroke-width="1"/>
+      <line x1="26.2" y1="3.8" x2="21.8" y2="8.2" stroke="#5B3A1E" stroke-width="1"/>
     </svg>`;
   return L.divIcon({
     className: '',
     html: svg,
-    iconSize: [34, 31],
-    iconAnchor: [17, 21],
+    iconSize: [38, 27],
+    iconAnchor: [19, 24],
   });
 }
 
