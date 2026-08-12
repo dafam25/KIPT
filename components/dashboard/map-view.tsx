@@ -8,21 +8,21 @@ import type { Kapal } from '@/lib/types';
 import { useData } from '@/context/data-context';
 
 // The vessel marker uses the actual boat asset (perahu + 2 dayung, no cabin/building)
-// directly instead of a hand-drawn SVG. The source PNG has a flat studio background
-// and generous empty margin above/below the boat, so it's rendered inside a wide,
-// short box with object-fit: cover — that keeps the full width (the oars reach close
-// to the image's left/right edges) while cropping away most of the empty vertical
-// space — plus a rounded edge and drop shadow so it stays legible against any basemap
-// color at any zoom level. Built once at module scope so react-leaflet's Marker sees a
-// stable `icon` reference across renders; rebuilding it per-render would make
-// react-leaflet call marker.setIcon() on every render — including the 4-second
-// position-jitter interval below — tearing down and rebuilding each marker's DOM
-// element and popup binding for no visual change.
+// directly instead of a hand-drawn SVG. The source PNG now has genuine alpha
+// transparency (verified by test-rendering it over white/map-gray/dark backgrounds —
+// no box or halo in any case), so it's shown with object-fit: contain at its natural
+// ~3:2 aspect ratio — no cropping needed — plus a drop-shadow filter (which follows the
+// image's actual opaque pixels, not its bounding box) for a bit of "floating" lift.
+// Built once at module scope so react-leaflet's Marker sees a stable `icon` reference
+// across renders; rebuilding it per-render would make react-leaflet call
+// marker.setIcon() on every render — including the 4-second position-jitter interval
+// below — tearing down and rebuilding each marker's DOM element and popup binding for
+// no visual change.
 const VESSEL_ICON = L.divIcon({
   className: '',
-  html: `<img src="/images/kapal-nelayan.png" alt="" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 49%;border-radius:5px;filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))" />`,
-  iconSize: [52, 17],
-  iconAnchor: [26, 11],
+  html: `<img src="/images/kapal-nelayan.png" alt="" style="display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(15,23,42,0.4))" />`,
+  iconSize: [46, 31],
+  iconAnchor: [23, 18],
 });
 
 export function MapView({
