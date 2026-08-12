@@ -123,7 +123,7 @@ export default function KapalListPage() {
               <DialogContent className="sm:max-w-lg">
                 <DialogHeader>
                   <DialogTitle>Tambah Kapal</DialogTitle>
-                  <DialogDescription>Daftarkan kapal baru ke sistem Digital Fisherman ID.</DialogDescription>
+                  <DialogDescription>Daftarkan kapal baru ke sistem Digital Nelayan ID.</DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-1.5 sm:col-span-2">

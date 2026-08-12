@@ -33,7 +33,7 @@ export function Header() {
               className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-white/25"
             />
             <div>
-              <p className="text-sm font-bold tracking-wide">DIGITAL FISHERMAN ID</p>
+              <p className="text-sm font-bold tracking-wide">DIGITAL NELAYAN ID</p>
               <p className="text-xs text-sidebar-foreground/60">TRACKING KAPAL & HASIL TANGKAP</p>
             </div>
           </div>

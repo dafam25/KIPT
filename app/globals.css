@@ -54,7 +54,7 @@
 }
 
 /*
- * Digital Fisherman ID has a single fixed light theme (no light/dark
+ * Digital Nelayan ID has a single fixed light theme (no light/dark
  * toggle is in scope). The :root and .dark blocks intentionally hold the
  * same values so the palette is consistent whether or not the `dark`
  * class is present on <html>.

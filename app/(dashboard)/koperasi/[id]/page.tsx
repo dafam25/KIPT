@@ -90,7 +90,7 @@ export default function KoperasiDetailPage() {
         <CardHeader className="text-sm font-semibold">
           Anggota Nelayan Terhubung ({anggota.length})
           <p className="text-xs font-normal text-muted-foreground">
-            Nelayan yang tercatat di sistem Digital Fisherman ID
+            Nelayan yang tercatat di sistem Digital Nelayan ID
           </p>
         </CardHeader>
         <CardContent>

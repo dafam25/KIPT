@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Fisherman ID",
+  title: "Digital Nelayan ID",
   description: "Dashboard tracking kapal & hasil tangkap nelayan",
 };
 

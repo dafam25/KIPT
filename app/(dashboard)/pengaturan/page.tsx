@@ -53,7 +53,7 @@ export default function PengaturanPage() {
   const [sinkronisasiOtomatis, setSinkronisasiOtomatis] = useState(false);
   const [tampilanKompak, setTampilanKompak] = useState(false);
   const [bahasa, setBahasa] = useState('id');
-  const [namaAplikasi, setNamaAplikasi] = useState('Digital Fisherman ID');
+  const [namaAplikasi, setNamaAplikasi] = useState('Digital Nelayan ID');
   const [zonaWaktu, setZonaWaktu] = useState('wib');
   const [formatTanggal, setFormatTanggal] = useState('dd-mmm-yyyy');
   const [satuanBerat, setSatuanBerat] = useState('kg');
