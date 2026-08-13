@@ -194,7 +194,7 @@ export default function KapalListPage() {
                 </form>
               </DialogContent>
             </Dialog>
-            <Button variant="outline" render={<Link href="/kapal/jadwal-sandar" />}>
+            <Button variant="outline" nativeButton={false} render={<Link href="/kapal/jadwal-sandar" />}>
               {t('kapal.jadwalSandarButton')}
             </Button>
           </>

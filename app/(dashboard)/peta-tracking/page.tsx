@@ -157,7 +157,7 @@ export default function PetaTrackingPage() {
                 {t('petaTracking.kecepatan')} <span className="text-foreground">{selectedKapal.kecepatanKnot} knot</span>
               </div>
             )}
-            <Button size="sm" render={<Link href={`/kapal/${selectedKapal.id}`} />} className="ml-auto">
+            <Button size="sm" nativeButton={false} render={<Link href={`/kapal/${selectedKapal.id}`} />} className="ml-auto">
               <ExternalLink className="mr-2 h-4 w-4" />
               {t('petaTracking.lihatDetailKapal')}
             </Button>
