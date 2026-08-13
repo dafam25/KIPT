@@ -47,7 +47,10 @@ export const id = {
   layout: {
     brandSubtitle: 'TRACKING KAPAL & HASIL TANGKAP',
     searchPlaceholder: 'Cari nelayan, kapal, atau hasil...',
-    adminLabel: 'Admin DKP',
+    adminLabel: 'Admin PKP',
+    menuProfil: 'Profil',
+    menuPengaturanAkun: 'Pengaturan Akun',
+    menuKeluar: 'Keluar',
   },
   dashboard: {
     kpiTotalNelayan: 'Total Nelayan',
@@ -502,7 +505,7 @@ export const id = {
       },
       {
         pertanyaan: 'Bagaimana cara mengubah nama akun atau informasi profil saya?',
-        jawaban: 'Belum tersedia. Versi ini belum memiliki sistem akun multi-pengguna — seluruh akses saat ini menggunakan satu akun Admin DKP bersama.',
+        jawaban: 'Belum tersedia. Versi ini belum memiliki sistem akun multi-pengguna — seluruh akses saat ini menggunakan satu akun Admin PKP bersama.',
         kategori: 'Akun & Akses',
       },
       {

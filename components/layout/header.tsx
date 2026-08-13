@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, ChevronDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/context';
 import { NotificationBell } from './notification-bell';
 import { LanguageToggle } from './language-toggle';
+import { AdminMenu } from './admin-menu';
 import { navItems } from './nav-items';
 import Link from 'next/link';
 
@@ -69,11 +70,7 @@ export function Header() {
       <div className="ml-auto flex items-center gap-3">
         <LanguageToggle />
         <NotificationBell />
-        <div className="flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-sm">
-          <span className="h-6 w-6 rounded-full bg-primary" />
-          {t('layout.adminLabel')}
-          <ChevronDown className="h-3 w-3" />
-        </div>
+        <AdminMenu />
       </div>
     </header>
   );

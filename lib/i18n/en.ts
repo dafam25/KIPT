@@ -49,7 +49,10 @@ export const en: Dictionary = {
   layout: {
     brandSubtitle: 'VESSEL & CATCH TRACKING',
     searchPlaceholder: 'Search fishermen, vessels, or catch results...',
-    adminLabel: 'Admin DKP',
+    adminLabel: 'Admin PKP',
+    menuProfil: 'Profile',
+    menuPengaturanAkun: 'Account Settings',
+    menuKeluar: 'Log Out',
   },
   dashboard: {
     kpiTotalNelayan: 'Total Fishermen',
@@ -504,7 +507,7 @@ export const en: Dictionary = {
       },
       {
         pertanyaan: 'How do I change my account name or profile information?',
-        jawaban: 'Not available yet. This version does not yet have a multi-user account system — all access currently uses a single shared Admin DKP account.',
+        jawaban: 'Not available yet. This version does not yet have a multi-user account system — all access currently uses a single shared Admin PKP account.',
         kategori: 'Akun & Akses',
       },
       {
