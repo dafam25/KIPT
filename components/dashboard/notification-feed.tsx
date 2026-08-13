@@ -2,6 +2,7 @@
 
 import { AlertTriangle, Info, CheckCircle2, Settings as SettingsIcon } from 'lucide-react';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import type { NotifikasiJenis } from '@/lib/types';
@@ -28,12 +29,13 @@ export function NotificationFeed({
   filterJenis?: NotifikasiJenis | 'semua';
 }) {
   const { notifikasi, markNotifikasiDibaca } = useData();
+  const { t } = useLanguage();
   const filtered = filterJenis === 'semua' ? notifikasi : notifikasi.filter((n) => n.jenis === filterJenis);
   const sorted = [...filtered].sort((a, b) => b.waktu.localeCompare(a.waktu));
   const items = typeof limit === 'number' ? sorted.slice(0, limit) : sorted;
 
   if (items.length === 0) {
-    return <p className="text-sm text-muted-foreground">Belum ada notifikasi.</p>;
+    return <p className="text-sm text-muted-foreground">{t('notifikasi.belumAdaNotifikasi')}</p>;
   }
 
   return (

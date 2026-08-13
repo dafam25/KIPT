@@ -3,10 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n/context';
 import { navItems } from './nav-items';
 
 export function Sidebar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <aside className="hidden md:flex md:w-64 md:flex-col border-r border-sidebar-border bg-sidebar px-3 py-4 text-sidebar-foreground">
@@ -18,7 +20,7 @@ export function Sidebar() {
         />
         <div>
           <p className="text-sm font-bold tracking-wide">DIGITAL NELAYAN ID</p>
-          <p className="text-xs text-sidebar-foreground/60">TRACKING KAPAL & HASIL TANGKAP</p>
+          <p className="text-xs text-sidebar-foreground/60">{t('layout.brandSubtitle')}</p>
         </div>
       </div>
       <nav className="flex flex-col gap-1">
@@ -37,7 +39,7 @@ export function Sidebar() {
               )}
             >
               <Icon className="h-4 w-4" />
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           );
         })}

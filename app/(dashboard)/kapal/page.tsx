@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { Ship, Anchor, PauseCircle, AlertTriangle, Plus } from 'lucide-react';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -18,7 +19,7 @@ import {
 import type { Kapal } from '@/lib/types';
 import { totalKapal, kapalMelautCount, kapalSandarCount, kapalTidakAktifCount } from '@/lib/stats';
 import { formatNumber } from '@/lib/format';
-import { KAPAL_STATUS_LABEL, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
+import { KAPAL_STATUS_LABEL_KEY, KAPAL_STATUS_TONE } from '@/lib/kapal-status';
 import { nextKapalId } from '@/lib/id';
 
 const JENIS_KAPAL_OPTIONS: Kapal['jenis'][] = ['Purse Seine', 'Longline', 'Gillnet', 'Kapal Motor', 'Kapal Tanpa Motor'];
@@ -33,6 +34,7 @@ function emptyForm() {
 
 export default function KapalListPage() {
   const { kapal, nelayan, addKapal } = useData();
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(emptyForm());
   const [error, setError] = useState('');
@@ -40,7 +42,7 @@ export default function KapalListPage() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!form.nama.trim() || !form.pelabuhanInduk.trim() || !form.gt || !form.mesinPk || !form.kecepatanKnot) {
-      setError('Lengkapi semua data kapal terlebih dahulu.');
+      setError(t('kapal.errorLengkapi'));
       return;
     }
     addKapal({
@@ -63,7 +65,7 @@ export default function KapalListPage() {
 
   const columns: DataTableColumn<Kapal>[] = [
     {
-      header: 'Nama Kapal',
+      header: t('kapal.colNamaKapal'),
       cell: (k) => (
         <Link href={`/kapal/${k.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
@@ -73,11 +75,11 @@ export default function KapalListPage() {
         </Link>
       ),
     },
-    { header: 'ID Kapal', cell: (k) => <span className="font-mono text-xs">{k.id}</span> },
-    { header: 'Jenis', cell: (k) => k.jenis },
-    { header: 'GT', cell: (k) => `${k.gt} GT` },
+    { header: t('kapal.colIdKapal'), cell: (k) => <span className="font-mono text-xs">{k.id}</span> },
+    { header: t('kapal.colJenis'), cell: (k) => k.jenis },
+    { header: t('kapal.colGt'), cell: (k) => `${k.gt} GT` },
     {
-      header: 'Pelabuhan Induk',
+      header: t('kapal.colPelabuhanInduk'),
       cell: (k) => (
         <span className="block max-w-36 truncate" title={k.pelabuhanInduk}>
           {k.pelabuhanInduk}
@@ -85,7 +87,7 @@ export default function KapalListPage() {
       ),
     },
     {
-      header: 'Nahkoda',
+      header: t('kapal.colNahkoda'),
       cell: (k) => {
         const nama = nelayan.find((n) => n.id === k.nahkodaId)?.nama ?? '-';
         return (
@@ -95,15 +97,15 @@ export default function KapalListPage() {
         );
       },
     },
-    { header: 'Status', cell: (k) => <StatusBadge label={KAPAL_STATUS_LABEL[k.status]} tone={KAPAL_STATUS_TONE[k.status]} /> },
+    { header: t('kapal.colStatus'), cell: (k) => <StatusBadge label={t(KAPAL_STATUS_LABEL_KEY[k.status])} tone={KAPAL_STATUS_TONE[k.status]} /> },
   ];
 
   return (
     <div className="space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Kapal' }]}
-        title="Kapal"
-        description="Kelola data kapal terdaftar"
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('kapal.listTitle') }]}
+        title={t('kapal.listTitle')}
+        description={t('kapal.listDescription')}
         actions={
           <>
             <Dialog
@@ -118,20 +120,20 @@ export default function KapalListPage() {
             >
               <DialogTrigger render={<Button />}>
                 <Plus className="mr-2 h-4 w-4" />
-                Tambah Kapal
+                {t('kapal.addButton')}
               </DialogTrigger>
               <DialogContent className="sm:max-w-lg">
                 <DialogHeader>
-                  <DialogTitle>Tambah Kapal</DialogTitle>
-                  <DialogDescription>Daftarkan kapal baru ke sistem Digital Nelayan ID.</DialogDescription>
+                  <DialogTitle>{t('kapal.dialogTitle')}</DialogTitle>
+                  <DialogDescription>{t('kapal.dialogDescription')}</DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-1.5 sm:col-span-2">
-                    <label htmlFor="kapal-nama" className="text-sm text-muted-foreground">Nama Kapal</label>
+                    <label htmlFor="kapal-nama" className="text-sm text-muted-foreground">{t('kapal.formNamaKapal')}</label>
                     <Input id="kapal-nama" value={form.nama} onChange={(e) => setForm((f) => ({ ...f, nama: e.target.value }))} />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="kapal-jenis" className="text-sm text-muted-foreground">Jenis Kapal</label>
+                    <label htmlFor="kapal-jenis" className="text-sm text-muted-foreground">{t('kapal.formJenisKapal')}</label>
                     <Select
                       items={JENIS_KAPAL_OPTIONS.map((j) => ({ value: j, label: j }))}
                       value={form.jenis}
@@ -146,31 +148,31 @@ export default function KapalListPage() {
                     </Select>
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="kapal-pelabuhan" className="text-sm text-muted-foreground">Pelabuhan Induk</label>
+                    <label htmlFor="kapal-pelabuhan" className="text-sm text-muted-foreground">{t('kapal.formPelabuhanInduk')}</label>
                     <Input id="kapal-pelabuhan" value={form.pelabuhanInduk} onChange={(e) => setForm((f) => ({ ...f, pelabuhanInduk: e.target.value }))} />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="kapal-gt" className="text-sm text-muted-foreground">GT</label>
+                    <label htmlFor="kapal-gt" className="text-sm text-muted-foreground">{t('kapal.formGt')}</label>
                     <Input id="kapal-gt" type="number" min={0} value={form.gt} onChange={(e) => setForm((f) => ({ ...f, gt: e.target.value }))} />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="kapal-mesin" className="text-sm text-muted-foreground">Mesin (PK)</label>
+                    <label htmlFor="kapal-mesin" className="text-sm text-muted-foreground">{t('kapal.formMesinPk')}</label>
                     <Input id="kapal-mesin" type="number" min={0} value={form.mesinPk} onChange={(e) => setForm((f) => ({ ...f, mesinPk: e.target.value }))} />
                   </div>
                   <div className="space-y-1.5">
-                    <label htmlFor="kapal-kecepatan" className="text-sm text-muted-foreground">Kecepatan (Knot)</label>
+                    <label htmlFor="kapal-kecepatan" className="text-sm text-muted-foreground">{t('kapal.formKecepatanKnot')}</label>
                     <Input id="kapal-kecepatan" type="number" min={0} value={form.kecepatanKnot} onChange={(e) => setForm((f) => ({ ...f, kecepatanKnot: e.target.value }))} />
                   </div>
                   <div className="space-y-1.5 sm:col-span-2">
-                    <label htmlFor="kapal-nahkoda" className="text-sm text-muted-foreground">Nahkoda</label>
+                    <label htmlFor="kapal-nahkoda" className="text-sm text-muted-foreground">{t('kapal.formNahkoda')}</label>
                     <Select
-                      items={[{ value: NONE_NAHKODA, label: 'Tanpa Nahkoda' }, ...nelayan.map((n) => ({ value: n.id, label: n.nama }))]}
+                      items={[{ value: NONE_NAHKODA, label: t('kapal.tanpaNahkoda') }, ...nelayan.map((n) => ({ value: n.id, label: n.nama }))]}
                       value={form.nahkodaId}
                       onValueChange={(v) => setForm((f) => ({ ...f, nahkodaId: v ?? NONE_NAHKODA }))}
                     >
                       <SelectTrigger id="kapal-nahkoda"><SelectValue /></SelectTrigger>
                       <SelectContent>
-                        <SelectItem value={NONE_NAHKODA}>Tanpa Nahkoda</SelectItem>
+                        <SelectItem value={NONE_NAHKODA}>{t('kapal.tanpaNahkoda')}</SelectItem>
                         {nelayan.map((n) => (
                           <SelectItem key={n.id} value={n.id}>{n.nama}</SelectItem>
                         ))}
@@ -178,37 +180,37 @@ export default function KapalListPage() {
                     </Select>
                   </div>
                   <div className="flex items-center justify-between sm:col-span-2">
-                    <label htmlFor="kapal-slo" className="text-sm text-muted-foreground">SLO Tersedia</label>
+                    <label htmlFor="kapal-slo" className="text-sm text-muted-foreground">{t('kapal.formSloTersedia')}</label>
                     <Switch id="kapal-slo" checked={form.slo} onCheckedChange={(v) => setForm((f) => ({ ...f, slo: v }))} />
                   </div>
                   <div className="flex items-center justify-between sm:col-span-2">
-                    <label htmlFor="kapal-pas-kecil" className="text-sm text-muted-foreground">Pas Kecil Tersedia</label>
+                    <label htmlFor="kapal-pas-kecil" className="text-sm text-muted-foreground">{t('kapal.formPasKecilTersedia')}</label>
                     <Switch id="kapal-pas-kecil" checked={form.pasKecil} onCheckedChange={(v) => setForm((f) => ({ ...f, pasKecil: v }))} />
                   </div>
                   {error && <p className="text-sm text-destructive sm:col-span-2">{error}</p>}
                   <DialogFooter className="sm:col-span-2">
-                    <Button type="submit">Simpan</Button>
+                    <Button type="submit">{t('common.save')}</Button>
                   </DialogFooter>
                 </form>
               </DialogContent>
             </Dialog>
             <Button variant="outline" render={<Link href="/kapal/jadwal-sandar" />}>
-              Jadwal Sandar
+              {t('kapal.jadwalSandarButton')}
             </Button>
           </>
         }
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Ship} label="Total Kapal" value={formatNumber(totalKapal(kapal))} deltaPercent={5.2} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
-        <KpiCard icon={Anchor} label="Aktif Melaut" value={formatNumber(kapalMelautCount(kapal))} deltaPercent={3.4} deltaLabel="Dibandingkan bulan lalu" accent="green" />
-        <KpiCard icon={PauseCircle} label="Sandar" value={formatNumber(kapalSandarCount(kapal))} deltaPercent={-1.8} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
-        <KpiCard icon={AlertTriangle} label="Tidak Aktif" value={formatNumber(kapalTidakAktifCount(kapal))} deltaPercent={-2.6} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
+        <KpiCard icon={Ship} label={t('kapal.kpiTotalKapal')} value={formatNumber(totalKapal(kapal))} deltaPercent={5.2} deltaLabel={t('common.comparedToLastMonth')} accent="blue" />
+        <KpiCard icon={Anchor} label={t('kapal.kpiAktifMelaut')} value={formatNumber(kapalMelautCount(kapal))} deltaPercent={3.4} deltaLabel={t('common.comparedToLastMonth')} accent="green" />
+        <KpiCard icon={PauseCircle} label={t('kapal.kpiSandar')} value={formatNumber(kapalSandarCount(kapal))} deltaPercent={-1.8} deltaLabel={t('common.comparedToLastMonth')} accent="cyan" />
+        <KpiCard icon={AlertTriangle} label={t('kapal.kpiTidakAktif')} value={formatNumber(kapalTidakAktifCount(kapal))} deltaPercent={-2.6} deltaLabel={t('common.comparedToLastMonth')} accent="purple" />
       </div>
       <DataTable
         data={kapal}
         columns={columns}
         getRowKey={(k) => k.id}
-        searchPlaceholder="Cari nama atau ID kapal..."
+        searchPlaceholder={t('kapal.searchPlaceholder')}
         filterFn={(k, q) => k.nama.toLowerCase().includes(q) || k.id.toLowerCase().includes(q)}
       />
     </div>

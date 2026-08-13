@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { Users, CheckCircle2, ShieldCheck, UsersRound, Plus } from 'lucide-react';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -21,10 +22,6 @@ import { nextNelayanId } from '@/lib/id';
 import { avatarForGender, AVATAR_DEFAULT, type JenisKelamin } from '@/lib/avatar';
 
 const NONE_VALUE = 'none';
-const JENIS_KELAMIN_OPTIONS: { value: JenisKelamin; label: string }[] = [
-  { value: 'pria', label: 'Pria' },
-  { value: 'wanita', label: 'Wanita' },
-];
 
 function emptyForm() {
   return {
@@ -35,14 +32,20 @@ function emptyForm() {
 
 export default function NelayanListPage() {
   const { nelayan, koperasi, kapal, addNelayan } = useData();
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState(emptyForm());
   const [error, setError] = useState('');
 
+  const JENIS_KELAMIN_OPTIONS: { value: JenisKelamin; label: string }[] = [
+    { value: 'pria', label: t('nelayan.genderPria') },
+    { value: 'wanita', label: t('nelayan.genderWanita') },
+  ];
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!form.nama.trim() || !form.nik.trim() || !form.tempatLahir.trim() || !form.tanggalLahir || !form.alamat.trim() || !form.noHp.trim() || !form.pendamping.trim()) {
-      setError('Lengkapi semua data nelayan terlebih dahulu.');
+      setError(t('nelayan.errorLengkapi'));
       return;
     }
     addNelayan({
@@ -67,9 +70,9 @@ export default function NelayanListPage() {
   }
 
   const columns: DataTableColumn<Nelayan>[] = [
-    { header: 'ID', cell: (n) => <span className="font-mono text-xs">{n.id}</span> },
+    { header: t('nelayan.colId'), cell: (n) => <span className="font-mono text-xs">{n.id}</span> },
     {
-      header: 'Nama',
+      header: t('nelayan.colNama'),
       cell: (n) => (
         <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
           <img
@@ -82,7 +85,7 @@ export default function NelayanListPage() {
       ),
     },
     {
-      header: 'Koperasi',
+      header: t('nelayan.colKoperasi'),
       cell: (n) => {
         const nama = koperasi.find((k) => k.id === n.koperasiId)?.nama ?? '-';
         return (
@@ -92,13 +95,13 @@ export default function NelayanListPage() {
         );
       },
     },
-    { header: 'Kapal', cell: (n) => kapal.find((k) => k.id === n.kapalId)?.nama ?? '-' },
-    { header: 'Bergabung', cell: (n) => formatDate(n.tanggalBergabung) },
+    { header: t('nelayan.colKapal'), cell: (n) => kapal.find((k) => k.id === n.kapalId)?.nama ?? '-' },
+    { header: t('nelayan.colBergabung'), cell: (n) => formatDate(n.tanggalBergabung) },
     {
-      header: 'Status',
+      header: t('nelayan.colStatus'),
       cell: (n) => (
         <StatusBadge
-          label={n.status === 'aktif' ? 'Aktif' : 'Nonaktif'}
+          label={n.status === 'aktif' ? t('status.aktif') : t('status.nonaktif')}
           tone={n.status === 'aktif' ? 'success' : 'muted'}
         />
       ),
@@ -108,9 +111,9 @@ export default function NelayanListPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Nelayan' }]}
-        title="Nelayan"
-        description="Kelola data nelayan terdaftar"
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('nelayan.listTitle') }]}
+        title={t('nelayan.listTitle')}
+        description={t('nelayan.listDescription')}
         actions={
           <Dialog
             open={open}
@@ -124,24 +127,24 @@ export default function NelayanListPage() {
           >
             <DialogTrigger render={<Button />}>
               <Plus className="mr-2 h-4 w-4" />
-              Tambah Nelayan
+              {t('nelayan.addButton')}
             </DialogTrigger>
             <DialogContent className="sm:max-w-lg">
               <DialogHeader>
-                <DialogTitle>Tambah Nelayan</DialogTitle>
-                <DialogDescription>Daftarkan nelayan baru ke sistem Digital Nelayan ID.</DialogDescription>
+                <DialogTitle>{t('nelayan.dialogTitle')}</DialogTitle>
+                <DialogDescription>{t('nelayan.dialogDescription')}</DialogDescription>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5 sm:col-span-2">
-                  <label htmlFor="nelayan-nama" className="text-sm text-muted-foreground">Nama</label>
+                  <label htmlFor="nelayan-nama" className="text-sm text-muted-foreground">{t('nelayan.formNama')}</label>
                   <Input id="nelayan-nama" value={form.nama} onChange={(e) => setForm((f) => ({ ...f, nama: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-nik" className="text-sm text-muted-foreground">NIK</label>
+                  <label htmlFor="nelayan-nik" className="text-sm text-muted-foreground">{t('nelayan.formNik')}</label>
                   <Input id="nelayan-nik" value={form.nik} onChange={(e) => setForm((f) => ({ ...f, nik: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-jenis-kelamin" className="text-sm text-muted-foreground">Jenis Kelamin</label>
+                  <label htmlFor="nelayan-jenis-kelamin" className="text-sm text-muted-foreground">{t('nelayan.formJenisKelamin')}</label>
                   <Select
                     items={JENIS_KELAMIN_OPTIONS}
                     value={form.jenisKelamin}
@@ -156,35 +159,35 @@ export default function NelayanListPage() {
                   </Select>
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-no-hp" className="text-sm text-muted-foreground">No HP</label>
+                  <label htmlFor="nelayan-no-hp" className="text-sm text-muted-foreground">{t('nelayan.formNoHp')}</label>
                   <Input id="nelayan-no-hp" value={form.noHp} onChange={(e) => setForm((f) => ({ ...f, noHp: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-tempat-lahir" className="text-sm text-muted-foreground">Tempat Lahir</label>
+                  <label htmlFor="nelayan-tempat-lahir" className="text-sm text-muted-foreground">{t('nelayan.formTempatLahir')}</label>
                   <Input id="nelayan-tempat-lahir" value={form.tempatLahir} onChange={(e) => setForm((f) => ({ ...f, tempatLahir: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-tanggal-lahir" className="text-sm text-muted-foreground">Tanggal Lahir</label>
+                  <label htmlFor="nelayan-tanggal-lahir" className="text-sm text-muted-foreground">{t('nelayan.formTanggalLahir')}</label>
                   <Input id="nelayan-tanggal-lahir" type="date" value={form.tanggalLahir} onChange={(e) => setForm((f) => ({ ...f, tanggalLahir: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5 sm:col-span-2">
-                  <label htmlFor="nelayan-alamat" className="text-sm text-muted-foreground">Alamat</label>
+                  <label htmlFor="nelayan-alamat" className="text-sm text-muted-foreground">{t('nelayan.formAlamat')}</label>
                   <Input id="nelayan-alamat" value={form.alamat} onChange={(e) => setForm((f) => ({ ...f, alamat: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-pendamping" className="text-sm text-muted-foreground">Pendamping</label>
+                  <label htmlFor="nelayan-pendamping" className="text-sm text-muted-foreground">{t('nelayan.formPendamping')}</label>
                   <Input id="nelayan-pendamping" value={form.pendamping} onChange={(e) => setForm((f) => ({ ...f, pendamping: e.target.value }))} />
                 </div>
                 <div className="space-y-1.5">
-                  <label htmlFor="nelayan-koperasi" className="text-sm text-muted-foreground">Koperasi</label>
+                  <label htmlFor="nelayan-koperasi" className="text-sm text-muted-foreground">{t('nelayan.formKoperasi')}</label>
                   <Select
-                    items={[{ value: NONE_VALUE, label: 'Tanpa Koperasi' }, ...koperasi.map((k) => ({ value: k.id, label: k.nama }))]}
+                    items={[{ value: NONE_VALUE, label: t('nelayan.tanpaKoperasi') }, ...koperasi.map((k) => ({ value: k.id, label: k.nama }))]}
                     value={form.koperasiId}
                     onValueChange={(v) => setForm((f) => ({ ...f, koperasiId: v ?? NONE_VALUE }))}
                   >
                     <SelectTrigger id="nelayan-koperasi"><SelectValue /></SelectTrigger>
                     <SelectContent>
-                      <SelectItem value={NONE_VALUE}>Tanpa Koperasi</SelectItem>
+                      <SelectItem value={NONE_VALUE}>{t('nelayan.tanpaKoperasi')}</SelectItem>
                       {koperasi.map((k) => (
                         <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
                       ))}
@@ -192,15 +195,15 @@ export default function NelayanListPage() {
                   </Select>
                 </div>
                 <div className="space-y-1.5 sm:col-span-2">
-                  <label htmlFor="nelayan-kapal" className="text-sm text-muted-foreground">Kapal</label>
+                  <label htmlFor="nelayan-kapal" className="text-sm text-muted-foreground">{t('nelayan.formKapal')}</label>
                   <Select
-                    items={[{ value: NONE_VALUE, label: 'Tanpa Kapal' }, ...kapal.map((k) => ({ value: k.id, label: k.nama }))]}
+                    items={[{ value: NONE_VALUE, label: t('nelayan.tanpaKapal') }, ...kapal.map((k) => ({ value: k.id, label: k.nama }))]}
                     value={form.kapalId}
                     onValueChange={(v) => setForm((f) => ({ ...f, kapalId: v ?? NONE_VALUE }))}
                   >
                     <SelectTrigger id="nelayan-kapal"><SelectValue /></SelectTrigger>
                     <SelectContent>
-                      <SelectItem value={NONE_VALUE}>Tanpa Kapal</SelectItem>
+                      <SelectItem value={NONE_VALUE}>{t('nelayan.tanpaKapal')}</SelectItem>
                       {kapal.map((k) => (
                         <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
                       ))}
@@ -209,7 +212,7 @@ export default function NelayanListPage() {
                 </div>
                 {error && <p className="text-sm text-destructive sm:col-span-2">{error}</p>}
                 <DialogFooter className="sm:col-span-2">
-                  <Button type="submit">Simpan</Button>
+                  <Button type="submit">{t('common.save')}</Button>
                 </DialogFooter>
               </form>
             </DialogContent>
@@ -217,16 +220,16 @@ export default function NelayanListPage() {
         }
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Users} label="Total Nelayan" value={formatNumber(totalNelayan(nelayan))} deltaPercent={4.6} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
-        <KpiCard icon={CheckCircle2} label="Nelayan Aktif" value={formatNumber(nelayanAktifCount(nelayan))} deltaPercent={2.1} deltaLabel="Dibandingkan bulan lalu" accent="green" />
-        <KpiCard icon={ShieldCheck} label="Terverifikasi" value={formatNumber(nelayanTerverifikasiCount(nelayan))} deltaPercent={3.8} deltaLabel="Dibandingkan bulan lalu" accent="cyan" />
-        <KpiCard icon={UsersRound} label="Tergabung Koperasi" value={formatNumber(nelayanTergabungKoperasiCount(nelayan))} deltaPercent={1.5} deltaLabel="Dibandingkan bulan lalu" accent="purple" />
+        <KpiCard icon={Users} label={t('nelayan.kpiTotalNelayan')} value={formatNumber(totalNelayan(nelayan))} deltaPercent={4.6} deltaLabel={t('common.comparedToLastMonth')} accent="blue" />
+        <KpiCard icon={CheckCircle2} label={t('nelayan.kpiNelayanAktif')} value={formatNumber(nelayanAktifCount(nelayan))} deltaPercent={2.1} deltaLabel={t('common.comparedToLastMonth')} accent="green" />
+        <KpiCard icon={ShieldCheck} label={t('nelayan.kpiTerverifikasi')} value={formatNumber(nelayanTerverifikasiCount(nelayan))} deltaPercent={3.8} deltaLabel={t('common.comparedToLastMonth')} accent="cyan" />
+        <KpiCard icon={UsersRound} label={t('nelayan.kpiTergabungKoperasi')} value={formatNumber(nelayanTergabungKoperasiCount(nelayan))} deltaPercent={1.5} deltaLabel={t('common.comparedToLastMonth')} accent="purple" />
       </div>
       <DataTable
         data={nelayan}
         columns={columns}
         getRowKey={(n) => n.id}
-        searchPlaceholder="Cari nama atau ID nelayan..."
+        searchPlaceholder={t('nelayan.searchPlaceholder')}
         filterFn={(n, q) => n.nama.toLowerCase().includes(q) || n.id.toLowerCase().includes(q)}
       />
     </div>

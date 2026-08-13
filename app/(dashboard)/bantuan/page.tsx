@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { User, Database, Wrench, AlertTriangle, FileText, Search, HelpCircle, Ticket, ShieldCheck, Mail, Phone, Clock, ChevronRight } from 'lucide-react';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -18,61 +19,10 @@ import { toastManager } from '@/components/ui/toast';
 import type { TiketBantuan, TiketKategori, TiketStatus } from '@/lib/types';
 import { generateLocalId } from '@/lib/id';
 import { formatDate, formatNumber } from '@/lib/format';
+import { id as idDict } from '@/lib/i18n/id';
+import { en as enDict } from '@/lib/i18n/en';
 
 type FaqKategori = 'Akun & Akses' | 'Data & Informasi' | 'Fitur & Layanan' | 'Teknis & Error' | 'Kebijakan & Regulasi';
-
-const FAQ_ITEMS: { pertanyaan: string; jawaban: string; kategori: FaqKategori }[] = [
-  {
-    pertanyaan: 'Bagaimana cara mendaftarkan nelayan baru ke sistem?',
-    jawaban: 'Buka halaman Nelayan, lalu isi data nelayan melalui menu tambah data. Setelah tersimpan, data akan langsung muncul di daftar nelayan terdaftar.',
-    kategori: 'Fitur & Layanan',
-  },
-  {
-    pertanyaan: 'Apa yang dimaksud dengan pemeriksaan biosecurity?',
-    jawaban: 'Pemeriksaan biosecurity adalah proses verifikasi kondisi kapal dan kru sebelum melaut untuk mencegah penyebaran penyakit dan menjaga kualitas hasil tangkapan. Hasil pemeriksaan berupa status Lolos atau Tidak Lolos.',
-    kategori: 'Data & Informasi',
-  },
-  {
-    pertanyaan: 'Bagaimana cara mengekspor laporan ke format CSV?',
-    jawaban: 'Buka halaman Laporan & Analitik, pilih kategori laporan yang diinginkan, lalu klik tombol Export Laporan di bagian atas halaman.',
-    kategori: 'Fitur & Layanan',
-  },
-  {
-    pertanyaan: 'Mengapa posisi kapal di peta tracking selalu berubah?',
-    jawaban: 'Posisi kapal disimulasikan agar terlihat seperti data real-time. Pada implementasi produksi, data ini akan berasal dari perangkat GPS/AIS yang terpasang di kapal.',
-    kategori: 'Teknis & Error',
-  },
-  {
-    pertanyaan: 'Apakah data yang saya masukkan akan tersimpan setelah refresh halaman?',
-    jawaban: 'Belum. Versi ini menyimpan data pada sesi browser saja (belum terhubung ke database), sehingga data akan kembali ke kondisi awal setelah halaman dimuat ulang.',
-    kategori: 'Teknis & Error',
-  },
-  {
-    pertanyaan: 'Bagaimana cara menghubungi tim dukungan jika tiket belum direspons?',
-    jawaban: 'Ajukan tiket baru melalui formulir di halaman ini dengan kategori yang sesuai. Tim dukungan akan memperbarui status tiket menjadi Diproses atau Selesai.',
-    kategori: 'Fitur & Layanan',
-  },
-  {
-    pertanyaan: 'Bagaimana cara mengubah nama akun atau informasi profil saya?',
-    jawaban: 'Belum tersedia. Versi ini belum memiliki sistem akun multi-pengguna — seluruh akses saat ini menggunakan satu akun Admin DKP bersama.',
-    kategori: 'Akun & Akses',
-  },
-  {
-    pertanyaan: 'Bagaimana kebijakan penyimpanan dan keamanan data pada sistem ini?',
-    jawaban: 'Versi ini adalah purwarupa (prototype) yang menyimpan data pada sesi browser saja, belum terhubung ke database maupun kebijakan retensi data resmi. Kebijakan keamanan dan regulasi lengkap akan ditetapkan sebelum sistem digunakan secara produksi.',
-    kategori: 'Kebijakan & Regulasi',
-  },
-];
-
-const KATEGORI_BANTUAN: { value: FaqKategori; label: string; icon: typeof User }[] = [
-  { value: 'Akun & Akses', label: 'Akun & Akses', icon: User },
-  { value: 'Data & Informasi', label: 'Data & Informasi', icon: Database },
-  { value: 'Fitur & Layanan', label: 'Fitur & Layanan', icon: Wrench },
-  { value: 'Teknis & Error', label: 'Teknis & Error', icon: AlertTriangle },
-  { value: 'Kebijakan & Regulasi', label: 'Kebijakan & Regulasi', icon: FileText },
-];
-
-const KATEGORI_OPTIONS: TiketKategori[] = ['Teknis', 'Akun', 'Data', 'Lainnya'];
 
 const STATUS_TONE: Record<TiketStatus, 'warning' | 'info' | 'success'> = {
   Terbuka: 'warning',
@@ -82,8 +32,33 @@ const STATUS_TONE: Record<TiketStatus, 'warning' | 'info' | 'success'> = {
 
 export default function BantuanPage() {
   const { tiketBantuan, addTiketBantuan } = useData();
+  const { t, language } = useLanguage();
   const [search, setSearch] = useState('');
   const [kategoriFilter, setKategoriFilter] = useState<FaqKategori | null>(null);
+
+  const FAQ_ITEMS: { pertanyaan: string; jawaban: string; kategori: FaqKategori }[] =
+    (language === 'id' ? idDict : enDict).bantuan.faq as { pertanyaan: string; jawaban: string; kategori: FaqKategori }[];
+
+  const KATEGORI_BANTUAN: { value: FaqKategori; label: string; icon: typeof User }[] = [
+    { value: 'Akun & Akses', label: t('bantuan.kategoriAkunAkses'), icon: User },
+    { value: 'Data & Informasi', label: t('bantuan.kategoriDataInformasi'), icon: Database },
+    { value: 'Fitur & Layanan', label: t('bantuan.kategoriFiturLayanan'), icon: Wrench },
+    { value: 'Teknis & Error', label: t('bantuan.kategoriTeknisError'), icon: AlertTriangle },
+    { value: 'Kebijakan & Regulasi', label: t('bantuan.kategoriKebijakanRegulasi'), icon: FileText },
+  ];
+
+  const KATEGORI_OPTIONS: TiketKategori[] = ['Teknis', 'Akun', 'Data', 'Lainnya'];
+  const KATEGORI_LABEL: Record<TiketKategori, string> = {
+    Teknis: t('bantuan.kategoriTeknis'),
+    Akun: t('bantuan.kategoriAkun'),
+    Data: t('bantuan.kategoriData'),
+    Lainnya: t('bantuan.kategoriLainnya'),
+  };
+  const STATUS_LABEL: Record<TiketStatus, string> = {
+    Terbuka: t('status.terbuka'),
+    Diproses: t('status.diproses'),
+    Selesai: t('status.selesai'),
+  };
 
   const faqTersaring = FAQ_ITEMS.filter(
     (item) =>
@@ -100,16 +75,16 @@ export default function BantuanPage() {
   const tiketUrut = [...tiketBantuan].sort((a, b) => b.dibuatPada.localeCompare(a.dibuatPada));
 
   const columns: DataTableColumn<TiketBantuan>[] = [
-    { header: 'Judul', cell: (t) => t.judul },
-    { header: 'Kategori', cell: (t) => t.kategori },
-    { header: 'Status', cell: (t) => <StatusBadge label={t.status} tone={STATUS_TONE[t.status]} /> },
-    { header: 'Tanggal Dibuat', cell: (t) => formatDate(t.dibuatPada.slice(0, 10)) },
+    { header: t('bantuan.colJudul'), cell: (row) => row.judul },
+    { header: t('bantuan.colKategori'), cell: (row) => KATEGORI_LABEL[row.kategori] },
+    { header: t('bantuan.colStatus'), cell: (row) => <StatusBadge label={STATUS_LABEL[row.status]} tone={STATUS_TONE[row.status]} /> },
+    { header: t('bantuan.colTanggalDibuat'), cell: (row) => formatDate(row.dibuatPada.slice(0, 10)) },
   ];
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!judul.trim() || !deskripsi.trim()) {
-      setError('Judul dan deskripsi tiket wajib diisi.');
+      setError(t('bantuan.errorJudulDeskripsi'));
       return;
     }
     addTiketBantuan({
@@ -124,22 +99,22 @@ export default function BantuanPage() {
     setKategori('Teknis');
     setDeskripsi('');
     setError('');
-    toastManager.add({ title: 'Tiket berhasil diajukan', description: 'Tim dukungan akan segera meninjau tiket Anda.' });
+    toastManager.add({ title: t('bantuan.toastTiketBerhasilTitle'), description: t('bantuan.toastTiketBerhasilDesc') });
   }
 
   return (
     <div className="space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Bantuan' }]}
-        title="Bantuan"
-        description="Pusat bantuan, pertanyaan umum, dan pengajuan tiket dukungan"
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('bantuan.title') }]}
+        title={t('bantuan.title')}
+        description={t('bantuan.description')}
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={HelpCircle} label="Jam Layanan" value="Sen-Jum" accent="blue" />
-        <KpiCard icon={HelpCircle} label="FAQ Tersedia" value={formatNumber(FAQ_ITEMS.length)} accent="green" />
-        <KpiCard icon={Ticket} label="Tiket Saya" value={formatNumber(tiketBantuan.length)} accent="cyan" />
-        <KpiCard icon={ShieldCheck} label="Status Layanan" value="Normal" accent="purple" />
+        <KpiCard icon={HelpCircle} label={t('bantuan.kpiJamLayanan')} value={t('bantuan.jamLayananValue')} accent="blue" />
+        <KpiCard icon={HelpCircle} label={t('bantuan.kpiFaqTersedia')} value={formatNumber(FAQ_ITEMS.length)} accent="green" />
+        <KpiCard icon={Ticket} label={t('bantuan.kpiTiketSaya')} value={formatNumber(tiketBantuan.length)} accent="cyan" />
+        <KpiCard icon={ShieldCheck} label={t('bantuan.kpiStatusLayanan')} value={t('bantuan.statusLayananValue')} accent="purple" />
       </div>
 
       <Card>
@@ -149,7 +124,7 @@ export default function BantuanPage() {
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Cari bantuan, panduan, atau topik..."
+              placeholder={t('bantuan.searchPlaceholder')}
               className="pl-9"
             />
           </div>
@@ -179,12 +154,16 @@ export default function BantuanPage() {
 
       <Card>
         <CardHeader className="text-sm font-semibold">
-          Pertanyaan yang Sering Diajukan
-          {kategoriFilter && <span className="ml-2 font-normal text-muted-foreground">— {kategoriFilter}</span>}
+          {t('bantuan.pertanyaanSeringDiajukan')}
+          {kategoriFilter && (
+            <span className="ml-2 font-normal text-muted-foreground">
+              — {KATEGORI_BANTUAN.find((k) => k.value === kategoriFilter)?.label}
+            </span>
+          )}
         </CardHeader>
         <CardContent>
           {faqTersaring.length === 0 ? (
-            <p className="py-6 text-center text-sm text-muted-foreground">Tidak ada FAQ yang cocok.</p>
+            <p className="py-6 text-center text-sm text-muted-foreground">{t('bantuan.tidakAdaFaqCocok')}</p>
           ) : (
             <Accordion>
               {faqTersaring.map((item) => (
@@ -201,24 +180,24 @@ export default function BantuanPage() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
       <div className="space-y-6 lg:col-span-2">
       <Card>
-        <CardHeader className="text-sm font-semibold">Tiket Dukungan ({tiketBantuan.length})</CardHeader>
+        <CardHeader className="text-sm font-semibold">{t('bantuan.tiketDukungan', { count: tiketBantuan.length })}</CardHeader>
         <CardContent>
-          <DataTable data={tiketUrut} columns={columns} getRowKey={(t) => t.id} pageSize={10} />
+          <DataTable data={tiketUrut} columns={columns} getRowKey={(row) => row.id} pageSize={10} />
         </CardContent>
       </Card>
 
       <Card>
-        <CardHeader className="text-sm font-semibold">Ajukan Tiket Baru</CardHeader>
+        <CardHeader className="text-sm font-semibold">{t('bantuan.ajukanTiketBaru')}</CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5 sm:col-span-2">
-              <label htmlFor="tiket-judul" className="text-sm text-muted-foreground">Judul</label>
-              <Input id="tiket-judul" value={judul} onChange={(e) => setJudul(e.target.value)} placeholder="Ringkasan singkat masalah Anda" />
+              <label htmlFor="tiket-judul" className="text-sm text-muted-foreground">{t('bantuan.formJudul')}</label>
+              <Input id="tiket-judul" value={judul} onChange={(e) => setJudul(e.target.value)} placeholder={t('bantuan.judulPlaceholder')} />
             </div>
             <div className="space-y-1.5">
-              <label htmlFor="tiket-kategori" className="text-sm text-muted-foreground">Kategori</label>
+              <label htmlFor="tiket-kategori" className="text-sm text-muted-foreground">{t('bantuan.formKategori')}</label>
               <Select
-                items={KATEGORI_OPTIONS.map((k) => ({ value: k, label: k }))}
+                items={KATEGORI_OPTIONS.map((k) => ({ value: k, label: KATEGORI_LABEL[k] }))}
                 value={kategori}
                 onValueChange={(v) => setKategori((v ?? 'Teknis') as TiketKategori)}
               >
@@ -228,24 +207,24 @@ export default function BantuanPage() {
                 <SelectContent>
                   {KATEGORI_OPTIONS.map((k) => (
                     <SelectItem key={k} value={k}>
-                      {k}
+                      {KATEGORI_LABEL[k]}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-1.5 sm:col-span-2">
-              <label htmlFor="tiket-deskripsi" className="text-sm text-muted-foreground">Deskripsi</label>
+              <label htmlFor="tiket-deskripsi" className="text-sm text-muted-foreground">{t('bantuan.formDeskripsi')}</label>
               <Textarea
                 id="tiket-deskripsi"
                 value={deskripsi}
                 onChange={(e) => setDeskripsi(e.target.value)}
-                placeholder="Jelaskan masalah Anda secara detail"
+                placeholder={t('bantuan.deskripsiPlaceholder')}
               />
             </div>
             {error && <p className="text-sm text-destructive sm:col-span-2">{error}</p>}
             <div className="sm:col-span-2">
-              <Button type="submit">Ajukan Tiket</Button>
+              <Button type="submit">{t('bantuan.ajukanTiket')}</Button>
             </div>
           </form>
         </CardContent>
@@ -254,41 +233,41 @@ export default function BantuanPage() {
 
       <div className="space-y-6">
         <Card>
-          <CardHeader className="text-sm font-semibold">Hubungi Kami</CardHeader>
+          <CardHeader className="text-sm font-semibold">{t('bantuan.hubungiKami')}</CardHeader>
           <CardContent className="space-y-3 text-sm">
             <div className="flex items-center gap-3">
               <Mail className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="font-medium">Email</p>
+                <p className="font-medium">{t('bantuan.email')}</p>
                 <p className="text-muted-foreground">bantuan@dkp.go.id</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="font-medium">Telepon</p>
+                <p className="font-medium">{t('bantuan.telepon')}</p>
                 <p className="text-muted-foreground">(021) 1234 5678</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Clock className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="font-medium">Jam Operasional</p>
-                <p className="text-muted-foreground">Senin - Jumat, 08:00 - 17:00 WIB</p>
+                <p className="font-medium">{t('bantuan.jamOperasional')}</p>
+                <p className="text-muted-foreground">{t('bantuan.jamOperasionalValue')}</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="text-sm font-semibold">Panduan Cepat</CardHeader>
+          <CardHeader className="text-sm font-semibold">{t('bantuan.panduanCepat')}</CardHeader>
           <CardContent className="space-y-1">
             {[
-              { label: 'Cara Melacak Kapal', href: '/peta-tracking' },
-              { label: 'Cara Input Hasil Tangkapan', href: '/hasil-tangkap/input' },
-              { label: 'Cara Cek Biosecurity', href: '/hasil-tangkap/biosecurity' },
-              { label: 'Cara Membuat Laporan', href: '/laporan' },
-              { label: 'Kelola Data Nelayan', href: '/nelayan' },
+              { label: t('bantuan.guideMelacakKapal'), href: '/peta-tracking' },
+              { label: t('bantuan.guideInputHasilTangkapan'), href: '/hasil-tangkap/input' },
+              { label: t('bantuan.guideCekBiosecurity'), href: '/hasil-tangkap/biosecurity' },
+              { label: t('bantuan.guideMembuatLaporan'), href: '/laporan' },
+              { label: t('bantuan.guideKelolaDataNelayan'), href: '/nelayan' },
             ].map((guide) => (
               <Link
                 key={guide.href}

@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Users, Ship, Fish, MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { KpiCard } from '@/components/dashboard/kpi-card';
 import { TrendLineChart } from '@/components/dashboard/trend-line-chart';
 import { DonutChart } from '@/components/dashboard/donut-chart';
@@ -23,16 +24,17 @@ const MapView = dynamic(
 
 export default function DashboardPage() {
   const { nelayan, kapal, hasilTangkap } = useData();
+  const { t } = useLanguage();
   const trenData = useMemo(() => trenHasilTangkapHarian(hasilTangkap), [hasilTangkap]);
   const komposisiData = useMemo(() => komposisiHasilTangkap(hasilTangkap), [hasilTangkap]);
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Users} label="Total Nelayan" value={formatNumber(totalNelayan(nelayan))} deltaPercent={8.2} deltaLabel="Dibandingkan bulan lalu" accent="blue" />
-        <KpiCard icon={Ship} label="Total Kapal" value={formatNumber(totalKapal(kapal))} deltaPercent={6.7} deltaLabel="Dibandingkan bulan lalu" accent="green" />
-        <KpiCard icon={Fish} label="Total Hasil Tangkapan" value={`${formatNumber(totalHasilTangkapKg(hasilTangkap))} kg`} deltaPercent={12.5} deltaLabel="Dibandingkan kemarin" accent="purple" />
-        <KpiCard icon={MapPin} label="Kapal Melaut" value={formatNumber(kapalMelautCount(kapal))} deltaPercent={4.3} deltaLabel="Kapal aktif" accent="cyan" />
+        <KpiCard icon={Users} label={t('dashboard.kpiTotalNelayan')} value={formatNumber(totalNelayan(nelayan))} deltaPercent={8.2} deltaLabel={t('common.comparedToLastMonth')} accent="blue" />
+        <KpiCard icon={Ship} label={t('dashboard.kpiTotalKapal')} value={formatNumber(totalKapal(kapal))} deltaPercent={6.7} deltaLabel={t('common.comparedToLastMonth')} accent="green" />
+        <KpiCard icon={Fish} label={t('dashboard.kpiTotalHasilTangkapan')} value={`${formatNumber(totalHasilTangkapKg(hasilTangkap))} kg`} deltaPercent={12.5} deltaLabel={t('common.comparedToYesterday')} accent="purple" />
+        <KpiCard icon={MapPin} label={t('dashboard.kpiKapalMelaut')} value={formatNumber(kapalMelautCount(kapal))} deltaPercent={4.3} deltaLabel={t('common.activeShips')} accent="cyan" />
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -44,13 +46,13 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">
-          <CardHeader className="text-sm font-semibold">Grafik Hasil Tangkapan (kg)</CardHeader>
+          <CardHeader className="text-sm font-semibold">{t('dashboard.chartHasilTangkapan')}</CardHeader>
           <CardContent>
             <TrendLineChart data={trenData} />
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="text-sm font-semibold">Komposisi Hasil Tangkapan</CardHeader>
+          <CardHeader className="text-sm font-semibold">{t('dashboard.komposisiHasilTangkapan')}</CardHeader>
           <CardContent>
             <DonutChart data={komposisiData} />
           </CardContent>
@@ -58,7 +60,7 @@ export default function DashboardPage() {
       </div>
 
       <Card>
-        <CardHeader className="text-sm font-semibold">Notifikasi & Peringatan</CardHeader>
+        <CardHeader className="text-sm font-semibold">{t('dashboard.notifikasiPeringatan')}</CardHeader>
         <CardContent>
           <NotificationFeed limit={5} />
         </CardContent>

@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { Fish, Wallet, Ship, Layers } from 'lucide-react';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -25,6 +26,7 @@ type JenisRow = { nama: string; beratKg: number; persen: number };
 
 export default function HasilTangkapPage() {
   const { hasilTangkap, kapal, biosecurityCheck } = useData();
+  const { t } = useLanguage();
 
   const komposisi = useMemo(() => komposisiHasilTangkap(hasilTangkap), [hasilTangkap]);
   const tren = useMemo(() => trenHasilTangkapHarian(hasilTangkap), [hasilTangkap]);
@@ -40,23 +42,23 @@ export default function HasilTangkapPage() {
   );
 
   const jenisIkanColumns: DataTableColumn<JenisRow>[] = [
-    { header: 'Jenis Ikan', cell: (r) => r.nama },
-    { header: 'Berat (kg)', cell: (r) => formatNumber(r.beratKg) },
-    { header: 'Persentase', cell: (r) => `${r.persen.toFixed(1)}%` },
+    { header: t('hasilTangkap.colJenisIkan'), cell: (r) => r.nama },
+    { header: t('hasilTangkap.colBeratKg'), cell: (r) => formatNumber(r.beratKg) },
+    { header: t('hasilTangkap.colPersentase'), cell: (r) => `${r.persen.toFixed(1)}%` },
   ];
 
   const rekapColumns: DataTableColumn<RekapRow>[] = [
-    { header: 'Nama', cell: (r) => r.label },
-    { header: 'Total Berat (kg)', cell: (r) => formatNumber(r.totalKg) },
-    { header: 'Jumlah Trip', cell: (r) => formatNumber(r.jumlahTrip) },
+    { header: t('hasilTangkap.colNama'), cell: (r) => r.label },
+    { header: t('hasilTangkap.colTotalBeratKg'), cell: (r) => formatNumber(r.totalKg) },
+    { header: t('hasilTangkap.colJumlahTrip'), cell: (r) => formatNumber(r.jumlahTrip) },
   ];
 
   const terbaruColumns: DataTableColumn<HasilTangkap>[] = [
-    { header: 'Tanggal', cell: (h) => formatDate(h.tanggal) },
-    { header: 'Kapal', cell: (h) => kapal.find((k) => k.id === h.kapalId)?.nama ?? h.kapalId },
-    { header: 'Lokasi', cell: (h) => h.lokasi },
+    { header: t('hasilTangkap.colTanggal'), cell: (h) => formatDate(h.tanggal) },
+    { header: t('hasilTangkap.colKapal'), cell: (h) => kapal.find((k) => k.id === h.kapalId)?.nama ?? h.kapalId },
+    { header: t('hasilTangkap.colLokasi'), cell: (h) => h.lokasi },
     {
-      header: 'Jenis Ikan',
+      header: t('hasilTangkap.colJenisIkan'),
       cell: (h) => {
         const names = h.jenisIkan.map((j) => j.nama).join(', ');
         return (
@@ -66,13 +68,13 @@ export default function HasilTangkapPage() {
         );
       },
     },
-    { header: 'Berat (kg)', cell: (h) => formatNumber(h.jenisIkan.reduce((s, j) => s + j.beratKg, 0)) },
-    { header: 'Nilai', cell: (h) => formatRupiah(h.estimasiNilai) },
+    { header: t('hasilTangkap.colBeratKg'), cell: (h) => formatNumber(h.jenisIkan.reduce((s, j) => s + j.beratKg, 0)) },
+    { header: t('hasilTangkap.colNilai'), cell: (h) => formatRupiah(h.estimasiNilai) },
     {
-      header: 'Status',
+      header: t('hasilTangkap.colStatus'),
       cell: (h) => (
         <StatusBadge
-          label={h.status === 'verified' ? 'Terverifikasi' : 'Menunggu'}
+          label={h.status === 'verified' ? t('status.terverifikasi') : t('status.menunggu')}
           tone={h.status === 'verified' ? 'success' : 'warning'}
         />
       ),
@@ -80,15 +82,15 @@ export default function HasilTangkapPage() {
   ];
 
   const biosecurityColumns: DataTableColumn<BiosecurityCheck>[] = [
-    { header: 'Tanggal', cell: (b) => formatDate(b.tanggal) },
-    { header: 'Kapal', cell: (b) => kapal.find((k) => k.id === b.kapalId)?.nama ?? b.kapalId },
-    { header: 'Petugas', cell: (b) => b.petugas },
-    { header: 'Nomor Sertifikat', cell: (b) => b.nomorSertifikat },
+    { header: t('hasilTangkap.colTanggal'), cell: (b) => formatDate(b.tanggal) },
+    { header: t('hasilTangkap.colKapal'), cell: (b) => kapal.find((k) => k.id === b.kapalId)?.nama ?? b.kapalId },
+    { header: t('hasilTangkap.colPetugas'), cell: (b) => b.petugas },
+    { header: t('hasilTangkap.colNomorSertifikat'), cell: (b) => b.nomorSertifikat },
     {
-      header: 'Status',
+      header: t('hasilTangkap.colStatus'),
       cell: (b) => (
         <StatusBadge
-          label={b.hasil === 'lolos' ? 'Lolos' : 'Tidak Lolos'}
+          label={b.hasil === 'lolos' ? t('status.lolos') : t('status.tidakLolos')}
           tone={b.hasil === 'lolos' ? 'success' : 'destructive'}
         />
       ),
@@ -98,36 +100,36 @@ export default function HasilTangkapPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Hasil Tangkap' }]}
-        title="Hasil Tangkap"
-        description="Pantau hasil tangkapan ikan secara real-time"
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('hasilTangkap.title') }]}
+        title={t('hasilTangkap.title')}
+        description={t('hasilTangkap.description')}
         actions={
           <>
             <Link href="/hasil-tangkap/biosecurity" className={buttonVariants({ variant: 'outline' })}>
-              Cek Biosecurity
+              {t('hasilTangkap.cekBiosecurity')}
             </Link>
             <Link href="/hasil-tangkap/input" className={buttonVariants()}>
-              Input Hasil Tangkap
+              {t('hasilTangkap.inputHasilTangkap')}
             </Link>
           </>
         }
       />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KpiCard icon={Fish} label="Total Hasil Tangkapan" value={`${formatNumber(totalHasilTangkapKg(hasilTangkap))} kg`} accent="blue" />
-        <KpiCard icon={Wallet} label="Total Nilai Tangkapan" value={formatRupiah(totalNilaiTangkapan(hasilTangkap))} accent="green" />
-        <KpiCard icon={Ship} label="Rata-rata per Trip" value={`${formatNumber(Math.round(rataRataPerTripKg(hasilTangkap)))} kg`} accent="cyan" />
-        <KpiCard icon={Layers} label="Jenis Ikan Tertangkap" value={`${formatNumber(komposisi.length)} Jenis`} accent="purple" />
+        <KpiCard icon={Fish} label={t('hasilTangkap.kpiTotalHasilTangkapan')} value={`${formatNumber(totalHasilTangkapKg(hasilTangkap))} kg`} accent="blue" />
+        <KpiCard icon={Wallet} label={t('hasilTangkap.kpiTotalNilaiTangkapan')} value={formatRupiah(totalNilaiTangkapan(hasilTangkap))} accent="green" />
+        <KpiCard icon={Ship} label={t('hasilTangkap.kpiRataRataPerTrip')} value={`${formatNumber(Math.round(rataRataPerTripKg(hasilTangkap)))} kg`} accent="cyan" />
+        <KpiCard icon={Layers} label={t('hasilTangkap.kpiJenisIkanTertangkap')} value={`${formatNumber(komposisi.length)} ${t('hasilTangkap.jenisSuffix')}`} accent="purple" />
       </div>
 
       <Card>
         <CardContent className="p-4">
           <Tabs defaultValue="ringkasan">
             <TabsList>
-              <TabsTrigger value="ringkasan">Ringkasan</TabsTrigger>
-              <TabsTrigger value="jenis-ikan">Per Jenis Ikan</TabsTrigger>
-              <TabsTrigger value="kapal">Per Kapal</TabsTrigger>
-              <TabsTrigger value="wilayah">Per Wilayah</TabsTrigger>
+              <TabsTrigger value="ringkasan">{t('hasilTangkap.tabRingkasan')}</TabsTrigger>
+              <TabsTrigger value="jenis-ikan">{t('hasilTangkap.tabPerJenisIkan')}</TabsTrigger>
+              <TabsTrigger value="kapal">{t('hasilTangkap.tabPerKapal')}</TabsTrigger>
+              <TabsTrigger value="wilayah">{t('hasilTangkap.tabPerWilayah')}</TabsTrigger>
             </TabsList>
             <TabsContent value="ringkasan" className="pt-4">
               <TrendLineChart data={tren} />
@@ -147,14 +149,14 @@ export default function HasilTangkapPage() {
       </Card>
 
       <Card>
-        <CardHeader className="text-sm font-semibold">Data Hasil Tangkapan Terbaru</CardHeader>
+        <CardHeader className="text-sm font-semibold">{t('hasilTangkap.dataTerbaru')}</CardHeader>
         <CardContent>
           <DataTable data={terbaru} columns={terbaruColumns} getRowKey={(h) => h.id} pageSize={10} />
         </CardContent>
       </Card>
 
       <Card>
-        <CardHeader className="text-sm font-semibold">Status Biosecurity Terbaru</CardHeader>
+        <CardHeader className="text-sm font-semibold">{t('hasilTangkap.statusBiosecurityTerbaru')}</CardHeader>
         <CardContent>
           <DataTable data={terbaruBiosecurity} columns={biosecurityColumns} getRowKey={(b) => b.id} pageSize={10} />
         </CardContent>

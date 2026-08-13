@@ -4,6 +4,7 @@ import { Suspense, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { searchGlobal, type SearchResult } from '@/lib/search';
@@ -12,43 +13,45 @@ function PencarianResults() {
   const searchParams = useSearchParams();
   const q = searchParams.get('q') ?? '';
   const { nelayan, kapal, hasilTangkap } = useData();
+  const { t } = useLanguage();
   const results = useMemo(() => searchGlobal(q, nelayan, kapal, hasilTangkap), [q, nelayan, kapal, hasilTangkap]);
-  const emptyPrompt = 'Masukkan kata kunci pencarian di kolom pencarian atas';
+  const emptyPrompt = t('pencarian.emptyPrompt');
 
   const columns: DataTableColumn<SearchResult>[] = [
-    { header: 'Kategori', cell: (r) => r.kategori },
+    { header: t('pencarian.colKategori'), cell: (r) => r.kategori },
     {
-      header: 'Nama / Judul',
+      header: t('pencarian.colNamaJudul'),
       cell: (r) => (
         <Link href={r.href} className="font-medium text-primary hover:underline">
           {r.judul}
         </Link>
       ),
     },
-    { header: 'ID', cell: (r) => <span className="font-mono text-xs">{r.subjudul}</span> },
+    { header: t('pencarian.colId'), cell: (r) => <span className="font-mono text-xs">{r.subjudul}</span> },
   ];
 
   return (
     <div className="space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Pencarian' }]}
-        title="Hasil Pencarian"
-        description={q ? `Menampilkan hasil untuk "${q}"` : emptyPrompt}
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('pencarian.title') }]}
+        title={t('pencarian.title')}
+        description={q ? t('pencarian.descriptionWithQuery', { q }) : emptyPrompt}
       />
       <DataTable
         key={q}
         data={results}
         columns={columns}
         getRowKey={(r) => `${r.kategori}-${r.id}`}
-        emptyMessage={q ? `Tidak ada hasil untuk "${q}"` : emptyPrompt}
+        emptyMessage={q ? t('pencarian.emptyMessageWithQuery', { q }) : emptyPrompt}
       />
     </div>
   );
 }
 
 export default function PencarianPage() {
+  const { t } = useLanguage();
   return (
-    <Suspense fallback={<p className="text-sm text-muted-foreground">Memuat hasil pencarian...</p>}>
+    <Suspense fallback={<p className="text-sm text-muted-foreground">{t('pencarian.memuatHasil')}</p>}>
       <PencarianResults />
     </Suspense>
   );

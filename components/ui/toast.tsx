@@ -3,6 +3,7 @@
 import { Toast } from '@base-ui/react/toast';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n/context';
 
 export const toastManager = Toast.createToastManager();
 
@@ -16,6 +17,7 @@ export function Toaster() {
 
 function ToastList() {
   const { toasts } = Toast.useToastManager();
+  const { t } = useLanguage();
   return (
     <Toast.Portal>
       <Toast.Viewport className="fixed bottom-4 right-4 z-50 flex w-full max-w-sm flex-col gap-2">
@@ -33,7 +35,7 @@ function ToastList() {
             <Toast.Description className="mt-1 text-sm text-muted-foreground" />
             <Toast.Close
               className="absolute right-2 top-2 rounded-md p-1 text-muted-foreground hover:bg-muted"
-              aria-label="Tutup notifikasi"
+              aria-label={t('toast.closeNotification')}
             >
               <X className="h-3.5 w-3.5" />
             </Toast.Close>

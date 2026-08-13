@@ -6,6 +6,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { Kapal } from '@/lib/types';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
+import { KAPAL_STATUS_LABEL_KEY } from '@/lib/kapal-status';
 
 // The vessel marker uses the actual boat asset (perahu + 2 dayung, no cabin/building)
 // directly instead of a hand-drawn SVG. The source PNG now has genuine alpha
@@ -35,6 +37,7 @@ export function MapView({
   onSelectKapal?: (id: string) => void;
 }) {
   const { updateKapalPosisi } = useData();
+  const { t } = useLanguage();
   const [tileMode, setTileMode] = useState<'peta' | 'satelit'>('peta');
 
   useEffect(() => {
@@ -58,14 +61,14 @@ export function MapView({
           onClick={() => setTileMode('peta')}
           className={tileMode === 'peta' ? 'bg-primary px-3 py-1.5 text-primary-foreground' : 'px-3 py-1.5 text-muted-foreground hover:text-foreground'}
         >
-          Peta
+          {t('petaTracking.petaLabel')}
         </button>
         <button
           type="button"
           onClick={() => setTileMode('satelit')}
           className={tileMode === 'satelit' ? 'bg-primary px-3 py-1.5 text-primary-foreground' : 'px-3 py-1.5 text-muted-foreground hover:text-foreground'}
         >
-          Satelit
+          {t('petaTracking.satelitLabel')}
         </button>
       </div>
       <MapContainer center={[-2.5, 118]} zoom={5} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
@@ -90,7 +93,7 @@ export function MapView({
             <Popup>
               <strong>{k.nama}</strong>
               <br />
-              {k.status === 'melaut' ? 'Aktif Melaut' : k.status}
+              {t(KAPAL_STATUS_LABEL_KEY[k.status])}
             </Popup>
           </Marker>
         ))}

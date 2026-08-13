@@ -9,14 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { toastManager } from '@/components/ui/toast';
-
-const DECORATIVE_TABS = [
-  { value: 'akun', label: 'Akun & Keamanan' },
-  { value: 'notifikasi', label: 'Notifikasi' },
-  { value: 'integrasi', label: 'Integrasi' },
-  { value: 'backup', label: 'Data & Backup' },
-  { value: 'pengguna', label: 'Manajemen Pengguna' },
-] as const;
+import { useLanguage } from '@/lib/i18n/context';
 
 const BAHASA_OPTIONS = [
   { value: 'id', label: 'Bahasa Indonesia' },
@@ -40,14 +33,8 @@ const SATUAN_BERAT_OPTIONS = [
   { value: 'ton', label: 'Ton' },
 ];
 
-function showComingSoonToast() {
-  toastManager.add({
-    title: 'Fitur belum tersedia',
-    description: 'Fitur ini memerlukan sistem akun & backend, tersedia di versi mendatang.',
-  });
-}
-
 export default function PengaturanPage() {
+  const { t } = useLanguage();
   const [notifikasiCuaca, setNotifikasiCuaca] = useState(true);
   const [notifikasiKapal, setNotifikasiKapal] = useState(true);
   const [sinkronisasiOtomatis, setSinkronisasiOtomatis] = useState(false);
@@ -58,34 +45,49 @@ export default function PengaturanPage() {
   const [formatTanggal, setFormatTanggal] = useState('dd-mmm-yyyy');
   const [satuanBerat, setSatuanBerat] = useState('kg');
 
+  const DECORATIVE_TABS = [
+    { value: 'akun', label: t('pengaturan.tabAkunKeamanan') },
+    { value: 'notifikasi', label: t('pengaturan.tabNotifikasi') },
+    { value: 'integrasi', label: t('pengaturan.tabIntegrasi') },
+    { value: 'backup', label: t('pengaturan.tabDataBackup') },
+    { value: 'pengguna', label: t('pengaturan.tabManajemenPengguna') },
+  ] as const;
+
+  function showComingSoonToast() {
+    toastManager.add({
+      title: t('pengaturan.toastFiturBelumTersediaTitle'),
+      description: t('pengaturan.toastFiturBelumTersediaDesc'),
+    });
+  }
+
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
-        crumbs={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Pengaturan' }]}
-        title="Pengaturan"
-        description="Kelola preferensi dan konfigurasi sistem"
+        crumbs={[{ label: t('nav.dashboard'), href: '/dashboard' }, { label: t('pengaturan.title') }]}
+        title={t('pengaturan.title')}
+        description={t('pengaturan.description')}
       />
       <Tabs defaultValue="umum">
         <TabsList>
-          <TabsTrigger value="umum">Pengaturan Umum</TabsTrigger>
+          <TabsTrigger value="umum">{t('pengaturan.tabUmum')}</TabsTrigger>
           {DECORATIVE_TABS.map((tab) => (
             <TabsTrigger key={tab.value} value={tab.value}>
               {tab.label}
             </TabsTrigger>
           ))}
-          <TabsTrigger value="preferensi">Preferensi</TabsTrigger>
+          <TabsTrigger value="preferensi">{t('pengaturan.tabPreferensi')}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="umum" className="space-y-4 pt-4">
           <Card>
-            <CardHeader className="text-sm font-semibold">Konfigurasi Aplikasi</CardHeader>
+            <CardHeader className="text-sm font-semibold">{t('pengaturan.konfigurasiAplikasi')}</CardHeader>
             <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label htmlFor="cfg-nama-aplikasi" className="text-sm text-muted-foreground">Nama Aplikasi</label>
+                <label htmlFor="cfg-nama-aplikasi" className="text-sm text-muted-foreground">{t('pengaturan.namaAplikasi')}</label>
                 <Input id="cfg-nama-aplikasi" value={namaAplikasi} onChange={(e) => setNamaAplikasi(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="cfg-zona-waktu" className="text-sm text-muted-foreground">Zona Waktu</label>
+                <label htmlFor="cfg-zona-waktu" className="text-sm text-muted-foreground">{t('pengaturan.zonaWaktu')}</label>
                 <Select items={ZONA_WAKTU_OPTIONS} value={zonaWaktu} onValueChange={(v) => setZonaWaktu(v ?? 'wib')}>
                   <SelectTrigger id="cfg-zona-waktu"><SelectValue /></SelectTrigger>
                   <SelectContent>
@@ -96,7 +98,7 @@ export default function PengaturanPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="cfg-format-tanggal" className="text-sm text-muted-foreground">Format Tanggal</label>
+                <label htmlFor="cfg-format-tanggal" className="text-sm text-muted-foreground">{t('pengaturan.formatTanggal')}</label>
                 <Select items={FORMAT_TANGGAL_OPTIONS} value={formatTanggal} onValueChange={(v) => setFormatTanggal(v ?? 'dd-mmm-yyyy')}>
                   <SelectTrigger id="cfg-format-tanggal"><SelectValue /></SelectTrigger>
                   <SelectContent>
@@ -107,7 +109,7 @@ export default function PengaturanPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="cfg-satuan-berat" className="text-sm text-muted-foreground">Satuan Berat</label>
+                <label htmlFor="cfg-satuan-berat" className="text-sm text-muted-foreground">{t('pengaturan.satuanBerat')}</label>
                 <Select items={SATUAN_BERAT_OPTIONS} value={satuanBerat} onValueChange={(v) => setSatuanBerat(v ?? 'kg')}>
                   <SelectTrigger id="cfg-satuan-berat"><SelectValue /></SelectTrigger>
                   <SelectContent>
@@ -119,39 +121,39 @@ export default function PengaturanPage() {
               </div>
               <div className="sm:col-span-2">
                 <Button variant="outline" onClick={showComingSoonToast}>
-                  Simpan Konfigurasi
+                  {t('pengaturan.simpanKonfigurasi')}
                 </Button>
               </div>
             </CardContent>
           </Card>
           <Card>
-            <CardHeader className="text-sm font-semibold">Preferensi Notifikasi & Tampilan</CardHeader>
+            <CardHeader className="text-sm font-semibold">{t('pengaturan.preferensiNotifikasiTampilan')}</CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">Notifikasi Peringatan Cuaca</p>
-                  <p className="text-xs text-muted-foreground">Terima notifikasi saat ada peringatan cuaca ekstrem</p>
+                  <p className="text-sm font-medium">{t('pengaturan.notifikasiPeringatanCuaca')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pengaturan.notifikasiPeringatanCuacaDesc')}</p>
                 </div>
                 <Switch checked={notifikasiCuaca} onCheckedChange={setNotifikasiCuaca} />
               </div>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">Notifikasi Kapal Melaut</p>
-                  <p className="text-xs text-muted-foreground">Terima notifikasi saat status kapal berubah menjadi melaut</p>
+                  <p className="text-sm font-medium">{t('pengaturan.notifikasiKapalMelaut')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pengaturan.notifikasiKapalMelautDesc')}</p>
                 </div>
                 <Switch checked={notifikasiKapal} onCheckedChange={setNotifikasiKapal} />
               </div>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">Sinkronisasi Data Otomatis</p>
-                  <p className="text-xs text-muted-foreground">Perbarui data secara otomatis setiap beberapa menit</p>
+                  <p className="text-sm font-medium">{t('pengaturan.sinkronisasiDataOtomatis')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pengaturan.sinkronisasiDataOtomatisDesc')}</p>
                 </div>
                 <Switch checked={sinkronisasiOtomatis} onCheckedChange={setSinkronisasiOtomatis} />
               </div>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium">Mode Tampilan Kompak</p>
-                  <p className="text-xs text-muted-foreground">Kurangi jarak antar elemen pada tabel dan daftar</p>
+                  <p className="text-sm font-medium">{t('pengaturan.modeTampilanKompak')}</p>
+                  <p className="text-xs text-muted-foreground">{t('pengaturan.modeTampilanKompakDesc')}</p>
                 </div>
                 <Switch checked={tampilanKompak} onCheckedChange={setTampilanKompak} />
               </div>
@@ -165,10 +167,10 @@ export default function PengaturanPage() {
               <CardHeader className="text-sm font-semibold">{tab.label}</CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  Pengaturan {tab.label.toLowerCase()} akan tersedia setelah sistem akun & backend diimplementasikan.
+                  {t('pengaturan.pengaturanAkanTersedia', { tab: tab.label.toLowerCase() })}
                 </p>
                 <Button variant="outline" onClick={showComingSoonToast}>
-                  Simpan Perubahan
+                  {t('pengaturan.simpanPerubahan')}
                 </Button>
               </CardContent>
             </Card>
@@ -177,10 +179,10 @@ export default function PengaturanPage() {
 
         <TabsContent value="preferensi" className="pt-4">
           <Card>
-            <CardHeader className="text-sm font-semibold">Preferensi</CardHeader>
+            <CardHeader className="text-sm font-semibold">{t('pengaturan.preferensi')}</CardHeader>
             <CardContent className="space-y-4">
               <div className="max-w-xs space-y-1.5">
-                <label htmlFor="pengaturan-bahasa" className="text-sm text-muted-foreground">Bahasa</label>
+                <label htmlFor="pengaturan-bahasa" className="text-sm text-muted-foreground">{t('pengaturan.bahasa')}</label>
                 <Select items={BAHASA_OPTIONS} value={bahasa} onValueChange={(v) => setBahasa(v ?? 'id')}>
                   <SelectTrigger id="pengaturan-bahasa"><SelectValue /></SelectTrigger>
                   <SelectContent>
@@ -191,7 +193,7 @@ export default function PengaturanPage() {
                 </Select>
               </div>
               <Button variant="outline" onClick={showComingSoonToast}>
-                Simpan Perubahan
+                {t('pengaturan.simpanPerubahan')}
               </Button>
             </CardContent>
           </Card>

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { StatusBadge } from '@/components/shared/status-badge';
 import { Stepper } from '@/components/shared/stepper';
@@ -19,6 +20,16 @@ const METODE_OPTIONS = ['Pemeriksaan Fisik & Dokumen', 'Pemeriksaan Fisik', 'Pem
 export default function BiosecurityCheckPage() {
   const router = useRouter();
   const { kapal, biosecurityCheck, addBiosecurityCheck } = useData();
+  const { t } = useLanguage();
+  const CHECKLIST_LABEL_KEYS: Record<string, string> = {
+    kebersihanKapal: 'biosecurity.checklistLabels.kebersihanKapal',
+    airBallast: 'biosecurity.checklistLabels.airBallast',
+    alatTangkap: 'biosecurity.checklistLabels.alatTangkap',
+    dokumenKesehatan: 'biosecurity.checklistLabels.dokumenKesehatan',
+    hamaPenyakit: 'biosecurity.checklistLabels.hamaPenyakit',
+    limbahBuangan: 'biosecurity.checklistLabels.limbahBuangan',
+    awakKapal: 'biosecurity.checklistLabels.awakKapal',
+  };
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [kapalId, setKapalId] = useState('');
@@ -31,7 +42,7 @@ export default function BiosecurityCheckPage() {
   function handleNextFromStep1(e: FormEvent) {
     e.preventDefault();
     if (!kapalId || !tanggal || !petugas.trim()) {
-      setError('Lengkapi informasi kapal dan petugas pemeriksa terlebih dahulu.');
+      setError(t('biosecurity.errorLengkapiInfo'));
       return;
     }
     setError('');
@@ -41,7 +52,7 @@ export default function BiosecurityCheckPage() {
   function handleNextFromStep2() {
     const lengkap = BIOSECURITY_CHECKLIST_ITEMS.every((item) => values[item.key]);
     if (!lengkap) {
-      setError('Lengkapi seluruh hasil pemeriksaan sebelum melanjutkan.');
+      setError(t('biosecurity.errorLengkapiPemeriksaan'));
       return;
     }
     setError('');
@@ -72,18 +83,18 @@ export default function BiosecurityCheckPage() {
     <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
         crumbs={[
-          { label: 'Dashboard', href: '/dashboard' },
-          { label: 'Hasil Tangkap', href: '/hasil-tangkap' },
-          { label: 'Status Lolos Biosecurity' },
+          { label: t('nav.dashboard'), href: '/dashboard' },
+          { label: t('hasilTangkap.title'), href: '/hasil-tangkap' },
+          { label: t('biosecurity.title') },
         ]}
-        title="Input Status Lolos Biosecurity"
-        description="Catat dan verifikasi hasil pemeriksaan biosecurity kapal di pelabuhan"
+        title={t('biosecurity.title')}
+        description={t('biosecurity.description')}
       />
 
       <Card>
         <CardHeader>
           <Stepper
-            steps={[{ label: 'Informasi Kapal' }, { label: 'Pemeriksaan' }, { label: 'Review & Simpan' }]}
+            steps={[{ label: t('biosecurity.stepInformasiKapal') }, { label: t('biosecurity.stepPemeriksaan') }, { label: t('biosecurity.stepReviewSimpan') }]}
             currentStep={step}
           />
         </CardHeader>
@@ -93,13 +104,13 @@ export default function BiosecurityCheckPage() {
           {step === 1 && (
             <form onSubmit={handleNextFromStep1} className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label htmlFor="bio-kapal" className="text-sm text-muted-foreground">Pilih Kapal</label>
+                <label htmlFor="bio-kapal" className="text-sm text-muted-foreground">{t('biosecurity.pilihKapal')}</label>
                 <Select
                   items={kapal.map((k) => ({ value: k.id, label: k.nama }))}
                   value={kapalId}
                   onValueChange={(v) => setKapalId(v ?? '')}
                 >
-                  <SelectTrigger id="bio-kapal" className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
+                  <SelectTrigger id="bio-kapal" className="w-full"><SelectValue placeholder={t('biosecurity.placeholderPilihKapal')} /></SelectTrigger>
                   <SelectContent>
                     {kapal.map((k) => (
                       <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
@@ -108,15 +119,15 @@ export default function BiosecurityCheckPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="bio-tanggal" className="text-sm text-muted-foreground">Tanggal Pemeriksaan</label>
+                <label htmlFor="bio-tanggal" className="text-sm text-muted-foreground">{t('biosecurity.tanggalPemeriksaan')}</label>
                 <Input id="bio-tanggal" type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="bio-petugas" className="text-sm text-muted-foreground">Petugas Pemeriksa</label>
-                <Input id="bio-petugas" value={petugas} onChange={(e) => setPetugas(e.target.value)} placeholder="Nama petugas" />
+                <label htmlFor="bio-petugas" className="text-sm text-muted-foreground">{t('biosecurity.petugasPemeriksa')}</label>
+                <Input id="bio-petugas" value={petugas} onChange={(e) => setPetugas(e.target.value)} placeholder={t('biosecurity.namaPetugasPlaceholder')} />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="bio-metode" className="text-sm text-muted-foreground">Metode Pemeriksaan</label>
+                <label htmlFor="bio-metode" className="text-sm text-muted-foreground">{t('biosecurity.metodePemeriksaan')}</label>
                 <Select value={metode} onValueChange={(v) => setMetode(v ?? metode)}>
                   <SelectTrigger id="bio-metode" className="w-full"><SelectValue /></SelectTrigger>
                   <SelectContent>
@@ -127,7 +138,7 @@ export default function BiosecurityCheckPage() {
                 </Select>
               </div>
               <div className="sm:col-span-2">
-                <Button type="submit">Lanjut</Button>
+                <Button type="submit">{t('biosecurity.lanjut')}</Button>
               </div>
             </form>
           )}
@@ -137,12 +148,12 @@ export default function BiosecurityCheckPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {BIOSECURITY_CHECKLIST_ITEMS.map((item) => (
                   <div key={item.key} className="space-y-1.5">
-                    <label htmlFor={`bio-check-${item.key}`} className="text-sm text-muted-foreground">{item.label}</label>
+                    <label htmlFor={`bio-check-${item.key}`} className="text-sm text-muted-foreground">{t(CHECKLIST_LABEL_KEYS[item.key])}</label>
                     <Select
                       value={values[item.key] ?? ''}
                       onValueChange={(v) => setValues((prev) => ({ ...prev, [item.key]: v ?? '' }))}
                     >
-                      <SelectTrigger id={`bio-check-${item.key}`} className="w-full"><SelectValue placeholder="Pilih hasil" /></SelectTrigger>
+                      <SelectTrigger id={`bio-check-${item.key}`} className="w-full"><SelectValue placeholder={t('biosecurity.placeholderPilihHasil')} /></SelectTrigger>
                       <SelectContent>
                         {item.options.map((opt) => (
                           <SelectItem key={opt} value={opt}>{opt}</SelectItem>
@@ -153,8 +164,8 @@ export default function BiosecurityCheckPage() {
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button type="button" variant="outline" onClick={() => setStep(1)}>Kembali</Button>
-                <Button type="button" onClick={handleNextFromStep2}>Lanjut ke Review</Button>
+                <Button type="button" variant="outline" onClick={() => setStep(1)}>{t('biosecurity.kembali')}</Button>
+                <Button type="button" onClick={handleNextFromStep2}>{t('biosecurity.lanjutKeReview')}</Button>
               </div>
             </div>
           )}
@@ -162,26 +173,26 @@ export default function BiosecurityCheckPage() {
           {step === 3 && (
             <div className="space-y-4 text-sm">
               <div className="grid gap-2 sm:grid-cols-2">
-                <p><span className="text-muted-foreground">Kapal</span><br /><span className="font-medium">{kapalTerpilih?.nama ?? '-'}</span></p>
-                <p><span className="text-muted-foreground">Petugas</span><br /><span className="font-medium">{petugas}</span></p>
-                <p><span className="text-muted-foreground">Tanggal</span><br /><span className="font-medium">{formatDate(tanggal)}</span></p>
-                <p><span className="text-muted-foreground">Metode</span><br /><span className="font-medium">{metode}</span></p>
+                <p><span className="text-muted-foreground">{t('biosecurity.kapal')}</span><br /><span className="font-medium">{kapalTerpilih?.nama ?? '-'}</span></p>
+                <p><span className="text-muted-foreground">{t('biosecurity.petugas')}</span><br /><span className="font-medium">{petugas}</span></p>
+                <p><span className="text-muted-foreground">{t('biosecurity.tanggal')}</span><br /><span className="font-medium">{formatDate(tanggal)}</span></p>
+                <p><span className="text-muted-foreground">{t('biosecurity.metode')}</span><br /><span className="font-medium">{metode}</span></p>
               </div>
               <div className="space-y-1 rounded-lg border border-border p-3">
                 {BIOSECURITY_CHECKLIST_ITEMS.map((item) => (
                   <div key={item.key} className="flex items-center justify-between">
-                    <span className="text-muted-foreground">{item.label}</span>
+                    <span className="text-muted-foreground">{t(CHECKLIST_LABEL_KEYS[item.key])}</span>
                     <span className="font-medium">{values[item.key]}</span>
                   </div>
                 ))}
               </div>
               <div className="flex items-center justify-between rounded-lg bg-muted p-3">
-                <span>Status Lolos Biosecurity</span>
-                <StatusBadge label={hasil === 'lolos' ? 'Lolos' : 'Tidak Lolos'} tone={hasil === 'lolos' ? 'success' : 'destructive'} />
+                <span>{t('biosecurity.statusLolosBiosecurity')}</span>
+                <StatusBadge label={hasil === 'lolos' ? t('status.lolos') : t('status.tidakLolos')} tone={hasil === 'lolos' ? 'success' : 'destructive'} />
               </div>
               <div className="flex gap-2">
-                <Button type="button" variant="outline" onClick={() => setStep(2)}>Kembali</Button>
-                <Button type="button" onClick={handleSubmit}>Simpan</Button>
+                <Button type="button" variant="outline" onClick={() => setStep(2)}>{t('biosecurity.kembali')}</Button>
+                <Button type="button" onClick={handleSubmit}>{t('biosecurity.simpan')}</Button>
               </div>
             </div>
           )}

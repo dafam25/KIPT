@@ -6,13 +6,16 @@ import { Search, ChevronDown } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { useLanguage } from '@/lib/i18n/context';
 import { NotificationBell } from './notification-bell';
+import { LanguageToggle } from './language-toggle';
 import { navItems } from './nav-items';
 import Link from 'next/link';
 
 export function Header() {
   const [query, setQuery] = useState('');
   const router = useRouter();
+  const { t } = useLanguage();
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -34,7 +37,7 @@ export function Header() {
             />
             <div>
               <p className="text-sm font-bold tracking-wide">DIGITAL NELAYAN ID</p>
-              <p className="text-xs text-sidebar-foreground/60">TRACKING KAPAL & HASIL TANGKAP</p>
+              <p className="text-xs text-sidebar-foreground/60">{t('layout.brandSubtitle')}</p>
             </div>
           </div>
           <nav className="flex flex-col gap-1">
@@ -44,7 +47,7 @@ export function Header() {
                 href={item.href}
                 className="rounded-md px-3 py-2 text-sm text-sidebar-foreground/80 hover:bg-white/10 hover:text-sidebar-foreground"
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
           </nav>
@@ -57,17 +60,18 @@ export function Header() {
           <Input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Cari nelayan, kapal, atau hasil..."
+            placeholder={t('layout.searchPlaceholder')}
             className="pl-9"
           />
         </div>
       </form>
 
       <div className="ml-auto flex items-center gap-3">
+        <LanguageToggle />
         <NotificationBell />
         <div className="flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-sm">
           <span className="h-6 w-6 rounded-full bg-primary" />
-          Admin DKP
+          {t('layout.adminLabel')}
           <ChevronDown className="h-3 w-3" />
         </div>
       </div>

@@ -2,8 +2,10 @@
 
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { formatDate, formatNumber } from '@/lib/format';
+import { useLanguage } from '@/lib/i18n/context';
 
 export function TrendLineChart({ data }: { data: { tanggal: string; totalKg: number }[] }) {
+  const { t } = useLanguage();
   return (
     <ResponsiveContainer width="100%" height={260}>
       <AreaChart data={data}>
@@ -22,7 +24,7 @@ export function TrendLineChart({ data }: { data: { tanggal: string; totalKg: num
         />
         <YAxis tickFormatter={(v) => formatNumber(v)} stroke="var(--muted-foreground)" fontSize={12} />
         <Tooltip
-          formatter={(value) => [`${formatNumber(Number(value))} kg`, 'Total']}
+          formatter={(value) => [`${formatNumber(Number(value))} kg`, t('common.total')]}
           labelFormatter={(label) => formatDate(String(label))}
           contentStyle={{ background: 'var(--card)', border: '1px solid var(--border)' }}
         />

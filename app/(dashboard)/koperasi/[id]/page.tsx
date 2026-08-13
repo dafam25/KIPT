@@ -3,6 +3,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { DataTable, type DataTableColumn } from '@/components/shared/data-table';
 import { StatusBadge } from '@/components/shared/status-badge';
@@ -17,15 +18,16 @@ export default function KoperasiDetailPage() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const { koperasi, nelayan, kapal } = useData();
+  const { t } = useLanguage();
 
   const item = koperasi.find((k) => k.id === id);
 
   if (!item) {
     return (
       <div className="space-y-4">
-        <p className="text-muted-foreground">Data koperasi tidak ditemukan.</p>
+        <p className="text-muted-foreground">{t('koperasi.notFound')}</p>
         <Button variant="outline" onClick={() => router.push('/koperasi')}>
-          Kembali ke Daftar Koperasi
+          {t('koperasi.backToList')}
         </Button>
       </div>
     );
@@ -36,7 +38,7 @@ export default function KoperasiDetailPage() {
 
   const anggotaColumns: DataTableColumn<Nelayan>[] = [
     {
-      header: 'Nama',
+      header: t('koperasi.colNama'),
       cell: (n) => (
         <Link href={`/nelayan/${n.id}`} className="flex items-center gap-2 font-medium text-primary hover:underline">
           <img
@@ -48,12 +50,12 @@ export default function KoperasiDetailPage() {
         </Link>
       ),
     },
-    { header: 'Kapal', cell: (n) => kapal.find((k) => k.id === n.kapalId)?.nama ?? '-' },
+    { header: t('koperasi.colKapal'), cell: (n) => kapal.find((k) => k.id === n.kapalId)?.nama ?? '-' },
     {
-      header: 'Status',
+      header: t('koperasi.colStatus2'),
       cell: (n) => (
         <StatusBadge
-          label={n.status === 'aktif' ? 'Aktif' : 'Nonaktif'}
+          label={n.status === 'aktif' ? t('status.aktif') : t('status.nonaktif')}
           tone={n.status === 'aktif' ? 'success' : 'muted'}
         />
       ),
@@ -64,38 +66,38 @@ export default function KoperasiDetailPage() {
     <div className="space-y-6">
       <PageHeader
         crumbs={[
-          { label: 'Dashboard', href: '/dashboard' },
-          { label: 'Koperasi', href: '/koperasi' },
+          { label: t('nav.dashboard'), href: '/dashboard' },
+          { label: t('koperasi.listTitle'), href: '/koperasi' },
           { label: item.nama },
         ]}
-        title="Detail Koperasi"
+        title={t('koperasi.detailTitle')}
       />
 
       <Card>
         <CardHeader className="flex flex-row items-center justify-between text-sm font-semibold">
           {item.nama}
-          <StatusBadge label={item.status} tone={item.status === 'Aktif' ? 'success' : 'muted'} />
+          <StatusBadge label={item.status === 'Aktif' ? t('status.aktif') : t('status.nonaktif')} tone={item.status === 'Aktif' ? 'success' : 'muted'} />
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-y-2 text-sm sm:grid-cols-3">
-          <div><span className="text-muted-foreground">Lokasi</span><p className="font-medium">{item.lokasi}</p></div>
-          <div><span className="text-muted-foreground">Ketua</span><p className="font-medium">{item.ketua}</p></div>
-          <div><span className="text-muted-foreground">Anggota Terdaftar (Koperasi)</span><p className="font-medium">{formatNumber(item.jumlahAnggota)}</p></div>
-          <div><span className="text-muted-foreground">Volume Hasil</span><p className="font-medium">{formatNumber(item.volumeKg)} kg</p></div>
-          <div><span className="text-muted-foreground">Nilai Transaksi</span><p className="font-medium">{formatRupiah(item.nilaiTransaksi)}</p></div>
-          <div><span className="text-muted-foreground">Peringkat Volume</span><p className="font-medium">#{peringkat} dari {koperasi.length}</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldLokasi')}</span><p className="font-medium">{item.lokasi}</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldKetua')}</span><p className="font-medium">{item.ketua}</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldAnggotaTerdaftar')}</span><p className="font-medium">{formatNumber(item.jumlahAnggota)}</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldVolumeHasil')}</span><p className="font-medium">{formatNumber(item.volumeKg)} kg</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldNilaiTransaksi')}</span><p className="font-medium">{formatRupiah(item.nilaiTransaksi)}</p></div>
+          <div><span className="text-muted-foreground">{t('koperasi.fieldPeringkatVolume')}</span><p className="font-medium">{t('koperasi.peringkatDariTotal', { peringkat, total: koperasi.length })}</p></div>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader className="text-sm font-semibold">
-          Anggota Nelayan Terhubung ({anggota.length})
+          {t('koperasi.anggotaTerhubung', { count: anggota.length })}
           <p className="text-xs font-normal text-muted-foreground">
-            Nelayan yang tercatat di sistem Digital Nelayan ID
+            {t('koperasi.anggotaSubtitle')}
           </p>
         </CardHeader>
         <CardContent>
           {anggota.length === 0 ? (
-            <p className="text-sm text-muted-foreground">Belum ada nelayan terdaftar di koperasi ini.</p>
+            <p className="text-sm text-muted-foreground">{t('koperasi.belumAdaNelayan')}</p>
           ) : (
             <DataTable data={anggota} columns={anggotaColumns} getRowKey={(n) => n.id} pageSize={10} />
           )}

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { useData } from '@/context/data-context';
+import { useLanguage } from '@/lib/i18n/context';
 import { PageHeader } from '@/components/shared/page-header';
 import { Stepper } from '@/components/shared/stepper';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -31,6 +32,7 @@ function emptyRow(): IkanRow {
 export default function InputHasilTangkapPage() {
   const router = useRouter();
   const { kapal, addHasilTangkap } = useData();
+  const { t } = useLanguage();
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [kapalId, setKapalId] = useState('');
@@ -44,7 +46,7 @@ export default function InputHasilTangkapPage() {
   function handleNextFromStep1(e: FormEvent) {
     e.preventDefault();
     if (!kapalId || !tanggal || !waktuMulai || !waktuSelesai || !lokasi.trim()) {
-      setError('Lengkapi semua informasi kapal dan trip terlebih dahulu.');
+      setError(t('input.errorLengkapiTrip'));
       return;
     }
     setError('');
@@ -54,7 +56,7 @@ export default function InputHasilTangkapPage() {
   function handleNextFromStep2() {
     const valid = rows.every((r) => r.nama && Number(r.beratKg) > 0 && Number(r.jumlahEkor) > 0);
     if (!valid) {
-      setError('Lengkapi berat dan jumlah untuk setiap jenis ikan.');
+      setError(t('input.errorLengkapiIkan'));
       return;
     }
     setError('');
@@ -101,18 +103,18 @@ export default function InputHasilTangkapPage() {
     <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
         crumbs={[
-          { label: 'Dashboard', href: '/dashboard' },
-          { label: 'Hasil Tangkap', href: '/hasil-tangkap' },
-          { label: 'Input Hasil Tangkap' },
+          { label: t('nav.dashboard'), href: '/dashboard' },
+          { label: t('hasilTangkap.title'), href: '/hasil-tangkap' },
+          { label: t('input.title') },
         ]}
-        title="Input Hasil Tangkapan"
-        description="Catat jenis, jumlah, lokasi, dan waktu hasil tangkapan"
+        title={t('input.title')}
+        description={t('input.description')}
       />
 
       <Card>
         <CardHeader>
           <Stepper
-            steps={[{ label: 'Data Kapal & Trip' }, { label: 'Detail Ikan' }, { label: 'Review & Simpan' }]}
+            steps={[{ label: t('input.stepDataKapalTrip') }, { label: t('input.stepDetailIkan') }, { label: t('input.stepReviewSimpan') }]}
             currentStep={step}
           />
         </CardHeader>
@@ -122,13 +124,13 @@ export default function InputHasilTangkapPage() {
           {step === 1 && (
             <form onSubmit={handleNextFromStep1} className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <label htmlFor="input-kapal" className="text-sm text-muted-foreground">Pilih Kapal</label>
+                <label htmlFor="input-kapal" className="text-sm text-muted-foreground">{t('input.pilihKapal')}</label>
                 <Select
                   items={kapal.map((k) => ({ value: k.id, label: k.nama }))}
                   value={kapalId}
                   onValueChange={(v) => setKapalId(v ?? '')}
                 >
-                  <SelectTrigger id="input-kapal" className="w-full"><SelectValue placeholder="Pilih kapal" /></SelectTrigger>
+                  <SelectTrigger id="input-kapal" className="w-full"><SelectValue placeholder={t('input.placeholderPilihKapal')} /></SelectTrigger>
                   <SelectContent>
                     {kapal.map((k) => (
                       <SelectItem key={k.id} value={k.id}>{k.nama}</SelectItem>
@@ -137,23 +139,23 @@ export default function InputHasilTangkapPage() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="input-tanggal" className="text-sm text-muted-foreground">Tanggal Tangkap</label>
+                <label htmlFor="input-tanggal" className="text-sm text-muted-foreground">{t('input.tanggalTangkap')}</label>
                 <Input id="input-tanggal" type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="input-waktu-mulai" className="text-sm text-muted-foreground">Waktu Mulai</label>
+                <label htmlFor="input-waktu-mulai" className="text-sm text-muted-foreground">{t('input.waktuMulai')}</label>
                 <Input id="input-waktu-mulai" type="time" value={waktuMulai} onChange={(e) => setWaktuMulai(e.target.value)} />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="input-waktu-selesai" className="text-sm text-muted-foreground">Waktu Selesai</label>
+                <label htmlFor="input-waktu-selesai" className="text-sm text-muted-foreground">{t('input.waktuSelesai')}</label>
                 <Input id="input-waktu-selesai" type="time" value={waktuSelesai} onChange={(e) => setWaktuSelesai(e.target.value)} />
               </div>
               <div className="space-y-1.5 sm:col-span-2">
-                <label htmlFor="input-lokasi" className="text-sm text-muted-foreground">Lokasi Penangkapan</label>
-                <Input id="input-lokasi" value={lokasi} onChange={(e) => setLokasi(e.target.value)} placeholder="Contoh: Perairan Utara Jawa" />
+                <label htmlFor="input-lokasi" className="text-sm text-muted-foreground">{t('input.lokasiPenangkapan')}</label>
+                <Input id="input-lokasi" value={lokasi} onChange={(e) => setLokasi(e.target.value)} placeholder={t('input.lokasiPlaceholder')} />
               </div>
               <div className="sm:col-span-2">
-                <Button type="submit">Lanjut</Button>
+                <Button type="submit">{t('input.lanjut')}</Button>
               </div>
             </form>
           )}
@@ -164,11 +166,11 @@ export default function InputHasilTangkapPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="p-2">Jenis Ikan</th>
-                      <th className="p-2">Berat (kg)</th>
-                      <th className="p-2">Jumlah (Ekor)</th>
-                      <th className="p-2">Kondisi</th>
-                      <th className="p-2">Aksi</th>
+                      <th className="p-2">{t('input.colJenisIkan')}</th>
+                      <th className="p-2">{t('input.colBeratKg')}</th>
+                      <th className="p-2">{t('input.colJumlahEkor')}</th>
+                      <th className="p-2">{t('input.colKondisi')}</th>
+                      <th className="p-2">{t('input.colAksi')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -201,17 +203,17 @@ export default function InputHasilTangkapPage() {
                           </Select>
                         </td>
                         <td className="p-2">
-                          <Button type="button" variant="outline" size="sm" disabled={rows.length === 1} onClick={() => removeRow(i)}>Hapus</Button>
+                          <Button type="button" variant="outline" size="sm" disabled={rows.length === 1} onClick={() => removeRow(i)}>{t('input.hapus')}</Button>
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <Button type="button" variant="outline" onClick={addRow}>+ Tambah Jenis Ikan</Button>
+              <Button type="button" variant="outline" onClick={addRow}>{t('input.tambahJenisIkan')}</Button>
               <div className="flex gap-2">
-                <Button type="button" variant="outline" onClick={() => setStep(1)}>Kembali</Button>
-                <Button type="button" onClick={handleNextFromStep2}>Lanjut</Button>
+                <Button type="button" variant="outline" onClick={() => setStep(1)}>{t('input.kembali')}</Button>
+                <Button type="button" onClick={handleNextFromStep2}>{t('input.lanjut')}</Button>
               </div>
             </div>
           )}
@@ -219,19 +221,19 @@ export default function InputHasilTangkapPage() {
           {step === 3 && (
             <div className="space-y-4 text-sm">
               <div className="grid gap-2 sm:grid-cols-2">
-                <p><span className="text-muted-foreground">Kapal</span><br /><span className="font-medium">{kapalTerpilih?.nama ?? '-'}</span></p>
-                <p><span className="text-muted-foreground">Lokasi</span><br /><span className="font-medium">{lokasi}</span></p>
-                <p><span className="text-muted-foreground">Tanggal</span><br /><span className="font-medium">{tanggal}</span></p>
-                <p><span className="text-muted-foreground">Waktu</span><br /><span className="font-medium">{waktuMulai} - {waktuSelesai}</span></p>
+                <p><span className="text-muted-foreground">{t('input.kapal')}</span><br /><span className="font-medium">{kapalTerpilih?.nama ?? '-'}</span></p>
+                <p><span className="text-muted-foreground">{t('input.lokasi')}</span><br /><span className="font-medium">{lokasi}</span></p>
+                <p><span className="text-muted-foreground">{t('input.tanggal')}</span><br /><span className="font-medium">{tanggal}</span></p>
+                <p><span className="text-muted-foreground">{t('input.waktu')}</span><br /><span className="font-medium">{waktuMulai} - {waktuSelesai}</span></p>
               </div>
               <div className="overflow-x-auto rounded-lg border border-border">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="p-2">Jenis Ikan</th>
-                      <th className="p-2">Berat (kg)</th>
-                      <th className="p-2">Jumlah (Ekor)</th>
-                      <th className="p-2">Kondisi</th>
+                      <th className="p-2">{t('input.colJenisIkan')}</th>
+                      <th className="p-2">{t('input.colBeratKg')}</th>
+                      <th className="p-2">{t('input.colJumlahEkor')}</th>
+                      <th className="p-2">{t('input.colKondisi')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -247,12 +249,12 @@ export default function InputHasilTangkapPage() {
                 </table>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-muted p-3">
-                <span>Total Berat: <strong>{formatNumber(totalBerat)} kg</strong></span>
-                <span>Estimasi Nilai: <strong>{formatRupiah(estimasiNilai)}</strong></span>
+                <span>{t('input.totalBerat')} <strong>{formatNumber(totalBerat)} kg</strong></span>
+                <span>{t('input.estimasiNilai')} <strong>{formatRupiah(estimasiNilai)}</strong></span>
               </div>
               <div className="flex gap-2">
-                <Button type="button" variant="outline" onClick={() => setStep(2)}>Kembali</Button>
-                <Button type="button" onClick={handleSubmit}>Simpan</Button>
+                <Button type="button" variant="outline" onClick={() => setStep(2)}>{t('input.kembali')}</Button>
+                <Button type="button" onClick={handleSubmit}>{t('input.simpan')}</Button>
               </div>
             </div>
           )}

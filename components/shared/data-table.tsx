@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 import { paginate, totalPages, pageNumbersToShow } from '@/lib/table';
+import { useLanguage } from '@/lib/i18n/context';
 
 export interface DataTableColumn<T> {
   header: string;
@@ -28,14 +29,17 @@ export function DataTable<T>({
   data,
   columns,
   getRowKey,
-  searchPlaceholder = 'Cari...',
+  searchPlaceholder,
   filterFn,
   pageSize = 10,
-  emptyMessage = 'Belum ada data',
+  emptyMessage,
   onRowClick,
 }: DataTableProps<T>) {
+  const { t } = useLanguage();
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
+  const resolvedSearchPlaceholder = searchPlaceholder ?? t('table.searchPlaceholder');
+  const resolvedEmptyMessage = emptyMessage ?? t('table.emptyMessage');
 
   const filtered = useMemo(() => {
     if (!filterFn || !query.trim()) return data;
@@ -58,7 +62,7 @@ export function DataTable<T>({
               setQuery(e.target.value);
               setPage(1);
             }}
-            placeholder={searchPlaceholder}
+            placeholder={resolvedSearchPlaceholder}
             className="pl-9"
           />
         </div>
@@ -78,7 +82,7 @@ export function DataTable<T>({
             {pageItems.length === 0 && (
               <TableRow>
                 <TableCell colSpan={columns.length} className="py-8 text-center text-muted-foreground">
-                  {emptyMessage}
+                  {resolvedEmptyMessage}
                 </TableCell>
               </TableRow>
             )}
@@ -101,7 +105,7 @@ export function DataTable<T>({
       {pageCount > 1 && (
         <div className="flex items-center justify-between text-sm text-muted-foreground">
           <span>
-            Menampilkan {(pageSafe - 1) * pageSize + 1}-{Math.min(pageSafe * pageSize, filtered.length)} dari {filtered.length} data
+            {t('common.showingRange', { from: (pageSafe - 1) * pageSize + 1, to: Math.min(pageSafe * pageSize, filtered.length), total: filtered.length })}
           </span>
           <div className="flex items-center gap-1">
             <Button
@@ -109,7 +113,7 @@ export function DataTable<T>({
               size="icon-sm"
               disabled={pageSafe <= 1}
               onClick={() => setPage(pageSafe - 1)}
-              aria-label="Halaman sebelumnya"
+              aria-label={t('common.previousPage')}
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -135,7 +139,7 @@ export function DataTable<T>({
               size="icon-sm"
               disabled={pageSafe >= pageCount}
               onClick={() => setPage(pageSafe + 1)}
-              aria-label="Halaman berikutnya"
+              aria-label={t('common.nextPage')}
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
