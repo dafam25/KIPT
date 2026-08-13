@@ -376,8 +376,6 @@ export const en: Dictionary = {
     aktivitasTerbaru: 'Recent Activity',
     mendapatkanHasil: 'caught {{berat}} kg at {{lokasi}}',
     belumAdaAktivitas: 'No activity recorded yet.',
-    petaLabel: 'Map',
-    satelitLabel: 'Satellite',
   },
   laporan: {
     title: 'Reports & Analytics',

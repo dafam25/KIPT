@@ -374,8 +374,6 @@ export const id = {
     aktivitasTerbaru: 'Aktivitas Terbaru',
     mendapatkanHasil: 'mendapatkan {{berat}} kg hasil tangkapan di {{lokasi}}',
     belumAdaAktivitas: 'Belum ada aktivitas tercatat.',
-    petaLabel: 'Peta',
-    satelitLabel: 'Satelit',
   },
   laporan: {
     title: 'Laporan & Analitik',
